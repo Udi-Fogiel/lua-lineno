@@ -42,5 +42,27 @@
         tex.box[sec_col][col_attr] = 2
         tex.box[first_col][col_attr] = 1}}
     \directlua{token.set_macro("last@outputdblcol", 
-        token.get_macro("last@outputdblcol"):gsub("\csstring\\\csstring\\set@outputbox@with@footnote@and@float \csstring\\\csstring\\fi", 
-        "\csstring\\\csstring\\set@outputbox@with@footnote@and@float \csstring\\\csstring\\fi \csstring\\\csstring\\lualineno@balance"))}}
+        token.get_macro("last@outputdblcol"):gsub("\csstring\\\csstring\\set@outputbox@with@footnote@and@float
+        \csstring\\\csstring\\fi",
+        "\csstring\\\csstring\\set@outputbox@with@footnote@and@float \csstring\\\csstring\\fi
+        \csstring\\\csstring\\lualineno@balance"))}}
+
+\AddToHook{package/ltxgrid/after}{%
+  \def\box@column#1{%
+ \ltxgrid@info@sw{\class@info{\string\box@column\string#1}}{}%
+ \raise\topskip
+ \hb@xt@\columnwidth\bgroup
+  \dimen@\ht#1\@ifdim{\dimen@>\@colht}{\dimen@\@colht}{}%
+  \count@\vbadness\vbadness\@M
+  \dimen@ii\vfuzz\vfuzz\maxdimen
+  \ltxgrid@info@sw{\saythe\@colht\saythe\dimen@}{}%
+  \vtop attr \directlua{tex.print(luatexbase.attributes['lualineno_col'])} = \pagegrid@cur to\dimen@\bgroup
+   \hrule\@height\z@
+   \unvbox#1%
+   \raggedcolumn@skip
+  \egroup
+  \vfuzz\dimen@ii
+  \vbadness\count@
+  \hss
+ \egroup
+}}
