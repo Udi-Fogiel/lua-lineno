@@ -184,7 +184,7 @@ local function recurse(parent, list, column)
                 local line_type = lineno_types[line_attr][column]
                 if line_type then
                     put_next(line_type['preamble'])
-                    runtoks(token.get_next)
+                    runtoks(get_next)
 		    put_next(line_type['boxes'])
 		    local left_box = scan_list()
 		    local right_box = scan_list()
@@ -240,6 +240,11 @@ if format_name == 'lualatex' then
            setattribute(col_attr, 2)
         end
         return true
+    end, 'lualineno.mark_columns')
+    luatexbase.add_to_callback('buildpage_filter', function(info)
+        if info == 'after_output' then
+            setattribute(col_attr, -0x7FFFFFFF)
+        end
     end, 'lualineno.mark_columns')
     if luatexbase.in_callback('pre_shipout_filter', 'luacolor.process') then
         luatexbase.declare_callback_rule('pre_shipout_filter', 
