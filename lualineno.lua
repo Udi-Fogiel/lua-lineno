@@ -160,6 +160,31 @@ local insert_before = node.insert_before
 local insert_after = node.insert_after
 local traverse = node.traverse
 
+local function add_line_boxes(n, parent, line_type)
+    put_next(line_type['preamble'])
+    runtoks(get_next)
+    put_next(line_type['boxes'])
+    local left_box = scan_list()
+    local right_box = scan_list()
+    
+    local left_kern = node.new('kern')
+    local shift_kern = node.new('kern')
+    local right_kern = node.new('kern')
+         
+    left_kern.kern = -left_box.width - n.shift
+    shift_kern.kern = n.shift
+    right_kern.kern = parent.width - n.shift - n.width
+		    
+    n.head = insert_before(n.list,n.head,shift_kern)
+    n.head = insert_before(n.list,n.head,left_box)
+    n.head = insert_before(n.list,n.head,left_kern)
+		    
+    if n.subtype ~= 1 then
+        n.head = insert_after(n.list,node.tail(n.head),right_kern)
+    end
+    n.head = insert_after(n.list,node.tail(n.head),right_box)
+end
+
 local function inner_expand_write(n)
     n.data = n.data
 end
@@ -180,32 +205,9 @@ local function recurse(parent, list, column)
     for n in traverse(list) do
         if n.id == 0 and (n.subtype == 1 or n.subtype == 6 or n.subtype == 4) then
             local line_attr = get_attribute(node.tail(n.head), type_attr)
-            if line_attr then
-                local line_type = lineno_types[line_attr][column]
-                if line_type then
-                    put_next(line_type['preamble'])
-                    runtoks(get_next)
-		    put_next(line_type['boxes'])
-		    local left_box = scan_list()
-		    local right_box = scan_list()
-		    
-		    local left_kern = node.new('kern')
-		    local shift_kern = node.new('kern')
-		    local right_kern = node.new('kern')
-		     
-		    left_kern.kern = -left_box.width - n.shift
-		    shift_kern.kern = n.shift
-		    right_kern.kern = parent.width - n.shift - n.width
-		    
-		    n.head = insert_before(n.list,n.head,shift_kern)
-		    n.head = insert_before(n.list,n.head,left_box)
-		    n.head = insert_before(n.list,n.head,left_kern)
-		    
-		    if n.subtype ~= 1 then
-		        n.head = insert_after(n.list,node.tail(n.head),right_kern)
-		    end
-		    n.head = insert_after(n.list,node.tail(n.head),right_box)
-		end
+            local line_type = line_attr and lineno_types[line_attr][column] or nil
+            if line_type then
+                add_line_boxes(n, parent, line_type)
             end
             expand_write(n)
         elseif n.id == 8 and n.subtype == 1 then
@@ -216,8 +218,60 @@ local function recurse(parent, list, column)
     end
 end
 
+local function real_box(list)
+    for n in traverse(list) do
+        if n.id == 0 and real_box(n.list) then
+            return true
+        elseif (n.id == 1 and real_box(n.list)) then
+            return true
+        elseif n.id == 29 then
+            return true
+        end
+    end
+    return false
+end
+
+local function real_line(list, offset)
+    for n in traverse(list) do
+        if n.id == 29 then
+            return true
+        elseif n.id == 1 and real_box(n.list) then
+            return n, offset + node.dimensions(list, n)
+        elseif n.id == 0 and real_box(n.list) then
+           local new_offset = offset + node.dimensions(list, n)
+           return real_line(n.list, new_offset)
+        end
+    end
+    return false
+end
+
+local function recurse_smart(parent, list, column, offset, inline)
+    column = get_attribute(parent, col_attr) or column
+    for n in traverse(list) do
+        if n.id == 0 and (n.subtype == 1 or n.subtype == 6 or n.subtype == 4 or (n.subtype == 2 and inline)) then
+            local line_attr = get_attribute(node.tail(n.head), type_attr)
+            local line_type = line_attr and lineno_types[line_attr][column] or nil 
+            if line_type then
+                
+                local m, new_offset = real_line(n.head, offset)
+                if new_offset then
+                    new_offset = new_offset  + n.shift
+                    recurse_smart(m, m.head, column, new_offset, true)
+                elseif m then
+                    add_line_boxes(n, parent, line_type)
+                end
+            end
+            expand_write(n)
+        elseif n.id == 8 and n.subtype == 1 then
+            inner_expand_write(n)
+        elseif n.list then
+            recurse_smart(n, n.list, column, offset, inline)
+        end
+    end
+end
+
 local function lineno_pre_shipout(head)
-    recurse(head, head.list, 1)
+    recurse_smart(head, head.list, 1, 0, false)
     return true
 end
 
@@ -244,7 +298,7 @@ if format_name == 'lualatex' then
     luatexbase.add_to_callback('buildpage_filter', function(info)
         if info == 'after_output' then
             setattribute(col_attr, -0x7FFFFFFF)
-        end
+        end 
     end, 'lualineno.mark_columns')
     if luatexbase.in_callback('pre_shipout_filter', 'luacolor.process') then
         luatexbase.declare_callback_rule('pre_shipout_filter', 

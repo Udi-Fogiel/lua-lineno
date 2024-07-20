@@ -23,15 +23,13 @@
       "\\lualineno@setcol@attr \\mc@align@columns"))}}
   
 \AddToHook{package/balance/after}{%
-  \def\lualineno@balance{%
-    \directlua{
+    \expandafter\renewcommand\expandafter
+    \@BAlancecol\expandafter{\@BAlancecol\directlua{
         local sec_col = token.create('@outputbox').index
         local first_col = token.create('@leftcolumn').index
         local col_attr = luatexbase.attributes['lualineno_col']
         tex.box[sec_col][col_attr] = 2
-        tex.box[first_col][col_attr] = 1}}
-    \expandafter\renewcommand\expandafter
-    \@BAlancecol\expandafter{\@BAlancecol\lualineno@balance}}
+        tex.box[first_col][col_attr] = 1}}}
         
 \AddToHook{package/flushend/after}{%
   \def\lualineno@flushend{
@@ -46,7 +44,7 @@
         "\\set@outputbox@with@footnote@and@float \\fi \\lualineno@balance"))}}
 
 \AddToHook{package/ltxgrid/after}{%
-  \def\box@column#1{%
+\def\box@column#1{%
  \ltxgrid@info@sw{\class@info{\string\box@column\string#1}}{}%
  \raise\topskip
  \hb@xt@\columnwidth\bgroup
@@ -54,7 +52,8 @@
   \count@\vbadness\vbadness\@M
   \dimen@ii\vfuzz\vfuzz\maxdimen
   \ltxgrid@info@sw{\saythe\@colht\saythe\dimen@}{}%
-  \vtop attr \directlua{tex.print(luatexbase.attributes['lualineno_col'])} = \pagegrid@cur to\dimen@\bgroup
+  \vtop attr \directlua{tex.print(luatexbase.attributes['lualineno_col'])} 
+        = \pagegrid@cur to\dimen@\bgroup
    \hrule\@height\z@
    \unvbox#1%
    \raggedcolumn@skip
