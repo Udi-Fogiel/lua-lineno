@@ -231,15 +231,15 @@ local function real_box(list)
     return false
 end
 
-local function real_line(list, offset)
+local function real_line(list, parent, offset)
     for n in traverse(list) do
         if n.id == 29 then
             return true
         elseif n.id == 1 and real_box(n.list) then
-            return n, offset + node.dimensions(list, n)
+            return n, offset + node.rangedimensions(parent, list, n)
         elseif n.id == 0 and real_box(n.list) then
-           local new_offset = offset + node.dimensions(list, n)
-           return real_line(n.list, new_offset)
+           local new_offset = offset + node.rangedimensions(parent, list, n)
+           return real_line(n.list, n, new_offset)
         end
     end
     return false
@@ -253,9 +253,8 @@ local function recurse_smart(parent, list, column, offset, inline)
             local line_type = line_attr and lineno_types[line_attr][column] or nil 
             if line_type then
                 
-                local m, new_offset = real_line(n.head, offset)
+                local m, new_offset = real_line(n.head, n, offset)
                 if new_offset then
-                    new_offset = new_offset  + n.shift
                     recurse_smart(m, m.head, column, new_offset, true)
                 elseif m then
                     add_line_boxes(n, parent, line_type, offset)
