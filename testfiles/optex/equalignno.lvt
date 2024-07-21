@@ -1,0 +1,20 @@
+\input{regression-test.tex}
+\load[lualineno]
+
+\newcount\lineno
+\deflineno
+  {
+    name = default
+    preamble = {\advance\lineno1}
+    left = {\setfontsize{mag.6}\the\lineno\kern.8em}
+  }
+\setlineno{default}
+\tracingoutput=1\tracingonline=1
+\showboxbreadth \maxdimen \showboxdepth \maxdimen
+\START
+$$\eqalignno{
+a^2+b^2 &= c^2 \cr
+c &= \sqrt{a^2+b^2} & \eqmark \cr}
+$$
+\vfill\break
+\END

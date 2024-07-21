@@ -14,8 +14,7 @@ typesetexe = "optex"
 typesetfiles = {"lualineno.opm"}
 ctanzip = module
 checkconfigs = {"configfiles/config-optex", "configfiles/config-latex"}
-
-specialformats  = {optex = {luatex = {binary = "optex"}}}
+specialformats  = {optex = {luatex = {binary = "optex", format = ""}}}
 
 tagfiles = sourcefiles
 function update_tag(file,content,tagname,tagdate)

@@ -1,0 +1,28 @@
+\input{regression-test.tex}
+\load[lualineno]
+
+\newcount\lineno
+\deflineno
+  {
+    name = default
+    preamble = {\advance\lineno1}
+    left = {\setfontsize{mag.6}\the\lineno\kern.8em}
+  }
+\deflineno
+  {
+    name = default
+    preamble = {\advance\lineno1}
+    right = {\setfontsize{mag.6}\kern.8em\the\lineno}
+    column = 2
+  }
+\setlineno{default}
+\tracingoutput=1\tracingonline=1
+\showboxbreadth \maxdimen \showboxdepth \maxdimen
+\START
+\table{||lc|r||}{ \crl
+Month & commodity & price \crli \tskip2pt
+January & notebook & \$ 700 \cr
+February & skateboard & \$ 100 \cr
+July & yacht & k\$ 170 \crl}
+\vfill\break
+\END

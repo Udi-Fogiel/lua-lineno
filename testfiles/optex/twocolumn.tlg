@@ -1,0 +1,1215 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+(../lipsum.ltd.tex)
+Completed box being shipped out [1]
+\vbox(718.24724+0.0)x455.24408, direction TLT
+.\pdflinkstate 1
+.\pdflinkstate 0
+.\vbox(694.24724+0.0)x455.24408, glue set 582.24725fill, direction TLT
+..\glue(\topskip) 10.0
+..\hbox(0.0+0.0)x0.0, direction TLT
+..\penalty 10000
+..\glue -12.0
+..\hbox(108.0+0.0)x455.24408, glue set 20.0fil, direction TLT
+...\vbox(108.0+0.0)x217.62204, direction TLT
+....\glue(\splittopskip) 5.11125
+....\hbox(6.88875+1.94443)x217.62204, glue set 1.86804, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\pdfliteral direct <lua data reference ...>
+......\_tenrm 1
+......\kern8.00003
+.....\kern0.0 (font)
+.....\localpar
+......\localinterlinepenalty=0
+......\localbrokenpenalty=0
+......\localleftbox=null
+......\localrightbox=null
+.....\hbox(0.0+0.0)x20.0, direction TLT
+.....\_tenrm L
+.....\_tenrm o
+.....\_tenrm r
+.....\_tenrm e
+.....\_tenrm m
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm i
+.....\_tenrm p
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm s
+.....\_tenrm u
+.....\_tenrm m
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm d
+.....\_tenrm o
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm o
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm s
+.....\_tenrm i
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm m
+.....\_tenrm e
+.....\_tenrm t
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm c
+.....\_tenrm o
+.....\_tenrm n
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm s
+.....\_tenrm e
+.....\_tenrm c
+.....\_tenrm t
+.....\_tenrm e
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm e
+.....\_tenrm r
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 10000
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 0.04143, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 2
+......\kern8.00003
+.....\kern0.0 (font)
+.....\_tenrm a
+.....\_tenrm d
+.....\_tenrm i
+.....\_tenrm p
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm i
+.....\_tenrm s
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm i
+.....\_tenrm n
+.....\_tenrm g
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm l
+.....\_tenrm i
+.....\_tenrm t
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm U
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm p
+.....\_tenrm u
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm r
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm l
+.....\_tenrm i
+.....\_tenrm t
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\kern-0.27779 (font)
+.....\_tenrm e
+.....\_tenrm s
+.....\_tenrm t
+.....\_tenrm i
+.....\_tenrm b
+.....\_tenrm u
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm u
+.....\_tenrm m
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm u
+.....\_tenrm t
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm p
+.....\_tenrm l
+.....\_tenrm a
+.....\_tenrm c
+.....\_tenrm -
+.....\discretionary (penalty 50)
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 100
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 0.68723, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 3
+......\kern8.00003
+.....\kern0.0 (font)
+.....\_tenrm e
+.....\_tenrm r
+.....\_tenrm a
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm c
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm d
+.....\_tenrm i
+.....\_tenrm p
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm i
+.....\_tenrm s
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm i
+.....\_tenrm n
+.....\_tenrm g
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\_tenrm i
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm a
+.....\_tenrm e
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm f
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm i
+.....\_tenrm s
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm C
+.....\_tenrm u
+.....\_tenrm r
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm a
+.....\_tenrm b
+.....\_tenrm i
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm d
+.....\_tenrm i
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm m
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 0.21788, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 4
+......\kern8.00003
+.....\kern0.0 (font)
+.....\_tenrm g
+.....\_tenrm r
+.....\_tenrm a
+.....\kern-0.27779 (font)
+.....\_tenrm v
+.....\_tenrm i
+.....\_tenrm d
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm m
+.....\_tenrm a
+.....\_tenrm u
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm r
+.....\_tenrm i
+.....\_tenrm s
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm N
+.....\_tenrm a
+.....\_tenrm m
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm r
+.....\_tenrm c
+.....\_tenrm u
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm l
+.....\_tenrm i
+.....\_tenrm b
+.....\kern0.27779 (font)
+.....\_tenrm e
+.....\_tenrm r
+.....\_tenrm o
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm n
+.....\_tenrm o
+.....\_tenrm n
+.....\discretionary (penalty 50)
+......< \_tenrm -
+......= \kern-0.27779 (font)
+.....\_tenrm u
+.....\_tenrm m
+.....\_tenrm m
+.....\kern-0.27779 (font)
+.....\_tenrm y
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm g
+.....\_tenrm e
+.....\_tenrm t
+.....\_tenrm ,
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set - 0.22345, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 5
+......\kern8.00003
+.....\kern0.0 (font)
+.....\_tenrm c
+.....\_tenrm o
+.....\_tenrm n
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm s
+.....\_tenrm e
+.....\_tenrm c
+.....\_tenrm t
+.....\_tenrm e
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm e
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm i
+.....\_tenrm d
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\_tenrm u
+.....\_tenrm l
+.....\_tenrm p
+.....\_tenrm u
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm a
+.....\_tenrm t
+.....\_tenrm e
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm m
+.....\_tenrm a
+.....\_tenrm g
+.....\_tenrm n
+.....\_tenrm a
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm D
+.....\_tenrm o
+.....\_tenrm n
+.....\_tenrm e
+.....\_tenrm c
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\kern-0.27779 (font)
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm h
+.....\_tenrm i
+.....\_tenrm c
+.....\_tenrm -
+.....\discretionary (penalty 50)
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\penalty 100
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 0.43443, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 6
+......\kern8.00003
+.....\kern0.0 (font)
+.....\_tenrm u
+.....\_tenrm l
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm u
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm g
+.....\_tenrm u
+.....\_tenrm e
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm u
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm n
+.....\_tenrm e
+.....\_tenrm q
+.....\_tenrm u
+.....\_tenrm e
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm P
+.....\kern-0.27779 (font)
+.....\_tenrm e
+.....\_tenrm l
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm e
+.....\_tenrm n
+.....\discretionary (penalty 50)
+......< \_tenrm -
+......= \kern-0.27779 (font)
+.....\_tenrm t
+.....\_tenrm e
+.....\_tenrm s
+.....\_tenrm q
+.....\_tenrm u
+.....\_tenrm e
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm h
+.....\_tenrm a
+.....\_tenrm b
+.....\_tenrm i
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm a
+.....\_tenrm n
+.....\kern-0.27779 (font)
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm m
+.....\_tenrm o
+.....\_tenrm r
+.....\_tenrm b
+.....\_tenrm i
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 1.44827, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 7
+......\kern8.00003
+.....\kern0.0 (font)
+.....\_tenrm t
+.....\_tenrm r
+.....\_tenrm i
+.....\_tenrm s
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm i
+.....\_tenrm q
+.....\_tenrm u
+.....\_tenrm e
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm s
+.....\_tenrm e
+.....\_tenrm n
+.....\_tenrm e
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm n
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm m
+.....\_tenrm a
+.....\_tenrm l
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm s
+.....\_tenrm u
+.....\_tenrm a
+.....\_tenrm d
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm f
+.....\_tenrm a
+.....\_tenrm m
+.....\_tenrm e
+.....\_tenrm s
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 1.76039, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 8
+......\kern8.00003
+.....\kern0.0 (font)
+.....\_tenrm a
+.....\_tenrm c
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm r
+.....\_tenrm p
+.....\_tenrm i
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm g
+.....\_tenrm e
+.....\_tenrm s
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm a
+.....\_tenrm s
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm M
+.....\_tenrm a
+.....\_tenrm u
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm r
+.....\_tenrm i
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm u
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm l
+.....\_tenrm e
+.....\_tenrm o
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm C
+.....\_tenrm r
+.....\_tenrm a
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\_tenrm i
+.....\_tenrm v
+.....\kern-0.27779 (font)
+.....\_tenrm e
+.....\_tenrm r
+.....\_tenrm r
+.....\_tenrm a
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+0.0)x217.62204, glue set 1.31503, direction TLT
+.....\kern-13.00003 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 9
+......\kern8.00003
+.....\kern0.0 (font)
+.....\_tenrm m
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm r
+.....\_tenrm h
+.....\_tenrm o
+.....\_tenrm n
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm c
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm s
+.....\_tenrm e
+.....\_tenrm m
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm N
+.....\_tenrm u
+.....\_tenrm l
+.....\_tenrm l
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm l
+.....\_tenrm e
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\kern-0.27779 (font)
+.....\_tenrm e
+.....\_tenrm s
+.....\_tenrm t
+.....\_tenrm i
+.....\_tenrm b
+.....\_tenrm u
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm u
+.....\_tenrm m
+.....\glue(\rightskip) 0.0
+.....\hbox(0.0+0.0)x0.0, direction TLT
+...\glue 0.0 plus 1.0fil minus 1.0fil
+...\vbox(108.0+0.0)x217.62204, direction TLT
+....\glue(\splittopskip) 5.11125
+....\hbox(6.88875+1.94443)x217.62204, glue set - 0.04857, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm u
+.....\_tenrm r
+.....\_tenrm n
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm f
+.....\_tenrm r
+.....\_tenrm i
+.....\_tenrm n
+.....\_tenrm g
+.....\_tenrm i
+.....\_tenrm l
+.....\_tenrm l
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm u
+.....\_tenrm l
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm r
+.....\_tenrm i
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm c
+.....\_tenrm e
+.....\_tenrm s
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm P
+.....\_tenrm h
+.....\_tenrm a
+.....\_tenrm s
+.....\_tenrm e
+.....\_tenrm l
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm u
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm t
+.....\_tenrm e
+.....\_tenrm l
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm s
+.....\_tenrm i
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm m
+.....\_tenrm e
+.....\_tenrm t
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 0
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 0.17603, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm t
+.....\_tenrm o
+.....\_tenrm r
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm o
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm g
+.....\_tenrm r
+.....\_tenrm a
+.....\kern-0.27779 (font)
+.....\_tenrm v
+.....\_tenrm i
+.....\_tenrm d
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm p
+.....\_tenrm l
+.....\_tenrm a
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm e
+.....\_tenrm r
+.....\_tenrm a
+.....\_tenrm t
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm I
+.....\_tenrm n
+.....\discretionary (penalty 50)
+......< \_tenrm -
+......= \kern-0.27779 (font)
+.....\_tenrm t
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm g
+.....\_tenrm e
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm s
+.....\_tenrm a
+.....\_tenrm p
+.....\_tenrm i
+.....\_tenrm e
+.....\_tenrm n
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm s
+.....\_tenrm t
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm i
+.....\_tenrm a
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm u
+.....\_tenrm l
+.....\_tenrm i
+.....\_tenrm s
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 1
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 0.5747, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm i
+.....\_tenrm n
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm p
+.....\_tenrm r
+.....\_tenrm e
+.....\_tenrm t
+.....\_tenrm i
+.....\_tenrm u
+.....\_tenrm m
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm q
+.....\_tenrm u
+.....\_tenrm i
+.....\_tenrm s
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\_tenrm i
+.....\_tenrm v
+.....\kern-0.27779 (font)
+.....\_tenrm e
+.....\_tenrm r
+.....\_tenrm r
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm c
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm n
+.....\kern-0.27779 (font)
+.....\_tenrm u
+.....\_tenrm n
+.....\_tenrm c
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm P
+.....\_tenrm r
+.....\_tenrm a
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm s
+.....\_tenrm e
+.....\_tenrm n
+.....\kern-0.27779 (font)
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm g
+.....\_tenrm e
+.....\_tenrm t
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 2
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+0.0)x217.62204, glue set 0.74283, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm s
+.....\_tenrm e
+.....\_tenrm m
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\kern-0.27779 (font)
+.....\_tenrm e
+.....\_tenrm l
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm l
+.....\_tenrm e
+.....\_tenrm o
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm u
+.....\_tenrm l
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm r
+.....\_tenrm i
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm c
+.....\_tenrm e
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm b
+.....\_tenrm i
+.....\_tenrm b
+.....\kern0.27779 (font)
+.....\_tenrm e
+.....\_tenrm n
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm d
+.....\_tenrm u
+.....\_tenrm m
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm A
+.....\kern-0.27779 (font)
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm n
+.....\_tenrm e
+.....\_tenrm a
+.....\_tenrm n
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm f
+.....\_tenrm a
+.....\_tenrm u
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm c
+.....\_tenrm i
+.....\_tenrm b
+.....\_tenrm u
+.....\_tenrm s
+.....\_tenrm .
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 3
+....\glue(\baselineskip) 5.11125
+....\hbox(6.88875+1.94443)x217.62204, glue set 1.8317, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm M
+.....\_tenrm o
+.....\_tenrm r
+.....\_tenrm b
+.....\_tenrm i
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm d
+.....\_tenrm o
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm o
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm n
+.....\kern-0.27779 (font)
+.....\_tenrm u
+.....\_tenrm l
+.....\_tenrm l
+.....\_tenrm a
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm m
+.....\_tenrm a
+.....\_tenrm l
+.....\_tenrm e
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm s
+.....\_tenrm u
+.....\_tenrm a
+.....\_tenrm d
+.....\_tenrm a
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm u
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm p
+.....\_tenrm u
+.....\_tenrm l
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm v
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm i
+.....\_tenrm n
+.....\_tenrm a
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm t
+.....\_tenrm ,
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 4
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 0.93454, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm m
+.....\_tenrm o
+.....\_tenrm l
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm l
+.....\_tenrm i
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm c
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm n
+.....\kern-0.27779 (font)
+.....\_tenrm u
+.....\_tenrm l
+.....\_tenrm l
+.....\_tenrm a
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm C
+.....\_tenrm u
+.....\_tenrm r
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm a
+.....\_tenrm b
+.....\_tenrm i
+.....\_tenrm t
+.....\_tenrm u
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm u
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm o
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm s
+.....\_tenrm e
+.....\_tenrm m
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm p
+.....\kern0.27779 (font)
+.....\_tenrm e
+.....\_tenrm r
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm n
+.....\kern-0.27779 (font)
+.....\_tenrm u
+.....\_tenrm l
+.....\_tenrm l
+.....\_tenrm a
+.....\_tenrm .
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 5
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set - 0.23941, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm D
+.....\_tenrm o
+.....\_tenrm n
+.....\_tenrm e
+.....\_tenrm c
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm v
+.....\kern-0.55556 (font)
+.....\_tenrm a
+.....\_tenrm r
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm i
+.....\_tenrm u
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm o
+.....\_tenrm r
+.....\_tenrm c
+.....\_tenrm i
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm g
+.....\_tenrm e
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm r
+.....\_tenrm i
+.....\_tenrm s
+.....\_tenrm u
+.....\_tenrm s
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm D
+.....\_tenrm u
+.....\_tenrm i
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm n
+.....\_tenrm i
+.....\_tenrm b
+.....\_tenrm h
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm m
+.....\_tenrm i
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm c
+.....\_tenrm o
+.....\_tenrm n
+.....\_tenrm g
+.....\_tenrm u
+.....\_tenrm e
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 6
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 1.0817, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm e
+.....\_tenrm u
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm c
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm c
+.....\_tenrm u
+.....\_tenrm m
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm s
+.....\_tenrm a
+.....\_tenrm n
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm e
+.....\_tenrm l
+.....\_tenrm e
+.....\_tenrm i
+.....\_tenrm f
+.....\_tenrm e
+.....\_tenrm n
+.....\_tenrm d
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm s
+.....\_tenrm a
+.....\_tenrm g
+.....\_tenrm i
+.....\_tenrm t
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm t
+.....\_tenrm i
+.....\_tenrm s
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm q
+.....\_tenrm u
+.....\_tenrm i
+.....\_tenrm s
+.....\_tenrm ,
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm d
+.....\_tenrm i
+.....\_tenrm a
+.....\_tenrm m
+.....\_tenrm .
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm D
+.....\_tenrm u
+.....\_tenrm i
+.....\_tenrm s
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 7
+....\penalty 10000
+....\glue(\baselineskip) 3.16682
+....\hbox(6.88875+1.94443)x217.62204, glue set 40.67812fil, direction TLT
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+.....\kern0.0 (font)
+.....\_tenrm e
+.....\_tenrm g
+.....\_tenrm e
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm o
+.....\_tenrm r
+.....\_tenrm c
+.....\_tenrm i
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm s
+.....\_tenrm i
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm a
+.....\_tenrm m
+.....\_tenrm e
+.....\_tenrm t
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm o
+.....\_tenrm r
+.....\_tenrm c
+.....\_tenrm i
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm d
+.....\_tenrm i
+.....\_tenrm g
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm n
+.....\_tenrm i
+.....\_tenrm s
+.....\discretionary (penalty 50)
+......< \_tenrm -
+.....\_tenrm s
+.....\_tenrm i
+.....\_tenrm m
+.....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+.....\_tenrm r
+.....\_tenrm u
+.....\_tenrm t
+.....\_tenrm r
+.....\_tenrm u
+.....\_tenrm m
+.....\_tenrm .
+.....\penalty 10000
+.....\glue(\parfillskip) 0.0 plus 1.0fil
+.....\glue(\rightskip) 0.0
+.....\hbox(6.29724+0.0)x18.00003, direction TLT
+......\kern8.00003
+......\_tenrm 1
+......\_tenrm 8
+....\glue -1.94443
+....\glue 0.0 plus 1.0fil
+..\glue 6.0 plus 2.0 minus 2.0
+..\glue 0.0 plus 1.0fill
+..\kern0.0
+..\glue 0.0
+.\glue(\baselineskip) 17.70276
+.\hbox(6.29724+0.0)x455.24408, glue set 225.12204fil, direction TLT
+..\glue 0.0 plus 1.0fil minus 1.0fil
+..\_ten_tenrm 1
+..\glue 0.0 plus 1.0fil minus 1.0fil

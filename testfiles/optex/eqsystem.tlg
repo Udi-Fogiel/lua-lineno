@@ -1,0 +1,116 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+! Undefined control sequence.
+l. ...\eqsystem
+            { x + y - 2z = 10 \cr
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+! Misplaced \cr.
+l. ...\eqsystem{ x + y - 2z = 10 \cr
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+! Misplaced \cr.
+l. ...2x - 7y + z = 13 \cr
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+Completed box being shipped out [1]
+\vbox(718.24724+0.0)x455.24408, direction TLT
+.\pdflinkstate 1
+.\pdflinkstate 0
+.\vbox(694.24724+0.0)x455.24408, glue set 663.3028fill, direction TLT
+..\glue(\topskip) 10.0
+..\hbox(0.0+0.0)x455.24408, glue set 435.24408fil, direction TLT
+...\localpar
+....\localinterlinepenalty=0
+....\localbrokenpenalty=0
+....\localleftbox=null
+....\localrightbox=null
+...\hbox(0.0+0.0)x20.0, direction TLT
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+..\penalty 10000
+..\glue(\abovedisplayshortskip) 0.0 plus 3.0
+..\glue(\baselineskip) 5.55556
+..\hbox(6.44444+1.94444)x210.88828, shifted 122.1779, direction TLT
+...\kern-135.17793 (font)
+...\hbox(6.29724+0.0)x13.00003, direction TLT
+....\pdfliteral direct <lua data reference ...>
+....\_tenrm 1
+....\kern8.00003
+...\kern122.1779 (font)
+...\hbox(6.44444+1.94444)x210.88828, direction TLT
+....\_mF x
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF +
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF y
+....\kern0.35878 (italic)
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF ^^@
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF 2
+....\_mF z
+....\kern0.4398 (italic)
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\_mF =
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\_mF 1
+....\_mF 0
+....\_mF 2
+....\_mF x
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF ^^@
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF 7
+....\_mF y
+....\kern0.35878 (italic)
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF +
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF z
+....\kern0.4398 (italic)
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\_mF =
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\_mF 1
+....\_mF 3
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF ^^@
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF x
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF +
+....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+....\_mF y
+....\kern0.35878 (italic)
+....\penalty 10000
+....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+....\penalty 10000
+....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\_mF =
+....\glue(\thickmuskip) 2.77771 plus 2.77771
+....\_mF ^^@
+....\_mF 5
+...\kern122.1779 (font)
+...\hbox(0.0+0.0)x0.0, direction TLT
+..\penalty 0
+..\glue(\belowdisplayshortskip) 7.0 plus 3.0 minus 4.0
+..\glue 0.0 plus 1.0fill
+..\kern0.0
+..\glue 0.0
+.\glue(\baselineskip) 17.70276
+.\hbox(6.29724+0.0)x455.24408, glue set 225.12204fil, direction TLT
+..\glue 0.0 plus 1.0fil minus 1.0fil
+..\_ten_tenrm 1
+..\glue 0.0 plus 1.0fil minus 1.0fil
