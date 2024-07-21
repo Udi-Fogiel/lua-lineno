@@ -6,7 +6,7 @@ luatex
 epstopdf-pkg # for breqn in luatex
 #
 lipsum
-multicol
+tools # for multicol
 flushend
 balance
 ltxgrid
