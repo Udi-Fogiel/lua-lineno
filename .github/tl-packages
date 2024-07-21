@@ -7,8 +7,8 @@ epstopdf-pkg # for breqn in luatex
 #
 lipsum
 tools # for multicol
-flushend
-balance
-ltxgrid
+sttools
+preprint
+revtex
 amsmath
 breqn
