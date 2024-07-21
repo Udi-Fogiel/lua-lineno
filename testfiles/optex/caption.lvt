@@ -1,0 +1,28 @@
+\input{regression-test.tex}
+\load[lualineno]
+
+\newcount\lineno
+\deflineno
+  {
+    name = default
+    preamble = {\advance\lineno1}
+    left = {\setfontsize{mag.6}\the\lineno\kern.8em}
+  }
+\setlineno{default}
+\tracingoutput=1\tracingonline=1
+\showboxbreadth \maxdimen \showboxdepth \maxdimen
+\START
+\caption/t The dependency of the computer-dependency on the age.
+\cskip
+\noindent\hfil\table{rl}{
+age
+& value \crl\noalign{\smallskip}
+0--1 & unmeasured \cr
+1--6 & observable \cr
+6--12 & significant \cr
+12--20 & extremal \cr
+20--40 & normal \cr
+40--60 & various \cr
+60--$\infty$ & moderate}
+\vfill\break
+\END

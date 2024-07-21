@@ -1,0 +1,73 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{lualineno}
+\newcounter{lineno}
+\deflineno
+  {
+    name = default
+    left = {\stepcounter{lineno}\tiny\thelineno\kern.8em}
+  }
+\setlineno{default}
+\usepackage{longtable}
+\begin{document}
+\showoutput
+\START
+\begin{longtable}{| *{4}{p{2.5cm}|}}
+    \caption{Test Table.}
+    \label{test} \\
+    \hline
+    \textbf{No} & \textbf{A} & \textbf{B} & \textbf{C} \\
+    \hline
+    \endhead
+    \multicolumn{4}{@{} p{2.5cm} @{}}{\scriptsize {Source: Source 2000, Source 2001}} \\
+    \endfoot
+    \hline
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    1&A&B&C\\
+    2&D&E&F\\
+    \hline
+\end{longtable}
+\vfill\break\END

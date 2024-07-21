@@ -1,0 +1,5635 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+[]|\TU/lmr/m/n/7 Source: Source
+\hbox(8.39996+0.14)x71.13188, glue set 7.1152, direction TLT
+.\localpar
+..\localinterlinepenalty=0
+..\localbrokenpenalty=0
+..\localleftbox=null
+..\localrightbox=null
+.\hbox(0.0+0.0)x0.0, direction TLT
+.\rule(8.39996+*)x0.0
+.\TU/lmr/m/n/7 S
+.\TU/lmr/m/n/7 o
+.\TU/lmr/m/n/7 u
+.\TU/lmr/m/n/7 r
+.\TU/lmr/m/n/7 c
+.\TU/lmr/m/n/7 e
+.\TU/lmr/m/n/7 :
+.\glue(\spaceskip) 3.59334 plus 2.695 minus 0.44916
+.\TU/lmr/m/n/7 S
+.\TU/lmr/m/n/7 o
+.\TU/lmr/m/n/7 u
+.\TU/lmr/m/n/7 r
+.\TU/lmr/m/n/7 c
+.\TU/lmr/m/n/7 e
+.\glue(\rightskip) 0.0
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0, direction TLT
+....\hbox(0.0+0.0)x345.0, direction TLT
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set - 7.70995fil, direction TLT
+...\write-{}
+...\special{}
+...\glue(\topskip) 0.0
+...\vbox(33.30995+0.0)x345.0, direction TLT
+....\hbox(8.39996+12.11)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+12.11)x83.13188, glue set 158.59875fil, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94+12.11)x0.0, glue set - 144.54fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\vbox(6.94+12.11)x289.07999, direction TLT
+........\hbox(6.94+0.11)x289.07999, glue set 100.20999fil, direction TLT
+.........\kern-33.70003 (font)
+.........\hbox(3.33+0.0)x7.40501, direction TLT
+..........\TU/lmr/m/n/5 1
+..........\kern4.00002
+.........\kern26.29501 (font)
+.........\glue 0.0 plus 1.0fil
+.........\hbox(6.94+0.11)x88.66, direction TLT
+..........\TU/lmr/m/n/10 T
+..........\kern-0.83 (font)
+..........\TU/lmr/m/n/10 a
+..........\discretionary (penalty 50)
+...........< \TU/lmr/m/n/10 -
+..........\TU/lmr/m/n/10 b
+..........\TU/lmr/m/n/10 l
+..........\TU/lmr/m/n/10 e
+..........\penalty 10000
+..........\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..........\TU/lmr/m/n/10 1
+..........\TU/lmr/m/n/10 :
+..........\glue(\spaceskip) 4.44 plus 3.32999 minus 0.555
+..........\TU/lmr/m/n/10 T
+..........\kern-0.83 (font)
+..........\TU/lmr/m/n/10 e
+..........\TU/lmr/m/n/10 s
+..........\TU/lmr/m/n/10 t
+..........\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..........\TU/lmr/m/n/10 T
+..........\kern-0.83 (font)
+..........\TU/lmr/m/n/10 a
+..........\discretionary (penalty 50)
+...........< \TU/lmr/m/n/10 -
+..........\TU/lmr/m/n/10 b
+..........\TU/lmr/m/n/10 l
+..........\TU/lmr/m/n/10 e
+..........\TU/lmr/m/n/10 .
+.........\glue 0.0 plus 1.0fil
+.........\kern0.0 (font)
+.........\hbox(0.0+0.0)x0.0, direction TLT
+........\glue 12.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\hbox(0.0+0.0)x0.0, direction TLT
+......\write1{\@writefile{lot}{\contentsline {table}{\numberline {1}{Test Table.}}{1}{}\protected@file@percent }}
+......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+......\write1{\newlabel{test}{{1}{1}{}{table.}{}}}
+......\penalty 10000
+......\glue 0.0
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+....\glue(\lineskip) 0.0
+....\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+......\leaders 0.0 plus 1.0fill
+.......\rule(0.4+0.0)x*
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty -51
+....\glue -0.4
+....\glue(\lineskip) 0.0
+....\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+......\leaders 0.0 plus 1.0fill
+.......\rule(0.4+0.0)x*
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x83.13188, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+......\glue 6.0
+......\vbox(8.39996+3.60004)x71.13188, direction TLT
+.......\hbox(8.39996+3.60004)x71.13188, glue set 56.38188fil, direction TLT
+........\kern-19.64125 (font)
+........\hbox(3.33+0.0)x7.40501, direction TLT
+.........\TU/lmr/m/n/5 2
+.........\kern4.00002
+........\kern12.23624 (font)
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/bx/n/10 N
+........\TU/lmr/bx/n/10 o
+........\kern0.0 (italic)
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+........\hbox(0.0+0.0)x0.0, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x83.13188, direction TLT
+......\glue 6.0
+......\vbox(8.39996+3.60004)x71.13188, direction TLT
+.......\hbox(8.39996+3.60004)x71.13188, glue set 62.44188fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/bx/n/10 A
+........\kern0.0 (italic)
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x83.13188, direction TLT
+......\glue 6.0
+......\vbox(8.39996+3.60004)x71.13188, direction TLT
+.......\hbox(8.39996+3.60004)x71.13188, glue set 62.95189fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/bx/n/10 B
+........\kern0.0 (italic)
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x83.13188, direction TLT
+......\glue 6.0
+......\vbox(8.39996+3.60004)x71.13188, direction TLT
+.......\hbox(8.39996+3.60004)x71.13188, glue set 62.82188fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/bx/n/10 C
+........\kern0.0 (italic)
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+....\glue(\lineskip) 0.0
+....\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+......\leaders 0.0 plus 1.0fill
+.......\rule(0.4+0.0)x*
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty -51
+....\glue -0.4
+....\glue(\lineskip) 0.0
+....\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+......\leaders 0.0 plus 1.0fill
+.......\rule(0.4+0.0)x*
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+...\penalty 10000
+...\penalty 10000
+...\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+.....\leaders 0.0 plus 1.0fill
+......\rule(0.4+0.0)x*
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\penalty -51
+...\glue -0.4
+...\glue(\lineskip) 0.0
+...\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+.....\leaders 0.0 plus 1.0fill
+......\rule(0.4+0.0)x*
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\penalty 10000
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-19.64125 (font)
+.......\hbox(3.33+0.11)x7.40501, direction TLT
+........\TU/lmr/m/n/5 3
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-19.64125 (font)
+.......\hbox(3.385+0.0)x7.40501, direction TLT
+........\TU/lmr/m/n/5 4
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-19.64125 (font)
+.......\hbox(3.33+0.11)x7.40501, direction TLT
+........\TU/lmr/m/n/5 5
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-19.64125 (font)
+.......\hbox(3.33+0.11)x7.40501, direction TLT
+........\TU/lmr/m/n/5 6
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-19.64125 (font)
+.......\hbox(3.38+0.11)x7.40501, direction TLT
+........\TU/lmr/m/n/5 7
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-19.64125 (font)
+.......\hbox(3.33+0.11)x7.40501, direction TLT
+........\TU/lmr/m/n/5 8
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-19.64125 (font)
+.......\hbox(3.33+0.11)x7.40501, direction TLT
+........\TU/lmr/m/n/5 9
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 0
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 1
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 2
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 3
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 4
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 5
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 6
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.38+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 7
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 8
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 1
+........\TU/lmr/m/n/5 9
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 0
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 1
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 2
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 3
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 4
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 5
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 6
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.38+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 7
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 8
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 2
+........\TU/lmr/m/n/5 9
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 0
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 1
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 2
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 3
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 4
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 5
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 6
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.38+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 7
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 8
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 3
+........\TU/lmr/m/n/5 9
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 4
+........\TU/lmr/m/n/5 0
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 4
+........\TU/lmr/m/n/5 1
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 4
+........\TU/lmr/m/n/5 2
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 4
+........\TU/lmr/m/n/5 3
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.0)x10.81001, direction TLT
+........\TU/lmr/m/n/5 4
+........\TU/lmr/m/n/5 4
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\vbox(8.39996+11.60004)x345.0, direction TLT
+....\hbox(8.39996+11.60004)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+11.60004)x83.13188, glue set 261.39563fil, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\vbox(8.39996+11.60004)x71.13188, direction TLT
+.......\hbox(8.39996+0.14)x71.13188, glue set 7.1152, direction TLT
+........\kern-17.04625 (font)
+........\hbox(3.385+0.11)x10.81001, direction TLT
+.........\TU/lmr/m/n/5 4
+.........\TU/lmr/m/n/5 5
+.........\kern4.00002
+........\kern6.23624 (font)
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/m/n/7 S
+........\TU/lmr/m/n/7 o
+........\TU/lmr/m/n/7 u
+........\TU/lmr/m/n/7 r
+........\TU/lmr/m/n/7 c
+........\TU/lmr/m/n/7 e
+........\TU/lmr/m/n/7 :
+........\glue(\spaceskip) 3.59334 plus 2.695 minus 0.44916
+........\TU/lmr/m/n/7 S
+........\TU/lmr/m/n/7 o
+........\TU/lmr/m/n/7 u
+........\TU/lmr/m/n/7 r
+........\TU/lmr/m/n/7 c
+........\TU/lmr/m/n/7 e
+........\glue(\rightskip) 0.0
+........\hbox(0.0+0.0)x0.0, direction TLT
+.......\penalty 300
+.......\glue(\baselineskip) 2.939
+.......\hbox(4.921+3.60004)x71.13188, glue set 8.56584fil, direction TLT
+........\kern-17.04625 (font)
+........\hbox(3.385+0.11)x10.81001, direction TLT
+.........\TU/lmr/m/n/5 4
+.........\TU/lmr/m/n/5 6
+.........\kern4.00002
+........\kern6.23624 (font)
+........\TU/lmr/m/n/7 2
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 ,
+........\glue(\spaceskip) 2.695 plus 1.68437 minus 0.71866
+........\TU/lmr/m/n/7 S
+........\TU/lmr/m/n/7 o
+........\TU/lmr/m/n/7 u
+........\TU/lmr/m/n/7 r
+........\TU/lmr/m/n/7 c
+........\TU/lmr/m/n/7 e
+........\glue(\spaceskip) 2.695 plus 1.3475 minus 0.89833
+........\TU/lmr/m/n/7 2
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 1
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+........\hbox(0.0+0.0)x0.0, direction TLT
+......\glue 0.0 plus 1.0fil
+......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0, direction TLT
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10 1
+....\glue 0.0 plus 1.0fil
+Non-PDF special ignored!
+Completed box being shipped out [2]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0, direction TLT
+....\hbox(0.0+0.0)x345.0, direction TLT
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 436.29004fill, direction TLT
+...\glue(\topskip) 0.0
+...\vbox(33.30995+0.0)x345.0, direction TLT
+....\hbox(8.39996+12.11)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+12.11)x83.13188, glue set 158.59875fil, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue 6.0
+......\glue 0.0 plus 1.0fil
+......\glue 0.00002
+......\hbox(6.94+12.11)x0.0, glue set - 144.54fil, direction TLT
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\vbox(6.94+12.11)x289.07999, direction TLT
+........\hbox(6.94+0.11)x289.07999, glue set 100.20999fil, direction TLT
+.........\kern-37.10503 (font)
+.........\hbox(3.385+0.11)x10.81001, direction TLT
+..........\TU/lmr/m/n/5 4
+..........\TU/lmr/m/n/5 7
+..........\kern4.00002
+.........\kern26.29501 (font)
+.........\glue 0.0 plus 1.0fil
+.........\hbox(6.94+0.11)x88.66, direction TLT
+..........\TU/lmr/m/n/10 T
+..........\kern-0.83 (font)
+..........\TU/lmr/m/n/10 a
+..........\discretionary (penalty 50)
+...........< \TU/lmr/m/n/10 -
+..........\TU/lmr/m/n/10 b
+..........\TU/lmr/m/n/10 l
+..........\TU/lmr/m/n/10 e
+..........\penalty 10000
+..........\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..........\TU/lmr/m/n/10 1
+..........\TU/lmr/m/n/10 :
+..........\glue(\spaceskip) 4.44 plus 3.32999 minus 0.555
+..........\TU/lmr/m/n/10 T
+..........\kern-0.83 (font)
+..........\TU/lmr/m/n/10 e
+..........\TU/lmr/m/n/10 s
+..........\TU/lmr/m/n/10 t
+..........\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+..........\TU/lmr/m/n/10 T
+..........\kern-0.83 (font)
+..........\TU/lmr/m/n/10 a
+..........\discretionary (penalty 50)
+...........< \TU/lmr/m/n/10 -
+..........\TU/lmr/m/n/10 b
+..........\TU/lmr/m/n/10 l
+..........\TU/lmr/m/n/10 e
+..........\TU/lmr/m/n/10 .
+.........\glue 0.0 plus 1.0fil
+.........\kern0.0 (font)
+.........\hbox(0.0+0.0)x0.0, direction TLT
+........\glue 12.0
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\hbox(0.0+0.0)x0.0, direction TLT
+......\write1{\@writefile{lot}{\contentsline {table}{\numberline {1}{Test Table.}}{2}{}\protected@file@percent }}
+......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
+......\write1{\newlabel{test}{{1}{2}{}{table.}{}}}
+......\penalty 10000
+......\glue 0.0
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+....\glue(\lineskip) 0.0
+....\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+......\leaders 0.0 plus 1.0fill
+.......\rule(0.4+0.0)x*
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty -51
+....\glue -0.4
+....\glue(\lineskip) 0.0
+....\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+......\leaders 0.0 plus 1.0fill
+.......\rule(0.4+0.0)x*
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+....\glue(\lineskip) 0.0
+....\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+3.60004)x83.13188, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+......\glue 6.0
+......\vbox(8.39996+3.60004)x71.13188, direction TLT
+.......\hbox(8.39996+3.60004)x71.13188, glue set 56.38188fil, direction TLT
+........\kern-23.04625 (font)
+........\hbox(3.385+0.11)x10.81001, direction TLT
+.........\TU/lmr/m/n/5 4
+.........\TU/lmr/m/n/5 8
+.........\kern4.00002
+........\kern12.23624 (font)
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/bx/n/10 N
+........\TU/lmr/bx/n/10 o
+........\kern0.0 (italic)
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+........\hbox(0.0+0.0)x0.0, direction TLT
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x83.13188, direction TLT
+......\glue 6.0
+......\vbox(8.39996+3.60004)x71.13188, direction TLT
+.......\hbox(8.39996+3.60004)x71.13188, glue set 62.44188fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/bx/n/10 A
+........\kern0.0 (italic)
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x83.13188, direction TLT
+......\glue 6.0
+......\vbox(8.39996+3.60004)x71.13188, direction TLT
+.......\hbox(8.39996+3.60004)x71.13188, glue set 62.95189fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/bx/n/10 B
+........\kern0.0 (italic)
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+.....\glue(\tabskip) 0.0
+.....\hbox(8.39996+3.60004)x83.13188, direction TLT
+......\glue 6.0
+......\vbox(8.39996+3.60004)x71.13188, direction TLT
+.......\hbox(8.39996+3.60004)x71.13188, glue set 62.82188fil, direction TLT
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/bx/n/10 C
+........\kern0.0 (italic)
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+......\glue 0.0 plus 1.0fil
+......\glue 6.0
+......\glue -0.2
+......\rule(*+*)x0.4
+......\glue -0.2
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+....\glue(\lineskip) 0.0
+....\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+......\leaders 0.0 plus 1.0fill
+.......\rule(0.4+0.0)x*
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty -51
+....\glue -0.4
+....\glue(\lineskip) 0.0
+....\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+......\leaders 0.0 plus 1.0fill
+.......\rule(0.4+0.0)x*
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+....\penalty 10000
+...\penalty 10000
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.385+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 4
+........\TU/lmr/m/n/5 9
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 5
+........\TU/lmr/m/n/5 0
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 5
+........\TU/lmr/m/n/5 1
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 1
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.63188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 A
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.05188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 B
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.91188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 C
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue(\lineskip) 0.0
+...\hbox(8.39996+3.60004)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\rule(8.39996+3.60004)x0.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 66.13188fil, direction TLT
+.......\kern-23.04625 (font)
+.......\hbox(3.33+0.11)x10.81001, direction TLT
+........\TU/lmr/m/n/5 5
+........\TU/lmr/m/n/5 2
+........\kern4.00002
+.......\kern12.23624 (font)
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 2
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 63.49188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 D
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.32188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 E
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0
+....\hbox(8.39996+3.60004)x83.13188, direction TLT
+.....\glue 6.0
+.....\vbox(8.39996+3.60004)x71.13188, direction TLT
+......\hbox(8.39996+3.60004)x71.13188, glue set 64.60188fil, direction TLT
+.......\localpar
+........\localinterlinepenalty=0
+........\localbrokenpenalty=0
+........\localleftbox=null
+........\localrightbox=null
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\rule(8.39996+*)x0.0
+.......\TU/lmr/m/n/10 F
+.......\penalty 10000
+.......\rule(0.0+3.60004)x0.0
+.......\penalty 10000
+.......\glue(\parfillskip) 0.0 plus 1.0fil
+.......\glue(\rightskip) 0.0
+.....\glue 0.0 plus 1.0fil
+.....\glue 6.0
+.....\glue -0.2
+.....\rule(*+*)x0.4
+.....\glue -0.2
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\penalty 10000
+...\glue(\lineskip) 0.0
+...\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+.....\leaders 0.0 plus 1.0fill
+......\rule(0.4+0.0)x*
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\penalty -51
+...\glue -0.4
+...\glue(\lineskip) 0.0
+...\hbox(0.4+0.0)x345.0, glue set 6.23624fill, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+....\hbox(0.4+0.0)x83.13188, glue set 332.52753fill, direction TLT
+.....\leaders 0.0 plus 1.0fill
+......\rule(0.4+0.0)x*
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0
+....\hbox(0.0+0.0)x83.13188, direction TLT
+....\glue(\tabskip) 0.0 plus 1.0fill
+...\penalty 10000
+...\vbox(8.39996+11.60004)x345.0, direction TLT
+....\hbox(8.39996+11.60004)x345.0, glue set 6.23624fill, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+.....\hbox(8.39996+11.60004)x83.13188, glue set 261.39563fil, direction TLT
+......\rule(8.39996+3.60004)x0.0
+......\vbox(8.39996+11.60004)x71.13188, direction TLT
+.......\hbox(8.39996+0.14)x71.13188, glue set 7.1152, direction TLT
+........\kern-17.04625 (font)
+........\hbox(3.33+0.11)x10.81001, direction TLT
+.........\TU/lmr/m/n/5 5
+.........\TU/lmr/m/n/5 3
+.........\kern4.00002
+........\kern6.23624 (font)
+........\localpar
+.........\localinterlinepenalty=0
+.........\localbrokenpenalty=0
+.........\localleftbox=null
+.........\localrightbox=null
+........\hbox(0.0+0.0)x0.0, direction TLT
+........\rule(8.39996+*)x0.0
+........\TU/lmr/m/n/7 S
+........\TU/lmr/m/n/7 o
+........\TU/lmr/m/n/7 u
+........\TU/lmr/m/n/7 r
+........\TU/lmr/m/n/7 c
+........\TU/lmr/m/n/7 e
+........\TU/lmr/m/n/7 :
+........\glue(\spaceskip) 3.59334 plus 2.695 minus 0.44916
+........\TU/lmr/m/n/7 S
+........\TU/lmr/m/n/7 o
+........\TU/lmr/m/n/7 u
+........\TU/lmr/m/n/7 r
+........\TU/lmr/m/n/7 c
+........\TU/lmr/m/n/7 e
+........\glue(\rightskip) 0.0
+........\hbox(0.0+0.0)x0.0, direction TLT
+.......\penalty 300
+.......\glue(\baselineskip) 2.939
+.......\hbox(4.921+3.60004)x71.13188, glue set 8.56584fil, direction TLT
+........\kern-17.04625 (font)
+........\hbox(3.385+0.11)x10.81001, direction TLT
+.........\TU/lmr/m/n/5 5
+.........\TU/lmr/m/n/5 4
+.........\kern4.00002
+........\kern6.23624 (font)
+........\TU/lmr/m/n/7 2
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 ,
+........\glue(\spaceskip) 2.695 plus 1.68437 minus 0.71866
+........\TU/lmr/m/n/7 S
+........\TU/lmr/m/n/7 o
+........\TU/lmr/m/n/7 u
+........\TU/lmr/m/n/7 r
+........\TU/lmr/m/n/7 c
+........\TU/lmr/m/n/7 e
+........\glue(\spaceskip) 2.695 plus 1.3475 minus 0.89833
+........\TU/lmr/m/n/7 2
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 0
+........\TU/lmr/m/n/7 1
+........\penalty 10000
+........\rule(0.0+3.60004)x0.0
+........\penalty 10000
+........\glue(\parfillskip) 0.0 plus 1.0fil
+........\glue(\rightskip) 0.0
+........\hbox(0.0+0.0)x0.0, direction TLT
+......\glue 0.0 plus 1.0fil
+......\hbox(0.0+0.0)x0.0, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0
+.....\hbox(0.0+0.0)x83.13188, direction TLT
+.....\glue(\tabskip) 0.0 plus 1.0fill
+...\penalty 10000
+...\penalty 0
+...\glue 12.0 plus 4.0 minus 4.0
+...\glue 0.0 plus 1.0fill
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0, direction TLT
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10 2
+....\glue 0.0 plus 1.0fil
