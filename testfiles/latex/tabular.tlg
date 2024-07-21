@@ -1,0 +1,97 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line ....
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line ....
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0, direction TLT
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0, direction TLT
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil, direction TLT
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0, direction TLT
+....\hbox(0.0+0.0)x345.0, direction TLT
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 525.20001fill, direction TLT
+...\write-{}
+...\glue(\topskip) 0.0
+...\hbox(14.9+9.9)x345.0, glue set 290.85999fil, direction TLT
+....\localpar
+.....\localinterlinepenalty=0
+.....\localbrokenpenalty=0
+.....\localleftbox=null
+.....\localrightbox=null
+....\hbox(0.0+0.0)x15.0, direction TLT
+....\hbox(14.9+9.9)x39.14003, direction TLT
+.....\mathon
+.....\vbox(14.9+9.9)x39.14003, direction TLT
+......\rule(0.4+0.0)x39.14003
+......\hbox(8.39996+3.60004)x39.14003, direction TLT
+.......\kern-22.40501 (font)
+.......\hbox(3.33+0.0)x7.40501, direction TLT
+........\TU/lmr/m/n/5 1
+........\kern4.00002
+.......\kern15.0 (font)
+.......\glue(\tabskip) 0.0
+.......\hbox(8.39996+3.60004)x19.50002, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\glue 6.0
+........\glue 0.0 plus 1.0fil
+........\glue 0.00002
+........\TU/lmr/m/n/10 A
+........\glue 0.0 plus 1.0fil
+........\glue 6.0
+.......\glue(\tabskip) 0.0
+.......\hbox(8.39996+3.60004)x19.64001, glue set 0.28fil, direction TLT
+........\glue 6.0
+........\glue 0.0 plus 1.0fil
+........\glue 0.00002
+........\TU/lmr/m/n/10 B
+........\glue 0.0 plus 1.0fil
+........\glue 6.0
+.......\glue(\tabskip) 0.0
+.......\kern0.0 (font)
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\glue(\lineskip) 0.0
+......\hbox(8.39996+3.60004)x39.14003, direction TLT
+.......\kern-22.40501 (font)
+.......\hbox(3.33+0.0)x7.40501, direction TLT
+........\TU/lmr/m/n/5 2
+........\kern4.00002
+.......\kern15.0 (font)
+.......\glue(\tabskip) 0.0
+.......\hbox(8.39996+3.60004)x19.50002, glue set 0.14fil, direction TLT
+........\rule(8.39996+3.60004)x0.0
+........\glue 6.0
+........\glue 0.0 plus 1.0fil
+........\glue 0.00002
+........\TU/lmr/m/n/10 C
+........\glue 0.0 plus 1.0fil
+........\glue 6.0
+.......\glue(\tabskip) 0.0
+.......\hbox(8.39996+3.60004)x19.64001, direction TLT
+........\glue 6.0
+........\glue 0.0 plus 1.0fil
+........\glue 0.00002
+........\TU/lmr/m/n/10 D
+........\glue 0.0 plus 1.0fil
+........\glue 6.0
+.......\glue(\tabskip) 0.0
+.......\kern0.0 (font)
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\rule(0.4+0.0)x39.14003
+.....\mathoff
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue 0.0 plus 1.0fill
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0, direction TLT
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil, direction TLT
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10 1
+....\glue 0.0 plus 1.0fil

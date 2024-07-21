@@ -1,0 +1,29 @@
+\input{regression-test.tex}
+\documentclass[twocolumn]{article}
+\usepackage{lualineno}
+\newcounter{lineno}
+\deflineno
+  {
+    name = default
+    preamble = {\stepcounter{lineno}}
+    left = {\tiny\thelineno\kern.8em}
+  }
+\deflineno
+  {
+    name = default
+    preamble = {\stepcounter{lineno}}
+    right = {\tiny\thelineno\kern.8em}
+    column = 2
+  }
+\setlineno{default}
+
+\usepackage{balance}
+
+\usepackage{lipsum}
+\begin{document}
+\showoutput
+\START
+\lipsum[1]
+\balance
+\vfill\break
+\END

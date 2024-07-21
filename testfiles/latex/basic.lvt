@@ -1,0 +1,20 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{lualineno}
+\newcounter{lineno}
+\deflineno
+  {
+    name = default
+    preamble = {\stepcounter{lineno}}
+    left = {\tiny\thelineno\kern.8em}
+  }
+
+\setlineno{default}
+
+\usepackage{lipsum}
+\begin{document}
+\showoutput
+\START
+\lipsum[1-2]
+\vfill\break
+\END

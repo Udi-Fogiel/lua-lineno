@@ -1,0 +1,21 @@
+name: Automated testing
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  l3build:
+    runs-on: ubuntu-latest
+    steps:
+      # Boilerplate
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v3
+        with:
+            package_file: .github/tl-packages
+      - name: Check test files
+        run: l3build check --show-log-on-error -q -H

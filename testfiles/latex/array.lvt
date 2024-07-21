@@ -1,0 +1,22 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{lualineno}
+\newcounter{lineno}
+\deflineno
+  {
+    name = default
+    preamble = {\stepcounter{lineno}}
+    left = {\tiny\thelineno\kern.8em}
+  }
+\setlineno{default}
+\begin{document}
+\showoutput
+\START
+\[\begin{array}{cc}
+\hline
+A & B\\
+C & D\\
+\hline
+\end{array}\]
+\vfill\break
+\END
