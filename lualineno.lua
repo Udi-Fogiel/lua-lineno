@@ -255,6 +255,7 @@ local function recurse_smart(parent, list, column, offset, inline)
                 
                 local m, new_offset = real_line(n.head, n, offset)
                 if new_offset then
+                    new_offset = new_offset  + n.shift
                     recurse_smart(m, m.head, column, new_offset, true)
                 elseif m then
                     add_line_boxes(n, parent, line_type, offset)
