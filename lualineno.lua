@@ -95,6 +95,7 @@ local function set_defaults()
             scan_keyword('=')
             lineno_defaults['right'] = scan_toks()
         elseif scan_keyword('box') then
+            scan_keyword('=')
             if scan_keyword('true') then
                 lineno_defaults['box'] = 'true'
             elseif scan_keyword('false') then
@@ -102,8 +103,15 @@ local function set_defaults()
             elseif scan_keyword('inline') then
                 lineno_defaults['box'] = 'inline'
             end
-        elseif scan_keyword('align') then
-            lineno_defaults['alignment'] = scan_bool('align')
+        elseif scan_keyword('alignment') then
+            scan_keyword('=')
+            if scan_keyword('true') then
+                lineno_defaults['alignment'] = 'true'
+            elseif scan_keyword('false') then
+                lineno_defaults['alignment'] = 'false'
+            elseif scan_keyword('once') then
+                lineno_defaults['alignment'] = 'once'
+            end
         elseif scan_keyword('equation') then
             lineno_defaults['equation'] = scan_bool('equation')
         elseif scan_keyword('line') then
@@ -156,8 +164,15 @@ local function define_lineno()
             elseif scan_keyword('inline') then
                 box = 'inline'
             end
-        elseif scan_keyword('align') then
-            align = scan_bool('align')
+        elseif scan_keyword('alignment') then
+            scan_keyword('=')
+            if scan_keyword('true') then
+                align = 'true'
+            elseif scan_keyword('false') then
+                align = 'false'
+            elseif scan_keyword('once') then
+                align = 'once'
+            end
         elseif scan_keyword('equation') then
             equation = scan_bool('equation')
         elseif scan_keyword('line') then
@@ -379,7 +394,7 @@ local function number_lines_human(parent, list, column, offset, inline)
         local line_type = line_attr and lineno_types[line_attr][column]
         if n.id == 0 and line_type and 
                (line_type[node.subtypes("hlist")[n.subtype]] == 'true' or 
-               (n.subtype == 2 and line_type['box'] == 'inline' and inline) or 
+               (line_type[node.subtypes("hlist")[n.subtype]] == 'inline' and inline) or 
                n.subtype == 0) then
             local m, new_offset = real_line(n.head, n, offset)
             if new_offset then
@@ -389,6 +404,8 @@ local function number_lines_human(parent, list, column, offset, inline)
                 add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
             end
             expand_write(n)
+        elseif n.id == 0 and line_type and line_type[node.subtypes("hlist")[n.subtype]] == 'once' and real_box(n.list) then
+            add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
         elseif n.id == 8 and n.subtype == 1 then
             inner_expand_write(n)
         elseif n.list then
