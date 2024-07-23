@@ -2,14 +2,16 @@
 \documentclass{article}
 \usepackage{lualineno}
 \newcounter{lineno}
-\deflineno
+\lualineno
   {
-    name = default
-    preamble = {\stepcounter{lineno}}
-    left = {\tiny\thelineno\kern.8em}
+    define =
+      {
+        name = default
+        preamble = {\stepcounter{lineno}}
+        left = {\tiny\thelineno\kern.8em}
+      }
+    set = default
   }
-
-\setlineno{default}
 
 \usepackage{lipsum}
 \begin{document}

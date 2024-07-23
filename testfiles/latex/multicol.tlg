@@ -3,7 +3,7 @@ Don't change this file in any respect.
 Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for 'english' will be used instead.
 (lipsum)                
 (lipsum)                With LuaTeX, lipsum requires babel to get proper hyphenation (you can use \usepackage[base]{babel}).
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 \TU/lmr/m/n/10 dic-tum gravida mau-
 \hbox(6.94+2.06)x108.33333, glue set 4.99501, direction TLT
 .\TU/lmr/m/n/10 d
@@ -30,7 +30,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 .\TU/lmr/m/n/10 -
 .\discretionary (penalty 50)
 .\glue(\rightskip) 0.0
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 \TU/lmr/m/n/10 non-ummy eget, con-
 \hbox(6.15+2.06)x108.33333, glue set 5.26752, direction TLT
 .\TU/lmr/m/n/10 n

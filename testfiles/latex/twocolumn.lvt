@@ -2,21 +2,23 @@
 \documentclass[twocolumn]{article}
 \usepackage{lualineno}
 \newcounter{lineno}
-\deflineno
+\lualineno
   {
-    name = default
-    preamble = {\stepcounter{lineno}}
-    left = {\tiny\thelineno\kern.8em}
+    define =
+      {
+        name = default
+        preamble = {\stepcounter{lineno}}
+        left = {\tiny\thelineno\kern.8em}
+      }
+    define =
+      {
+        name = default
+        preamble = {\stepcounter{lineno}}
+        right = {\tiny\thelineno\kern.8em}
+        column = 2
+      }
+    set = default
   }
-\deflineno
-  {
-    name = default
-    preamble = {\stepcounter{lineno}}
-    right = {\tiny\thelineno\kern.8em}
-    column = 2
-  }
-
-\setlineno{default}
 
 \usepackage{lipsum}
 \begin{document}

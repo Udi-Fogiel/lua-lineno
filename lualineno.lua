@@ -63,19 +63,19 @@ local lineno_defaults = {
     ['preamble'] = { },
     ['left'] = { },
     ['right'] = { },
-    [2] = nil,
-    [4] = true,
-    [6] = true,
-    [1] = true,
-    ['offset'] = true
+    ['box'] = 'inline',
+    ['alignment'] = 'true',
+    ['equation'] = 'true',
+    ['line'] = 'true',
+    ['offset'] = 'true'
 }
 
 local function scan_bool(name)
     scan_keyword('=')
     if scan_keyword('true') then
-        return true
+        return 'true'
     elseif scan_keyword('false') then
-        return false
+        return 'false'
     end
 end
 
@@ -96,18 +96,18 @@ local function set_defaults()
             lineno_defaults['right'] = scan_toks()
         elseif scan_keyword('box') then
             if scan_keyword('true') then
-                lineno_defaults[2] = true
+                lineno_defaults['box'] = 'true'
             elseif scan_keyword('false') then
-                lineno_defaults[2] = false
+                lineno_defaults['box'] = 'false'
             elseif scan_keyword('inline') then
-                lineno_defaults[2] = nil
+                lineno_defaults['box'] = 'inline'
             end
         elseif scan_keyword('align') then
-            lineno_defaults[4] = scan_bool('align')
+            lineno_defaults['alignment'] = scan_bool('align')
         elseif scan_keyword('equation') then
-            lineno_defaults[6] = scan_bool('equation')
+            lineno_defaults['equation'] = scan_bool('equation')
         elseif scan_keyword('line') then
-            lineno_defaults[1] = scan_bool('equation')
+            lineno_defaults['line'] = scan_bool('equation')
         elseif scan_keyword('offset') then
             lineno_defaults['offset'] = scan_bool('offset')
         else
@@ -150,9 +150,9 @@ local function define_lineno()
         elseif scan_keyword('box') then
                scan_keyword('=')
             if scan_keyword('true') then
-                box = true
+                box = 'true'
             elseif scan_keyword('false') then
-                box = false
+                box = 'false'
             elseif scan_keyword('inline') then
                 box = 'inline'
             end
@@ -184,20 +184,22 @@ local function define_lineno()
     lineno_attr[name] = lineno_attr[name] or #lineno_types + 1
     lineno_types[lineno_attr[name]] = lineno_types[lineno_attr[name]] or { }
     local lineno_type = lineno_types[lineno_attr[name]]
-    lineno_type[column] = lineno_type[column] or lineno_defaults
-    local col = lineno_type[column]
+
+    if not lineno_type[column] then
+        lineno_type[column] = { }
+        for k,v in pairs(lineno_defaults) do
+            lineno_type[column][k] = v
+        end
+    end
     
+    local col = lineno_type[column]
     col['preamble'] = preamble or col['preamble']
     col['left'] = left_box or col['left']
     col['right'] = right_box or col['right']
-    if box == 'inline' then
-        col[2] = nil
-    else
-        col[2] = box or col[2]
-    end
-    col[4] = align or col[4]
-    col[6] = equation or col[6]
-    col[1] = line or col[1]
+    col['box'] = box or col['box']
+    col['alignment'] = align or col['alignment']
+    col['equation'] = equation or col['equation']
+    col['line'] = line or col['line']
     col['offset'] = offset or col['offset']
 end
 
@@ -305,8 +307,10 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     n.head = insert_before(n.list,n.head,shift_kern)
     n.head = insert_before(n.list,n.head,left_box)
     n.head = insert_before(n.list,n.head,left_kern)
-		    
-    n.head = insert_after(n.list,node.tail(n.head),right_kern)
+    
+    if n.subtype ~= 1 then
+        n.head = insert_after(n.list,node.tail(n.head),right_kern)
+    end
     n.head = insert_after(n.list,node.tail(n.head),right_box)
 end
 
@@ -327,12 +331,11 @@ end
 local function number_lines_tex(parent, list, column)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
-        if n.id == 0 then
-            local line_attr = get_attribute(node.tail(n.head), type_attr)
-            local line_type = line_attr and lineno_types[line_attr][column] or nil 
-            if line_type and (line_type[n.subtype] or n.subtype == 0) then
-                add_boxes_to_line(n, parent, line_type, 0)
-            end
+        local line_attr = n.head and get_attribute(node.tail(n.head), type_attr)
+        local line_type = line_attr and lineno_types[line_attr][column]
+        if n.id == 0 and line_type and 
+               (line_type[node.subtypes("hlist")[n.subtype]] == 'true' or n.subtype == 0) then
+            add_boxes_to_line(n, parent, line_type, 0)
             expand_write(n)
         elseif n.id == 8 and n.subtype == 1 then
             inner_expand_write(n)
@@ -372,17 +375,18 @@ end
 local function number_lines_human(parent, list, column, offset, inline)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
-        if n.id == 0 then
-            local line_attr = get_attribute(node.tail(n.head), type_attr)
-            local line_type = line_attr and lineno_types[line_attr][column] or nil 
-            if line_type and (line_type[n.subtype] or (n.subtype == 2 and line_type[n.subtype] == nil and inline) or n.subtype == 0) then
-                local m, new_offset = real_line(n.head, n, offset)
-                if new_offset then
-                    new_offset = new_offset  + n.shift
-                    number_lines_human(m, m.head, column, new_offset, true)
-                elseif m then
-                    add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
-                end
+        local line_attr = n.head and get_attribute(node.tail(n.head), type_attr)
+        local line_type = line_attr and lineno_types[line_attr][column]
+        if n.id == 0 and line_type and 
+               (line_type[node.subtypes("hlist")[n.subtype]] == 'true' or 
+               (n.subtype == 2 and line_type['box'] == 'inline' and inline) or 
+               n.subtype == 0) then
+            local m, new_offset = real_line(n.head, n, offset)
+            if new_offset then
+                new_offset = new_offset  + n.shift
+                number_lines_human(m, m.head, column, new_offset, true)
+            elseif m then
+                add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
             end
             expand_write(n)
         elseif n.id == 8 and n.subtype == 1 then
@@ -393,8 +397,8 @@ local function number_lines_human(parent, list, column, offset, inline)
     end
 end
 
-luatexbase.add_to_callback('pre_shipout_filter', function()
-    if alg_bool
+luatexbase.add_to_callback('pre_shipout_filter', function(head)
+    if alg_bool then
         number_lines_human(head, head.list, 1, 0, false)
     else
         number_lines_tex(head, head.list, 1, 0)

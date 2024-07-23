@@ -2,20 +2,16 @@
 \load[lualineno]
 
 \newcount\lineno
-\deflineno
+\lualineno
   {
-    name = default
-    preamble = {\advance\lineno1}
-    left = {\setfontsize{mag.6}\the\lineno\kern.8em}
+    define =
+      {
+        name = default
+        preamble = {\advance\lineno1}
+        left = {\setfontsize{mag.6}\the\lineno\kern.8em}
+      }
+    set = default
   }
-\deflineno
-  {
-    name = default
-    preamble = {\advance\lineno1}
-    right = {\setfontsize{mag.6}\kern.8em\the\lineno}
-    column = 2
-  }
-\setlineno{default}
 \tracingoutput=1\tracingonline=1
 \showboxbreadth \maxdimen \showboxdepth \maxdimen
 \START
