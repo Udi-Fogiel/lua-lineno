@@ -7,40 +7,48 @@ if format_name ~= 'optex' and format_name ~= 'lualatex' then
              {"Use optex or lualatex."})
 end
 
+
+------------------------------------------
+------------------------------------------
+
 local runtoks = tex.runtoks
 local put_next = token.put_next
 local create = token.create
 local new_tok = token.new
 
 local lbrace, rbrace = new_tok(0x7B, 1), new_tok(0x7D, 2)
+local relax, endlocalcontrol, hbox, let, undef
+do
+  local lineno_primitives = {'relax', 'endlocalcontrol', 'hbox', 'let'}
+  local saved_toks = { }
+  for _, csname in ipairs(lineno_primitives) do
+      if token.is_defined('lualineno_' .. csname) then
+          local tok = create('lualineno_' .. csname)
+          saved_toks[csname] = new_tok(tok.mod, tok.command)
+      end
+  end 
+  tex.enableprimitives('lualineno_',lineno_primitives)
+  local function frozentok(name)
+      local tok = create('lualineno_' .. name)
+      return new_tok(tok.mode, tok.command)
+  end
 
-local lineno_primitives = {'relax', 'endlocalcontrol', 'hbox', 'let'}
-local saved_toks = { }
-for _, csname in ipairs(lineno_primitives) do
-    if token.is_defined('lualineno_' .. csname) then
-        local tok = create('lualineno_' .. csname)
-        saved_toks[csname] = new_tok(tok.mod, tok.command)
-    end
-end 
-tex.enableprimitives('lualineno_',lineno_primitives)
-local function frozentok(name)
-    local tok = create('lualineno_' .. name)
-    return new_tok(tok.mode, tok.command)
+  relax = frozentok'relax'
+  endlocalcontrol = frozentok'endlocalcontrol'
+  hbox  = frozentok'hbox'
+  let = frozentok'let'
+  undef = new_tok(0, 133)
+
+  runtoks(function()
+      for _,csname in ipairs(lineno_primitives) do
+          put_next(let, create('lualineno_' .. csname),
+              saved_toks[csname] or undef)
+      end
+  end)
 end
 
-local relax = frozentok'relax'
-local endlocalcontrol = frozentok'endlocalcontrol'
-local hbox  = frozentok'hbox'
-local let = frozentok'let'
-local undef = new_tok(0, 133)
-
-runtoks(function()
-    for _,csname in ipairs(lineno_primitives) do
-        put_next(let, create('lualineno_' .. csname),
-            saved_toks[csname] or undef)
-    end
-end)
-saved_toks = nil
+------------------------------------------
+------------------------------------------
 
 local get_next = token.get_next
 local scan_toks = token.scan_toks
@@ -51,37 +59,57 @@ local scan_keyword = token.scan_keyword
 
 local lineno_types = { }
 local lineno_attr = { }
+local lineno_defaults = {
+    ['preamble'] = { },
+    ['left'] = { },
+    ['right'] = { },
+    [2] = nil,
+    [4] = true,
+    [6] = true,
+    [1] = true,
+    ['offset'] = true
+}
 
-local function define_lineno()
-    local saved_endlinechar = tex.endlinechar
-    tex.endlinechar = 32
+local function scan_bool(name)
+    scan_keyword('=')
+    if scan_keyword('true') then
+        return true
+    elseif scan_keyword('false') then
+        return false
+    end
+end
+
+local function set_defaults()  
     local toks = scan_toks()
-    tex.endlinechar = saved_endlinechar
     put_next(relax)
     put_next(toks)
     
-    local column, name, preamble, left_box, right_box
     while true do
-        if scan_keyword('column') then
+        if scan_keyword('preamble') then
             scan_keyword('=')
-            column = scan_int()
-            scan_keyword(',')
-        elseif scan_keyword('name') then
-            scan_keyword('=')
-            name = scan_string()
-            scan_keyword(',')
-        elseif scan_keyword('preamble') then
-            scan_keyword('=')
-            preamble = scan_toks()
-            scan_keyword(',')
+            lineno_defaults['preamble'] = scan_toks()
         elseif scan_keyword('left') then
             scan_keyword('=')
-            left_box = scan_toks()
-            scan_keyword(',')
+            lineno_defaults['left'] = scan_toks()
         elseif scan_keyword('right') then
             scan_keyword('=')
-            right_box = scan_toks()
-            scan_keyword(',')
+            lineno_defaults['right'] = scan_toks()
+        elseif scan_keyword('box') then
+            if scan_keyword('true') then
+                lineno_defaults[2] = true
+            elseif scan_keyword('false') then
+                lineno_defaults[2] = false
+            elseif scan_keyword('inline') then
+                lineno_defaults[2] = nil
+            end
+        elseif scan_keyword('align') then
+            lineno_defaults[4] = scan_bool('align')
+        elseif scan_keyword('equation') then
+            lineno_defaults[6] = scan_bool('equation')
+        elseif scan_keyword('line') then
+            lineno_defaults[1] = scan_bool('equation')
+        elseif scan_keyword('offset') then
+            lineno_defaults['offset'] = scan_bool('offset')
         else
             break
         end
@@ -92,36 +120,86 @@ local function define_lineno()
         texerror("lualineno: wrong syntax in \\deflineno",
                 {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
         put_next(tok)
-        
+    end
+    
+end
+
+local function define_lineno()
+    local toks = scan_toks()
+    put_next(relax)
+    put_next(toks)
+    
+    local column, name, preamble, left_box, right_box
+    local box, align, equation, line, offset
+    while true do
+        if scan_keyword('column') then
+            scan_keyword('=')
+            column = scan_int()
+        elseif scan_keyword('name') then
+            scan_keyword('=')
+            name = scan_string()
+        elseif scan_keyword('preamble') then
+            scan_keyword('=')
+            preamble = scan_toks()
+        elseif scan_keyword('left') then
+            scan_keyword('=')
+            left_box = scan_toks()
+        elseif scan_keyword('right') then
+            scan_keyword('=')
+            right_box = scan_toks()
+        elseif scan_keyword('box') then
+               scan_keyword('=')
+            if scan_keyword('true') then
+                box = true
+            elseif scan_keyword('false') then
+                box = false
+            elseif scan_keyword('inline') then
+                box = 'inline'
+            end
+        elseif scan_keyword('align') then
+            align = scan_bool('align')
+        elseif scan_keyword('equation') then
+            equation = scan_bool('equation')
+        elseif scan_keyword('line') then
+            line = scan_bool('line')
+        elseif scan_keyword('offset') then
+            offset = scan_bool('offset')
+        else
+            break
+        end
+    end
+    
+    local tok = get_next()
+    if tok.tok ~= relax.tok then
+        texerror("lualineno: wrong syntax in \\deflineno",
+                {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
+        put_next(tok)
     end
     if not name then 
         texerror("lualineno: missing name in \\deflineno")
     end
     
     column = column or 1
-    preamble = preamble or { }
-    left_box = left_box or { }
-    right_box = right_box or { }
         
-    local t = { }
-    t[#t+1] = hbox t[#t+1] = lbrace t[#t+1] = lbrace
-    for i = 1, #left_box do
-        t[#t+1] = left_box[i]
-    end
-    t[#t+1] = rbrace t[#t+1] = rbrace
-    t[#t+1] = hbox t[#t+1] = lbrace t[#t+1] = lbrace
-    for i = 1, #right_box do
-        t[#t+1] = right_box[i]
-    end
-    t[#t+1] = rbrace t[#t+1] = rbrace
-    preamble[#preamble+1] = endlocalcontrol
     lineno_attr[name] = lineno_attr[name] or #lineno_types + 1
     lineno_types[lineno_attr[name]] = lineno_types[lineno_attr[name]] or { }
-    lineno_types[lineno_attr[name]][column] = 
-      { ['boxes'] =  t, 
-        ['preamble'] = preamble }
+    local lineno_type = lineno_types[lineno_attr[name]]
+    lineno_type[column] = lineno_type[column] or lineno_defaults
+    local col = lineno_type[column]
+    
+    col['preamble'] = preamble or col['preamble']
+    col['left'] = left_box or col['left']
+    col['right'] = right_box or col['right']
+    if box == 'inline' then
+        col[2] = nil
+    else
+        col[2] = box or col[2]
+    end
+    col[4] = align or col[4]
+    col[6] = equation or col[6]
+    col[1] = line or col[1]
+    col['offset'] = offset or col['offset']
 end
-
 
 local setattribute = tex.setattribute
 local type_attr = luatexbase.new_attribute('lualineno_type')
@@ -136,23 +214,64 @@ local function set_lineno()
     end
 end
 
-local function_table = lua.get_functions_table()
-local define_lua_call = function(csname, fn, ...)
-    if token.is_defined(csname) then
-        texio.write_nl('log', "lualineno: redefining \\" .. csname)
+local alg_bool = true
+
+local function lualineno()
+    local saved_endlinechar = tex.endlinechar
+    tex.endlinechar = 32
+    local toks = scan_toks()
+    tex.endlinechar = saved_endlinechar
+    put_next(relax)
+    put_next(toks)
+    
+    while true do
+        if scan_keyword('set') then
+            scan_keyword('=')
+            set_lineno()
+        elseif scan_keyword('define') then
+            scan_keyword('=')
+            define_lineno()
+        elseif scan_keyword('defaults') then
+            scan_keyword('=')
+            set_default()
+        elseif scan_keyword('algorithm') then
+            scan_keyword('=')
+            if scan_keyword('human') then
+                alg_bool = true
+            elseif scan_keyword('tex') then
+                alg_bool = false
+            end
+        else
+            break
+        end
     end
-    local luafnalloc
-    if format_name == 'lualatex' then
-        luafnalloc = luatexbase.new_luafunction('lualineno.' .. csname)
-    else
-        luafnalloc = #function_table + 1
+    
+    local tok = get_next()
+    if tok.tok ~= relax.tok then
+        texerror("lualineno: wrong syntax in \\deflineno",
+                {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
+        put_next(tok)
     end
-    token.set_lua(csname, luafnalloc, ...)
-    function_table[luafnalloc] = fn
+    
 end
 
-define_lua_call('deflineno', define_lineno)
-define_lua_call('setlineno', set_lineno)
+do
+  if token.is_defined('lualineno') then
+      texio.write_nl('log', "lualineno: redefining \\lualineno")
+  end
+  local function_table = lua.get_functions_table()
+  local luafnalloc
+  if format_name == 'lualatex' then
+      luafnalloc = luatexbase.new_luafunction('lualineno')
+  else
+      luafnalloc = #function_table + 1
+  end
+  token.set_lua('lualineno', luafnalloc)
+  function_table[luafnalloc] = lualineno
+end
+
+------------------------------------------
+------------------------------------------
 
 local get_attribute = node.get_attribute
 local copy_list = node.copy_list
@@ -160,11 +279,19 @@ local insert_before = node.insert_before
 local insert_after = node.insert_after
 local traverse = node.traverse
 
-local function add_line_boxes(n, parent, line_type, offset)
+local function add_boxes_to_line(n, parent, line_type, offset)
+    put_next(endlocalcontrol)
     put_next(line_type['preamble'])
     runtoks(get_next)
-    put_next(line_type['boxes'])
+    
+    put_next(rbrace, rbrace)
+    put_next(line_type['left'])
+    put_next(hbox, lbrace, lbrace)
     local left_box = scan_list()
+    
+    put_next(rbrace, rbrace)
+    put_next(line_type['right'])
+    put_next(hbox, lbrace, lbrace)
     local right_box = scan_list()
     
     local left_kern = node.new('kern')
@@ -179,9 +306,7 @@ local function add_line_boxes(n, parent, line_type, offset)
     n.head = insert_before(n.list,n.head,left_box)
     n.head = insert_before(n.list,n.head,left_kern)
 		    
-    if n.subtype ~= 1 then
-        n.head = insert_after(n.list,node.tail(n.head),right_kern)
-    end
+    n.head = insert_after(n.list,node.tail(n.head),right_kern)
     n.head = insert_after(n.list,node.tail(n.head),right_box)
 end
 
@@ -199,21 +324,20 @@ local function expand_write(list)
     end
 end
 
-
-local function recurse(parent, list, column)
+local function number_lines_tex(parent, list, column)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
-        if n.id == 0 and (n.subtype == 1 or n.subtype == 6 or n.subtype == 4) then
+        if n.id == 0 then
             local line_attr = get_attribute(node.tail(n.head), type_attr)
-            local line_type = line_attr and lineno_types[line_attr][column] or nil
-            if line_type then
-                add_line_boxes(n, parent, line_type, 0)
+            local line_type = line_attr and lineno_types[line_attr][column] or nil 
+            if line_type and (line_type[n.subtype] or n.subtype == 0) then
+                add_boxes_to_line(n, parent, line_type, 0)
             end
             expand_write(n)
         elseif n.id == 8 and n.subtype == 1 then
             inner_expand_write(n)
         elseif n.list then
-            recurse(n, n.list, column)
+            number_lines_tex(n, n.list, column)
         end
     end
 end
@@ -237,7 +361,7 @@ local function real_line(list, parent, offset)
             return true
         elseif n.id == 1 and real_box(n.list) then
             return n, offset + node.rangedimensions(parent, list, n)
-        elseif n.id == 0 and real_box(n.list) then
+        elseif n.id == 0 and n.subtype ~= 7 and real_box(n.list) then
            local new_offset = offset + node.rangedimensions(parent, list, n)
            return real_line(n.list, n, new_offset)
         end
@@ -245,37 +369,41 @@ local function real_line(list, parent, offset)
     return false
 end
 
-local function recurse_smart(parent, list, column, offset, inline)
+local function number_lines_human(parent, list, column, offset, inline)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
-        if n.id == 0 and (n.subtype == 1 or n.subtype == 6 or n.subtype == 4 or (n.subtype == 2 and inline)) then
+        if n.id == 0 then
             local line_attr = get_attribute(node.tail(n.head), type_attr)
             local line_type = line_attr and lineno_types[line_attr][column] or nil 
-            if line_type then
-                
+            if line_type and (line_type[n.subtype] or (n.subtype == 2 and line_type[n.subtype] == nil and inline) or n.subtype == 0) then
                 local m, new_offset = real_line(n.head, n, offset)
                 if new_offset then
                     new_offset = new_offset  + n.shift
-                    recurse_smart(m, m.head, column, new_offset, true)
+                    number_lines_human(m, m.head, column, new_offset, true)
                 elseif m then
-                    add_line_boxes(n, parent, line_type, offset)
+                    add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
                 end
             end
             expand_write(n)
         elseif n.id == 8 and n.subtype == 1 then
             inner_expand_write(n)
         elseif n.list then
-            recurse_smart(n, n.list, column, offset, inline)
+            number_lines_human(n, n.list, column, offset, inline)
         end
     end
 end
 
-local function lineno_pre_shipout(head)
-    recurse_smart(head, head.list, 1, 0, false)
+luatexbase.add_to_callback('pre_shipout_filter', function()
+    if alg_bool
+        number_lines_human(head, head.list, 1, 0, false)
+    else
+        number_lines_tex(head, head.list, 1, 0)
+    end
     return true
-end
+end, 'lualineno')
 
-luatexbase.add_to_callback('pre_shipout_filter', lineno_pre_shipout, 'lualineno.add_boxes')
+------------------------------------------
+------------------------------------------
 
 if format_name == 'lualatex' then
     function inner_expand_write(n)
