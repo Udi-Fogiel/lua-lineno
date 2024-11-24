@@ -124,7 +124,7 @@ local function set_defaults()
     
     local tok = get_next()
     if tok.tok ~= relax.tok then
-        texerror("lualineno: wrong syntax in \\deflineno",
+        texerror("lualineno: wrong syntax in \\lualineno",
                 {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
         put_next(tok)
     end
@@ -185,12 +185,12 @@ local function define_lineno()
     
     local tok = get_next()
     if tok.tok ~= relax.tok then
-        texerror("lualineno: wrong syntax in \\deflineno",
+        texerror("lualineno: wrong syntax in \\lualineno",
                 {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
         put_next(tok)
     end
     if not name then 
-        texerror("lualineno: missing name in \\deflineno")
+        texerror("lualineno: missing name in \\lualineno")
     end
     
     column = column or 1
@@ -265,7 +265,7 @@ local function lualineno()
     
     local tok = get_next()
     if tok.tok ~= relax.tok then
-        texerror("lualineno: wrong syntax in \\deflineno",
+        texerror("lualineno: wrong syntax in \\lualineno",
                 {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
         put_next(tok)
     end
@@ -333,9 +333,14 @@ local function inner_expand_write(n)
     n.data = n.data
 end
 
+local hlist_id = node.id('hlist')
+local vlist_id = node.id('vlist')
+local glyph_id = node.id('glyph')
+local whatsit_id = node.id('whatsit')
+
 local function expand_write(list)
     for n in traverse(list) do
-        if n.id == 8 and n.subtype == 1 then
+        if n.id == whatsit_id and n.subtype == 1 then
             inner_expand_write(n)
         elseif n.list then
             expand_write(n.list)
@@ -343,16 +348,18 @@ local function expand_write(list)
     end
 end
 
+local hlist_subs = node.subtypes("hlist")
+
 local function number_lines_tex(parent, list, column)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
         local line_attr = n.head and get_attribute(node.tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr][column]
-        if n.id == 0 and line_type and 
-               (line_type[node.subtypes("hlist")[n.subtype]] == 'true' or n.subtype == 0) then
+        if n.id == hlist_id and line_type and
+               (line_type[hlist_subs[n.subtype]] == 'true' or n.subtype == 0) then
             add_boxes_to_line(n, parent, line_type, 0)
             expand_write(n)
-        elseif n.id == 8 and n.subtype == 1 then
+        elseif n.id == whatsit_id and n.subtype == 1 then
             inner_expand_write(n)
         elseif n.list then
             number_lines_tex(n, n.list, column)
@@ -362,11 +369,11 @@ end
 
 local function real_box(list)
     for n in traverse(list) do
-        if n.id == 0 and real_box(n.list) then
+        if n.id == hlist_id and real_box(n.list) then
             return true
-        elseif (n.id == 1 and real_box(n.list)) then
+        elseif (n.id == vlist_id and real_box(n.list)) then
             return true
-        elseif n.id == 29 then
+        elseif n.id == glyph_id then
             return true
         end
     end
@@ -375,11 +382,11 @@ end
 
 local function real_line(list, parent, offset)
     for n in traverse(list) do
-        if n.id == 29 then
+        if n.id == glyph_id then
             return true
-        elseif n.id == 1 and real_box(n.list) then
+        elseif n.id == vlist_id and real_box(n.list) then
             return n, offset + node.rangedimensions(parent, list, n)
-        elseif n.id == 0 and n.subtype ~= 7 and real_box(n.list) then
+        elseif n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
            local new_offset = offset + node.rangedimensions(parent, list, n)
            return real_line(n.list, n, new_offset)
         end
@@ -392,9 +399,9 @@ local function number_lines_human(parent, list, column, offset, inline)
     for n in traverse(list) do
         local line_attr = n.head and get_attribute(node.tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr][column]
-        if n.id == 0 and line_type and 
-               (line_type[node.subtypes("hlist")[n.subtype]] == 'true' or 
-               (line_type[node.subtypes("hlist")[n.subtype]] == 'inline' and inline) or 
+        if n.id == hlist_id and line_type and
+               (line_type[hlist_subs[n.subtype]] == 'true' or
+               (line_type[hlist_subs[n.subtype]] == 'inline' and inline) or
                n.subtype == 0) then
             local m, new_offset = real_line(n.head, n, offset)
             if new_offset then
@@ -404,9 +411,9 @@ local function number_lines_human(parent, list, column, offset, inline)
                 add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
             end
             expand_write(n)
-        elseif n.id == 0 and line_type and line_type[node.subtypes("hlist")[n.subtype]] == 'once' and real_box(n.list) then
+        elseif n.id == hlist_id and line_type and line_type[hlist_subs[n.subtype]] == 'once' and real_box(n.list) then
             add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
-        elseif n.id == 8 and n.subtype == 1 then
+        elseif n.id == whatsit_id and n.subtype == 1 then
             inner_expand_write(n)
         elseif n.list then
             number_lines_human(n, n.list, column, offset, inline)
