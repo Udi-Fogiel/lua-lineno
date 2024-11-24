@@ -96,7 +96,7 @@ Completed box being shipped out [1]
 ......\hbox(0.0+0.0)x0.0, direction TLT
 ......\write1{\@writefile{lot}{\contentsline {table}{\numberline {1}{Test Table.}}{1}{}\protected@file@percent }}
 ......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
-......\write1{\newlabel{test}{{1}{1}{}{table.}{}}}
+......\write1{\newlabel{test}{{1}{1}{}{table.1}{}}}
 ......\penalty 10000
 ......\glue 0.0
 .....\glue(\tabskip) 0.0
@@ -4908,7 +4908,7 @@ Completed box being shipped out [2]
 ......\hbox(0.0+0.0)x0.0, direction TLT
 ......\write1{\@writefile{lot}{\contentsline {table}{\numberline {1}{Test Table.}}{2}{}\protected@file@percent }}
 ......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
-......\write1{\newlabel{test}{{1}{2}{}{table.}{}}}
+......\write1{\newlabel{test}{{1}{2}{}{table.1}{}}}
 ......\penalty 10000
 ......\glue 0.0
 .....\glue(\tabskip) 0.0
