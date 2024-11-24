@@ -1,12 +1,10 @@
-local format_name = tex.formatname
+local format = tex.formatname
 local texerror = tex.error
 
--- TODO: more robust format testing - lualatex-dev etc...
-if format_name ~= 'optex' and format_name ~= 'lualatex' then
-    texerror("lualineno: The format " .. format_name .. " is not supported", 
-             {"Use optex or lualatex."})
+if not (format == 'optex' or format:find('lualatex')) then
+    error("lualineno: The format " .. format .. " is not supported\n\n" ..
+             "Use OpTeX or LuaLaTeX.")
 end
-
 
 ------------------------------------------
 ------------------------------------------
@@ -16,20 +14,21 @@ local put_next = token.put_next
 local create = token.create
 local new_tok = token.new
 
-local lbrace, rbrace = new_tok(0x7B, 1), new_tok(0x7D, 2)
+local lbrace, rbrace = new_tok(string.byte('{'), 1), new_tok(string.byte('}'), 2)
 local relax, endlocalcontrol, hbox, let, undef
 do
   local lineno_primitives = {'relax', 'endlocalcontrol', 'hbox', 'let'}
+  local prefix = 'lualineno_'
   local saved_toks = { }
   for _, csname in ipairs(lineno_primitives) do
-      if token.is_defined('lualineno_' .. csname) then
-          local tok = create('lualineno_' .. csname)
+      if token.is_defined(prefix .. csname) then
+          local tok = create(prefix .. csname)
           saved_toks[csname] = new_tok(tok.mod, tok.command)
       end
   end 
-  tex.enableprimitives('lualineno_',lineno_primitives)
+  tex.enableprimitives(prefix,lineno_primitives)
   local function frozentok(name)
-      local tok = create('lualineno_' .. name)
+      local tok = create(prefix .. name)
       return new_tok(tok.mode, tok.command)
   end
 
@@ -41,7 +40,7 @@ do
 
   runtoks(function()
       for _,csname in ipairs(lineno_primitives) do
-          put_next(let, create('lualineno_' .. csname),
+          put_next(let, create(prefix .. csname),
               saved_toks[csname] or undef)
       end
   end)
@@ -115,7 +114,7 @@ local function set_defaults()
         elseif scan_keyword('equation') then
             lineno_defaults['equation'] = scan_bool('equation')
         elseif scan_keyword('line') then
-            lineno_defaults['line'] = scan_bool('equation')
+            lineno_defaults['line'] = scan_bool('line')
         elseif scan_keyword('offset') then
             lineno_defaults['offset'] = scan_bool('offset')
         else
@@ -221,13 +220,14 @@ end
 local setattribute = tex.setattribute
 local type_attr = luatexbase.new_attribute('lualineno_type')
 local col_attr = luatexbase.new_attribute('lualineno_col')
+local unset_attr = -0x7FFFFFFF
 
 local function set_lineno()
     local attr = lineno_attr[scan_string()]
     if attr then
         setattribute(type_attr, attr)
     else
-        setattribute(type_attr,-0x7FFFFFFF)
+        setattribute(type_attr,unset_attr)
     end
 end
 
@@ -278,7 +278,7 @@ do
   end
   local function_table = lua.get_functions_table()
   local luafnalloc
-  if format_name == 'lualatex' then
+  if format == 'lualatex' then
       luafnalloc = luatexbase.new_luafunction('lualineno')
   else
       luafnalloc = #function_table + 1
@@ -426,7 +426,28 @@ end, 'lualineno')
 ------------------------------------------
 ------------------------------------------
 
-if format_name == 'lualatex' then
+if format == 'optex' then
+    local colorize = callback.remove_from_callback('pre_shipout_filter', '_colors')
+    if colorize then
+        callback.add_to_callback('pre_shipout_filter', colorize, '_colors')
+    end
+    local replace = [[
+\_directlua{
+    local column = tex.splitbox(6, tex.dimen[1], 'exactly')
+    local num = tex.count['_tmpnum']
+    local attr = luatexbase.attributes['lualineno_col']
+    node.set_attribute(column, attr, num)
+    node.write(column)
+}]]
+    local find = [[\_vsplit 6 to\_dimen 1 ]]
+    local patched_multi, success = token.get_macro("_createcolumns"):gsub(find, replace)
+    if success then
+        texio.write_nl('log', "lualineno: patching \\_createcolumns")
+        token.set_macro("_createcolumns", patched_multi)
+    else
+        texio.write_nl('log', "lualineno: failed to patch \\_createcolumns")
+    end
+else
     function inner_expand_write(n)
         runtoks(function()
             put_next(let,create('protect'),create('noexpand'))
@@ -446,27 +467,11 @@ if format_name == 'lualatex' then
     end, 'lualineno.mark_columns')
     luatexbase.add_to_callback('buildpage_filter', function(info)
         if info == 'after_output' then
-            setattribute(col_attr, -0x7FFFFFFF)
+            setattribute(col_attr, unset_attr)
         end 
     end, 'lualineno.mark_columns')
     if luatexbase.in_callback('pre_shipout_filter', 'luacolor.process') then
         luatexbase.declare_callback_rule('pre_shipout_filter', 
                  'lualineno.add_boxes', 'before', 'luacolor.process')
     end
-end
-
-if format_name == 'optex' then
-    local colorize = callback.remove_from_callback('pre_shipout_filter', '_colors')
-    callback.add_to_callback('pre_shipout_filter', colorize, '_colors')
-    local replace = [[
-\_directlua{
-    local column = tex.splitbox(6, tex.dimen[1], 'exactly')
-    local num = tex.count['_tmpnum']
-    local attr = luatexbase.attributes['lualineno_col']
-    node.set_attribute(column, attr, num) 
-    node.write(column)
-}]]
-    local find = [[\_vsplit 6 to\_dimen 1 ]]
-    local patched_multi, success = token.get_macro("_createcolumns"):gsub(find, replace)
-    token.set_macro("_createcolumns", patched_multi)
 end
