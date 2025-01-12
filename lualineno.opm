@@ -1,7 +1,75 @@
 % Optional comments
-\_def\_lualineno_version {0.0.1, 2024-07-16} 
-\_codedecl \deflineno {Line numbering <\_lineno_version>}
+\_def \_lualineno_version {0.0.1, 2024-07-16}
+\_codedecl \lualineno {Line numbering <\_lualineno_version>}
 
 \_directlua{require('lualineno')}
 
 \_endcode
+
+\chap User doc
+
+The package defines only one macro, `\lualineno`.
+Just loading the package doesn't do much, the user
+needs to define new lineno types in order to get 
+line numbers.
+
+The `\lualineno` macro accepts a list of key-val pairs
+separated by spaces. 
+
+
+\_doc
+\verbchar`
+%  optex -jobname lualineno-doc '\docgen lualineno'
+\load [doc,lualineno]
+
+\insertoutline{Lua-Lineno}
+\tit Numbering lines using the `pre_shipout_filter` callback
+\hfill Version: \_lualineno_version \par
+\centerline{\it Udi Fogiel, 2024}
+
+The lualineno package helps in the assignment
+of numbering lines using the `pre_shipout_filter`.
+Using this method requires no modifications to the
+output routine, which usually cause problems.
+
+The main motivation for writing this package was to
+allow to number lines of balanced multi-column text, 
+while allowing to choose the location of the numbers
+according to the column.
+
+\insertoutline{Contents}\outlines 0
+\notoc\nonum\sec Table of contents
+\maketoc
+\printdoctail lualineno.opm % prints the documentation written after \_endcode
+
+\chap Implementation
+
+\_def\_printcomments{\_medskip
+     {\_catcodetable0 \_typosize[10/12]\_everypar={}\_scantextokens\_ea{\_vcomments}\par}%
+     \_bigskip
+   }
+
+\sec Lua module
+
+\commentchars-- \vitt{lualineno.sty}
+\verbinput \hisyntax{lua} (1-) lualineno.lua
+
+
+\sec \OpTeX/ package
+The \OpTeX/ package deos not contain much. It is mainly here
+for the documentation, or
+in case someone prefer to type `\load[lualineno]` instead of
+`\directlua{require('lualineno')}`.
+\printdoc lualineno.opm % prints \_doc...\_cod parts + code before \_endcode
+
+\sec \LaTeX/ package
+The \LaTeX/ package mostly contains patches to
+other packages. 
+
+\commentchars\%\% \vitt{lualineno.sty}
+\verbinput \hisyntax{tex} (1-) lualineno.sty
+
+\bye
+\_cod
+
+\endinput

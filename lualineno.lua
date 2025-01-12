@@ -1,3 +1,7 @@
+-- \secc Initialization^^M
+-- Currently the module works only with 
+-- Lua\LaTeX/ and \OpTeX.
+
 local format = tex.formatname
 local texerror = tex.error
 
@@ -6,8 +10,10 @@ if not (format == 'optex' or format:find('lualatex')) then
              "Use OpTeX or LuaLaTeX.")
 end
 
-------------------------------------------
-------------------------------------------
+-- To make sure the tokens used has the correct meaning
+-- we define them as new primitives. We use a prefix
+-- unlikely used by others, but just in case if a macro
+-- was overwritten we restore it at the end. 
 
 local runtoks = tex.runtoks
 local put_next = token.put_next
@@ -15,29 +21,38 @@ local create = token.create
 local new_tok = token.new
 
 local lbrace, rbrace = new_tok(string.byte('{'), 1), new_tok(string.byte('}'), 2)
-local relax, endlocalcontrol, hbox, let, undef
+local relax, hbox, let
 do
-  local lineno_primitives = {'relax', 'endlocalcontrol', 'hbox', 'let'}
-  local prefix = 'lualineno_'
+-- initialization of the new primitives.
+  local lineno_primitives = {'relax', 'hbox', 'let'}
+  local prefix = '@lua^line&no_' -- unlikely prefix...
+-- In case a csname already exists, we save it 
+-- to restore it later.
   local saved_toks = { }
   for _, csname in ipairs(lineno_primitives) do
       if token.is_defined(prefix .. csname) then
           local tok = create(prefix .. csname)
-          saved_toks[csname] = new_tok(tok.mod, tok.command)
+          saved_toks[csname] = new_tok(tok.mode, tok.command)
       end
-  end 
+  end
   tex.enableprimitives(prefix,lineno_primitives)
+-- Now we create new tokens with the meaning of 
+-- the primitives. It is very hard to change their
+-- meaning from the user end (or even impossible?).
+-- Credit to 
   local function frozentok(name)
       local tok = create(prefix .. name)
       return new_tok(tok.mode, tok.command)
   end
-
   relax = frozentok'relax'
-  endlocalcontrol = frozentok'endlocalcontrol'
   hbox  = frozentok'hbox'
   let = frozentok'let'
-  undef = new_tok(0, 133)
-
+ 
+-- Finally, we clean after ourselvs. If we changed an existing macro, 
+-- we restore its meaning, otherwise we undefine the new primitive.
+  -- local undef = new_tok(0, table.swapped(token.commands())['undefined_cs'])
+  -- OpTeX does not have table.swapped()
+  local undef = new_tok(0, 133)
   runtoks(function()
       for _,csname in ipairs(lineno_primitives) do
           put_next(let, create(prefix .. csname),
@@ -46,8 +61,13 @@ do
   end)
 end
 
-------------------------------------------
-------------------------------------------
+-- \secc User Interface^^M
+-- This section describe the definition of
+-- the one macro exposed to the end user.
+-- The code is probably longer than it
+-- should be, but with this method we can
+-- create a format agnostic key-value interface.
+-- The idea is based on an article by Hans Hagen. 
 
 local get_next = token.get_next
 local scan_toks = token.scan_toks
@@ -69,20 +89,31 @@ local lineno_defaults = {
     ['offset'] = 'true'
 }
 
-local function scan_bool(name)
+-- A helper function for boolean keys.
+local function scan_choice(...)
     scan_keyword('=')
-    if scan_keyword('true') then
-        return 'true'
-    elseif scan_keyword('false') then
-        return 'false'
+    local args = {...}
+    for _, keyword in ipairs(args) do
+        if scan_keyword(keyword) then
+            return keyword
+        end
     end
 end
 
-local function set_defaults()  
+local uni_char = utf8.char
+
+local function set_defaults()
+-- This function is used in the defaults key.
+-- To avoid the need to insert a `\relax` from the \TeX/ end
+-- to prevent the scanners from looking ahead,
+-- we absorb the tokens in the argument (to remove the braces), 
+-- then put them back in the input stream, delimited by our special
+-- `\relax`.
     local toks = scan_toks()
     put_next(relax)
     put_next(toks)
-    
+-- The scanning of the keys is done similarly to the mentioned
+-- article.    
     while true do
         if scan_keyword('preamble') then
             scan_keyword('=')
@@ -94,44 +125,38 @@ local function set_defaults()
             scan_keyword('=')
             lineno_defaults['right'] = scan_toks()
         elseif scan_keyword('box') then
-            scan_keyword('=')
-            if scan_keyword('true') then
-                lineno_defaults['box'] = 'true'
-            elseif scan_keyword('false') then
-                lineno_defaults['box'] = 'false'
-            elseif scan_keyword('inline') then
-                lineno_defaults['box'] = 'inline'
-            end
+            lineno_defaults['box'] = scan_choice('true', 'false', 'inline')
         elseif scan_keyword('alignment') then
-            scan_keyword('=')
-            if scan_keyword('true') then
-                lineno_defaults['alignment'] = 'true'
-            elseif scan_keyword('false') then
-                lineno_defaults['alignment'] = 'false'
-            elseif scan_keyword('once') then
-                lineno_defaults['alignment'] = 'once'
-            end
+            lineno_defaults['alignment'] = scan_choice('true', 'false', 'once')
         elseif scan_keyword('equation') then
-            lineno_defaults['equation'] = scan_bool('equation')
+            lineno_defaults['equation'] = scan_choice('true', 'false', 'once')
         elseif scan_keyword('line') then
-            lineno_defaults['line'] = scan_bool('line')
+            lineno_defaults['line'] = scan_choice('true', 'false')
         elseif scan_keyword('offset') then
-            lineno_defaults['offset'] = scan_bool('offset')
+            lineno_defaults['offset'] = scan_choice('true', 'false')
         else
             break
         end
     end
-    
+-- After all the scanning is done,
+-- the next token in the input stream
+-- should be our special `\relax`,
     local tok = get_next()
     if tok.tok ~= relax.tok then
+-- if this is not the case the syntax is wrong.
         texerror("lualineno: wrong syntax in \\lualineno",
-                {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
+                {"There's a '" .. (tok.csname or uni_char(tok.mode)) .. "' out of place." })
+-- Recovery from errors usually produce wrong output, 
+-- but just in case we return the last token back.
         put_next(tok)
     end
     
 end
 
 local function define_lineno()
+-- This function is used in the define key.
+-- It is very similar to the set_defaults() function,
+-- but it accepts a `column` and `name` keys as well.
     local toks = scan_toks()
     put_next(relax)
     put_next(toks)
@@ -155,66 +180,52 @@ local function define_lineno()
             scan_keyword('=')
             right_box = scan_toks()
         elseif scan_keyword('box') then
-               scan_keyword('=')
-            if scan_keyword('true') then
-                box = 'true'
-            elseif scan_keyword('false') then
-                box = 'false'
-            elseif scan_keyword('inline') then
-                box = 'inline'
-            end
+            box = scan_choice('true', 'false', 'inline')
         elseif scan_keyword('alignment') then
-            scan_keyword('=')
-            if scan_keyword('true') then
-                align = 'true'
-            elseif scan_keyword('false') then
-                align = 'false'
-            elseif scan_keyword('once') then
-                align = 'once'
-            end
+            align = scan_choice('true', 'false', 'once')
         elseif scan_keyword('equation') then
-            equation = scan_bool('equation')
+            equation = scan_choice('true', 'false', 'once')
         elseif scan_keyword('line') then
-            line = scan_bool('line')
+            line = scan_choice('true', 'false')
         elseif scan_keyword('offset') then
-            offset = scan_bool('offset')
+            offset = scan_choice('true', 'false')
         else
             break
         end
     end
-    
+-- Again we check that the correct delimiter is found after all the scanning is done
     local tok = get_next()
     if tok.tok ~= relax.tok then
         texerror("lualineno: wrong syntax in \\lualineno",
-                {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
+                {"There's a '" .. (tok.csname or uni_char(tok.mode)) .. "' out of place." })
         put_next(tok)
     end
+-- A newly defined lualineno type must have a name
     if not name then 
         texerror("lualineno: missing name in \\lualineno")
     end
-    
+
+-- If the `column` key is not specified we assume 
+-- the definition is for the first (or only) column.
     column = column or 1
-        
+
+-- We keep a map between the lineno type names and attributes.
     lineno_attr[name] = lineno_attr[name] or #lineno_types + 1
     lineno_types[lineno_attr[name]] = lineno_types[lineno_attr[name]] or { }
-    local lineno_type = lineno_types[lineno_attr[name]]
+-- Make sure the table for the column of this lineno type exists
+    lineno_types[lineno_attr[name]][column] = lineno_types[lineno_attr[name]][column] or { }
 
-    if not lineno_type[column] then
-        lineno_type[column] = { }
-        for k,v in pairs(lineno_defaults) do
-            lineno_type[column][k] = v
-        end
-    end
-    
-    local col = lineno_type[column]
-    col['preamble'] = preamble or col['preamble']
-    col['left'] = left_box or col['left']
-    col['right'] = right_box or col['right']
-    col['box'] = box or col['box']
-    col['alignment'] = align or col['alignment']
-    col['equation'] = equation or col['equation']
-    col['line'] = line or col['line']
-    col['offset'] = offset or col['offset']
+-- Populate the column's table.
+-- If a key was not specified we use the defualt value.
+    local col = lineno_types[lineno_attr[name]][column]
+    col['preamble'] = preamble or lineno_defaults['preamble']
+    col['left'] = left_box or lineno_defaults['left']
+    col['right'] = right_box or lineno_defaults['right']
+    col['box'] = box or lineno_defaults['box']
+    col['alignment'] = align or lineno_defaults['alignment']
+    col['equation'] = equation or lineno_defaults['equation']
+    col['line'] = line or lineno_defaults['line']
+    col['offset'] = offset or lineno_defaults['offset']
 end
 
 local setattribute = tex.setattribute
@@ -222,16 +233,63 @@ local type_attr = luatexbase.new_attribute('lualineno_type')
 local col_attr = luatexbase.new_attribute('lualineno_col')
 local unset_attr = -0x7FFFFFFF
 
-local function set_lineno()
-    local attr = lineno_attr[scan_string()]
-    if attr then
-        setattribute(type_attr, attr)
-    else
-        setattribute(type_attr,unset_attr)
+local alg_bool = true
+local hlist_id = node.id('hlist')
+local vlist_id = node.id('vlist')
+local glyph_id = node.id('glyph')
+local hlist_subs = node.subtypes("hlist")
+
+
+local function mark_last_vlist(n)
+    local current = n
+    while current do
+        if current.id == vlist_id then
+            node.set_attribute(current, type_attr, -1)
+            return true
+        elseif current.id == hlist_id then
+            if mark_last_vlist(node.tail(current.list)) then return true end
+        end
+        current = current.prev
     end
+    return false
 end
 
-local alg_bool = true
+local get_props = node.getproperty
+local set_props = node.setproperty
+
+local make_labels
+local function label_last_glyph(m, tokens)
+    if format == 'optex' then
+        local add_numbers = luatexbase.remove_from_callback('lualineno', 'add line numbers')
+        luatexbase.add_to_callback('lualineno', make_labels, 'labels')
+        if add_numbers then
+            luatexbase.add_to_callback('lualineno', add_numbers, 'add line numbers')
+        end
+    else
+        luatexbase.add_to_callback('lualineno', make_labels, 'labels')
+    end
+    label_last_glyph = function(n, toks)
+        local current = n
+        while current do
+            if current.id == glyph_id then
+                local props = get_props(current)
+                if not props then
+                    props = { }
+                    set_props(current,props)
+                end
+                props.lualineno = toks
+                return true
+            elseif current.list then
+                if label_last_glyph(node.tail(current.list), toks) then return true end
+            end
+            current = current.prev
+        end
+        return false
+    end
+    label_last_glyph(m, tokens)
+end
+
+local texnest = tex.nest
 
 local function lualineno()
     local saved_endlinechar = tex.endlinechar
@@ -244,7 +302,8 @@ local function lualineno()
     while true do
         if scan_keyword('set') then
             scan_keyword('=')
-            set_lineno()
+            local attr = lineno_attr[scan_string()]
+            setattribute(type_attr, attr and attr or unset_attr)
         elseif scan_keyword('define') then
             scan_keyword('=')
             define_lineno()
@@ -258,6 +317,16 @@ local function lualineno()
             elseif scan_keyword('tex') then
                 alg_bool = false
             end
+        elseif scan_keyword('anchor') then
+            for i=texnest.ptr,0,-1 do 
+                if mark_last_vlist(texnest[i].tail) then return end
+            end
+        elseif scan_keyword('label') then
+            scan_keyword('=')
+            local toks = scan_toks(false, true)
+            for i=texnest.ptr,0,-1 do 
+                if label_last_glyph(texnest[i].tail, toks) then return end
+            end
         else
             break
         end
@@ -266,7 +335,7 @@ local function lualineno()
     local tok = get_next()
     if tok.tok ~= relax.tok then
         texerror("lualineno: wrong syntax in \\lualineno",
-                {"There's a '" .. (tok.csname or utf8.char(tok.mode)) .. "' out of place." })
+                {"There's a '" .. (tok.csname or uni_char(tok.mode)) .. "' out of place." })
         put_next(tok)
     end
     
@@ -277,30 +346,21 @@ do
       texio.write_nl('log', "lualineno: redefining \\lualineno")
   end
   local function_table = lua.get_functions_table()
-  local luafnalloc
-  if format == 'lualatex' then
-      luafnalloc = luatexbase.new_luafunction('lualineno')
-  else
-      luafnalloc = #function_table + 1
-  end
+  local luafnalloc = luatexbase.new_luafunction and luatexbase.new_luafunction('lualineno') or #function_table + 1
   token.set_lua('lualineno', luafnalloc)
   function_table[luafnalloc] = lualineno
 end
 
-------------------------------------------
-------------------------------------------
+-- \secc a^^M
 
 local get_attribute = node.get_attribute
-local copy_list = node.copy_list
 local insert_before = node.insert_before
 local insert_after = node.insert_after
 local traverse = node.traverse
 
 local function add_boxes_to_line(n, parent, line_type, offset)
-    put_next(endlocalcontrol)
-    put_next(line_type['preamble'])
-    runtoks(get_next)
-    
+-- In case \LaTeX/ is used without the luacolor package,
+-- we add an additional group to make the boxes color safe.
     put_next(rbrace, rbrace)
     put_next(line_type['left'])
     put_next(hbox, lbrace, lbrace)
@@ -322,33 +382,20 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     n.head = insert_before(n.list,n.head,shift_kern)
     n.head = insert_before(n.list,n.head,left_box)
     n.head = insert_before(n.list,n.head,left_kern)
-    
     if n.subtype ~= 1 then
         n.head = insert_after(n.list,node.tail(n.head),right_kern)
     end
     n.head = insert_after(n.list,node.tail(n.head),right_box)
+    return n.head
 end
 
-local function inner_expand_write(n)
-    n.data = n.data
-end
+luatexbase.create_callback('lualineno', 'list', false)
+luatexbase.add_to_callback('lualineno', function(n, parent, line_type, offset)
+    runtoks(function() put_next(line_type['preamble']) end) 
+return true end, 'runtoks')
+luatexbase.add_to_callback('lualineno', add_boxes_to_line, 'add line numbers')
 
-local hlist_id = node.id('hlist')
-local vlist_id = node.id('vlist')
-local glyph_id = node.id('glyph')
-local whatsit_id = node.id('whatsit')
-
-local function expand_write(list)
-    for n in traverse(list) do
-        if n.id == whatsit_id and n.subtype == 1 then
-            inner_expand_write(n)
-        elseif n.list then
-            expand_write(n.list)
-        end
-    end
-end
-
-local hlist_subs = node.subtypes("hlist")
+local call_callback = luatexbase.call_callback
 
 local function number_lines_tex(parent, list, column)
     column = get_attribute(parent, col_attr) or column
@@ -357,21 +404,23 @@ local function number_lines_tex(parent, list, column)
         local line_type = line_attr and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type and
                (line_type[hlist_subs[n.subtype]] == 'true' or n.subtype == 0) then
-            add_boxes_to_line(n, parent, line_type, 0)
-            expand_write(n)
-        elseif n.id == whatsit_id and n.subtype == 1 then
-            inner_expand_write(n)
+            call_callback('lualineno', n, parent, line_type, 0)
         elseif n.list then
             number_lines_tex(n, n.list, column)
         end
     end
 end
 
+-- Not all object that are considered lines from \LuaTeX's point of view
+-- would be considered a line from a human perspective. For example, a line
+-- containing only an indent box, or an alignment containing only rules,
+-- so we search for a glyph node recursively.
+
 local function real_box(list)
     for n in traverse(list) do
-        if n.id == hlist_id and real_box(n.list) then
+        if n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
             return true
-        elseif (n.id == vlist_id and real_box(n.list)) then
+        elseif n.id == vlist_id and n.subtype ~= 11 and real_box(n.list) then
             return true
         elseif n.id == glyph_id then
             return true
@@ -384,7 +433,7 @@ local function real_line(list, parent, offset)
     for n in traverse(list) do
         if n.id == glyph_id then
             return true
-        elseif n.id == vlist_id and real_box(n.list) then
+        elseif n.id == vlist_id and n.subtype ~= 11 and real_box(n.list) then
             return n, offset + node.rangedimensions(parent, list, n)
         elseif n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
            local new_offset = offset + node.rangedimensions(parent, list, n)
@@ -401,22 +450,19 @@ local function number_lines_human(parent, list, column, offset, inline)
         local line_type = line_attr and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type and
                (line_type[hlist_subs[n.subtype]] == 'true' or
-               (line_type[hlist_subs[n.subtype]] == 'inline' and inline) or
+               (inline and line_type[hlist_subs[n.subtype]] == 'inline') or
                n.subtype == 0) then
             local m, new_offset = real_line(n.head, n, offset)
             if new_offset then
                 new_offset = new_offset  + n.shift
-                number_lines_human(m, m.head, column, new_offset, true)
+                number_lines_human(m, m.head, column, get_attribute(m, type_attr) == -1 and 0 or new_offset, true)
             elseif m then
-                add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
+                call_callback('lualineno', n, parent, line_type, line_type['offset'] == 'true' and offset or 0)
             end
-            expand_write(n)
         elseif n.id == hlist_id and line_type and line_type[hlist_subs[n.subtype]] == 'once' and real_box(n.list) then
-            add_boxes_to_line(n, parent, line_type, line_type['offset'] and offset or 0)
-        elseif n.id == whatsit_id and n.subtype == 1 then
-            inner_expand_write(n)
+            call_callback('lualineno', n, parent, line_type, line_type['offset']  == 'true' and offset or 0)
         elseif n.list then
-            number_lines_human(n, n.list, column, offset, inline)
+            number_lines_human(n, n.list, column, get_attribute(n, type_attr) == -1 and 0 or offset, inline)
         end
     end
 end
@@ -430,14 +476,17 @@ luatexbase.add_to_callback('pre_shipout_filter', function(head)
     return true
 end, 'lualineno')
 
-------------------------------------------
-------------------------------------------
+-- \secc Format Specific Code^^M
 
 if format == 'optex' then
+-- To be able to use \OpTeX/'s color mechnism in line numbers the colorizing
+-- needs to happen after the line numbers are added, so we remove and insert
+-- back again the colorizing function from the `pre_shipout_filter` callback.
     local colorize = callback.remove_from_callback('pre_shipout_filter', '_colors')
-    if colorize then
-        callback.add_to_callback('pre_shipout_filter', colorize, '_colors')
-    end
+    callback.add_to_callback('pre_shipout_filter', colorize, '_colors')
+-- This is the patch of `\beginmulti` in order mark the columns boxes.
+-- For each box we assign an attribute with a value 
+-- according to the column number.
     local replace = [[
 \_directlua{
     local column = tex.splitbox(6, tex.dimen[1], 'exactly')
@@ -448,24 +497,42 @@ if format == 'optex' then
 }]]
     local find = [[\_vsplit 6 to\_dimen 1 ]]
     local patched_multi, success = token.get_macro("_createcolumns"):gsub(find, replace)
+-- Log the success or failure of the patch
     if success then
         texio.write_nl('log', "lualineno: patching \\_createcolumns")
         token.set_macro("_createcolumns", patched_multi)
     else
         texio.write_nl('log', "lualineno: failed to patch \\_createcolumns")
     end
-else
-    function inner_expand_write(n)
-        runtoks(function()
-            put_next(let,create('protect'),create('noexpand'))
-        end)
-        n.data = n.data
-        runtoks(function()
-            put_next(let,create('protect'),create('relax'))
-        end)
+
+local lbracket, rbracket = new_tok(string.byte('['), 12), new_tok(string.byte(']'), 12)
+local label_tok = create('_label')
+make_labels = function(list)
+    for n in traverse(list) do
+        if n.id == glyph_id then
+            local props = get_props(n)
+            if props then
+                local label = props.lualineno
+                if label then 
+                    runtoks(function()
+                        put_next(rbracket)
+                        put_next(label)
+                        put_next(label_tok,lbracket)
+                    end)
+                end 
+            end
+        elseif n.list then 
+            make_labels(n.list)
+        end
     end
+    return true
+end
+
+else
+-- Here we mark the columns accroding to `\if@firstcolumn`
+    local true_tok = create('iftrue')
     luatexbase.add_to_callback('pre_output_filter', function()
-        if create('if@firstcolumn').mode == create('iftrue').mode then
+        if create('if@firstcolumn').mode == true_tok.mode then
            setattribute(col_attr, 1)
         else
            setattribute(col_attr, 2)
@@ -477,8 +544,35 @@ else
             setattribute(col_attr, unset_attr)
         end 
     end, 'lualineno.mark_columns')
-    if luatexbase.in_callback('pre_shipout_filter', 'luacolor.process') then
-        luatexbase.declare_callback_rule('pre_shipout_filter', 
-                 'lualineno.add_boxes', 'before', 'luacolor.process')
+-- If the luacolor package is loaded,
+-- colorizing must happen after line numbers
+-- are added to be able to color them.
+    luatexbase.declare_callback_rule('pre_shipout_filter', 
+         'lualineno', 'before', 'luacolor.process')
+    
+local label_tok = create('label')
+local node_copy, node_flush = node.copy, node.flush_node
+make_labels = function(list)
+    for n in traverse(list) do
+        if n.id == glyph_id then
+            local props = get_props(n)
+            if props then
+                local label = props.lualineno
+                if label then 
+                    runtoks(function()
+                        put_next(rbrace,rbrace)
+                        put_next(label)
+                        put_next(hbox, lbrace, label_tok,lbrace)
+                        local label_node = scan_list()
+                        list = insert_after(list,n,node_copy(label_node.head))
+                        node_flush(label_node)
+                    end)
+                end 
+            end
+        elseif n.list then 
+            make_labels(n.list)
+        end
     end
+    return true
+end
 end

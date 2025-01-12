@@ -13,7 +13,7 @@ Completed box being shipped out [1]
 ..\vbox(550.0+0.0)x345.0, glue set 490.95001fill, direction TLT
 ...\vbox(29.05+0.0)x345.0, direction TLT
 ....\vbox(29.05+0.0)x345.0, direction TLT
-.....\write1{\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces table caption}}{1}{}\protected@file@percent }}
+.....\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces table caption}}{\thepage }{}\protected@file@percent }}
 .....\glue 10.0
 .....\hbox(6.94+1.94)x345.0, glue set 124.02501fil, direction TLT
 ......\kern-7.40501 (font)
