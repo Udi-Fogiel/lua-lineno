@@ -21,21 +21,16 @@ local create = token.create
 local new_tok = token.new
 
 local lbrace, rbrace = new_tok(string.byte('{'), 1), new_tok(string.byte('}'), 2)
-local relax, hbox, let
+local relax, hbox
 do
 -- initialization of the new primitives.
-  local lineno_primitives = {'relax', 'hbox', 'let'}
   local prefix = '@lua^line&no_' -- unlikely prefix...
--- In case a csname already exists, we save it 
--- to restore it later.
-  local saved_toks = { }
-  for _, csname in ipairs(lineno_primitives) do
-      if token.is_defined(prefix .. csname) then
-          local tok = create(prefix .. csname)
-          saved_toks[csname] = new_tok(tok.mode, tok.command)
-      end
+  while token.is_defined(prefix .. 'let') or token.is_defined(prefix .. 'relax')
+    or token.is_defined(prefix .. 'hbox') do
+    prefix = prefix .. '@lua^line&no_'
   end
-  tex.enableprimitives(prefix,lineno_primitives)
+  local undef = create(prefix .. 'relax')
+  tex.enableprimitives(prefix,{'relax', 'hbox', 'let'})
 -- Now we create new tokens with the meaning of 
 -- the primitives. It is very hard to change their
 -- meaning from the user end (or even impossible?).
@@ -47,16 +42,13 @@ do
   relax = frozentok'relax'
   hbox  = frozentok'hbox'
   let = frozentok'let'
- 
 -- Finally, we clean after ourselvs. If we changed an existing macro, 
 -- we restore its meaning, otherwise we undefine the new primitive.
   -- local undef = new_tok(0, table.swapped(token.commands())['undefined_cs'])
   -- OpTeX does not have table.swapped()
-  local undef = new_tok(0, 133)
   runtoks(function()
       for _,csname in ipairs(lineno_primitives) do
-          put_next(let, create(prefix .. csname),
-              saved_toks[csname] or undef)
+          put_next(let, create(prefix .. csname), undef)
       end
   end)
 end
