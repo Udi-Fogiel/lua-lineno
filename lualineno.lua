@@ -472,7 +472,7 @@ luatexbase.add_to_callback('pre_shipout_filter', function(head)
         number_lines_tex(head, head.list, 1, 0)
     end
     return true
-end, 'lualineno')
+end, 'lualineno.shipout')
 
 -- \secc Format Specific Code^^M
 
@@ -546,7 +546,7 @@ else
 -- colorizing must happen after line numbers
 -- are added to be able to color them.
     luatexbase.declare_callback_rule('pre_shipout_filter', 
-         'lualineno', 'before', 'luacolor.process')
+         'lualineno.shipout', 'before', 'luacolor.process')
     
 local label_tok = create('label')
 local node_copy, node_flush = node.copy, node.flush_node
