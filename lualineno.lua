@@ -47,7 +47,7 @@ do
   -- local undef = new_tok(0, table.swapped(token.commands())['undefined_cs'])
   -- OpTeX does not have table.swapped()
   runtoks(function()
-      for _,csname in ipairs(lineno_primitives) do
+      for _,csname in ipairs({'relax', 'hbox', 'let'}) do
           put_next(let, create(prefix .. csname), undef)
       end
   end)
@@ -252,13 +252,9 @@ local set_props = node.setproperty
 local make_labels
 local function label_last_glyph(m, tokens)
     if format == 'optex' then
-        local add_numbers = luatexbase.remove_from_callback('lualineno', 'add line numbers')
-        luatexbase.add_to_callback('lualineno', make_labels, 'labels')
-        if add_numbers then
-            luatexbase.add_to_callback('lualineno', add_numbers, 'add line numbers')
-        end
+        luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', make_labels, 'lualineno.labels')
     else
-        luatexbase.add_to_callback('lualineno', make_labels, 'labels')
+        luatexbase.add_to_callback('lualineno.post_add_numbers_filter', make_labels, 'lualineno.labels')
     end
     label_last_glyph = function(n, toks)
         local current = n
@@ -272,7 +268,9 @@ local function label_last_glyph(m, tokens)
                 props.lualineno = toks
                 return true
             elseif current.list then
-                if label_last_glyph(node.tail(current.list), toks) then return true end
+                if label_last_glyph(node.tail(current.list), toks) then 
+                    return true 
+                end
             end
             current = current.prev
         end
@@ -381,13 +379,21 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     return n.head
 end
 
-luatexbase.create_callback('lualineno', 'list', false)
-luatexbase.add_to_callback('lualineno', function(n, parent, line_type, offset)
+luatexbase.create_callback('lualineno.pre_add_numbers_filter', 'list', false)
+luatexbase.create_callback('lualineno.add_numbers', 'exclusive', add_boxes_to_line)
+luatexbase.create_callback('lualineno.post_add_numbers_filter', 'list', false)
+luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', function(n, parent, line_type, offset)
     runtoks(function() put_next(line_type['preamble']) end) 
-return true end, 'runtoks')
-luatexbase.add_to_callback('lualineno', add_boxes_to_line, 'add line numbers')
+return true end, 'lualineno.runtoks')
 
 local call_callback = luatexbase.call_callback
+local function call_lineno_callbacks(head, parent, line_type, offset)
+    local current = call_callback('lualineno.pre_add_numbers_filter', head, parent, line_type, offset)
+    head = current == true and head or current
+    current = call_callback('lualineno.add_numbers', head , parent, line_type, offset)
+    head = current == true and head or current
+    call_callback('lualineno.post_add_numbers_filter', head , parent, line_type, offset)
+end
 
 local function number_lines_tex(parent, list, column)
     column = get_attribute(parent, col_attr) or column
@@ -396,7 +402,7 @@ local function number_lines_tex(parent, list, column)
         local line_type = line_attr and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type and
                (line_type[hlist_subs[n.subtype]] == 'true' or n.subtype == 0) then
-            call_callback('lualineno', n, parent, line_type, 0)
+            call_lineno_callbacks(n, parent, line_type, 0)
         elseif n.list then
             number_lines_tex(n, n.list, column)
         end
@@ -449,10 +455,10 @@ local function number_lines_human(parent, list, column, offset, inline)
                 new_offset = new_offset  + n.shift
                 number_lines_human(m, m.head, column, get_attribute(m, type_attr) == -1 and 0 or new_offset, true)
             elseif m then
-                call_callback('lualineno', n, parent, line_type, line_type['offset'] == 'true' and offset or 0)
+                call_lineno_callbacks(n, parent, line_type, line_type['offset'] == 'true' and offset or 0)
             end
         elseif n.id == hlist_id and line_type and line_type[hlist_subs[n.subtype]] == 'once' and real_box(n.list) then
-            call_callback('lualineno', n, parent, line_type, line_type['offset']  == 'true' and offset or 0)
+            call_lineno_callbacks(n, parent, line_type, line_type['offset']  == 'true' and offset or 0)
         elseif n.list then
             number_lines_human(n, n.list, column, get_attribute(n, type_attr) == -1 and 0 or offset, inline)
         end
