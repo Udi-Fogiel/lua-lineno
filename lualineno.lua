@@ -265,7 +265,7 @@ local set_props = node.setproperty
 
 local make_labels
 local function label_last_glyph(m, tokens)
-    if optes then
+    if optex then
         luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', make_labels, 'lualineno.labels')
     elseif latex then
         luatexbase.add_to_callback('lualineno.post_add_numbers_filter', make_labels, 'lualineno.labels')
