@@ -503,28 +503,28 @@ if format == 'optex' then
         texio.write_nl('log', "lualineno: failed to patch \\_createcolumns")
     end
 
-local lbracket, rbracket = new_tok(string.byte('['), 12), new_tok(string.byte(']'), 12)
-local label_tok = create('_label')
-make_labels = function(list)
-    for n in traverse(list) do
-        if n.id == glyph_id then
-            local props = get_props(n)
-            if props then
-                local label = props.lualineno
-                if label then 
-                    runtoks(function()
-                        put_next(rbracket)
-                        put_next(label)
-                        put_next(label_tok,lbracket)
-                    end)
-                end 
+    local lbracket, rbracket = new_tok(string.byte('['), 12), new_tok(string.byte(']'), 12)
+    local label_tok = create('_label')
+    make_labels = function(list)
+        for n in traverse(list) do
+            if n.id == glyph_id then
+                local props = get_props(n)
+                if props then
+                    local label = props.lualineno
+                    if label then 
+                        runtoks(function()
+                            put_next(rbracket)
+                            put_next(label)
+                            put_next(label_tok,lbracket)
+                        end)
+                    end 
+                end
+            elseif n.list then 
+                make_labels(n.list)
             end
-        elseif n.list then 
-            make_labels(n.list)
         end
+        return true
     end
-    return true
-end
 
 else
 -- Here we mark the columns accroding to `\if@firstcolumn`
@@ -548,29 +548,29 @@ else
     luatexbase.declare_callback_rule('pre_shipout_filter', 
          'lualineno.shipout', 'before', 'luacolor.process')
     
-local label_tok = create('label')
-local node_copy, node_flush = node.copy, node.flush_node
-make_labels = function(list)
-    for n in traverse(list) do
-        if n.id == glyph_id then
-            local props = get_props(n)
-            if props then
-                local label = props.lualineno
-                if label then 
-                    runtoks(function()
-                        put_next(rbrace,rbrace)
-                        put_next(label)
-                        put_next(hbox, lbrace, label_tok,lbrace)
-                        local label_node = scan_list()
-                        list = insert_after(list,n,node_copy(label_node.head))
-                        node_flush(label_node)
-                    end)
-                end 
+    local label_tok = create('label')
+    local node_copy, node_flush = node.copy, node.flush_node
+    make_labels = function(list)
+        for n in traverse(list) do
+            if n.id == glyph_id then
+                local props = get_props(n)
+                if props then
+                    local label = props.lualineno
+                    if label then 
+                        runtoks(function()
+                            put_next(rbrace,rbrace)
+                            put_next(label)
+                            put_next(hbox, lbrace, label_tok,lbrace)
+                            local label_node = scan_list()
+                            list = insert_after(list,n,node_copy(label_node.head))
+                            node_flush(label_node)
+                        end)
+                    end 
+                end
+            elseif n.list then 
+                make_labels(n.list)
             end
-        elseif n.list then 
-            make_labels(n.list)
         end
+        return true
     end
-    return true
-end
 end
