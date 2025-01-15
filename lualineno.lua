@@ -5,9 +5,23 @@
 local format = tex.formatname
 local texerror = tex.error
 
-if not (format == 'optex' or format:find('lualatex')) then
+local optex, latex, plain
+
+if format:find("optex") then -- OpTeX
+    optex = true
+elseif format:find("latex") then -- lualatex, lualatex-dev, ...
+    latex = true
+elseif format == "luatex" or
+       format == "luahbtex" or
+       format:find("plain")
+then -- Plain
+    plain = true
+end
+
+
+if not (optex or latex or plain) then
     error("lualineno: The format " .. format .. " is not supported\n\n" ..
-             "Use OpTeX or LuaLaTeX.")
+             "Use OpTeX, LuaLaTeX or Plain.")
 end
 
 -- To make sure the tokens used has the correct meaning
@@ -221,8 +235,8 @@ local function define_lineno()
 end
 
 local setattribute = tex.setattribute
-local type_attr = luatexbase.new_attribute('lualineno_type')
-local col_attr = luatexbase.new_attribute('lualineno_col')
+local type_attr = luatexbase and luatexbase.new_attribute('lualineno_type') or 0
+local col_attr = luatexbase and luatexbase.new_attribute('lualineno_col') or 1
 local unset_attr = -0x7FFFFFFF
 
 local alg_bool = true
@@ -251,9 +265,9 @@ local set_props = node.setproperty
 
 local make_labels
 local function label_last_glyph(m, tokens)
-    if format == 'optex' then
+    if optes then
         luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', make_labels, 'lualineno.labels')
-    else
+    elseif latex then
         luatexbase.add_to_callback('lualineno.post_add_numbers_filter', make_labels, 'lualineno.labels')
     end
     label_last_glyph = function(n, toks)
@@ -280,7 +294,7 @@ local function label_last_glyph(m, tokens)
 end
 
 local texnest = tex.nest
-
+local number_lines_human
 local function lualineno()
     local saved_endlinechar = tex.endlinechar
     tex.endlinechar = 32
@@ -288,7 +302,7 @@ local function lualineno()
     tex.endlinechar = saved_endlinechar
     put_next(relax)
     put_next(toks)
-    
+
     while true do
         if scan_keyword('set') then
             scan_keyword('=')
@@ -317,6 +331,17 @@ local function lualineno()
             for i=texnest.ptr,0,-1 do 
                 if label_last_glyph(texnest[i].tail, toks) then return end
             end
+        elseif scan_keyword('line_attr') then
+            scan_keyword('=')
+            type_attr = token.scan_int()
+        elseif scan_keyword('col_attr') then
+            scan_keyword('=')
+            col_attr = token.scan_int()
+        elseif scan_keyword('processbox') then
+            scan_keyword('=')
+            local box = tex.box[token.scan_int()]
+            number_lines_human(box.head, box, 1, 0, false)
+            node.set_attribute(box, col_attr, -2)
         else
             break
         end
@@ -336,7 +361,7 @@ do
       texio.write_nl('log', "lualineno: redefining \\lualineno")
   end
   local function_table = lua.get_functions_table()
-  local luafnalloc = luatexbase.new_luafunction and luatexbase.new_luafunction('lualineno') or #function_table + 1
+  local luafnalloc = luatexbase and luatexbase.new_luafunction and luatexbase.new_luafunction('lualineno') or #function_table + 1
   token.set_lua('lualineno', luafnalloc)
   function_table[luafnalloc] = lualineno
 end
@@ -379,20 +404,31 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     return n.head
 end
 
-luatexbase.create_callback('lualineno.pre_add_numbers_filter', 'list', false)
-luatexbase.create_callback('lualineno.add_numbers', 'exclusive', add_boxes_to_line)
-luatexbase.create_callback('lualineno.post_add_numbers_filter', 'list', false)
-luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', function(n, parent, line_type, offset)
-    runtoks(function() put_next(line_type['preamble']) end) 
-return true end, 'lualineno.runtoks')
+if not plain then
+    luatexbase.create_callback('lualineno.pre_add_numbers_filter', 'list', false)
+    luatexbase.create_callback('lualineno.add_numbers', 'exclusive', add_boxes_to_line)
+    luatexbase.create_callback('lualineno.post_add_numbers_filter', 'list', false)
+    luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', function(n, parent, line_type, offset)
+        runtoks(function() put_next(line_type['preamble']) end) 
+    return true end, 'lualineno.runtoks')
+end
 
-local call_callback = luatexbase.call_callback
-local function call_lineno_callbacks(head, parent, line_type, offset)
-    local current = call_callback('lualineno.pre_add_numbers_filter', head, parent, line_type, offset)
-    head = current == true and head or current
-    current = call_callback('lualineno.add_numbers', head , parent, line_type, offset)
-    head = current == true and head or current
-    call_callback('lualineno.post_add_numbers_filter', head , parent, line_type, offset)
+
+local call_lineno_callbacks
+if plain then
+    call_lineno_callbacks = function(head, parent, line_type, offset)
+        runtoks(function() put_next(line_type['preamble']) end)
+        add_boxes_to_line(head, parent, line_type, offset)
+    end
+else
+    local call_callback = luatexbase.call_callback
+    call_lineno_callbacks = function(head, parent, line_type, offset)
+        local current = call_callback('lualineno.pre_add_numbers_filter', head, parent, line_type, offset)
+        head = current == true and head or current
+        current = call_callback('lualineno.add_numbers', head , parent, line_type, offset)
+        head = current == true and head or current
+        call_callback('lualineno.post_add_numbers_filter', head , parent, line_type, offset)
+    end
 end
 
 local function number_lines_tex(parent, list, column)
@@ -441,7 +477,7 @@ local function real_line(list, parent, offset)
     return false
 end
 
-local function number_lines_human(parent, list, column, offset, inline)
+number_lines_human = function(parent, list, column, offset, inline)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
         local line_attr = n.head and get_attribute(node.tail(n.head), type_attr)
@@ -465,14 +501,16 @@ local function number_lines_human(parent, list, column, offset, inline)
     end
 end
 
-luatexbase.add_to_callback('pre_shipout_filter', function(head)
-    if alg_bool then
-        number_lines_human(head, head.list, 1, 0, false)
-    else
-        number_lines_tex(head, head.list, 1, 0)
-    end
-    return true
-end, 'lualineno.shipout')
+if not plain then
+    luatexbase.add_to_callback('pre_shipout_filter', function(head)
+        if alg_bool then
+            number_lines_human(head, head.list, 1, 0, false)
+        else
+            number_lines_tex(head, head.list, 1, 0)
+        end
+        return true
+    end, 'lualineno.shipout')
+end
 
 -- \secc Format Specific Code^^M
 
@@ -525,8 +563,7 @@ if format == 'optex' then
         end
         return true
     end
-
-else
+elseif latex then
 -- Here we mark the columns accroding to `\if@firstcolumn`
     local true_tok = create('iftrue')
     luatexbase.add_to_callback('pre_output_filter', function()
