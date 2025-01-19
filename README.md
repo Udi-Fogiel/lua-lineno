@@ -15,6 +15,7 @@ To print the documentation run `optex -jobname lualineno-doc '\docgen lualineno'
 
 ## License
 The lualineno package is licencesed under the 0BSD license.
+For its full text see the file LICENSE.
 
 ## DISCLAIMER
 
