@@ -1,8 +1,12 @@
 build/
-*.log
-*.ref
-*.tex
+test.tex
 *.pdf
-*.zip
+*.log
 *.aux
+*.ref
+*.tuc
 *.toc
+*.lot
+*.lof
+*.dvi
+*.zip

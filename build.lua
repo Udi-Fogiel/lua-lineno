@@ -7,7 +7,7 @@ module = "lualineno"
 stdengine    = "luatex"
 checkengines = {"luatex"}
 checkruns = 1
-sourcefiles = {"*.opm", "*.sty", "*.lua"}
+sourcefiles = {"*.opm", "*.sty", "*.lua", "*.tex"}
 installfiles = sourcefiles
 packtdszip = true
 typesetexe = "optex"
@@ -15,6 +15,7 @@ typesetfiles = {"lualineno.opm"}
 ctanzip = module
 
 checkconfigs = {"configfiles/config-optex", "configfiles/config-latex", "configfiles/config-plain"}
+specialformats = specialformats or { }
 specialformats.optex  = {luatex = {binary = "optex", format = ""}}
 specialformats.plain  = {luatex = {binary = "luatex", format = ""}}
 
