@@ -1,3 +1,6 @@
+  --[[
+  lualineno version 0.1, 2025-01-19
+  ]]--
 -- \secc Initialization^^M
 -- Currently the module works only with 
 -- Lua\LaTeX/ and \OpTeX.

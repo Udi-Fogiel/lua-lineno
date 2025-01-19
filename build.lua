@@ -23,7 +23,6 @@ tdslocations =
   {
     "tex/optex/lualineno/*.opm",
     "tex/lualatex/lualineno/*.sty",
-    "tex/luatex/lualineno/*.tex",
     "tex/luatex/lualineno/*.lua",
   }
 
@@ -45,8 +44,10 @@ function update_tag(file,content,tagname,tagdate)
     return string.gsub(content,
       "{lualineno} [%d%d%d%d-%d%d-%d%d v%d+.%d+.%d+",
       "{lualineno} [" .. tagdate .. " v" .. tagname)
-  elseif file == "README.md" then
-    return content
+  elseif string.match(file, "%.md$") then
+    return  string.gsub(content,
+      "version %d+.%d+, %d%d%d%d-%d%d-%d%d",
+      "version " .. tagname .. ", " .. tagdate)
   end
 end
 
