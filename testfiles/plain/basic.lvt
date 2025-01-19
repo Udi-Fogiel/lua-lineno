@@ -1,0 +1,42 @@
+\input{regression-test.tex}
+\directlua{require("lualineno.lua")}
+
+\newcount\lineno
+\lualineno
+  {
+    define =
+      {
+        name = default
+        preamble = {\advance\lineno1}
+        left = {\the\lineno\kern.8em}
+      }
+    set = default
+  }
+\catcode`\@=11
+\def\plainoutput{%
+  \setbox0\vbox{\makeheadline\pagebody\makefootline}%
+  \lualineno{processbox = 0}%
+  \shipout\box0
+  \advancepageno 
+  \ifnum\outputpenalty>-\@MM\else \dosupereject\fi
+}
+\tracingoutput=1\tracingonline=1
+\showboxbreadth \maxdimen \showboxdepth \maxdimen
+\START
+Here is the definitive guide to the use of TeX, written by the
+system's creator, Donald E. Knuth. TeX represents the state of the art in
+computer typesetting. It is particularly valuable where the document, article,
+or book to be produced contains a lot of mathematics, and where the user is
+concerned about typographic quality. TeX software offers both writers and
+publishers the opportunity to produce technical text of all kinds, in an
+attractive form, with the speed and efficiency of a computer system. Novice and
+expert users alike will gain from The TeXbook the level of information they
+seek. Knuth warns newcomers away from the more difficult areas, while he entices
+experienced users with new challenges. The novice need not learn much about TeX
+to prepare a simple manuscript with it. But for the preparation of more complex
+documents, The TeXbook contains all the detail required. Knuth's familiar wit,
+and illustrations specially drawn by Duane Bibby, add a light touch to an
+unusually readable software manual. The TeXbook is the first in a five-volume
+series on Computers and Typesetting, all authored by Knuth.
+\vfill\break
+\END
