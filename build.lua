@@ -9,7 +9,6 @@ checkengines = {"luatex"}
 checkruns = 1
 sourcefiles = {"*.opm", "*.sty", "*.lua", "lualineno*.tex"}
 installfiles = sourcefiles
-packtdszip = true
 typesetexe = "optex"
 typesetfiles = {"lualineno.opm"}
 ctanzip = module
