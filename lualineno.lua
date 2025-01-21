@@ -407,23 +407,14 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     return n.head
 end
 
-if not plain then
+local call_lineno_callbacks
+if luatexbase then
     luatexbase.create_callback('lualineno.pre_add_numbers_filter', 'list', false)
     luatexbase.create_callback('lualineno.add_numbers', 'exclusive', add_boxes_to_line)
-    luatexbase.create_callback('lualineno.post_add_numbers_filter', 'list', false)
+    luatexbase.create_callback('lualineno.post_add_numbers_filter', 'reverselist', false)
     luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', function(n, parent, line_type, offset)
         runtoks(function() put_next(line_type['preamble']) end) 
     return true end, 'lualineno.runtoks')
-end
-
-
-local call_lineno_callbacks
-if plain then
-    call_lineno_callbacks = function(head, parent, line_type, offset)
-        runtoks(function() put_next(line_type['preamble']) end)
-        add_boxes_to_line(head, parent, line_type, offset)
-    end
-else
     local call_callback = luatexbase.call_callback
     call_lineno_callbacks = function(head, parent, line_type, offset)
         local current = call_callback('lualineno.pre_add_numbers_filter', head, parent, line_type, offset)
@@ -431,6 +422,11 @@ else
         current = call_callback('lualineno.add_numbers', head , parent, line_type, offset)
         head = current == true and head or current
         call_callback('lualineno.post_add_numbers_filter', head , parent, line_type, offset)
+    end
+else
+    call_lineno_callbacks = function(head, parent, line_type, offset)
+        runtoks(function() put_next(line_type['preamble']) end)
+        add_boxes_to_line(head, parent, line_type, offset)
     end
 end
 
