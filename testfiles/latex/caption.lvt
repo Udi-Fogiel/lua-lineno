@@ -7,12 +7,12 @@
     define = 
       {
         name = default
-        left = {\stepcounter{lineno}\tiny\thelineno\kern.8em}
+        start = {\stepcounter{lineno}\tiny\thelineno\kern.8em}
       }
     define = 
       {
         name = figure
-        left = {\stepcounter{lineno}\tiny\thelineno\kern.8em}
+        start = {\stepcounter{lineno}\tiny\thelineno\kern.8em}
         box = true
       }
     set = default

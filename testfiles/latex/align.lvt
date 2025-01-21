@@ -7,8 +7,8 @@
     define =
       {
         name = default
-        preamble = {\stepcounter{lineno}}
-        left = {\tiny\thelineno\kern.8em}
+        toks = {\stepcounter{lineno}}
+        start = {\tiny\thelineno\kern.8em}
       }
     set = default
   }

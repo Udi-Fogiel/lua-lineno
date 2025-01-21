@@ -88,9 +88,9 @@ local scan_keyword = token.scan_keyword
 local lineno_types = { }
 local lineno_attr = { }
 local lineno_defaults = {
-    ['preamble'] = { },
-    ['left'] = { },
-    ['right'] = { },
+    ['toks'] = { },
+    ['start'] = { },
+    ['end'] = { },
     ['box'] = 'inline',
     ['alignment'] = 'true',
     ['equation'] = 'true',
@@ -124,15 +124,15 @@ local function set_defaults()
 -- The scanning of the keys is done similarly to the mentioned
 -- article.    
     while true do
-        if scan_keyword('preamble') then
+        if scan_keyword('toks') then
             scan_keyword('=')
-            lineno_defaults['preamble'] = scan_toks()
-        elseif scan_keyword('left') then
+            lineno_defaults['toks'] = scan_toks()
+        elseif scan_keyword('start') then
             scan_keyword('=')
-            lineno_defaults['left'] = scan_toks()
-        elseif scan_keyword('right') then
+            lineno_defaults['start'] = scan_toks()
+        elseif scan_keyword('end') then
             scan_keyword('=')
-            lineno_defaults['right'] = scan_toks()
+            lineno_defaults['end'] = scan_toks()
         elseif scan_keyword('box') then
             lineno_defaults['box'] = scan_choice('true', 'false', 'inline')
         elseif scan_keyword('alignment') then
@@ -170,7 +170,7 @@ local function define_lineno()
     put_next(relax)
     put_next(toks)
     
-    local column, name, preamble, left_box, right_box
+    local column, name, toks, start_box, end_box
     local box, align, equation, line, offset
     while true do
         if scan_keyword('column') then
@@ -179,15 +179,15 @@ local function define_lineno()
         elseif scan_keyword('name') then
             scan_keyword('=')
             name = scan_string()
-        elseif scan_keyword('preamble') then
+        elseif scan_keyword('toks') then
             scan_keyword('=')
-            preamble = scan_toks()
-        elseif scan_keyword('left') then
+            toks = scan_toks()
+        elseif scan_keyword('start') then
             scan_keyword('=')
-            left_box = scan_toks()
-        elseif scan_keyword('right') then
+            start_box = scan_toks()
+        elseif scan_keyword('end') then
             scan_keyword('=')
-            right_box = scan_toks()
+            end_box = scan_toks()
         elseif scan_keyword('box') then
             box = scan_choice('true', 'false', 'inline')
         elseif scan_keyword('alignment') then
@@ -227,9 +227,9 @@ local function define_lineno()
 -- Populate the column's table.
 -- If a key was not specified we use the defualt value.
     local col = lineno_types[lineno_attr[name]][column]
-    col['preamble'] = preamble or lineno_defaults['preamble']
-    col['left'] = left_box or lineno_defaults['left']
-    col['right'] = right_box or lineno_defaults['right']
+    col['toks'] = toks or lineno_defaults['toks']
+    col['start'] = start_box or lineno_defaults['start']
+    col['end'] = end_box or lineno_defaults['end']
     col['box'] = box or lineno_defaults['box']
     col['alignment'] = align or lineno_defaults['alignment']
     col['equation'] = equation or lineno_defaults['equation']
@@ -380,30 +380,30 @@ local function add_boxes_to_line(n, parent, line_type, offset)
 -- In case \LaTeX/ is used without the luacolor package,
 -- we add an additional group to make the boxes color safe.
     put_next(rbrace, rbrace)
-    put_next(line_type['left'])
+    put_next(line_type['start'])
     put_next(hbox, lbrace, lbrace)
-    local left_box = scan_list()
+    local start_box = scan_list()
     
     put_next(rbrace, rbrace)
-    put_next(line_type['right'])
+    put_next(line_type['end'])
     put_next(hbox, lbrace, lbrace)
-    local right_box = scan_list()
+    local end_box = scan_list()
     
-    local left_kern = node.new('kern')
+    local start_kern = node.new('kern')
     local shift_kern = node.new('kern')
-    local right_kern = node.new('kern')
+    local end_kern = node.new('kern')
          
-    left_kern.kern = -left_box.width - n.shift - offset
+    start_kern.kern = -start_box.width - n.shift - offset
     shift_kern.kern = n.shift + offset
-    right_kern.kern = parent.width - n.shift - n.width
+    end_kern.kern = parent.width - n.shift - n.width
 		    
     n.head = insert_before(n.list,n.head,shift_kern)
-    n.head = insert_before(n.list,n.head,left_box)
-    n.head = insert_before(n.list,n.head,left_kern)
+    n.head = insert_before(n.list,n.head,start_box)
+    n.head = insert_before(n.list,n.head,start_kern)
     if n.subtype ~= 1 then
-        n.head = insert_after(n.list,node.tail(n.head),right_kern)
+        n.head = insert_after(n.list,node.tail(n.head),end_kern)
     end
-    n.head = insert_after(n.list,node.tail(n.head),right_box)
+    n.head = insert_after(n.list,node.tail(n.head),end_box)
     return n.head
 end
 
@@ -413,7 +413,7 @@ if luatexbase then
     luatexbase.create_callback('lualineno.add_numbers', 'exclusive', add_boxes_to_line)
     luatexbase.create_callback('lualineno.post_add_numbers_filter', 'reverselist', false)
     luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', function(n, parent, line_type, offset)
-        runtoks(function() put_next(line_type['preamble']) end) 
+        runtoks(function() put_next(line_type['toks']) end) 
     return true end, 'lualineno.runtoks')
     local call_callback = luatexbase.call_callback
     call_lineno_callbacks = function(head, parent, line_type, offset)
@@ -425,7 +425,7 @@ if luatexbase then
     end
 else
     call_lineno_callbacks = function(head, parent, line_type, offset)
-        runtoks(function() put_next(line_type['preamble']) end)
+        runtoks(function() put_next(line_type['toks']) end)
         add_boxes_to_line(head, parent, line_type, offset)
     end
 end

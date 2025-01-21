@@ -7,14 +7,14 @@
     define =
       {
         name = default
-        preamble = {\stepcounter{lineno}}
-        left = {\tiny\thelineno\kern.8em}
+        toks = {\stepcounter{lineno}}
+        start = {\tiny\thelineno\kern.8em}
       }
     define =
       {
         name = default
-        preamble = {\stepcounter{lineno}}
-        right = {\tiny\thelineno\kern.8em}
+        toks = {\stepcounter{lineno}}
+        end = {\tiny\thelineno\kern.8em}
         column = 2
       }
     set = default

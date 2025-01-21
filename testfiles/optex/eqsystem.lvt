@@ -7,8 +7,8 @@
     define =
       {
         name = default
-        preamble = {\advance\lineno1}
-        left = {\setfontsize{mag.6}\the\lineno\kern.8em}
+        toks = {\advance\lineno1}
+        start = {\setfontsize{mag.6}\the\lineno\kern.8em}
       }
     set = default
   }
