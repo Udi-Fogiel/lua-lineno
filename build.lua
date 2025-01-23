@@ -7,45 +7,74 @@ module = "lualineno"
 stdengine    = "luatex"
 checkengines = {"luatex"}
 checkruns = 1
-sourcefiles = {"*.opm", "*.sty", "*.lua", "lualineno*.tex"}
+sourcefiles = {"*.opm", "*.sty", "*.lua", module .. ".tex"}
 installfiles = sourcefiles
+auxfiles = {"*.aux", "*.lof", "*.lot", "*.toc", '*.ref'}
+docfiles = {module .. '-doc.pdf'}
+textfiles = {"*.md", "LICENSE"}
 typesetexe = "optex"
-typesetfiles = {"lualineno.opm"}
+typesetfiles = {module .. ".opm"}
 ctanzip = module
+tdsroot = "luatex"
 
-checkconfigs = {"configfiles/config-optex", "configfiles/config-latex", "configfiles/config-plain"}
+checkconfigs = {
+    "configfiles/config-optex",
+    "configfiles/config-latex",
+    "configfiles/config-plain",
+    "configfiles/config-nil",
+}
+
 specialformats = specialformats or { }
 specialformats.optex  = {luatex = {binary = "optex", format = ""}}
-specialformats.plain  = {luatex = {binary = "luatex", format = ""}}
+specialformats.plain  = {luatex = {binary = "luahbtex", format = ""}}
 
 tdslocations =
   {
-    "tex/optex/lualineno/*.opm",
-    "tex/lualatex/lualineno/*.sty",
-    "tex/luatex/lualineno/*.lua",
+    "tex/optex/" .. module .. "/*.opm",
+    "tex/lualatex/" .. module .. "/*.sty",
+    "tex/luatex/" .. module .. "/*.tex",
+    "tex/luatex/" .. module .. "/*.lua",
   }
 
 specialtypesetting = specialtypesetting or {}
 function optex_doc()
-    run('.', "optex -jobname lualineno-doc '\\docgen lualineno'")
+    local error_level = 0
+    if not direxists('./build') then
+        error_level = error_level + mkdir('./build')
+    end
+    if not direxists('./build/doc') then
+        error_level = error_level + mkdir('./build/doc')
+    end
+    error_level = error_level + cp('*opm', '.', './build/doc')
+    error_level = error_level + run('./build/doc', "optex -jobname " .. module .. "-doc '\\docgen " .. module .. "'")
+    error_level = error_level + run('./build/doc', "optex -jobname " .. module .. "-doc '\\docgen " .. module .. "'")
+    error_level = error_level + run('./build/doc', "optex -jobname " .. module .. "-doc '\\docgen " .. module .. "'")
+    error_level = error_level + cp('*pdf', './build/doc', '.')
+    return error_level
 end
-specialtypesetting["lualineno.opm"] = {func = optex_doc}
+specialtypesetting[module .. ".opm"] = {func = optex_doc}
 
 tagfiles = sourcefiles
 function update_tag(file,content,tagname,tagdate)
   if string.match(file, "%.opm$") then
     return string.gsub(content,
-      "lualineno_version {%d+.%d+, %d%d%d%d-%d%d-%d%d",
-      "lualineno_version {" .. tagname .. ", " .. tagdate)
+      "version {%d+%.%d+, %d%d%d%d%-%d%d%-%d%d",
+      "version {" .. tagname .. ", " .. tagdate)
   elseif string.match(file, "%.lua$") then
-    return content
-  elseif file == "lualineno.sty" then
     return string.gsub(content,
-      "{lualineno} [%d%d%d%d-%d%d-%d%d v%d+.%d+.%d+",
-      "{lualineno} [" .. tagdate .. " v" .. tagname)
+      "version   = %d+%.%d+, %d%d%d%d%-%d%d%-%d%d",
+      "version   = " .. tagname .. ", " .. tagdate)
+  elseif string.match(file, "%.sty$") then
+    return string.gsub(content,
+      "} %[%d%d%d%d%-%d%d%-%d%d v%d+%.%d+\n",
+      "} [" .. tagdate .. " v" .. tagname .. "\n")
+  elseif string.match(file, "%.tex$") then
+    return string.gsub(content,
+      "version %d+%.%d+, %d%d%d%d%-%d%d%-%d%d",
+      "version " .. tagname .. ", " .. tagdate)
   elseif string.match(file, "%.md$") then
-    return  string.gsub(content,
-      "version %d+.%d+, %d%d%d%d-%d%d-%d%d",
+    return string.gsub(content,
+      "version %d+%.%d+, %d%d%d%d%-%d%d%-%d%d",
       "version " .. tagname .. ", " .. tagdate)
   end
 end
