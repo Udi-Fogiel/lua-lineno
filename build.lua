@@ -16,6 +16,7 @@ typesetexe = "optex"
 typesetfiles = {module .. ".opm"}
 ctanzip = module
 tdsroot = "luatex"
+packtdszip = true
 
 checkconfigs = {
     "configfiles/config-optex",
@@ -82,7 +83,8 @@ end
 function pre_release()
     call({"."}, "tag")
     call({"."}, "ctan", {config = options['config']})
-    rm(".", "*.tds.zip")
+    run(".", "zip -d " .. module .. ".zip " .. module .. ".tds.zip")
+    rm(".", "*.pdf")
 end
 
 target_list["prerelease"] = { func = pre_release, 
