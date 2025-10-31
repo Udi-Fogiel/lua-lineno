@@ -3,8 +3,8 @@ Don't change this file in any respect.
 Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for 'english' will be used instead.
 (lipsum)                
 (lipsum)                With LuaTeX, lipsum requires babel to get proper hyphenation (you can use \usepackage[base]{babel}).
-Overfull \vbox (1.005pt too high) has occurred while \output is active
-\vbox(107.055+0.0)x229.5, direction TLT
+Overfull \vbox (2.06pt too high) has occurred while \output is active
+\vbox(106.0+0.0)x229.5, direction TLT
 .\write-{}
 .\glue(\topskip) 3.06
 .\hbox(6.94+1.94)x229.5, glue set 1.14452, direction TLT
@@ -569,10 +569,10 @@ Completed box being shipped out [1]
 ....\hbox(0.0+0.0)x469.0, direction TLT
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x469.0, glue set 442.945fil, direction TLT
-...\hbox(107.055+0.0)x469.0, glue set 5.0fil, direction TLT
-....\hbox(107.055+0.0)x229.5, direction TLT
-.....\vbox(107.055+0.0)x229.5, direction TLT
+..\vbox(550.0+0.0)x469.0, glue set 444.0fil, direction TLT
+...\hbox(106.0+0.0)x469.0, glue set 5.0fil, direction TLT
+....\hbox(106.0+0.0)x229.5, direction TLT
+.....\vbox(106.0+0.0)x229.5, direction TLT
 ......\write-{}
 ......\glue(\topskip) 3.06
 ......\hbox(6.94+1.94)x229.5, glue set 1.14452, direction TLT
@@ -1185,8 +1185,8 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\rule(*+*)x0.0
 ....\glue 0.0 plus 1.0fil
-....\hbox(107.055+0.0)x229.5, direction TLT
-.....\vbox(107.055+0.0)x229.5, glue set 0.94499fill, direction TLT
+....\hbox(106.0+0.0)x229.5, direction TLT
+.....\vbox(106.0+0.0)x229.5, direction TLT
 ......\glue(\splittopskip) 3.06
 ......\hbox(6.94+2.06)x229.5, glue set 0.41374, direction TLT
 .......\kern0.0 (font)
@@ -1776,6 +1776,7 @@ Completed box being shipped out [1]
 ........\TU/lmr/m/n/5 1
 ........\TU/lmr/m/n/5 8
 ........\kern4.00002
+......\glue -0.11
 ......\glue 0.0 plus 1.0fill
 ......\glue 0.0
 ......\glue 0.0

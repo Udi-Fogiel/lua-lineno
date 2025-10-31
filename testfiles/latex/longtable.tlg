@@ -1,6 +1,6 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-Underfull \hbox (badness 10000) in paragraph at lines 26--26
+Underfull \hbox (badness 10000) in paragraph at lines ...
 []|\TU/lmr/m/n/7 Source: Source
 \hbox(8.39996+0.14)x71.13188, glue set 7.1152, direction TLT
 .\localpar
@@ -4828,6 +4828,7 @@ Completed box being shipped out [1]
 .....\glue(\tabskip) 0.0
 .....\hbox(0.0+0.0)x83.13188, direction TLT
 .....\glue(\tabskip) 0.0 plus 1.0fill
+...\glue 0.0
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0
 ...\glue 0.0 plus 0.0001fil

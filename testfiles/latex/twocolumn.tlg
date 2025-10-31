@@ -16,7 +16,7 @@ Completed box being shipped out [1]
 ..\vbox(550.0+0.0)x469.0, direction TLT
 ...\hbox(550.0+0.0)x469.0, glue set 5.0fil, direction TLT
 ....\hbox(550.0+0.0)x229.5, direction TLT
-.....\vbox(550.0+0.0)x229.5, glue set 202.06fill, direction TLT
+.....\vbox(550.0+0.0)x229.5, glue set 204.0fill, direction TLT
 ......\write-{}
 ......\glue(\topskip) 3.06
 ......\hbox(6.94+1.94)x229.5, glue set 1.14452, direction TLT
@@ -1991,6 +1991,7 @@ Completed box being shipped out [1]
 .......\glue(\parfillskip) 0.0 plus 1.0fil
 .......\glue(\rightskip) 0.0
 .......\hbox(0.0+0.0)x0.0, direction TLT
+......\glue -1.94
 ......\glue 0.0 plus 1.0fill
 ......\glue 0.0
 .....\glue 0.0 plus 1.0fil minus 1.0fil
@@ -1998,7 +1999,7 @@ Completed box being shipped out [1]
 ....\rule(*+*)x0.0
 ....\glue 0.0 plus 1.0fil
 ....\hbox(550.0+0.0)x229.5, direction TLT
-.....\vbox(550.0+0.0)x229.5, glue set 202.06fill, direction TLT
+.....\vbox(550.0+0.0)x229.5, glue set 204.0fill, direction TLT
 ......\glue(\topskip) 3.06
 ......\hbox(6.94+1.94)x229.5, glue set 1.14452, direction TLT
 .......\kern0.0 (font)
@@ -3981,6 +3982,7 @@ Completed box being shipped out [1]
 ........\TU/lmr/m/n/5 5
 ........\TU/lmr/m/n/5 8
 ........\kern4.00002
+......\glue -1.94
 ......\glue 0.0 plus 1.0fill
 ......\glue 0.0
 .....\glue 0.0 plus 1.0fil minus 1.0fil
