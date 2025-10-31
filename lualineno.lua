@@ -316,7 +316,7 @@ local function lualineno()
             define_lineno()
         elseif scan_keyword('defaults') then
             scan_keyword('=')
-            set_default()
+            set_defaults()
         elseif scan_keyword('algorithm') then
             scan_keyword('=')
             if scan_keyword('human') then
