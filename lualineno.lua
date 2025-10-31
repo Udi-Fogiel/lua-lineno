@@ -77,30 +77,14 @@ end
 -- should be, but with this method we can
 -- create a format agnostic key-value interface.
 -- The idea is based on an article by Hans Hagen. 
-
 local get_next = token.get_next
 local scan_toks = token.scan_toks
 local scan_string = token.scan_string
 local scan_list = token.scan_list
 local scan_int = token.scan_int
 local scan_keyword = token.scan_keyword
-
-local lineno_types = { }
-local lineno_attr = { }
-local lineno_defaults = {
-    ['toks'] = { },
-    ['start'] = { },
-    ['end'] = { },
-    ['box'] = 'inline',
-    ['alignment'] = 'true',
-    ['equation'] = 'true',
-    ['line'] = 'true',
-    ['offset'] = 'true'
-}
-
--- A helper function for boolean keys.
+-- A helper function for choice keys.
 local function scan_choice(...)
-    scan_keyword('=')
     local args = {...}
     for _, keyword in ipairs(args) do
         if scan_keyword(keyword) then
@@ -109,7 +93,30 @@ local function scan_choice(...)
     end
 end
 
+
+local lineno_types = { }
+local lineno_attr = { }
+local lineno_vals = {
+    toks = {scanner = scan_toks, default = { }},
+    start = {scanner = scan_toks, default = { }},
+    ['end'] = {scanner = scan_toks, default = { }},
+    box = {scanner = scan_choice, params = {'true', 'false', 'inline'}, default = 'inline'},
+    alignment = {scanner = scan_choice, params = {'true', 'false', 'once'}, default = 'true'},
+    equation = {scanner = scan_choice, params = {'true', 'false', 'once'}, default = 'true'},
+    line = {scanner = scan_choice, params = {'true', 'false'}, default = 'true'},
+    offset = {scanner = scan_choice, params = {'true', 'false'}, default = 'true'}
+}
+
 local uni_char = utf8.char
+
+local function check_delimiter()
+    local tok = get_next()
+    if tok.tok ~= relax.tok then
+        texerror("lualineno: wrong syntax in \\lualineno",
+                {"There's a '" .. (tok.csname or uni_char(tok.mode)) .. "' out of place." })
+        put_next(tok)
+    end
+end
 
 local function set_defaults()
 -- This function is used in the defaults key.
@@ -122,44 +129,20 @@ local function set_defaults()
     put_next(relax)
     put_next(toks)
 -- The scanning of the keys is done similarly to the mentioned
--- article.    
-    while true do
-        if scan_keyword('toks') then
-            scan_keyword('=')
-            lineno_defaults['toks'] = scan_toks()
-        elseif scan_keyword('start') then
-            scan_keyword('=')
-            lineno_defaults['start'] = scan_toks()
-        elseif scan_keyword('end') then
-            scan_keyword('=')
-            lineno_defaults['end'] = scan_toks()
-        elseif scan_keyword('box') then
-            lineno_defaults['box'] = scan_choice('true', 'false', 'inline')
-        elseif scan_keyword('alignment') then
-            lineno_defaults['alignment'] = scan_choice('true', 'false', 'once')
-        elseif scan_keyword('equation') then
-            lineno_defaults['equation'] = scan_choice('true', 'false', 'once')
-        elseif scan_keyword('line') then
-            lineno_defaults['line'] = scan_choice('true', 'false')
-        elseif scan_keyword('offset') then
-            lineno_defaults['offset'] = scan_choice('true', 'false')
-        else
-            break
-        end
+-- article.
+    local matched = true
+    while matched do
+	    matched = false
+        for key, scanner in pairs(lineno_vals) do
+		    if scan_keyword(key) then
+			    matched = true
+			    scan_keyword('=')
+				lineno_vals[key].default = scanner.scanner(table.unpack(scanner.params))
+				break
+			end
+		end
     end
--- After all the scanning is done,
--- the next token in the input stream
--- should be our special `\relax`,
-    local tok = get_next()
-    if tok.tok ~= relax.tok then
--- if this is not the case the syntax is wrong.
-        texerror("lualineno: wrong syntax in \\lualineno",
-                {"There's a '" .. (tok.csname or uni_char(tok.mode)) .. "' out of place." })
--- Recovery from errors usually produce wrong output, 
--- but just in case we return the last token back.
-        put_next(tok)
-    end
-    
+    check_delimiter()
 end
 
 local function define_lineno()
@@ -170,52 +153,36 @@ local function define_lineno()
     put_next(relax)
     put_next(toks)
     
-    local column, name, toks, start_box, end_box
-    local box, align, equation, line, offset
-    while true do
-        if scan_keyword('column') then
-            scan_keyword('=')
-            column = scan_int()
-        elseif scan_keyword('name') then
-            scan_keyword('=')
-            name = scan_string()
-        elseif scan_keyword('toks') then
-            scan_keyword('=')
-            toks = scan_toks()
-        elseif scan_keyword('start') then
-            scan_keyword('=')
-            start_box = scan_toks()
-        elseif scan_keyword('end') then
-            scan_keyword('=')
-            end_box = scan_toks()
-        elseif scan_keyword('box') then
-            box = scan_choice('true', 'false', 'inline')
-        elseif scan_keyword('alignment') then
-            align = scan_choice('true', 'false', 'once')
-        elseif scan_keyword('equation') then
-            equation = scan_choice('true', 'false', 'once')
-        elseif scan_keyword('line') then
-            line = scan_choice('true', 'false')
-        elseif scan_keyword('offset') then
-            offset = scan_choice('true', 'false')
-        else
-            break
-        end
+    local define_vals, vals = {}, {}
+    for k,v in pairs(lineno_vals) do
+        define_vals[k] = v
     end
--- Again we check that the correct delimiter is found after all the scanning is done
-    local tok = get_next()
-    if tok.tok ~= relax.tok then
-        texerror("lualineno: wrong syntax in \\lualineno",
-                {"There's a '" .. (tok.csname or uni_char(tok.mode)) .. "' out of place." })
-        put_next(tok)
+	define_vals.column = {scanner = scan_int}
+    define_vals.name = {scanner = scan_string}	
+    local matched = true
+    while matched do
+	    matched = false
+        for key, scanner in pairs(define_vals) do
+		    if scan_keyword(key) then
+			    matched = true
+			    scan_keyword('=')
+				vals[key] = scanner.scanner(table.unpack(scanner.params or {}))
+				break
+			end
+		end
     end
+    
+	check_delimiter()
+
 -- A newly defined lualineno type must have a name
+    local name = vals['name']
     if not name then 
         texerror("lualineno: missing name in \\lualineno")
     end
 
 -- If the `column` key is not specified we assume 
 -- the definition is for the first (or only) column.
+    local column = vals['column']
     column = column or 1
 
 -- We keep a map between the lineno type names and attributes.
@@ -226,15 +193,11 @@ local function define_lineno()
 
 -- Populate the column's table.
 -- If a key was not specified we use the defualt value.
-    local col = lineno_types[lineno_attr[name]][column]
-    col['toks'] = toks or lineno_defaults['toks']
-    col['start'] = start_box or lineno_defaults['start']
-    col['end'] = end_box or lineno_defaults['end']
-    col['box'] = box or lineno_defaults['box']
-    col['alignment'] = align or lineno_defaults['alignment']
-    col['equation'] = equation or lineno_defaults['equation']
-    col['line'] = line or lineno_defaults['line']
-    col['offset'] = offset or lineno_defaults['offset']
+    local col = { }
+	for k,v in pairs(lineno_vals) do 
+        col[k] = vals[k] or v.default
+    end
+	lineno_types[lineno_attr[name]][column] = col
 end
 
 local setattribute = tex.setattribute
@@ -336,27 +299,20 @@ local function lualineno()
             end
         elseif scan_keyword('line_attr') then
             scan_keyword('=')
-            type_attr = token.scan_int()
+            type_attr = scan_int()
         elseif scan_keyword('col_attr') then
             scan_keyword('=')
-            col_attr = token.scan_int()
+            col_attr = scan_int()
         elseif scan_keyword('processbox') then
             scan_keyword('=')
-            local box = tex.box[token.scan_int()]
+            local box = tex.box[scan_int()]
             number_lines_human(box.head, box, 1, 0, false)
             node.set_attribute(box, col_attr, -2)
         else
             break
         end
     end
-    
-    local tok = get_next()
-    if tok.tok ~= relax.tok then
-        texerror("lualineno: wrong syntax in \\lualineno",
-                {"There's a '" .. (tok.csname or uni_char(tok.mode)) .. "' out of place." })
-        put_next(tok)
-    end
-    
+    check_delimiter()    
 end
 
 do
