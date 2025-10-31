@@ -1,32 +1,8 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
-! Undefined control sequence.
-l. ...\eqsystem
-            { x + y - 2z = 10 \cr
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-! Misplaced \cr.
-l. ...\eqsystem{ x + y - 2z = 10 \cr
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-! Misplaced \cr.
-l. ...2x - 7y + z = 13 \cr
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 Completed box being shipped out [1]
 \vbox(718.24724+0.0)x455.24408, direction TLT
-.\pdflinkstate 1
-.\pdflinkstate 0
-.\vbox(694.24724+0.0)x455.24408, glue set 663.3028fill, direction TLT
+.\vbox(694.24724+0.0)x455.24408, glue set 643.85834fill, direction TLT
 ..\glue(\topskip) 10.0
 ..\hbox(0.0+0.0)x455.24408, glue set 435.24408fil, direction TLT
 ...\localpar
@@ -40,70 +16,317 @@ Completed box being shipped out [1]
 ...\glue(\rightskip) 0.0
 ..\penalty 10000
 ..\glue(\abovedisplayshortskip) 0.0 plus 3.0
-..\glue(\baselineskip) 5.55556
-..\hbox(6.44444+1.94444)x210.88828, shifted 122.1779, direction TLT
-...\kern-135.17793 (font)
-...\hbox(6.29724+0.0)x13.00003, direction TLT
-....\pdfliteral direct <lua data reference ...>
-....\_tenrm 1
-....\kern8.00003
-...\kern122.1779 (font)
-...\hbox(6.44444+1.94444)x210.88828, direction TLT
-....\_mF x
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF +
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF y
-....\kern0.35878 (italic)
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF ^^@
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF 2
-....\_mF z
-....\kern0.4398 (italic)
-....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\_mF =
-....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\_mF 1
-....\_mF 0
-....\_mF 2
-....\_mF x
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF ^^@
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF 7
-....\_mF y
-....\kern0.35878 (italic)
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF +
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF z
-....\kern0.4398 (italic)
-....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\_mF =
-....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\_mF 1
-....\_mF 3
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF ^^@
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF x
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF +
-....\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
-....\_mF y
-....\kern0.35878 (italic)
-....\penalty 10000
-....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
-....\penalty 10000
-....\glue(\spaceskip) 3.33333 plus 1.66666 minus 1.11111
-....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\_mF =
-....\glue(\thickmuskip) 2.77771 plus 2.77771
-....\_mF ^^@
-....\_mF 5
-...\kern122.1779 (font)
-...\hbox(0.0+0.0)x0.0, direction TLT
+..\glue(\lineskip) 1.0
+..\hbox(18.69444+13.69444)x84.40031, shifted 185.42189, direction TLT
+...\vbox(18.69444+13.69444)x84.40031, direction TLT
+....\hbox(6.44444+1.94444)x84.40031, direction TLT
+.....\kern-198.42192 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\pdfliteral direct <lua data reference ...>
+......\_tenrm 1
+......\kern8.00003
+.....\kern185.42189 (font)
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x13.49307, glue set 7.7778fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(4.30554+0.0)x5.71527, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF x
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.22214, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(5.83333+0.83333)x12.22214, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\_mF +
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x10.26161, glue set 5.00002fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(4.30554+1.94444)x5.2616, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF y
+.......\kern0.35878 (italic)
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.22214, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(5.83333+0.83333)x12.22214, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\_mF ^^@
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x10.09032, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(6.44444+0.0)x10.09032, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF 2
+.......\_mF z
+.......\kern0.4398 (italic)
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x13.33322, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(3.66875+0.0)x13.33322, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue(\thickmuskip) 2.77771 plus 2.77771
+.......\_mF =
+.......\glue(\thickmuskip) 2.77771 plus 2.77771
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.77782, glue set 2.77779fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(6.44444+0.0)x10.00003, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF 1
+.......\_mF 0
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue(\baselineskip) 3.61111
+....\hbox(6.44444+1.94444)x84.40031, direction TLT
+.....\kern-198.42192 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 2
+......\kern8.00003
+.....\kern185.42189 (font)
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x13.49307, glue set 2.77779fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(6.44444+0.0)x10.71529, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF 2
+.......\_mF x
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.22214, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(5.83333+0.83333)x12.22214, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\_mF ^^@
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x10.26161, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(6.44444+1.94444)x10.26161, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF 7
+.......\_mF y
+.......\kern0.35878 (italic)
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.22214, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(5.83333+0.83333)x12.22214, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\_mF +
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x10.09032, glue set 5.00002fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(4.30554+0.0)x5.0903, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF z
+.......\kern0.4398 (italic)
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x13.33322, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(3.66875+0.0)x13.33322, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue(\thickmuskip) 2.77771 plus 2.77771
+.......\_mF =
+.......\glue(\thickmuskip) 2.77771 plus 2.77771
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.77782, glue set 2.77779fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(6.44444+0.0)x10.00003, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF 1
+.......\_mF 3
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
+....\glue(\baselineskip) 3.61111
+....\hbox(6.44444+1.94444)x84.40031, direction TLT
+.....\kern-198.42192 (font)
+.....\hbox(6.29724+0.0)x13.00003, direction TLT
+......\_tenrm 3
+......\kern8.00003
+.....\kern185.42189 (font)
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x13.49307, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(5.83333+0.83333)x13.49307, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF ^^@
+.......\_mF x
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.22214, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(5.83333+0.83333)x12.22214, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\_mF +
+.......\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x10.26161, glue set 5.00002fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(4.30554+1.94444)x5.2616, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF y
+.......\kern0.35878 (italic)
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.22214, glue set 12.22214fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x10.09032, glue set 10.09032fill, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x13.33322, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(3.66875+0.0)x13.33322, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\glue(\thickmuskip) 2.77771 plus 2.77771
+.......\_mF =
+.......\glue(\thickmuskip) 2.77771 plus 2.77771
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\hbox(6.44444+1.94444)x12.77782, direction TLT
+......\glue 0.0 plus 1.0fill
+......\kern0.0
+......\mathon
+......\hbox(6.44444+0.83333)x12.77782, direction TLT
+.......\hbox(0.0+0.0)x0.0, direction TLT
+.......\_mF ^^@
+.......\_mF 5
+.......\hbox(0.0+0.0)x0.0, direction TLT
+......\mathoff
+......\kern0.0
+......\glue 0.0 plus 1.0fil
+.....\glue(\tabskip) 0.0
+.....\kern0.0 (font)
+.....\hbox(0.0+0.0)x0.0, direction TLT
 ..\penalty 0
 ..\glue(\belowdisplayshortskip) 7.0 plus 3.0 minus 4.0
 ..\glue 0.0 plus 1.0fill

@@ -444,7 +444,7 @@ local function number_lines_tex(parent, list, column)
     end
 end
 
--- Not all object that are considered lines from \LuaTeX's point of view
+-- Not every object that would be considered a line from \LuaTeX's point of view
 -- would be considered a line from a human perspective. For example, a line
 -- containing only an indent box, or an alignment containing only rules,
 -- so we search for a glyph node recursively.

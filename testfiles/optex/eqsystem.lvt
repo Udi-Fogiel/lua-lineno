@@ -1,5 +1,5 @@
 \input{regression-test.tex}
-\load[lualineno]
+\load[math,lualineno]
 
 \newcount\lineno
 \lualineno

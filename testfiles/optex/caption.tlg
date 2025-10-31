@@ -2,8 +2,6 @@ This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 Completed box being shipped out [1]
 \vbox(718.24724+0.0)x455.24408, direction TLT
-.\pdflinkstate 1
-.\pdflinkstate 0
 .\vbox(694.24724+0.0)x455.24408, glue set 567.90283fill, direction TLT
 ..\glue(\topskip) 3.00952
 ..\hbox(6.99048+1.94443)x455.24408, glue set 61.15675fil, direction TLT
@@ -123,7 +121,6 @@ Completed box being shipped out [1]
 ......\_tenrm e
 ......\kern5.0
 ......\hbox(10.5+5.5)x0.0, direction TLT
-.......\pdfliteral direct <lua data reference ...>
 .......\rule(10.5+5.5)x0.0
 .....\glue(\tabskip) 0.0
 .....\hbox(10.5+5.5)x62.30515, glue set 29.80496fil, direction TLT
