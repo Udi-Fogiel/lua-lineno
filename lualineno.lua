@@ -83,6 +83,7 @@ local scan_string = token.scan_string
 local scan_list = token.scan_list
 local scan_int = token.scan_int
 local scan_keyword = token.scan_keyword
+local unpack = table.unpack
 -- A helper function for choice keys.
 local function scan_choice(...)
     local args = {...}
@@ -100,11 +101,11 @@ local lineno_vals = {
     toks = {scanner = scan_toks, default = { }},
     start = {scanner = scan_toks, default = { }},
     ['end'] = {scanner = scan_toks, default = { }},
-    box = {scanner = scan_choice, params = {'true', 'false', 'inline'}, default = 'inline'},
-    alignment = {scanner = scan_choice, params = {'true', 'false', 'once'}, default = 'true'},
-    equation = {scanner = scan_choice, params = {'true', 'false', 'once'}, default = 'true'},
-    line = {scanner = scan_choice, params = {'true', 'false'}, default = 'true'},
-    offset = {scanner = scan_choice, params = {'true', 'false'}, default = 'true'}
+    box = {scanner = scan_choice, args = {'true', 'false', 'inline'}, default = 'inline'},
+    alignment = {scanner = scan_choice, args = {'true', 'false', 'once'}, default = 'true'},
+    equation = {scanner = scan_choice, args = {'true', 'false', 'once'}, default = 'true'},
+    line = {scanner = scan_choice, args = {'true', 'false'}, default = 'true'},
+    offset = {scanner = scan_choice, args = {'true', 'false'}, default = 'true'}
 }
 
 local uni_char = utf8.char
@@ -118,86 +119,65 @@ local function check_delimiter()
     end
 end
 
-local function set_defaults()
--- This function is used in the defaults key.
--- To avoid the need to insert a `\relax` from the \TeX/ end
--- to prevent the scanners from looking ahead,
--- we absorb the tokens in the argument (to remove the braces), 
--- then put them back in the input stream, delimited by our special
--- `\relax`.
-    local toks = scan_toks()
+local function process_keys(toks, tbl)
     put_next(relax)
     put_next(toks)
--- The scanning of the keys is done similarly to the mentioned
--- article.
-    local matched = true
+    local matched, vals = true, { }
     while matched do
 	    matched = false
-        for key, scanner in pairs(lineno_vals) do
+        for key, param in pairs(tbl) do
 		    if scan_keyword(key) then
 			    matched = true
 			    scan_keyword('=')
-				lineno_vals[key].default = scanner.scanner(table.unpack(scanner.params))
+				local args = param.args or {}
+				vals[key] = param.scanner(unpack(args))
 				break
 			end
 		end
     end
-    check_delimiter()
+	check_delimiter()
+	return vals
+end
+
+local function set_defaults()
+    local vals = process_keys(scan_toks(), lineno_vals)
+	for k,v in pairs(lineno_vals) do
+	    v.default = vals[k]
+	end
 end
 
 local function define_lineno()
 -- This function is used in the define key.
 -- It is very similar to the set_defaults() function,
 -- but it accepts a `column` and `name` keys as well.
-    local toks = scan_toks()
-    put_next(relax)
-    put_next(toks)
-    
-    local define_vals, vals = {}, {}
+    local define_vals = {}
     for k,v in pairs(lineno_vals) do
         define_vals[k] = v
     end
 	define_vals.column = {scanner = scan_int}
-    define_vals.name = {scanner = scan_string}	
-    local matched = true
-    while matched do
-	    matched = false
-        for key, scanner in pairs(define_vals) do
-		    if scan_keyword(key) then
-			    matched = true
-			    scan_keyword('=')
-				vals[key] = scanner.scanner(table.unpack(scanner.params or {}))
-				break
-			end
-		end
-    end
-    
-	check_delimiter()
-
+    define_vals.name = {scanner = scan_string}
+    local vals = process_keys(scan_toks(), define_vals)
 -- A newly defined lualineno type must have a name
     local name = vals['name']
     if not name then 
         texerror("lualineno: missing name in \\lualineno")
     end
-
 -- If the `column` key is not specified we assume 
 -- the definition is for the first (or only) column.
-    local column = vals['column']
-    column = column or 1
-
+    local col = vals['column']
+    col = col or 1
 -- We keep a map between the lineno type names and attributes.
     lineno_attr[name] = lineno_attr[name] or #lineno_types + 1
-    lineno_types[lineno_attr[name]] = lineno_types[lineno_attr[name]] or { }
+	local i = lineno_attr[name]
+    lineno_types[i] = lineno_types[i] or { }
 -- Make sure the table for the column of this lineno type exists
-    lineno_types[lineno_attr[name]][column] = lineno_types[lineno_attr[name]][column] or { }
-
+    lineno_types[i][col] = lineno_types[i][col] or { }
 -- Populate the column's table.
 -- If a key was not specified we use the defualt value.
-    local col = { }
+    local c = lineno_types[i][col]
 	for k,v in pairs(lineno_vals) do 
-        col[k] = vals[k] or v.default
+        c[k] = vals[k] or v.default
     end
-	lineno_types[lineno_attr[name]][column] = col
 end
 
 local setattribute = tex.setattribute
@@ -210,6 +190,7 @@ local hlist_id = node.id('hlist')
 local vlist_id = node.id('vlist')
 local glyph_id = node.id('glyph')
 local hlist_subs = node.subtypes("hlist")
+local tail = node.tail
 
 
 local function mark_last_vlist(n)
@@ -219,7 +200,7 @@ local function mark_last_vlist(n)
             node.set_attribute(current, type_attr, -1)
             return true
         elseif current.id == hlist_id then
-            if mark_last_vlist(node.tail(current.list)) then return true end
+            if mark_last_vlist(tail(current.list)) then return true end
         end
         current = current.prev
     end
@@ -248,7 +229,7 @@ local function label_last_glyph(m, tokens)
                 props.lualineno = toks
                 return true
             elseif current.list then
-                if label_last_glyph(node.tail(current.list), toks) then 
+                if label_last_glyph(tail(current.list), toks) then 
                     return true 
                 end
             end
@@ -357,9 +338,9 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     n.head = insert_before(n.list,n.head,start_box)
     n.head = insert_before(n.list,n.head,start_kern)
     if n.subtype ~= 1 then
-        n.head = insert_after(n.list,node.tail(n.head),end_kern)
+        n.head = insert_after(n.list,tail(n.head),end_kern)
     end
-    n.head = insert_after(n.list,node.tail(n.head),end_box)
+    n.head = insert_after(n.list,tail(n.head),end_box)
     return n.head
 end
 
@@ -389,7 +370,7 @@ end
 local function number_lines_tex(parent, list, column)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
-        local line_attr = n.head and get_attribute(node.tail(n.head), type_attr)
+        local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type and
                (line_type[hlist_subs[n.subtype]] == 'true' or n.subtype == 0) then
@@ -435,7 +416,7 @@ end
 number_lines_human = function(parent, list, column, offset, inline)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
-        local line_attr = n.head and get_attribute(node.tail(n.head), type_attr)
+        local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type and
                (line_type[hlist_subs[n.subtype]] == 'true' or
