@@ -58,7 +58,7 @@ do
   end
   relax = frozentok'relax'
   hbox  = frozentok'hbox'
-  let = frozentok'let'
+  local let = frozentok'let'
 -- Finally, we clean after ourselvs. If we changed an existing macro, 
 -- we restore its meaning, otherwise we undefine the new primitive.
   -- local undef = new_tok(0, table.swapped(token.commands())['undefined_cs'])
