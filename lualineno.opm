@@ -51,7 +51,7 @@ according to the column.
 
 \sec Lua module
 
-\commentchars-- \vitt{lualineno.sty}
+\commentchars-- \vitt{lualineno.lua}
 \verbinput \hisyntax{lua} (1-) lualineno.lua
 
 

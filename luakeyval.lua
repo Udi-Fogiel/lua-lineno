@@ -45,10 +45,10 @@ local function process_keys(tbl)
 end
 
 local function scan_choice(...)
-    local args = {...}
-    for _, keyword in ipairs(args) do
-        if scan_keyword(keyword) then
-            return keyword
+    local choices = {...}
+    for _, choice in ipairs(choices) do
+        if scan_keyword(choice) then
+            return choice
         end
     end
 end

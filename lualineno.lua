@@ -197,10 +197,11 @@ local lualineno_keys = {
 local texnest = tex.nest
 local number_lines_human
 
-local saved_endlinechar = tex.endlinechar
-    tex.endlinechar = 32
 local function lualineno()
+    local saved_endlinechar = tex.endlinechar
+    tex.endlinechar = 32
     local vals = process_keys(lualineno_keys)
+	tex.endlinechar = saved_endlinechar
 	if vals.set then
 	    local attr = lineno_attr[vals.set]
         setattribute(type_attr, attr and attr or unset_attr) 
