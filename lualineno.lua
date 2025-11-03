@@ -38,37 +38,7 @@ local create = token.create
 local new_tok = token.new
 
 local lbrace, rbrace = new_tok(string.byte('{'), 1), new_tok(string.byte('}'), 2)
-local relax, hbox
-do
--- initialization of the new primitives.
-  local prefix = '@lua^line&no_' -- unlikely prefix...
-  while token.is_defined(prefix .. 'let') or token.is_defined(prefix .. 'relax')
-    or token.is_defined(prefix .. 'hbox') do
-    prefix = prefix .. '@lua^line&no_'
-  end
-  local undef = create(prefix .. 'relax')
-  tex.enableprimitives(prefix,{'relax', 'hbox', 'let'})
--- Now we create new tokens with the meaning of 
--- the primitives. It is very hard to change their
--- meaning from the user end (or even impossible?).
--- Credit to 
-  local function frozentok(name)
-      local tok = create(prefix .. name)
-      return new_tok(tok.mode, tok.command)
-  end
-  relax = frozentok'relax'
-  hbox  = frozentok'hbox'
-  local let = frozentok'let'
--- Finally, we clean after ourselvs. If we changed an existing macro, 
--- we restore its meaning, otherwise we undefine the new primitive.
-  -- local undef = new_tok(0, table.swapped(token.commands())['undefined_cs'])
-  -- OpTeX does not have table.swapped()
-  runtoks(function()
-      for _,csname in ipairs({'relax', 'hbox', 'let'}) do
-          put_next(let, create(prefix .. csname), undef)
-      end
-  end)
-end
+local hbox = new_tok(141, 21)
 
 -- \secc User Interface^^M
 -- This section describe the definition of
@@ -83,80 +53,53 @@ local scan_string = token.scan_string
 local scan_list = token.scan_list
 local scan_int = token.scan_int
 local scan_keyword = token.scan_keyword
-local unpack = table.unpack
--- A helper function for choice keys.
-local function scan_choice(...)
-    local args = {...}
-    for _, keyword in ipairs(args) do
-        if scan_keyword(keyword) then
-            return keyword
-        end
-    end
-end
-
 
 local lineno_types = { }
 local lineno_attr = { }
-local lineno_vals = {
-    toks = {scanner = scan_toks, default = { }},
-    start = {scanner = scan_toks, default = { }},
-    ['end'] = {scanner = scan_toks, default = { }},
-    box = {scanner = scan_choice, args = {'true', 'false', 'inline'}, default = 'inline'},
-    alignment = {scanner = scan_choice, args = {'true', 'false', 'once'}, default = 'true'},
-    equation = {scanner = scan_choice, args = {'true', 'false', 'once'}, default = 'true'},
-    line = {scanner = scan_choice, args = {'true', 'false'}, default = 'true'},
-    offset = {scanner = scan_choice, args = {'true', 'false'}, default = 'true'}
+local defaults = {
+    toks = { },
+    start = { },
+    ['end'] = { },
+    box = 'inline',
+    alignment = 'true',
+    equation = 'true',
+    line = 'true',
+    offset = 'true'
 }
 
-local uni_char = utf8.char
-
-local function check_delimiter()
-    local tok = get_next()
-    if tok.tok ~= relax.tok then
-        texerror("lualineno: wrong syntax in \\lualineno",
-                {"There's a '" .. (tok.csname or uni_char(tok.mode)) .. "' out of place." })
-        put_next(tok)
-    end
-end
-
-local function process_keys(toks, tbl)
-    put_next(relax)
-    put_next(toks)
-    local matched, vals = true, { }
-    while matched do
-	    matched = false
-        for key, param in pairs(tbl) do
-		    if scan_keyword(key) then
-			    matched = true
-			    scan_keyword('=')
-				local args = param.args or {}
-				vals[key] = param.scanner(unpack(args))
-				break
-			end
-		end
-    end
-	check_delimiter()
-	return vals
-end
+local keyval = require('luakeyval')
+local scan_choice = keyval.choices
+local process_keys = keyval.process
+local defaults_keys = {
+    toks = {scanner = scan_toks},
+    start = {scanner = scan_toks},
+    ['end'] = {scanner = scan_toks},
+    box = {scanner = scan_choice, args = {'true', 'false', 'inline'}},
+    alignment = {scanner = scan_choice, args = {'true', 'false', 'once'}},
+    equation = {scanner = scan_choice, args = {'true', 'false', 'once'}},
+    line = {scanner = scan_choice, args = {'true', 'false'}},
+    offset = {scanner = scan_choice, args = {'true', 'false'}}
+}
 
 local function set_defaults()
-    local vals = process_keys(scan_toks(), lineno_vals)
-	for k,v in pairs(lineno_vals) do
-	    v.default = vals[k]
+    local vals = process_keys(defaults_keys)
+	for k,v in pairs(vals) do
+	    defaults[k] = v
 	end
 end
+
+local define_keys = { }
+for k,v in pairs(defaults_keys) do
+    define_keys[k] = v
+end
+define_keys.column = {scanner = scan_int}
+define_keys.name = {scanner = scan_string}
 
 local function define_lineno()
 -- This function is used in the define key.
 -- It is very similar to the set_defaults() function,
 -- but it accepts a `column` and `name` keys as well.
-    local define_vals = {}
-    for k,v in pairs(lineno_vals) do
-        define_vals[k] = v
-    end
-	define_vals.column = {scanner = scan_int}
-    define_vals.name = {scanner = scan_string}
-    local vals = process_keys(scan_toks(), define_vals)
+    local vals = process_keys(define_keys)
 -- A newly defined lualineno type must have a name
     local name = vals['name']
     if not name then 
@@ -175,8 +118,8 @@ local function define_lineno()
 -- Populate the column's table.
 -- If a key was not specified we use the defualt value.
     local c = lineno_types[i][col]
-	for k,v in pairs(lineno_vals) do 
-        c[k] = vals[k] or v.default
+	for k,v in pairs(defaults) do 
+        c[k] = vals[k] or defaults[k]
     end
 end
 
@@ -240,60 +183,48 @@ local function label_last_glyph(m, tokens)
     label_last_glyph(m, tokens)
 end
 
+local lualineno_keys = {
+    set = {scanner = scan_string},
+	define = {func = define_lineno},
+	defaults = {func = set_defaults},
+	algorithm = {scanner = scan_choice, args = {'human', 'tex'}},
+	anchor,
+	label = {scanner = scan_toks, args = {false, true}},
+	line_attr = {scanner = scan_int},
+	col_attr = {scanner = scan_int},
+	processbox = {scanner = scan_int},
+}
 local texnest = tex.nest
 local number_lines_human
-local function lualineno()
-    local saved_endlinechar = tex.endlinechar
-    tex.endlinechar = 32
-    local toks = scan_toks()
-    tex.endlinechar = saved_endlinechar
-    put_next(relax)
-    put_next(toks)
 
-    while true do
-        if scan_keyword('set') then
-            scan_keyword('=')
-            local attr = lineno_attr[scan_string()]
-            setattribute(type_attr, attr and attr or unset_attr)
-        elseif scan_keyword('define') then
-            scan_keyword('=')
-            define_lineno()
-        elseif scan_keyword('defaults') then
-            scan_keyword('=')
-            set_defaults()
-        elseif scan_keyword('algorithm') then
-            scan_keyword('=')
-            if scan_keyword('human') then
-                alg_bool = true
-            elseif scan_keyword('tex') then
-                alg_bool = false
-            end
-        elseif scan_keyword('anchor') then
-            for i=texnest.ptr,0,-1 do 
-                if mark_last_vlist(texnest[i].tail) then return end
-            end
-        elseif scan_keyword('label') then
-            scan_keyword('=')
-            local toks = scan_toks(false, true)
-            for i=texnest.ptr,0,-1 do 
-                if label_last_glyph(texnest[i].tail, toks) then return end
-            end
-        elseif scan_keyword('line_attr') then
-            scan_keyword('=')
-            type_attr = scan_int()
-        elseif scan_keyword('col_attr') then
-            scan_keyword('=')
-            col_attr = scan_int()
-        elseif scan_keyword('processbox') then
-            scan_keyword('=')
-            local box = tex.box[scan_int()]
-            number_lines_human(box.head, box, 1, 0, false)
-            node.set_attribute(box, col_attr, -2)
-        else
-            break
+local saved_endlinechar = tex.endlinechar
+    tex.endlinechar = 32
+local function lualineno()
+    local vals = process_keys(lualineno_keys)
+	if vals.set then
+	    local attr = lineno_attr[vals.set]
+        setattribute(type_attr, attr and attr or unset_attr) 
+	end
+	local alg = vals.algorithm
+	if alg == "human" then alg_bool = true end
+	if alg == "tex" then alg_bool = false end
+	if vals.anchor then
+	    for i=texnest.ptr,0,-1 do 
+            if mark_last_vlist(texnest[i].tail) then return end
         end
-    end
-    check_delimiter()    
+	end
+	if vals.label then
+	    for i=texnest.ptr,0,-1 do 
+            if label_last_glyph(texnest[i].tail, vals.label) then return end
+        end
+	end
+	type_attr = vals.line_attr or type_attr
+	col_attr = vals.col_attr or col_attr
+	if vals.processbox then 
+	    local box = tex.box[vals.processbox]
+        number_lines_human(box.head, box, 1, 0, false)
+        node.set_attribute(box, col_attr, -2)
+	end
 end
 
 do
