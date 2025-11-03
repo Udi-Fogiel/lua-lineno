@@ -2,7 +2,7 @@
   luakeyval version   = 0.1, 2025-11-25
   ]]--
 
-local put_next = token.put_next
+local put_next = token.unchecked_put_next
 local get_next = token.get_next
 local scan_toks = token.scan_toks
 local scan_keyword = token.scan_keyword
@@ -13,14 +13,14 @@ local function check_delimiter(str1, str2)
     local tok = get_next()
     if tok.tok ~= relax.tok then
         texerror(str1,{str2})
-        put_next(tok)
+        put_next({tok})
     end
 end
 
-local unpack = table.unpack 
+local unpack, insert = table.unpack, table.insert 
 local function process_keys(tbl)
     local toks = scan_toks()
-    put_next(relax)
+	insert(toks, relax)
     put_next(toks)
     local matched, vals = true, { }
     while matched do
@@ -40,7 +40,7 @@ local function process_keys(tbl)
 			end
 		end
     end
-	check_delimiter()
+	check_delimiter("foo", "bar")
 	return vals
 end
 

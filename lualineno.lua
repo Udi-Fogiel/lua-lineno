@@ -33,7 +33,7 @@ end
 -- was overwritten we restore it at the end. 
 
 local runtoks = tex.runtoks
-local put_next = token.put_next
+local put_next = token.unchecked_put_next
 local create = token.create
 local new_tok = token.new
 
@@ -247,14 +247,14 @@ local traverse = node.traverse
 local function add_boxes_to_line(n, parent, line_type, offset)
 -- In case \LaTeX/ is used without the luacolor package,
 -- we add an additional group to make the boxes color safe.
-    put_next(rbrace, rbrace)
+    put_next({rbrace, rbrace})
     put_next(line_type['start'])
-    put_next(hbox, lbrace, lbrace)
+    put_next({hbox, lbrace, lbrace})
     local start_box = scan_list()
     
-    put_next(rbrace, rbrace)
+    put_next({rbrace, rbrace})
     put_next(line_type['end'])
-    put_next(hbox, lbrace, lbrace)
+    put_next({hbox, lbrace, lbrace})
     local end_box = scan_list()
     
     local start_kern = node.new('kern')
@@ -418,9 +418,9 @@ if format == 'optex' then
                     local label = props.lualineno
                     if label then 
                         runtoks(function()
-                            put_next(rbracket)
+                            put_next({rbracket})
                             put_next(label)
-                            put_next(label_tok,lbracket)
+                            put_next({label_tok,lbracket})
                         end)
                     end 
                 end
@@ -462,9 +462,9 @@ elseif latex then
                     local label = props.lualineno
                     if label then 
                         runtoks(function()
-                            put_next(rbrace,rbrace)
+                            put_next({rbrace,rbrace})
                             put_next(label)
-                            put_next(hbox, lbrace, label_tok,lbrace)
+                            put_next({hbox, lbrace, label_tok,lbrace})
                             local label_node = scan_list()
                             list = insert_after(list,n,node_copy(label_node.head))
                             node_flush(label_node)
