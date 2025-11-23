@@ -83,9 +83,9 @@ local defaults_keys = {
 
 local function set_defaults()
     local vals = process_keys(defaults_keys)
-	for k,v in pairs(vals) do
-	    defaults[k] = v
-	end
+    for k,v in pairs(vals) do
+        defaults[k] = v
+    end
 end
 
 local define_keys = { }
@@ -111,14 +111,14 @@ local function define_lineno()
     col = col or 1
 -- We keep a map between the lineno type names and attributes.
     lineno_attr[name] = lineno_attr[name] or #lineno_types + 1
-	local i = lineno_attr[name]
+    local i = lineno_attr[name]
     lineno_types[i] = lineno_types[i] or { }
 -- Make sure the table for the column of this lineno type exists
     lineno_types[i][col] = lineno_types[i][col] or { }
 -- Populate the column's table.
 -- If a key was not specified we use the defualt value.
     local c = lineno_types[i][col]
-	for k,v in pairs(defaults) do 
+    for k,v in pairs(defaults) do 
         c[k] = vals[k] or defaults[k]
     end
 end
@@ -185,14 +185,14 @@ end
 
 local lualineno_keys = {
     set = {scanner = scan_string},
-	define = {func = define_lineno},
-	defaults = {func = set_defaults},
-	algorithm = {scanner = scan_choice, args = {'human', 'tex'}},
-	anchor,
-	label = {scanner = scan_toks, args = {false, true}},
-	line_attr = {scanner = scan_int},
-	col_attr = {scanner = scan_int},
-	processbox = {scanner = scan_int},
+    define = {func = define_lineno},
+    defaults = {func = set_defaults},
+    algorithm = {scanner = scan_choice, args = {'human', 'tex'}},
+    anchor,
+    label = {scanner = scan_toks, args = {false, true}},
+    line_attr = {scanner = scan_int},
+    col_attr = {scanner = scan_int},
+    processbox = {scanner = scan_int},
 }
 local texnest = tex.nest
 local number_lines_human
@@ -201,31 +201,31 @@ local function lualineno()
     local saved_endlinechar = tex.endlinechar
     tex.endlinechar = 32
     local vals = process_keys(lualineno_keys)
-	tex.endlinechar = saved_endlinechar
-	if vals.set then
-	    local attr = lineno_attr[vals.set]
+    tex.endlinechar = saved_endlinechar
+    if vals.set then
+        local attr = lineno_attr[vals.set]
         setattribute(type_attr, attr and attr or unset_attr) 
-	end
-	local alg = vals.algorithm
-	if alg == "human" then alg_bool = true end
-	if alg == "tex" then alg_bool = false end
-	if vals.anchor then
-	    for i=texnest.ptr,0,-1 do 
+    end
+    local alg = vals.algorithm
+    if alg == "human" then alg_bool = true end
+    if alg == "tex" then alg_bool = false end
+    if vals.anchor then
+        for i=texnest.ptr,0,-1 do 
             if mark_last_vlist(texnest[i].tail) then return end
         end
-	end
-	if vals.label then
-	    for i=texnest.ptr,0,-1 do 
+    end
+    if vals.label then
+        for i=texnest.ptr,0,-1 do 
             if label_last_glyph(texnest[i].tail, vals.label) then return end
         end
-	end
-	type_attr = vals.line_attr or type_attr
-	col_attr = vals.col_attr or col_attr
-	if vals.processbox then 
-	    local box = tex.box[vals.processbox]
+    end
+    type_attr = vals.line_attr or type_attr
+    col_attr = vals.col_attr or col_attr
+    if vals.processbox then 
+        local box = tex.box[vals.processbox]
         number_lines_human(box.head, box, 1, 0, false)
         node.set_attribute(box, col_attr, -2)
-	end
+    end
 end
 
 do
@@ -266,7 +266,7 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     start_kern.kern = -start_box.width - n.shift - offset
     shift_kern.kern = n.shift + offset
     end_kern.kern = parent.width - n.shift - n.width
-		    
+            
     n.head = insert_before(n.list,n.head,shift_kern)
     n.head = insert_before(n.list,n.head,start_box)
     n.head = insert_before(n.list,n.head,start_kern)
@@ -352,30 +352,30 @@ number_lines_human = function(parent, list, column, offset, inline)
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type then
-		    local ltype = line_type[hlist_subs[n.subtype]]
-			if ltype == 'true' or (inline and ltype == 'inline')
+            local ltype = line_type[hlist_subs[n.subtype]]
+            if ltype == 'true' or (inline and ltype == 'inline')
               or n.subtype == 0 then
                 local m, new_offset = real_line(n.head, n, offset)
                 if new_offset then
-			        if get_attribute(m, type_attr) == -1 then
-				        new_offset = 0
-			        else
-				        new_offset = new_offset + n.shift
-				    end
+                    if get_attribute(m, type_attr) == -1 then
+                        new_offset = 0
+                    else
+                        new_offset = new_offset + n.shift
+                    end
                     number_lines_human(m, m.head, column, new_offset, true)
                 elseif m then
-				    local final_offset = line_type['offset'] == 'true' and offset or 0
+                    local final_offset = line_type['offset'] == 'true' and offset or 0
                     call_lineno_callbacks(n, parent, line_type, final_offset)
                 end
             elseif ltype == 'once' and real_box(n.list) then
                 local final_offset = line_type['offset'] == 'true' and offset or 0
                 call_lineno_callbacks(n, parent, line_type, final_offset)
-		    else
-			    local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
-			    number_lines_human(n, n.list, column, is_offset, inline)
-			end
+            else
+                local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
+                number_lines_human(n, n.list, column, is_offset, inline)
+            end
         elseif n.list then
-		    local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
+            local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
             number_lines_human(n, n.list, column, is_offset, inline)
         end
     end
