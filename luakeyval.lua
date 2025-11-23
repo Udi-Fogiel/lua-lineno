@@ -8,26 +8,30 @@ local scan_toks = token.scan_toks
 local scan_keyword = token.scan_keyword
 
 local relax = token.new(token.biggest_char() + 1)
-local texerror = tex.error
-local function check_delimiter(str1, str2)
+local texerror, uni_char = tex.error, utf8.char
+local format = string.format
+local function check_delimiter(str1, str2, key)
     local tok = get_next()
     if tok.tok ~= relax.tok then
-        texerror(str1,{str2})
+        local tok_name = tok.csname or uni_char(tok.mode)
+        texerror(format(str1, key, tok_name),{format(str2, key, tok_name)})
         put_next({tok})
     end
 end
 
 local unpack, insert = table.unpack, table.insert 
-local function process_keys(tbl)
+local function process_keys(tbl, str1, str2)
     local toks = scan_toks()
 	insert(toks, relax)
     put_next(toks)
     local matched, vals = true, { }
+    local curr_key
     while matched do
 	    matched = false
         for key, param in pairs(tbl) do
 		    if scan_keyword(key) then
 			    matched = true
+				curr_key = key
 				local args = param.args or {}
 				local scanner = param.scanner
 				local val = scan_keyword('=') and 
@@ -40,7 +44,7 @@ local function process_keys(tbl)
 			end
 		end
     end
-	check_delimiter("foo", "bar")
+	check_delimiter(str1, str2, curr_key)
 	return vals
 end
 

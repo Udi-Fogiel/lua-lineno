@@ -81,8 +81,14 @@ local defaults_keys = {
     offset = {scanner = scan_choice, args = {'true', 'false'}}
 }
 
+local help_message = [[
+the last scanned key was "%s".
+there is a "%s" in the way.
+]]
 local function set_defaults()
-    local vals = process_keys(defaults_keys)
+    local vals = process_keys(defaults_keys,
+      "lualineno: wrong syntax when setting defaults",
+      help_message)
     for k,v in pairs(vals) do
         defaults[k] = v
     end
@@ -99,11 +105,13 @@ local function define_lineno()
 -- This function is used in the define key.
 -- It is very similar to the set_defaults() function,
 -- but it accepts a `column` and `name` keys as well.
-    local vals = process_keys(define_keys)
+    local vals = process_keys(define_keys,
+      "lualineno: wrong syntax when defining a lineno",
+      help_message)
 -- A newly defined lualineno type must have a name
     local name = vals['name']
     if not name then 
-        texerror("lualineno: missing name in \\lualineno")
+        texerror("lualineno: missing name in when defining a lineno")
     end
 -- If the `column` key is not specified we assume 
 -- the definition is for the first (or only) column.
@@ -200,7 +208,9 @@ local number_lines_human
 local function lualineno()
     local saved_endlinechar = tex.endlinechar
     tex.endlinechar = 32
-    local vals = process_keys(lualineno_keys)
+    local vals = process_keys(lualineno_keys,
+      "lualineno: wrong syntax in \\lualineno",
+      help_message)
     tex.endlinechar = saved_endlinechar
     if vals.set then
         local attr = lineno_attr[vals.set]
