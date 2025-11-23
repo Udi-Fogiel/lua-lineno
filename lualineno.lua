@@ -156,9 +156,9 @@ local set_props = node.setproperty
 local make_labels
 local function label_last_glyph(m, tokens)
     if optex then
-        luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', make_labels, 'lualineno.labels')
+        luatexbase.add_to_callback('lualineno.pre_numbering', make_labels, 'lualineno.labels')
     elseif latex then
-        luatexbase.add_to_callback('lualineno.post_add_numbers_filter', make_labels, 'lualineno.labels')
+        luatexbase.add_to_callback('lualineno.post_numbering', make_labels, 'lualineno.labels')
     end
     label_last_glyph = function(n, toks)
         local current = n
@@ -180,7 +180,7 @@ local function label_last_glyph(m, tokens)
         end
         return false
     end
-    label_last_glyph(m, tokens)
+    return label_last_glyph(m, tokens)
 end
 
 local lualineno_keys = {
@@ -233,13 +233,14 @@ do
       texio.write_nl('log', "lualineno: redefining \\lualineno")
   end
   local function_table = lua.get_functions_table()
-  local luafnalloc = luatexbase and luatexbase.new_luafunction and luatexbase.new_luafunction('lualineno') or #function_table + 1
+  local luafnalloc = luatexbase and luatexbase.new_luafunction 
+    and luatexbase.new_luafunction('lualineno') or #function_table + 1
   token.set_lua('lualineno', luafnalloc)
   function_table[luafnalloc] = lualineno
 end
 
 -- \secc a^^M
-
+-- \docfile
 local get_attribute = node.get_attribute
 local insert_before = node.insert_before
 local insert_after = node.insert_after
@@ -278,19 +279,19 @@ end
 
 local call_lineno_callbacks
 if luatexbase then
-    luatexbase.create_callback('lualineno.pre_add_numbers_filter', 'list', false)
-    luatexbase.create_callback('lualineno.add_numbers', 'exclusive', add_boxes_to_line)
-    luatexbase.create_callback('lualineno.post_add_numbers_filter', 'reverselist', false)
-    luatexbase.add_to_callback('lualineno.pre_add_numbers_filter', function(n, parent, line_type, offset)
+    luatexbase.create_callback('lualineno.pre_numbering', 'list', false)
+    luatexbase.create_callback('lualineno.numbering', 'exclusive', add_boxes_to_line)
+    luatexbase.create_callback('lualineno.post_numbering', 'reverselist', false)
+    luatexbase.add_to_callback('lualineno.pre_numbering', function(n, parent, line_type, offset)
         runtoks(function() put_next(line_type['toks']) end) 
     return true end, 'lualineno.runtoks')
     local call_callback = luatexbase.call_callback
     call_lineno_callbacks = function(head, parent, line_type, offset)
-        local current = call_callback('lualineno.pre_add_numbers_filter', head, parent, line_type, offset)
+        local current = call_callback('lualineno.pre_numbering', head, parent, line_type, offset)
         head = current == true and head or current
-        current = call_callback('lualineno.add_numbers', head , parent, line_type, offset)
+        current = call_callback('lualineno.numbering', head , parent, line_type, offset)
         head = current == true and head or current
-        call_callback('lualineno.post_add_numbers_filter', head , parent, line_type, offset)
+        call_callback('lualineno.post_numbering', head , parent, line_type, offset)
     end
 else
     call_lineno_callbacks = function(head, parent, line_type, offset)
@@ -350,21 +351,32 @@ number_lines_human = function(parent, list, column, offset, inline)
     for n in traverse(list) do
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr][column]
-        if n.id == hlist_id and line_type and
-               (line_type[hlist_subs[n.subtype]] == 'true' or
-               (inline and line_type[hlist_subs[n.subtype]] == 'inline') or
-               n.subtype == 0) then
-            local m, new_offset = real_line(n.head, n, offset)
-            if new_offset then
-                new_offset = new_offset  + n.shift
-                number_lines_human(m, m.head, column, get_attribute(m, type_attr) == -1 and 0 or new_offset, true)
-            elseif m then
-                call_lineno_callbacks(n, parent, line_type, line_type['offset'] == 'true' and offset or 0)
-            end
-        elseif n.id == hlist_id and line_type and line_type[hlist_subs[n.subtype]] == 'once' and real_box(n.list) then
-            call_lineno_callbacks(n, parent, line_type, line_type['offset']  == 'true' and offset or 0)
+        if n.id == hlist_id and line_type then
+		    local ltype = line_type[hlist_subs[n.subtype]]
+			if ltype == 'true' or (inline and ltype == 'inline')
+              or n.subtype == 0 then
+                local m, new_offset = real_line(n.head, n, offset)
+                if new_offset then
+			        if get_attribute(m, type_attr) == -1 then
+				        new_offset = 0
+			        else
+				        new_offset = new_offset + n.shift
+				    end
+                    number_lines_human(m, m.head, column, new_offset, true)
+                elseif m then
+				    local final_offset = line_type['offset'] == 'true' and offset or 0
+                    call_lineno_callbacks(n, parent, line_type, final_offset)
+                end
+            elseif ltype == 'once' and real_box(n.list) then
+                local final_offset = line_type['offset'] == 'true' and offset or 0
+                call_lineno_callbacks(n, parent, line_type, final_offset)
+		    else
+			    local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
+			    number_lines_human(n, n.list, column, is_offset, inline)
+			end
         elseif n.list then
-            number_lines_human(n, n.list, column, get_attribute(n, type_attr) == -1 and 0 or offset, inline)
+		    local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
+            number_lines_human(n, n.list, column, is_offset, inline)
         end
     end
 end

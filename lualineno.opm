@@ -51,9 +51,7 @@ according to the column.
 
 \sec Lua module
 
-\commentchars-- \vitt{lualineno.lua}
-\verbinput \hisyntax{lua} (1-) lualineno.lua
-
+\verbinput \commentchars-- \vitt{lualineno.lua} \hisyntax{lua} (1-) lualineno.lua
 
 \sec \OpTeX/ package
 The \OpTeX/ package deos not contain much. It is mainly here
@@ -66,8 +64,7 @@ in case someone prefer to type `\load[lualineno]` instead of
 The \LaTeX/ package mostly contains patches to
 other packages. 
 
-\commentchars\%\% \vitt{lualineno.sty}
-\verbinput \hisyntax{tex} (1-) lualineno.sty
+\verbinput \commentchars\%\% \vitt{lualineno.sty} \hisyntax{tex} (1-) lualineno.sty
 
 \bye
 \_cod
