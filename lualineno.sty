@@ -5,9 +5,8 @@
 \directlua{require('lualineno')}
 
 \AddToHook{package/multicol/after}{%
-  \directlua{token.set_macro("page@sofar", 
-      token.get_macro("page@sofar"):gsub("\\mc@align@columns", 
-      "\\directlua {local right_box = token.create('mult@rightbox').index
+  \directlua{
+      local replace = "\\directlua {local right_box = token.create('mult@rightbox').index
         local col_attr = luatexbase.attributes['lualineno_col']
         local i = right_box
         local last = tex.count['doublecol@number'] - 2
@@ -17,26 +16,39 @@
             column = column + 1
             tex.box[i][col_attr] = column
         end
-        tex.box[right_box][col_attr] = column + 1}\\mc@align@columns"))}}
+        tex.box[right_box][col_attr] = column + 1}\\mc@align@columns"
+      local find = "\\mc@align@columns"
+      local patch, success = token.get_macro("page@sofar"):gsub(find, replace)
+      if success then
+          token.set_macro("page@sofar", patch)
+      else
+          texio.write_nl('log', "lualineno: failed to patch \\page@sofar (multicol)")
+      end}}
   
 \AddToHook{package/balance/after}{%
-    \expandafter\renewcommand\expandafter
-    \@BAlancecol\expandafter{\@BAlancecol\directlua{
-        local sec_col = token.create('@outputbox').index
-        local first_col = token.create('@leftcolumn').index
-        local col_attr = luatexbase.attributes['lualineno_col']
-        tex.box[sec_col][col_attr] = 2
-        tex.box[first_col][col_attr] = 1}}}
+  \expandafter\renewcommand\expandafter
+  \@BAlancecol\expandafter{\@BAlancecol\directlua{
+      local sec_col = token.create('@outputbox').index
+      local first_col = token.create('@leftcolumn').index
+      local col_attr = luatexbase.attributes['lualineno_col']
+      tex.box[sec_col][col_attr] = 2
+      tex.box[first_col][col_attr] = 1}}}
         
 \AddToHook{package/flushend/after}{%
-    \directlua{token.set_macro("last@outputdblcol", 
-        token.get_macro("last@outputdblcol"):gsub("\\set@outputbox@with@footnote@and@float \\fi",
-        "\\set@outputbox@with@footnote@and@float \\fi \\directlua {
-             local sec_col = token.create('@outputbox').index
-             local first_col = token.create('@leftcolumn').index
-             local col_attr = luatexbase.attributes['lualineno_col']
-             tex.box[sec_col][col_attr] = 2
-             tex.box[first_col][col_attr] = 1}"))}}
+    \directlua{
+      local replace = "\\set@outputbox@with@footnote@and@float \\fi \\directlua {
+          local sec_col = token.create('@outputbox').index
+          local first_col = token.create('@leftcolumn').index
+          local col_attr = luatexbase.attributes['lualineno_col']
+          tex.box[sec_col][col_attr] = 2
+          tex.box[first_col][col_attr] = 1}"
+      local find = "\\set@outputbox@with@footnote@and@float \\fi"
+      local patch, success = token.get_macro("last@outputdblcol"):gsub(find, replace)
+      if success then
+          token.set_macro("last@outputdblcol", patch)
+      else
+          texio.write_nl('log', "lualineno: failed to patch \\last@outputdblcol (flushend)")
+      end}}
 
 \AddToHook{package/ltxgrid/after}{%
 \def\box@column#1{%

@@ -422,10 +422,10 @@ if format == 'optex' then
     node.write(column)
 }]]
     local find = [[\_vsplit 6 to\_dimen 1 ]]
-    local patched_multi, success = token.get_macro("_createcolumns"):gsub(find, replace)
+    local patch, success = token.get_macro("_createcolumns"):gsub(find, replace)
 -- Log the success or failure of the patch
     if success then
-        token.set_macro("_createcolumns", patched_multi)
+        token.set_macro("_createcolumns", patch)
     else
         texio.write_nl('log', "lualineno: failed to patch \\_createcolumns")
     end
