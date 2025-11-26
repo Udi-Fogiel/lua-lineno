@@ -7,9 +7,7 @@
 
 local format = tex.formatname
 local texerror = tex.error
-
 local optex, latex, plain
-
 if format:find("optex") then -- OpTeX
     optex = true
 elseif format:find("latex") then -- lualatex, lualatex-dev, ...
@@ -20,8 +18,6 @@ elseif format == "luatex" or
 then -- Plain
     plain = true
 end
-
-
 if not (optex or latex or plain) then
     error("lualineno: The format " .. format .. " is not supported\n\n" ..
              "Use OpTeX, LuaLaTeX or Plain.")
@@ -263,27 +259,31 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     put_next(line_type['start'])
     put_next({hbox, lbrace, lbrace})
     local start_box = scan_list()
-    
+    if start_box.head then
+        local start_kern = node.new('kern', 1)
+        local shift_kern = node.new('kern', 1)
+        start_kern.kern = -start_box.width - n.shift - offset
+        shift_kern.kern = n.shift + offset
+        if shift_kern.kern ~= 0 then
+            n.head = insert_before(n.list,n.head,shift_kern)
+        end
+        n.head = insert_before(n.list,n.head,start_box)
+        if start_kern.kern ~= 0 then
+            n.head = insert_before(n.list,n.head,start_kern)
+        end
+    end
     put_next({rbrace, rbrace})
     put_next(line_type['end'])
     put_next({hbox, lbrace, lbrace})
     local end_box = scan_list()
-    
-    local start_kern = node.new('kern')
-    local shift_kern = node.new('kern')
-    local end_kern = node.new('kern')
-         
-    start_kern.kern = -start_box.width - n.shift - offset
-    shift_kern.kern = n.shift + offset
-    end_kern.kern = parent.width - n.shift - n.width
-            
-    n.head = insert_before(n.list,n.head,shift_kern)
-    n.head = insert_before(n.list,n.head,start_box)
-    n.head = insert_before(n.list,n.head,start_kern)
-    if n.subtype ~= 1 then
-        n.head = insert_after(n.list,tail(n.head),end_kern)
+    if end_box.head then
+        local end_kern = node.new('kern', 1)
+        end_kern.kern = parent.width - n.shift - n.width
+        if end_kern.kern ~= 0 then
+            n.head = insert_after(n.list,tail(n.head),end_kern)
+        end
+        n.head = insert_after(n.list,tail(n.head),end_box)
     end
-    n.head = insert_after(n.list,tail(n.head),end_box)
     return n.head
 end
 
@@ -425,7 +425,6 @@ if format == 'optex' then
     local patched_multi, success = token.get_macro("_createcolumns"):gsub(find, replace)
 -- Log the success or failure of the patch
     if success then
-        texio.write_nl('log', "lualineno: patching \\_createcolumns")
         token.set_macro("_createcolumns", patched_multi)
     else
         texio.write_nl('log', "lualineno: failed to patch \\_createcolumns")

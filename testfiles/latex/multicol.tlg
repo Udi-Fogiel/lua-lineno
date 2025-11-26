@@ -75,11 +75,10 @@ Completed box being shipped out [1]
 .....\glue 0.0 plus -2.0
 .....\glue(\splittopskip) 3.06 plus 2.0
 .....\hbox(6.94+1.94)x108.33333, glue set 3.0941, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 1
 .......\kern4.00002
-......\kern0.0 (font)
 ......\localpar
 .......\localinterlinepenalty=0
 .......\localbrokenpenalty=0
@@ -108,15 +107,13 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 o
 ......\TU/lmr/m/n/10 r
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\penalty 150
 .....\glue(\baselineskip) 3.48999
 .....\hbox(6.57+1.93)x108.33333, glue set 3.38028, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 2
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 s
 ......\TU/lmr/m/n/10 i
 ......\TU/lmr/m/n/10 t
@@ -142,14 +139,12 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 r
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue(\baselineskip) 3.13
 .....\hbox(6.94+2.06)x108.33333, glue set 1.36017, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.11)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 3
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 a
 ......\TU/lmr/m/n/10 d
 ......\TU/lmr/m/n/10 i
@@ -179,15 +174,13 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 -
 ......\discretionary (penalty 50)
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\penalty 100
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+1.93)x108.33333, glue set 1.51228, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.385+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 4
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 r
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 s
@@ -216,14 +209,12 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 t
 ......\TU/lmr/m/n/10 ,
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue(\baselineskip) 3.13
 .....\hbox(6.94+2.06)x108.33333, glue set 2.9425, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.11)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 5
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 p
 ......\TU/lmr/m/n/10 l
 ......\TU/lmr/m/n/10 a
@@ -254,14 +245,12 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 n
 ......\TU/lmr/m/n/10 g
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue(\baselineskip) 2.89
 .....\hbox(7.05+1.93)x108.33333, glue set 1.86588, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.11)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 6
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 v
 ......\TU/lmr/m/n/10 i
 ......\discretionary (penalty 50)
@@ -292,14 +281,12 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 r
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue(\baselineskip) 3.13
 .....\hbox(6.94+2.06)x108.33333, glue set 4.99501, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.38+0.11)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 7
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 d
 ......\TU/lmr/m/n/10 i
 ......\TU/lmr/m/n/10 c
@@ -324,15 +311,13 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 -
 ......\discretionary (penalty 50)
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\penalty 100
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+1.93)x108.33333, glue set 1.98479, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.11)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 8
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 r
 ......\TU/lmr/m/n/10 i
 ......\TU/lmr/m/n/10 s
@@ -356,14 +341,12 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 o
 ......\TU/lmr/m/n/10 ,
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue(\baselineskip) 3.92001
 .....\hbox(6.15+2.06)x108.33333, glue set 5.26752, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.11)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 9
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 n
 ......\TU/lmr/m/n/10 o
 ......\TU/lmr/m/n/10 n
@@ -388,16 +371,14 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 -
 ......\discretionary (penalty 50)
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\penalty 100
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+1.94)x108.33333, glue set - 0.47511, direction TLT
-......\kern-10.81001 (font)
+......\kern-10.81001
 ......\hbox(3.33+0.11)x10.81001, direction TLT
 .......\TU/lmr/m/n/5 1
 .......\TU/lmr/m/n/5 0
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 s
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 c
@@ -427,15 +408,13 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 a
 ......\TU/lmr/m/n/10 ,
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue(\baselineskip) 3.12
 .....\hbox(6.94+2.06)x108.33333, glue set 0.93893, direction TLT
-......\kern-10.81001 (font)
+......\kern-10.81001
 ......\hbox(3.33+0.0)x10.81001, direction TLT
 .......\TU/lmr/m/n/5 1
 .......\TU/lmr/m/n/5 1
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 m
 ......\TU/lmr/m/n/10 a
 ......\TU/lmr/m/n/10 g
@@ -463,15 +442,13 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 l
 ......\TU/lmr/m/n/10 a
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+2.06)x108.33333, glue set 0.45085, direction TLT
-......\kern-10.81001 (font)
+......\kern-10.81001
 ......\hbox(3.33+0.0)x10.81001, direction TLT
 .......\TU/lmr/m/n/5 1
 .......\TU/lmr/m/n/5 2
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 a
 ......\TU/lmr/m/n/10 u
 ......\discretionary (penalty 50)
@@ -502,16 +479,14 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 -
 ......\discretionary (penalty 50)
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\penalty 100
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+1.94)x108.33333, glue set 3.4755, direction TLT
-......\kern-10.81001 (font)
+......\kern-10.81001
 ......\hbox(3.33+0.11)x10.81001, direction TLT
 .......\TU/lmr/m/n/5 1
 .......\TU/lmr/m/n/5 3
 .......\kern4.00002
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 t
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 s
@@ -537,7 +512,6 @@ Completed box being shipped out [1]
 ......\TU/lmr/m/n/10 b
 ......\TU/lmr/m/n/10 i
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ....\rule(*+*)x0.0
 ....\glue 0.0 plus 1.0fil minus 1.0fil
@@ -545,9 +519,6 @@ Completed box being shipped out [1]
 .....\glue 0.0 plus -2.0
 .....\glue(\splittopskip) 3.43 plus 2.0
 .....\hbox(6.57+1.94)x108.33333, glue set 0.79947, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 t
 ......\TU/lmr/m/n/10 r
 ......\TU/lmr/m/n/10 i
@@ -586,9 +557,6 @@ Completed box being shipped out [1]
 .....\penalty 100
 .....\glue(\baselineskip) 3.01
 .....\hbox(7.05+0.11)x108.33333, glue set 1.24992, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 t
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 s
@@ -620,9 +588,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 5.06
 .....\hbox(6.83+2.06)x108.33333, glue set - 0.63965, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 a
 ......\TU/lmr/m/n/10 c
 ......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
@@ -659,9 +624,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 2.89
 .....\hbox(7.05+0.22)x108.33333, glue set 0.29362, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 t
 ......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
@@ -696,9 +658,6 @@ Completed box being shipped out [1]
 .....\penalty 100
 .....\glue(\baselineskip) 4.84
 .....\hbox(6.94+0.11)x108.33333, glue set 0.81122, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 t
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 s
@@ -730,9 +689,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 4.95
 .....\hbox(6.94+0.11)x108.33333, glue set - 0.87587, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 t
 ......\glue(\spaceskip) 3.33 plus 1.665 minus 1.11
@@ -770,9 +726,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 4.84
 .....\hbox(7.05+2.06)x108.33333, glue set 0.07707, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 f
 ......\TU/lmr/m/n/10 r
 ......\TU/lmr/m/n/10 i
@@ -813,9 +766,6 @@ Completed box being shipped out [1]
 .....\penalty 100
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+0.11)x108.33333, glue set 2.56357, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 l
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 s
@@ -847,9 +797,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 4.95
 .....\hbox(6.94+2.06)x108.33333, glue set 1.7968, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 t
 ......\TU/lmr/m/n/10 o
 ......\TU/lmr/m/n/10 r
@@ -886,9 +833,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 3.11
 .....\hbox(6.83+2.06)x108.33333, glue set 2.64696, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 I
 ......\TU/lmr/m/n/10 n
 ......\discretionary (penalty 50)
@@ -926,9 +870,6 @@ Completed box being shipped out [1]
 .....\penalty 100
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+1.94)x108.33333, glue set 2.38455, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 c
 ......\discretionary (penalty 50)
 .......< \TU/lmr/m/n/10 -
@@ -961,9 +902,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 3.23
 .....\hbox(6.83+1.93)x108.33333, glue set 0.8641, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 v
 ......\TU/lmr/m/n/10 i
 ......\TU/lmr/m/n/10 v
@@ -998,9 +936,6 @@ Completed box being shipped out [1]
 .....\penalty 100
 .....\glue(\baselineskip) 3.13
 .....\hbox(6.94+2.06)x108.33333, glue set 2.78429, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 s
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 n
@@ -1036,9 +971,6 @@ Completed box being shipped out [1]
 .....\glue 0.0 plus -2.0
 .....\glue(\splittopskip) 2.84 plus 2.0
 .....\hbox(7.16+0.11)x108.33333, glue set 1.11311, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 l
 ......\discretionary (penalty 50)
@@ -1078,9 +1010,6 @@ Completed box being shipped out [1]
 .....\penalty 100
 .....\glue(\baselineskip) 4.84
 .....\hbox(7.05+0.11)x108.33333, glue set 2.23625, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 n
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 a
@@ -1110,9 +1039,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 4.95
 .....\hbox(6.94+1.93)x108.33333, glue set 2.5688, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 d
 ......\TU/lmr/m/n/10 o
 ......\discretionary (penalty 50)
@@ -1147,9 +1073,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 3.13
 .....\hbox(6.94+1.94)x108.33333, glue set 2.03233, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 ,
@@ -1186,9 +1109,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 3.01
 .....\hbox(7.05+1.93)x108.33333, glue set - 0.38289, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 a
 ......\TU/lmr/m/n/10 c
 ......\TU/lmr/m/n/10 ,
@@ -1226,9 +1146,6 @@ Completed box being shipped out [1]
 .....\penalty 100
 .....\glue(\baselineskip) 3.13
 .....\hbox(6.94+1.94)x108.33333, glue set 0.27068, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 t
 ......\TU/lmr/m/n/10 o
 ......\TU/lmr/m/n/10 r
@@ -1263,9 +1180,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 3.48999
 .....\hbox(6.57+2.06)x108.33333, glue set 3.1218, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 v
 ......\kern-0.56 (font)
 ......\TU/lmr/m/n/10 a
@@ -1299,9 +1213,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+2.06)x108.33333, glue set 2.78557, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 D
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 i
@@ -1329,9 +1240,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 2.89
 .....\hbox(7.05+1.93)x108.33333, glue set 2.87845, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 u
 ......\TU/lmr/m/n/10 ,
@@ -1365,9 +1273,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 3.13
 .....\hbox(6.94+2.06)x108.33333, glue set 0.14911, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 s
 ......\TU/lmr/m/n/10 a
 ......\TU/lmr/m/n/10 g
@@ -1402,9 +1307,6 @@ Completed box being shipped out [1]
 .......\kern4.00002
 .....\glue(\baselineskip) 3.37
 .....\hbox(6.57+2.06)x108.33333, glue set 1.90591, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 e
 ......\TU/lmr/m/n/10 g
 ......\TU/lmr/m/n/10 e
@@ -1436,9 +1338,6 @@ Completed box being shipped out [1]
 .....\penalty 150
 .....\glue(\baselineskip) 3.0
 .....\hbox(6.94+2.06)x108.33333, glue set 30.37334fil, direction TLT
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
-......\kern0.0 (font)
 ......\TU/lmr/m/n/10 d
 ......\TU/lmr/m/n/10 i
 ......\TU/lmr/m/n/10 g

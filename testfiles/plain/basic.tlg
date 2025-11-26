@@ -11,11 +11,10 @@ Completed box being shipped out [1]
 .\vbox(643.20255+0.0)x469.75499, glue set 511.25812fill, direction TLT
 ..\glue(\topskip) 3.05556
 ..\hbox(6.94444+1.94444)x469.75499, glue set 0.0635, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 1
 ....\kern8.00003
-...\kern0.0 (font)
 ...\localpar
 ....\localinterlinepenalty=0
 ....\localbrokenpenalty=0
@@ -138,15 +137,13 @@ Completed box being shipped out [1]
 ...\tenrm e
 ...\tenrm X
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\penalty 150
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set 0.64133, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 2
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm r
 ...\tenrm e
 ...\tenrm p
@@ -280,14 +277,12 @@ Completed box being shipped out [1]
 ...\tenrm t
 ...\tenrm ,
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set 0.87349, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 3
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm a
 ...\tenrm r
 ...\discretionary (penalty 50)
@@ -411,14 +406,12 @@ Completed box being shipped out [1]
 ...\tenrm u
 ...\tenrm t
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set 0.2035, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 4
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm t
 ...\kern-0.27779 (font)
 ...\tenrm y
@@ -566,14 +559,12 @@ Completed box being shipped out [1]
 ...\tenrm a
 ...\tenrm l
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set 0.49606, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 5
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm t
 ...\tenrm e
 ...\tenrm x
@@ -694,14 +685,12 @@ Completed box being shipped out [1]
 ...\tenrm n
 ...\tenrm d
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set 0.06032, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 6
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm e
 ...\tenrm x
 ...\discretionary (penalty 50)
@@ -829,14 +818,12 @@ Completed box being shipped out [1]
 ...\tenrm r
 ...\tenrm s
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set - 0.18806, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 7
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm a
 ...\kern-0.27779 (font)
 ...\tenrm w
@@ -968,14 +955,12 @@ Completed box being shipped out [1]
 ...\tenrm e
 ...\tenrm d
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set - 0.26804, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 8
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm n
 ...\tenrm o
 ...\tenrm t
@@ -1096,14 +1081,12 @@ Completed box being shipped out [1]
 ...\tenrm e
 ...\tenrm x
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set 0.19908, direction TLT
-...\kern-13.00005 (font)
+...\kern-13.00005
 ...\hbox(6.44444+0.0)x13.00005, direction TLT
 ....\tenrm 9
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm d
 ...\tenrm o
 ...\kern0.27779 (font)
@@ -1243,15 +1226,13 @@ Completed box being shipped out [1]
 ...\tenrm l
 ...\tenrm y
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set 0.22697, direction TLT
-...\kern-18.00006 (font)
+...\kern-18.00006
 ...\hbox(6.44444+0.0)x18.00006, direction TLT
 ....\tenrm 1
 ....\tenrm 0
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm d
 ...\tenrm r
 ...\tenrm a
@@ -1380,16 +1361,14 @@ Completed box being shipped out [1]
 ...\tenrm h
 ...\tenrm e
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\penalty 150
 ..\glue(\baselineskip) 3.11111
 ..\hbox(6.94444+1.94444)x469.75499, glue set 106.0321fil, direction TLT
-...\kern-18.00006 (font)
+...\kern-18.00006
 ...\hbox(6.44444+0.0)x18.00006, direction TLT
 ....\tenrm 1
 ....\tenrm 1
 ....\kern8.00003
-...\kern0.0 (font)
 ...\tenrm ^^L (ligature fi)
 ...\tenrm r
 ...\tenrm s
@@ -1493,7 +1472,6 @@ Completed box being shipped out [1]
 ...\penalty 10000
 ...\glue(\parfillskip) 0.0 plus 1.0fil
 ...\glue(\rightskip) 0.0
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\glue 0.0 plus 1.0fill
 .\glue(\baselineskip) 17.55556
 .\hbox(6.44444+0.0)x469.75499, glue set 232.37749fil, direction TLT

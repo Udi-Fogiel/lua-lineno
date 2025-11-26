@@ -20,12 +20,11 @@ Completed box being shipped out [1]
 ..\glue 0.0
 ..\glue(\baselineskip) 6.35997
 ..\hbox(8.64003+0.83333)x455.24408, glue set 0.18518, direction TLT
-...\kern-13.00003 (font)
+...\kern-13.00003
 ...\hbox(6.29724+0.0)x13.00003, direction TLT
 ....\pdfliteral direct <lua data reference ...>
 ....\_tenrm 1
 ....\kern8.00003
-...\kern0.0 (font)
 ...\glue(\tabskip) 0.0 plus 1000.0 minus 1000.0
 ...\hbox(8.64003+0.83333)x30.772, direction TLT
 ....\glue 0.0 plus 1.0fil
@@ -55,16 +54,13 @@ Completed box being shipped out [1]
 ....\mathoff
 ....\glue 0.0 plus 1.0fil
 ...\glue(\tabskip) 0.0 plus 1000.0 minus 1000.0
-...\kern0.0 (font)
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\penalty 100
 ..\glue(\baselineskip) 3.54514
 ..\hbox(10.62154+2.5)x455.24408, glue set 0.18518, direction TLT
-...\kern-13.00003 (font)
+...\kern-13.00003
 ...\hbox(6.29724+0.0)x13.00003, direction TLT
 ....\_tenrm 2
 ....\kern8.00003
-...\kern0.0 (font)
 ...\glue(\tabskip) 0.0 plus 1000.0 minus 1000.0
 ...\hbox(10.62154+2.5)x30.772, glue set 26.44444fil, direction TLT
 ....\glue 0.0 plus 1.0fil
@@ -109,8 +105,6 @@ Completed box being shipped out [1]
 ......\_tenrm )
 .....\mathoff
 ...\glue(\tabskip) 0.0
-...\kern0.0 (font)
-...\hbox(0.0+0.0)x0.0, direction TLT
 ..\penalty 100
 ..\penalty 0
 ..\glue(\belowdisplayskip) 12.0 plus 3.0 minus 9.0

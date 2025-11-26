@@ -20,12 +20,12 @@ Completed box being shipped out [1]
 ..\hbox(18.69444+13.69444)x84.40031, shifted 185.42189, direction TLT
 ...\vbox(18.69444+13.69444)x84.40031, direction TLT
 ....\hbox(6.44444+1.94444)x84.40031, direction TLT
-.....\kern-198.42192 (font)
+.....\kern-198.42192
 .....\hbox(6.29724+0.0)x13.00003, direction TLT
 ......\pdfliteral direct <lua data reference ...>
 ......\_tenrm 1
 ......\kern8.00003
-.....\kern185.42189 (font)
+.....\kern185.42189
 .....\glue(\tabskip) 0.0
 .....\hbox(6.44444+1.94444)x13.49307, glue set 7.7778fill, direction TLT
 ......\glue 0.0 plus 1.0fill
@@ -121,15 +121,13 @@ Completed box being shipped out [1]
 ......\kern0.0
 ......\glue 0.0 plus 1.0fil
 .....\glue(\tabskip) 0.0
-.....\kern0.0 (font)
-.....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue(\baselineskip) 3.61111
 ....\hbox(6.44444+1.94444)x84.40031, direction TLT
-.....\kern-198.42192 (font)
+.....\kern-198.42192
 .....\hbox(6.29724+0.0)x13.00003, direction TLT
 ......\_tenrm 2
 ......\kern8.00003
-.....\kern185.42189 (font)
+.....\kern185.42189
 .....\glue(\tabskip) 0.0
 .....\hbox(6.44444+1.94444)x13.49307, glue set 2.77779fill, direction TLT
 ......\glue 0.0 plus 1.0fill
@@ -226,15 +224,13 @@ Completed box being shipped out [1]
 ......\kern0.0
 ......\glue 0.0 plus 1.0fil
 .....\glue(\tabskip) 0.0
-.....\kern0.0 (font)
-.....\hbox(0.0+0.0)x0.0, direction TLT
 ....\glue(\baselineskip) 3.61111
 ....\hbox(6.44444+1.94444)x84.40031, direction TLT
-.....\kern-198.42192 (font)
+.....\kern-198.42192
 .....\hbox(6.29724+0.0)x13.00003, direction TLT
 ......\_tenrm 3
 ......\kern8.00003
-.....\kern185.42189 (font)
+.....\kern185.42189
 .....\glue(\tabskip) 0.0
 .....\hbox(6.44444+1.94444)x13.49307, direction TLT
 ......\glue 0.0 plus 1.0fill
@@ -325,8 +321,6 @@ Completed box being shipped out [1]
 ......\kern0.0
 ......\glue 0.0 plus 1.0fil
 .....\glue(\tabskip) 0.0
-.....\kern0.0 (font)
-.....\hbox(0.0+0.0)x0.0, direction TLT
 ..\penalty 0
 ..\glue(\belowdisplayshortskip) 7.0 plus 3.0 minus 4.0
 ..\glue 0.0 plus 1.0fill

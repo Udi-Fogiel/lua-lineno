@@ -16,11 +16,10 @@ Completed box being shipped out [1]
 .....\write1{\@writefile{lot}{\protect \contentsline {table}{\protect \numberline {1}{\ignorespaces table caption}}{\thepage }{}\protected@file@percent }}
 .....\glue 10.0
 .....\hbox(6.94+1.94)x345.0, glue set 124.02501fil, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 1
 .......\kern4.00002
-......\kern0.0 (font)
 ......\glue 0.0 plus 1.0fil
 ......\hbox(6.94+1.94)x96.95, direction TLT
 .......\TU/lmr/m/n/10 T
@@ -54,18 +53,15 @@ Completed box being shipped out [1]
 .......\TU/lmr/m/n/10 o
 .......\TU/lmr/m/n/10 n
 ......\glue 0.0 plus 1.0fil
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0
 .....\glue(\parskip) 0.0
 .....\glue(\parskip) 0.0
 .....\glue(\baselineskip) 3.91
 .....\hbox(6.15+0.11)x345.0, glue set 302.45999fil, direction TLT
-......\kern-7.40501 (font)
+......\kern-7.40501
 ......\hbox(3.33+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 2
 .......\kern4.00002
-......\kern0.0 (font)
 ......\localpar
 .......\localinterlinepenalty=0
 .......\localbrokenpenalty=0
@@ -84,7 +80,6 @@ Completed box being shipped out [1]
 ......\penalty 10000
 ......\glue(\parfillskip) 0.0 plus 1.0fil
 ......\glue(\rightskip) 0.0
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0
 ...\glue 12.0 plus 2.0 minus 2.0
 ...\glue -12.0 plus -2.0 minus -2.0

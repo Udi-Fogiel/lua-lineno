@@ -30,11 +30,11 @@ Completed box being shipped out [1]
 ....\hbox(0.0+0.0)x0.0, direction TLT
 ....\vbox(16.0+11.0)x16.41943, direction TLT
 .....\hbox(8.39996+3.60004)x16.41943, direction TLT
-......\kern-171.6953 (font)
+......\kern-171.6953
 ......\hbox(3.33+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 1
 .......\kern4.00002
-......\kern164.29028 (font)
+......\kern164.29028
 ......\glue(\tabskip) 0.0
 ......\hbox(8.39996+3.60004)x7.86249, glue set 0.36247fil, direction TLT
 .......\glue 0.0 plus 1.0fil
@@ -68,16 +68,14 @@ Completed box being shipped out [1]
 ........\kern-10.0
 .......\mathoff
 ......\glue(\tabskip) 0.0
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0
 .....\glue(\baselineskip) 3.0
 .....\hbox(8.39996+3.60004)x16.41943, direction TLT
-......\kern-171.6953 (font)
+......\kern-171.6953
 ......\hbox(3.33+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 2
 .......\kern4.00002
-......\kern164.29028 (font)
+......\kern164.29028
 ......\glue(\tabskip) 0.0
 ......\hbox(8.39996+3.60004)x7.86249, direction TLT
 .......\glue 0.0 plus 1.0fil
@@ -100,8 +98,6 @@ Completed box being shipped out [1]
 .......\mathoff
 .......\glue 0.0 plus 1.0fil
 ......\glue(\tabskip) 10.0
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue 0.0
 ...\penalty 0
 ...\glue(\belowdisplayshortskip) 6.0 plus 3.0 minus 3.0

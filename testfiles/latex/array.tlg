@@ -37,11 +37,11 @@ Completed box being shipped out [1]
 ....\vbox(14.9+9.9)x36.41943, direction TLT
 .....\rule(0.4+0.0)x36.41943
 .....\hbox(8.39996+3.60004)x36.41943, direction TLT
-......\kern-161.6953 (font)
+......\kern-161.6953
 ......\hbox(3.33+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 1
 .......\kern4.00002
-......\kern154.29028 (font)
+......\kern154.29028
 ......\glue(\tabskip) 0.0
 ......\hbox(8.39996+3.60004)x17.86249, glue set 0.18124fil, direction TLT
 .......\rule(8.39996+3.60004)x0.0
@@ -66,15 +66,13 @@ Completed box being shipped out [1]
 .......\glue 0.0 plus 1.0fil
 .......\glue 5.0
 ......\glue(\tabskip) 0.0
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\glue(\lineskip) 0.0
 .....\hbox(8.39996+3.60004)x36.41943, direction TLT
-......\kern-161.6953 (font)
+......\kern-161.6953
 ......\hbox(3.33+0.0)x7.40501, direction TLT
 .......\TU/lmr/m/n/5 2
 .......\kern4.00002
-......\kern154.29028 (font)
+......\kern154.29028
 ......\glue(\tabskip) 0.0
 ......\hbox(8.39996+3.60004)x17.86249, direction TLT
 .......\rule(8.39996+3.60004)x0.0
@@ -100,8 +98,6 @@ Completed box being shipped out [1]
 .......\glue 0.0 plus 1.0fil
 .......\glue 5.0
 ......\glue(\tabskip) 0.0
-......\kern0.0 (font)
-......\hbox(0.0+0.0)x0.0, direction TLT
 .....\rule(0.4+0.0)x36.41943
 ...\penalty 0
 ...\glue(\belowdisplayskip) 10.0 plus 2.0 minus 5.0

@@ -29,11 +29,11 @@ Completed box being shipped out [1]
 .....\vbox(14.9+9.9)x39.14003, direction TLT
 ......\rule(0.4+0.0)x39.14003
 ......\hbox(8.39996+3.60004)x39.14003, direction TLT
-.......\kern-22.40501 (font)
+.......\kern-22.40501
 .......\hbox(3.33+0.0)x7.40501, direction TLT
 ........\TU/lmr/m/n/5 1
 ........\kern4.00002
-.......\kern15.0 (font)
+.......\kern15.0
 .......\glue(\tabskip) 0.0
 .......\hbox(8.39996+3.60004)x19.50002, direction TLT
 ........\rule(8.39996+3.60004)x0.0
@@ -52,15 +52,13 @@ Completed box being shipped out [1]
 ........\glue 0.0 plus 1.0fil
 ........\glue 6.0
 .......\glue(\tabskip) 0.0
-.......\kern0.0 (font)
-.......\hbox(0.0+0.0)x0.0, direction TLT
 ......\glue(\lineskip) 0.0
 ......\hbox(8.39996+3.60004)x39.14003, direction TLT
-.......\kern-22.40501 (font)
+.......\kern-22.40501
 .......\hbox(3.33+0.0)x7.40501, direction TLT
 ........\TU/lmr/m/n/5 2
 ........\kern4.00002
-.......\kern15.0 (font)
+.......\kern15.0
 .......\glue(\tabskip) 0.0
 .......\hbox(8.39996+3.60004)x19.50002, glue set 0.14fil, direction TLT
 ........\rule(8.39996+3.60004)x0.0
@@ -79,8 +77,6 @@ Completed box being shipped out [1]
 ........\glue 0.0 plus 1.0fil
 ........\glue 6.0
 .......\glue(\tabskip) 0.0
-.......\kern0.0 (font)
-.......\hbox(0.0+0.0)x0.0, direction TLT
 ......\rule(0.4+0.0)x39.14003
 .....\mathoff
 ....\penalty 10000

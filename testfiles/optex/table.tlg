@@ -8,11 +8,10 @@ Completed box being shipped out [1]
 ...\pdfliteral direct <lua data reference ...>
 ...\rule(0.4+0.0)x150.58348
 ...\hbox(10.5+5.5)x150.58348, direction TLT
-....\kern-13.00003 (font)
+....\kern-13.00003
 ....\hbox(6.29724+0.0)x13.00003, direction TLT
 .....\_tenrm 1
 .....\kern8.00003
-....\kern0.0 (font)
 ....\glue(\tabskip) 0.0
 ....\hbox(10.5+5.5)x51.16145, glue set 10.47226fil, direction TLT
 .....\rule(*+*)x0.4
@@ -69,8 +68,6 @@ Completed box being shipped out [1]
 .....\kern1.0
 .....\rule(*+*)x0.4
 ....\glue(\tabskip) 0.0
-....\kern0.0 (font)
-....\hbox(0.0+0.0)x0.0, direction TLT
 ...\rule(0.0+0.0)x0.0
 ...\hbox(0.4+0.0)x150.58348, direction TLT
 ....\glue(\tabskip) 0.0
@@ -122,11 +119,10 @@ Completed box being shipped out [1]
 ....\glue(\tabskip) 0.0
 ...\rule(0.0+0.0)x0.0
 ...\hbox(10.5+5.5)x150.58348, direction TLT
-....\kern-13.00003 (font)
+....\kern-13.00003
 ....\hbox(6.29724+0.0)x13.00003, direction TLT
 .....\_tenrm 2
 .....\kern8.00003
-....\kern0.0 (font)
 ....\glue(\tabskip) 0.0
 ....\hbox(10.5+5.5)x51.16145, glue set 4.1946fil, direction TLT
 .....\rule(*+*)x0.4
@@ -184,15 +180,12 @@ Completed box being shipped out [1]
 .....\kern1.0
 .....\rule(*+*)x0.4
 ....\glue(\tabskip) 0.0
-....\kern0.0 (font)
-....\hbox(0.0+0.0)x0.0, direction TLT
 ...\glue(\lineskip) -4.0
 ...\hbox(10.5+5.5)x150.58348, direction TLT
-....\kern-13.00003 (font)
+....\kern-13.00003
 ....\hbox(6.29724+0.0)x13.00003, direction TLT
 .....\_tenrm 3
 .....\kern8.00003
-....\kern0.0 (font)
 ....\glue(\tabskip) 0.0
 ....\hbox(10.5+5.5)x51.16145, direction TLT
 .....\rule(*+*)x0.4
@@ -252,15 +245,12 @@ Completed box being shipped out [1]
 .....\kern1.0
 .....\rule(*+*)x0.4
 ....\glue(\tabskip) 0.0
-....\kern0.0 (font)
-....\hbox(0.0+0.0)x0.0, direction TLT
 ...\glue(\lineskip) -4.0
 ...\hbox(10.5+5.5)x150.58348, direction TLT
-....\kern-13.00003 (font)
+....\kern-13.00003
 ....\hbox(6.29724+0.0)x13.00003, direction TLT
 .....\_tenrm 4
 .....\kern8.00003
-....\kern0.0 (font)
 ....\glue(\tabskip) 0.0
 ....\hbox(10.5+5.5)x51.16145, glue set 20.61122fil, direction TLT
 .....\rule(*+*)x0.4
@@ -309,8 +299,6 @@ Completed box being shipped out [1]
 .....\kern1.0
 .....\rule(*+*)x0.4
 ....\glue(\tabskip) 0.0
-....\kern0.0 (font)
-....\hbox(0.0+0.0)x0.0, direction TLT
 ...\rule(0.4+0.0)x150.58348
 ..\glue 0.0 plus 1.0fill
 ..\kern0.0
