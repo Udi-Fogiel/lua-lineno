@@ -1,12 +1,14 @@
-% Optional comments
 \_def \_lualineno_version {0.0.1, 2024-07-16}
 \_codedecl \lualineno {Line numbering <\_lualineno_version>}
 
 \_directlua{require('lualineno')}
 \addto\_resetattrs{\lualineno{unset}}
+
 \_endcode
 
 \chap User doc
+
+\sec 
 
 The package defines only one macro, `\lualineno`.
 Just loading the package doesn't do much, the user
@@ -18,24 +20,80 @@ separated by spaces.
 
 
 \_doc
-\verbchar`
 %  optex -jobname lualineno-doc '\docgen lualineno'
+
+%%%%%%%%%%%%%%%%%%%%%%%%% example blocks
+
+\def\begEX{\begingroup\_setverb
+   \adef{ }{\_dsp}\adef\^^I{\t}%
+   \def\t{\hskip \dimexpr\tabspaces em/2\relax}%
+   \endlinechar=`^^J
+   \startEX}
+
+\expanded{\def\noexpand\startEX#1\csstring\\midEX^^J#2\csstring\\endEX^^J{%
+  \medskip
+  \setbox0\vtop attr 4 = 1{\hsize=0.36\hsize
+    \unexpanded{{\Blue\LaTeX}
+    \begingroup\bracedparam\begtti{}#1}%
+    \csstring\\endtt^^J}%
+  \setbox1\vtop attr 4 = 2{\hsize=0.36\hsize
+        \unexpanded{{\Green\OpTeX}
+        \begingroup\bracedparam\begtti{}#2}%
+        \csstring\\endtt^^J}%
+  \noindent\hfil\noexpand\inoval{\vbox{\hsize = 0.8\hsize\vskip10pt
+    \line{\box0\hss\vtop to \dimexpr\dp1-\ht1{\Red\leaders\vrule width 1bp\vfil}\hss\box1}}}\medskip\endgroup}}
+
+\everytt{\typoscale[600/600]\hisyntax{tex}}
+\colordef\EXbg{.2\Red}
+\ovalparams={\fcolor=\EXbg
+  \roundness=6pt
+  \shadow=Y
+  \lwidth=1bp
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \load [doc,lualineno]
+\margins/1 a4 (1,1,1,1)in
+\newcount\lineno
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\advance\lineno by 1}
+        start = {\thefontsize[5]
+                 \wlabel{\the\lineno}\the\lineno\kern.8em}
+      }
+      define =
+      {
+        name = default
+        column = 2
+        toks = {\advance\lineno by 1}
+        end = {\thefontsize[5]
+                 \kern.8em\wlabel{\the\lineno}\the\lineno}
+      }
+    set = default
+  }
+
 
 \insertoutline{Lua-Lineno}
 \tit Numbering lines using the `pre_shipout_filter` callback
 \hfill Version: \_lualineno_version \par
 \centerline{\it Udi Fogiel, 2024}
 
-The lualineno package helps in the assignment
-of numbering lines using the `pre_shipout_filter`.
-Using this method requires no modifications to the
-output routine, which usually cause problems.
+The lualineno package eximines the page box before shipout
+using \LuaTeX's capabilities to
+provide line numbering without tampering with the output
+routine.
 
 The main motivation for writing this package was to
 allow to number lines of balanced multi-column text, 
 while allowing to choose the location of the numbers
 according to the column.
+
+The package requires the LuaTeX engine, and works with with
+\OpTeX, \LaTeX/ and Plain.
 
 \insertoutline{Contents}\outlines 0
 \notoc\nonum\sec Table of contents

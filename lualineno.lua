@@ -314,12 +314,10 @@ if luatexbase then
         runtoks(function() put_next(line_type['toks']) end) 
     return true end, 'lualineno.runtoks')
     local call_callback = luatexbase.call_callback
-    lineno_callbacks = function(head, parent, line_type, offset)
-        local current = call_callback('lualineno.pre_numbering', head, parent, line_type, offset)
-        head = current == true and head or current
-        current = call_callback('lualineno.numbering', head , parent, line_type, offset)
-        head = current == true and head or current
-        call_callback('lualineno.post_numbering', head , parent, line_type, offset)
+    lineno_callbacks = function(line, parent, line_type, offset)
+        call_callback('lualineno.pre_numbering', line, parent, line_type, offset)
+        call_callback('lualineno.numbering', line, parent, line_type, offset)
+        call_callback('lualineno.post_numbering', line, parent, line_type, offset)
     end
 else
     lineno_callbacks = function(head, parent, line_type, offset)

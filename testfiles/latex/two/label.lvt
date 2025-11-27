@@ -1,0 +1,29 @@
+\input{regression-test.tex}
+\documentclass{article}
+\usepackage{lualineno}
+\newcounter{lineno}
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\refstepcounter{lineno}}
+        start = {\thelineno\kern.8em}
+      }
+    set = default
+  }
+
+\begin{document}
+\showoutput
+
+\START
+
+foo
+
+foo\lualineno{label={bar}}
+
+baz\ref{bar}
+
+foo
+\vfill\break
+\END

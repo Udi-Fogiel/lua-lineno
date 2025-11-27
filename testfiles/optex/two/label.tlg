@@ -1,0 +1,94 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+Completed box being shipped out [1]
+\vbox(718.24724+0.0)x455.24408, direction TLT
+.\vbox(694.24724+0.0)x455.24408, glue set 648.24725fill, direction TLT
+..\glue(\topskip) 3.11125
+..\hbox(6.88875+0.0)x455.24408, glue set 421.9108fil, direction TLT
+...\kern-13.00003
+...\hbox(6.29724+0.0)x13.00003, direction TLT
+....\pdfliteral direct <lua data reference ...>
+....\_tenrm 1
+....\kern8.00003
+...\localpar
+....\localinterlinepenalty=0
+....\localbrokenpenalty=0
+....\localleftbox=null
+....\localrightbox=null
+...\hbox(0.0+0.0)x20.0, direction TLT
+...\_tenrm f
+...\_tenrm o
+...\kern0.27779 (font)
+...\_tenrm o
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11125
+..\hbox(6.88875+0.0)x455.24408, glue set 421.9108fil, direction TLT
+...\kern-13.00003
+...\hbox(6.29724+0.0)x13.00003, direction TLT
+....\write1{\_bslash \_csstring \_Xlabel {bar}{2}}
+....\_tenrm 2
+....\kern8.00003
+...\localpar
+....\localinterlinepenalty=0
+....\localbrokenpenalty=0
+....\localleftbox=null
+....\localrightbox=null
+...\hbox(0.0+0.0)x20.0, direction TLT
+...\_tenrm f
+...\_tenrm o
+...\kern0.27779 (font)
+...\_tenrm o
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11125
+..\hbox(6.88875+0.0)x455.24408, glue set 415.24408fil, direction TLT
+...\kern-13.00003
+...\hbox(6.29724+0.0)x13.00003, direction TLT
+....\_tenrm 3
+....\kern8.00003
+...\localpar
+....\localinterlinepenalty=0
+....\localbrokenpenalty=0
+....\localleftbox=null
+....\localrightbox=null
+...\hbox(0.0+0.0)x20.0, direction TLT
+...\_tenrm b
+...\_tenrm a
+...\_tenrm z
+...\_tenrm 2
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+..\glue(\parskip) 0.0 plus 1.0
+..\glue(\baselineskip) 5.11125
+..\hbox(6.88875+0.0)x455.24408, glue set 421.9108fil, direction TLT
+...\kern-13.00003
+...\hbox(6.29724+0.0)x13.00003, direction TLT
+....\_tenrm 4
+....\kern8.00003
+...\localpar
+....\localinterlinepenalty=0
+....\localbrokenpenalty=0
+....\localleftbox=null
+....\localrightbox=null
+...\hbox(0.0+0.0)x20.0, direction TLT
+...\_tenrm f
+...\_tenrm o
+...\kern0.27779 (font)
+...\_tenrm o
+...\penalty 10000
+...\glue(\parfillskip) 0.0 plus 1.0fil
+...\glue(\rightskip) 0.0
+..\glue 0.0 plus 1.0fill
+..\kern0.0
+..\glue 0.0
+.\glue(\baselineskip) 17.70276
+.\hbox(6.29724+0.0)x455.24408, glue set 225.12204fil, direction TLT
+..\glue 0.0 plus 1.0fil minus 1.0fil
+..\_ten_tenrm 1
+..\glue 0.0 plus 1.0fil minus 1.0fil
