@@ -56,7 +56,7 @@ local defaults = {
     toks = { },
     start = { },
     ['end'] = { },
-    box = 'inline',
+    box = 'true',
     alignment = 'true',
     equation = 'true',
     line = 'true',
@@ -229,8 +229,8 @@ local function lualineno()
     col_attr = vals.col_attr or col_attr
     if vals.processbox then 
         local box = tex.box[vals.processbox]
-        number_lines_human(box.head, box, 1, 0, false)
-        node.set_attribute(box, col_attr, -2)
+        number_lines_human(box, box.head, 1, 0)
+        node.set_attribute(box, type_attr, -2)
     end
 end
 
@@ -241,7 +241,7 @@ do
   local function_table = lua.get_functions_table()
   local luafnalloc = luatexbase and luatexbase.new_luafunction 
     and luatexbase.new_luafunction('lualineno') or #function_table + 1
-  token.set_lua('lualineno', luafnalloc)
+  token.set_lua('lualineno', luafnalloc, 'protected')
   function_table[luafnalloc] = lualineno
 end
 
@@ -356,15 +356,16 @@ local function real_line(list, parent, offset)
     return false
 end
 
-number_lines_human = function(parent, list, column, offset, inline)
+number_lines_human = function(parent, list, column, offset)
+    if get_attribute(parent, type_attr) == -2 then return end
+    node.set_attribute(parent, type_attr, -2)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type then
             local ltype = line_type[hlist_subs[n.subtype]]
-            if ltype == 'true' or (inline and ltype == 'inline')
-              or n.subtype == 0 then
+            if ltype == 'true' or n.subtype == 0 then
                 local m, new_offset = real_line(n.head, n, offset)
                 if new_offset then
                     if get_attribute(m, type_attr) == -1 then
@@ -372,7 +373,10 @@ number_lines_human = function(parent, list, column, offset, inline)
                     else
                         new_offset = new_offset + n.shift
                     end
-                    number_lines_human(m, m.head, column, new_offset, true)
+                    number_lines_human(m, m.head, column, new_offset)
+                    if get_attribute(m, col_attr) then
+                        number_lines_human(n, n.head, column, new_offset)
+                    end
                 elseif m then
                     local final_offset = line_type['offset'] == 'true' and offset or 0
                     call_lineno_callbacks(n, parent, line_type, final_offset)
@@ -382,11 +386,11 @@ number_lines_human = function(parent, list, column, offset, inline)
                 call_lineno_callbacks(n, parent, line_type, final_offset)
             else
                 local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
-                number_lines_human(n, n.list, column, is_offset, inline)
+                number_lines_human(n, n.list, column, is_offset)
             end
         elseif n.list then
             local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
-            number_lines_human(n, n.list, column, is_offset, inline)
+            number_lines_human(n, n.list, column, is_offset)
         end
     end
 end

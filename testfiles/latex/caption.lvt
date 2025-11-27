@@ -9,12 +9,6 @@
         name = default
         start = {\stepcounter{lineno}\tiny\thelineno\kern.8em}
       }
-    define = 
-      {
-        name = figure
-        start = {\stepcounter{lineno}\tiny\thelineno\kern.8em}
-        box = true
-      }
     set = default
   }
 
@@ -23,7 +17,6 @@
 \START
 \null
 \begin{table}
-\lualineno{set = figure}
 \caption{table caption}
 some text
 \end{table}

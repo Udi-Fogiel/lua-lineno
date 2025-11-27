@@ -14,7 +14,7 @@
   }
 \catcode`\@=11
 \def\plainoutput{%
-  \setbox0\vbox{\makeheadline\pagebody\makefootline}%
+  \setbox0\vbox{\lualineno{set=foo}\makeheadline\pagebody\makefootline}%
   \lualineno{processbox = 0}%
   \shipout\box0
   \advancepageno 
