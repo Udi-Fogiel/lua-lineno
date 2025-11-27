@@ -3,7 +3,7 @@
 \_codedecl \lualineno {Line numbering <\_lualineno_version>}
 
 \_directlua{require('lualineno')}
-\addto\_resetattrs{\lualineno{set=foo}}
+\addto\_resetattrs{\lualineno{unset}}
 \_endcode
 
 \chap User doc

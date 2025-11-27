@@ -7,6 +7,47 @@
 
 local format = tex.formatname
 local texerror = tex.error
+
+local runtoks = tex.runtoks
+local put_next = token.unchecked_put_next
+local create = token.create
+local new_tok = token.new
+local lbrace, rbrace = new_tok(string.byte('{'), 1), new_tok(string.byte('}'), 2)
+local hbox = new_tok(141, 21)
+
+local get_next = token.get_next
+local scan_toks = token.scan_toks
+local scan_string = token.scan_string
+local scan_list = token.scan_list
+local scan_int = token.scan_int
+local scan_keyword = token.scan_keyword
+
+local keyval = require('luakeyval')
+local scan_choice = keyval.choices
+local process_keys = keyval.process
+
+local setattribute = tex.setattribute
+local type_attr = luatexbase and luatexbase.new_attribute('lualineno_type') or 0
+local col_attr = luatexbase and luatexbase.new_attribute('lualineno_col') or 1
+local unset_attr = -0x7FFFFFFF
+
+local hlist_id = node.id('hlist')
+local vlist_id = node.id('vlist')
+local glyph_id = node.id('glyph')
+local hlist_subs = node.subtypes("hlist")
+local tail = node.tail
+
+local get_props = node.getproperty
+local set_props = node.setproperty
+local get_attribute = node.get_attribute
+local set_attribute = node.set_attribute
+local insert_before = node.insert_before
+local insert_after = node.insert_after
+local traverse = node.traverse
+
+local texnest = tex.nest
+
+
 local optex, latex, plain
 if format:find("optex") then -- OpTeX
     optex = true
@@ -23,19 +64,6 @@ if not (optex or latex or plain) then
              "Use OpTeX, LuaLaTeX or Plain.")
 end
 
--- To make sure the tokens used has the correct meaning
--- we define them as new primitives. We use a prefix
--- unlikely used by others, but just in case if a macro
--- was overwritten we restore it at the end. 
-
-local runtoks = tex.runtoks
-local put_next = token.unchecked_put_next
-local create = token.create
-local new_tok = token.new
-
-local lbrace, rbrace = new_tok(string.byte('{'), 1), new_tok(string.byte('}'), 2)
-local hbox = new_tok(141, 21)
-
 -- \secc User Interface^^M
 -- This section describe the definition of
 -- the one macro exposed to the end user.
@@ -43,13 +71,6 @@ local hbox = new_tok(141, 21)
 -- should be, but with this method we can
 -- create a format agnostic key-value interface.
 -- The idea is based on an article by Hans Hagen. 
-local get_next = token.get_next
-local scan_toks = token.scan_toks
-local scan_string = token.scan_string
-local scan_list = token.scan_list
-local scan_int = token.scan_int
-local scan_keyword = token.scan_keyword
-
 local lineno_types = { }
 local lineno_attr = { }
 local defaults = {
@@ -63,14 +84,11 @@ local defaults = {
     offset = 'true'
 }
 
-local keyval = require('luakeyval')
-local scan_choice = keyval.choices
-local process_keys = keyval.process
 local defaults_keys = {
     toks = {scanner = scan_toks},
     start = {scanner = scan_toks},
     ['end'] = {scanner = scan_toks},
-    box = {scanner = scan_choice, args = {'true', 'false', 'inline'}},
+    box = {scanner = scan_choice, args = {'true', 'false'}},
     alignment = {scanner = scan_choice, args = {'true', 'false', 'once'}},
     equation = {scanner = scan_choice, args = {'true', 'false', 'once'}},
     line = {scanner = scan_choice, args = {'true', 'false'}},
@@ -127,24 +145,11 @@ local function define_lineno()
     end
 end
 
-local setattribute = tex.setattribute
-local type_attr = luatexbase and luatexbase.new_attribute('lualineno_type') or 0
-local col_attr = luatexbase and luatexbase.new_attribute('lualineno_col') or 1
-local unset_attr = -0x7FFFFFFF
-
-local alg_bool = true
-local hlist_id = node.id('hlist')
-local vlist_id = node.id('vlist')
-local glyph_id = node.id('glyph')
-local hlist_subs = node.subtypes("hlist")
-local tail = node.tail
-
-
 local function mark_last_vlist(n)
     local current = n
     while current do
         if current.id == vlist_id then
-            node.set_attribute(current, type_attr, -1)
+            set_attribute(current, type_attr, -1)
             return true
         elseif current.id == hlist_id then
             if mark_last_vlist(tail(current.list)) then return true end
@@ -154,15 +159,29 @@ local function mark_last_vlist(n)
     return false
 end
 
-local get_props = node.getproperty
-local set_props = node.setproperty
+local make_label, find_label
+find_label = function(list)
+    for n in traverse(list) do
+        if n.id == glyph_id then
+            local props = get_props(n)
+            if props then
+                local label = props.lualineno
+                if label then 
+                    make_label(label, list, n)
+                end 
+            end
+        elseif n.list then 
+            find_label(n.list)
+        end
+    end
+    return true
+end
 
-local make_labels
 local function label_last_glyph(m, tokens)
     if optex then
-        luatexbase.add_to_callback('lualineno.pre_numbering', make_labels, 'lualineno.labels')
+        luatexbase.add_to_callback('lualineno.pre_numbering', find_label, 'lualineno.labels')
     elseif latex then
-        luatexbase.add_to_callback('lualineno.post_numbering', make_labels, 'lualineno.labels')
+        luatexbase.add_to_callback('lualineno.post_numbering', find_label, 'lualineno.labels')
     end
     label_last_glyph = function(n, toks)
         local current = n
@@ -189,18 +208,17 @@ end
 
 local lualineno_keys = {
     set = {scanner = scan_string},
+    unset = { },
     define = {func = define_lineno},
     defaults = {func = set_defaults},
-    algorithm = {scanner = scan_choice, args = {'human', 'tex'}},
-    anchor,
+    anchor = { },
     label = {scanner = scan_toks, args = {false, true}},
     line_attr = {scanner = scan_int},
     col_attr = {scanner = scan_int},
     processbox = {scanner = scan_int},
 }
-local texnest = tex.nest
-local number_lines_human
 
+local find_line
 local function lualineno()
     local saved_endlinechar = tex.endlinechar
     tex.endlinechar = 32
@@ -210,11 +228,15 @@ local function lualineno()
     tex.endlinechar = saved_endlinechar
     if vals.set then
         local attr = lineno_attr[vals.set]
-        setattribute(type_attr, attr and attr or unset_attr) 
+        if attr then
+          setattribute(type_attr, attr)
+        else
+          texerror("lualineno: type '" .. vals.set .. "' undefined")
+        end
     end
-    local alg = vals.algorithm
-    if alg == "human" then alg_bool = true end
-    if alg == "tex" then alg_bool = false end
+    if vals.unset then
+        setattribute(type_attr, unset_attr)
+    end
     if vals.anchor then
         for i=texnest.ptr,0,-1 do 
             if mark_last_vlist(texnest[i].tail) then return end
@@ -229,8 +251,7 @@ local function lualineno()
     col_attr = vals.col_attr or col_attr
     if vals.processbox then 
         local box = tex.box[vals.processbox]
-        number_lines_human(box, box.head, 1, 0)
-        node.set_attribute(box, type_attr, -2)
+        find_line(box, box.head, 1, 0)
     end
 end
 
@@ -247,12 +268,8 @@ end
 
 -- \secc a^^M
 -- \docfile
-local get_attribute = node.get_attribute
-local insert_before = node.insert_before
-local insert_after = node.insert_after
-local traverse = node.traverse
 
-local function add_boxes_to_line(n, parent, line_type, offset)
+local function number_line(n, parent, line_type, offset)
 -- In case \LaTeX/ is used without the luacolor package,
 -- we add an additional group to make the boxes color safe.
     put_next({rbrace, rbrace})
@@ -287,16 +304,16 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     return n.head
 end
 
-local call_lineno_callbacks
+local lineno_callbacks
 if luatexbase then
     luatexbase.create_callback('lualineno.pre_numbering', 'list', false)
-    luatexbase.create_callback('lualineno.numbering', 'exclusive', add_boxes_to_line)
+    luatexbase.create_callback('lualineno.numbering', 'exclusive', number_line)
     luatexbase.create_callback('lualineno.post_numbering', 'reverselist', false)
     luatexbase.add_to_callback('lualineno.pre_numbering', function(n, parent, line_type, offset)
         runtoks(function() put_next(line_type['toks']) end) 
     return true end, 'lualineno.runtoks')
     local call_callback = luatexbase.call_callback
-    call_lineno_callbacks = function(head, parent, line_type, offset)
+    lineno_callbacks = function(head, parent, line_type, offset)
         local current = call_callback('lualineno.pre_numbering', head, parent, line_type, offset)
         head = current == true and head or current
         current = call_callback('lualineno.numbering', head , parent, line_type, offset)
@@ -304,23 +321,9 @@ if luatexbase then
         call_callback('lualineno.post_numbering', head , parent, line_type, offset)
     end
 else
-    call_lineno_callbacks = function(head, parent, line_type, offset)
+    lineno_callbacks = function(head, parent, line_type, offset)
         runtoks(function() put_next(line_type['toks']) end)
-        add_boxes_to_line(head, parent, line_type, offset)
-    end
-end
-
-local function number_lines_tex(parent, list, column)
-    column = get_attribute(parent, col_attr) or column
-    for n in traverse(list) do
-        local line_attr = n.head and get_attribute(tail(n.head), type_attr)
-        local line_type = line_attr and lineno_types[line_attr][column]
-        if n.id == hlist_id and line_type and
-               (line_type[hlist_subs[n.subtype]] == 'true' or n.subtype == 0) then
-            call_lineno_callbacks(n, parent, line_type, 0)
-        elseif n.list then
-            number_lines_tex(n, n.list, column)
-        end
+        number_line(head, parent, line_type, offset)
     end
 end
 
@@ -356,9 +359,9 @@ local function real_line(list, parent, offset)
     return false
 end
 
-number_lines_human = function(parent, list, column, offset)
+find_line = function(parent, list, column, offset)
     if get_attribute(parent, type_attr) == -2 then return end
-    node.set_attribute(parent, type_attr, -2)
+    set_attribute(parent, type_attr, -2)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
@@ -370,40 +373,34 @@ number_lines_human = function(parent, list, column, offset)
                 if new_offset then
                     if get_attribute(m, type_attr) == -1 then
                         new_offset = 0
-                    else
-                        if parent.id == vlist_id then
-                            new_offset = new_offset + n.shift
-                        end
+                    elseif parent.id == vlist_id then
+                        new_offset = new_offset + n.shift
                     end
-                    number_lines_human(m, m.head, column, new_offset)
+                    find_line(m, m.head, column, new_offset)
                     if get_attribute(m, col_attr) then
-                        number_lines_human(n, n.head, column, new_offset)
+                        find_line(n, n.head, column, new_offset)
                     end
                 elseif m then
                     local final_offset = line_type['offset'] == 'true' and offset or 0
-                    call_lineno_callbacks(n, parent, line_type, final_offset)
+                    lineno_callbacks(n, parent, line_type, final_offset)
                 end
             elseif ltype == 'once' and real_box(n.list) then
                 local final_offset = line_type['offset'] == 'true' and offset or 0
-                call_lineno_callbacks(n, parent, line_type, final_offset)
+                lineno_callbacks(n, parent, line_type, final_offset)
             else
                 local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
-                number_lines_human(n, n.list, column, is_offset)
+                find_line(n, n.list, column, is_offset)
             end
         elseif n.list then
             local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
-            number_lines_human(n, n.list, column, is_offset)
+            find_line(n, n.list, column, is_offset)
         end
     end
 end
 
 if not plain then
     luatexbase.add_to_callback('pre_shipout_filter', function(head)
-        if alg_bool then
-            number_lines_human(head, head.list, 1, 0, false)
-        else
-            number_lines_tex(head, head.list, 1, 0)
-        end
+        find_line(head, head.list, 1, 0)
         return true
     end, 'lualineno.shipout')
 end
@@ -438,25 +435,12 @@ if format == 'optex' then
 
     local lbracket, rbracket = new_tok(string.byte('['), 12), new_tok(string.byte(']'), 12)
     local label_tok = create('_label')
-    make_labels = function(list)
-        for n in traverse(list) do
-            if n.id == glyph_id then
-                local props = get_props(n)
-                if props then
-                    local label = props.lualineno
-                    if label then 
-                        runtoks(function()
-                            put_next({rbracket})
-                            put_next(label)
-                            put_next({label_tok,lbracket})
-                        end)
-                    end 
-                end
-            elseif n.list then 
-                make_labels(n.list)
-            end
-        end
-        return true
+    make_label = function(label)
+        runtoks(function()
+            put_next({rbracket})
+            put_next(label)
+            put_next({label_tok,lbracket})
+        end)
     end
 elseif latex then
 -- Here we mark the columns accroding to `\if@firstcolumn`
@@ -482,27 +466,14 @@ elseif latex then
     
     local label_tok = create('label')
     local node_copy, node_flush = node.copy, node.flush_node
-    make_labels = function(list)
-        for n in traverse(list) do
-            if n.id == glyph_id then
-                local props = get_props(n)
-                if props then
-                    local label = props.lualineno
-                    if label then 
-                        runtoks(function()
-                            put_next({rbrace,rbrace})
-                            put_next(label)
-                            put_next({hbox, lbrace, label_tok,lbrace})
-                            local label_node = scan_list()
-                            list = insert_after(list,n,node_copy(label_node.head))
-                            node_flush(label_node)
-                        end)
-                    end 
-                end
-            elseif n.list then 
-                make_labels(n.list)
-            end
-        end
-        return true
+    make_label = function(label, list, n)
+        runtoks(function()
+            put_next({rbrace,rbrace})
+            put_next(label)
+            put_next({hbox, lbrace, label_tok,lbrace})
+            local label_node = scan_list()
+            list = insert_after(list,n,node_copy(label_node.head))
+            node_flush(label_node)
+        end)
     end
 end
