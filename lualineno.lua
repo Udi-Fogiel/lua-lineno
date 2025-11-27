@@ -160,17 +160,18 @@ local function mark_last_vlist(n)
 end
 
 local make_label, find_label
-find_label = function(list)
+find_label = function(line)
+    local list = line.list
     for n in traverse(list) do
         if n.id == glyph_id then
             local props = get_props(n)
             if props then
                 local label = props.lualineno
-                if label then 
+                if label then
                     make_label(label, list, n)
                 end 
             end
-        elseif n.list then 
+        elseif n.list then
             find_label(n.list)
         end
     end
