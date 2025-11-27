@@ -371,7 +371,9 @@ number_lines_human = function(parent, list, column, offset)
                     if get_attribute(m, type_attr) == -1 then
                         new_offset = 0
                     else
-                        new_offset = new_offset + n.shift
+                        if parent.id == vlist_id then
+                            new_offset = new_offset + n.shift
+                        end
                     end
                     number_lines_human(m, m.head, column, new_offset)
                     if get_attribute(m, col_attr) then
