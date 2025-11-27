@@ -278,7 +278,7 @@ local function add_boxes_to_line(n, parent, line_type, offset)
     local end_box = scan_list()
     if end_box.head then
         local end_kern = node.new('kern', 1)
-        end_kern.kern = parent.width - n.shift - n.width
+        end_kern.kern = parent.width - n.shift - n.width + offset
         if end_kern.kern ~= 0 then
             n.head = insert_after(n.list,tail(n.head),end_kern)
         end
