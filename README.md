@@ -1,5 +1,5 @@
 # The Lua-Lineno Package
-lualineno version 0.1, 2025-01-19
+lualineno version 0.1, 2025-11-28
 
 ## Description
 The lualineno is a package that helps to add line numbers in LuaTeX.

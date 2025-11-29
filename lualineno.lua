@@ -1,5 +1,5 @@
   --[[
-  lualineno version   = 0.1, 2025-01-19
+  lualineno version   = 0.1, 2025-11-28
   ]]--
 -- \secc Initialization^^M
 -- Currently the module works only with 
@@ -44,6 +44,7 @@ local set_attribute = node.set_attribute
 local insert_before = node.insert_before
 local insert_after = node.insert_after
 local traverse = node.traverse
+local rangedimensions = node.rangedimensions
 
 local texnest = tex.nest
 
@@ -349,9 +350,9 @@ local function real_line(list, parent, offset)
         if n.id == glyph_id then
             return true
         elseif n.id == vlist_id and n.subtype ~= 11 and real_box(n.list) then
-            return n, offset + node.rangedimensions(parent, list, n)
+            return n, offset + rangedimensions(parent, list, n)
         elseif n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
-           local new_offset = offset + node.rangedimensions(parent, list, n)
+           local new_offset = offset + rangedimensions(parent, list, n)
            return real_line(n.list, n, new_offset)
         end
     end
@@ -364,7 +365,7 @@ find_line = function(parent, list, column, offset)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
-        local line_type = line_attr and lineno_types[line_attr][column]
+        local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type then
             local ltype = line_type[hlist_subs[n.subtype]]
             if ltype == 'true' or n.subtype == 0 then

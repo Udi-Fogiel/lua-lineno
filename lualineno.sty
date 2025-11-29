@@ -1,8 +1,9 @@
 \ProvidesPackage
-  {lualineno} [2024-07-16 v0.0.1
+  {lualineno} [2025-11-28 v0.1
   Line numbering in LuaTeX]
 
 \directlua{require('lualineno')}
+\AddToHook{build/page/reset}{\lualineno{unset}}
 
 \AddToHook{package/multicol/after}{%
   \directlua{
@@ -70,7 +71,5 @@
   \hss
  \egroup
 }}
-
-\AddToHook{build/page/reset}{\lualineno{unset}}
 
 \endinput

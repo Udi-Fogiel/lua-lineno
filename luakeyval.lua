@@ -1,5 +1,5 @@
   --[[
-  luakeyval version   = 0.1, 2025-11-04
+  luakeyval version   = 0.1, 2025-11-28
   ]]--
 
 local put_next = token.unchecked_put_next

@@ -1,4 +1,4 @@
-\_def \_lualineno_version {0.0.1, 2024-07-16}
+\_def \_lualineno_version {0.1, 2025-11-28}
 \_codedecl \lualineno {Line numbering <\_lualineno_version>}
 
 \_directlua{require('lualineno')}

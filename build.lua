@@ -56,6 +56,7 @@ end
 specialtypesetting[module .. ".opm"] = {func = optex_doc}
 
 tagfiles = sourcefiles
+table.insert(tagfiles, "README.md")
 function update_tag(file,content,tagname,tagdate)
   if string.match(file, "%.opm$") then
     return string.gsub(content,
