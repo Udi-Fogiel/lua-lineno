@@ -57,8 +57,7 @@ function optex_doc()
 end
 specialtypesetting[module .. ".opm"] = {func = optex_doc}
 
-tagfiles = sourcefiles
-table.insert(tagfiles, "README.md")
+tagfiles = {"*.opm", "*.sty", "*.lua", module .. ".tex", "*.md"}
 function update_tag(file,content,tagname,tagdate)
   if string.match(file, "%.opm$") then
     return string.gsub(content,
@@ -72,10 +71,6 @@ function update_tag(file,content,tagname,tagdate)
     return string.gsub(content,
       "} %[%d%d%d%d%-%d%d%-%d%d v%d+%.%d+\n",
       "} [" .. tagdate .. " v" .. tagname .. "\n")
-  elseif string.match(file, "%.tex$") then
-    return string.gsub(content,
-      "version %d+%.%d+, %d%d%d%d%-%d%d%-%d%d",
-      "version " .. tagname .. ", " .. tagdate)
   elseif string.match(file, "%.md$") then
     return string.gsub(content,
       "version %d+%.%d+, %d%d%d%d%-%d%d%-%d%d",

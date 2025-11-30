@@ -212,8 +212,8 @@ end
 local lualineno_keys = {
     set = {scanner = scan_string},
     unset = { default = true },
-    define = {func = define_lineno},
-    defaults = {func = set_defaults},
+    define = {scanner = function() return true end, func = define_lineno},
+    defaults = {scanner = function() return true end, func = set_defaults},
     anchor = { default = true },
     label = {scanner = scan_toks, args = {false, true}},
     line_attr = {scanner = scan_int},

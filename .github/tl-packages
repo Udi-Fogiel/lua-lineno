@@ -3,7 +3,7 @@ l3build
 # format generation
 latex-bin
 luatex
-epstopdf-pkg # for breqn in luatex
+optex
 #
 lipsum
 tools # for multicol
@@ -13,5 +13,5 @@ revtex
 amsmath
 amsfonts
 breqn
+epstopdf-pkg # for breqn in luatex
 l3packages
-optex
