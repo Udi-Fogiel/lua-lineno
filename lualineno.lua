@@ -1,6 +1,5 @@
-  --[[
-  lualineno version   = 0.1, 2025-11-28
-  ]]--
+-- lualineno version = 0.1, 2025-11-28
+
 -- \secc Initialization^^M
 -- Currently the module works only with 
 -- Lua\LaTeX/ and \OpTeX.
@@ -13,7 +12,6 @@ local put_next = token.unchecked_put_next
 local create = token.create
 local new_tok = token.new
 local lbrace, rbrace = new_tok(string.byte('{'), 1), new_tok(string.byte('}'), 2)
-local hbox = new_tok(141, 21)
 
 local get_next = token.get_next
 local scan_toks = token.scan_toks
@@ -26,9 +24,9 @@ local keyval = require('luakeyval')
 local scan_choice = keyval.choices
 local process_keys = keyval.process
 local messages = {
-    error1 = "lualineno: wrong syntax in \\lualineno",
-    value_forbidden = "lualineno: the %s key does not accept a value",
-    value_rquired = "lualineno: the %s key require a value",
+    error1 = "lualineno: Wrong syntax in \\lualineno",
+    value_forbidden = 'lualineno: The key "%s" does not accept a value',
+    value_required = 'lualineno: The key "%s" requires a value',
 }
 
 local setattribute = tex.setattribute
@@ -68,6 +66,21 @@ end
 if not (optex or latex or plain) then
     error("lualineno: The format " .. format .. " is not supported\n\n" ..
              "Use OpTeX, LuaLaTeX or Plain.")
+end
+
+  -- local hbox = new_tok(141, 21)
+local hbox
+do
+-- initialization of the new primitives.
+  local prefix = '@lua^line&no_' -- unlikely prefix...
+  while token.is_defined(prefix .. 'hbox') do
+    prefix = prefix .. '@lua^line&no_'
+  end
+  tex.enableprimitives(prefix,{'hbox'})
+-- Now we create new tokens with the meaning of
+-- the primitives.
+  local tok = create(prefix .. 'hbox')
+  hbox  = new_tok(tok.mode, tok.command)
 end
 
 -- \secc User Interface^^M
@@ -127,7 +140,8 @@ local function define_lineno()
 -- A newly defined lualineno type must have a name
     local name = vals['name']
     if not name then 
-        texerror("lualineno: missing name in when defining a lineno")
+        texerror("lualineno: Missing name when defining a lineno")
+        return
     end
 -- If the `column` key is not specified we assume 
 -- the definition is for the first (or only) column.
@@ -333,11 +347,11 @@ end
 
 local function real_box(list)
     for n in traverse(list) do
-        if n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
+        if n.id == glyph_id then
+            return true
+        elseif n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
             return true
         elseif n.id == vlist_id and n.subtype ~= 11 and real_box(n.list) then
-            return true
-        elseif n.id == glyph_id then
             return true
         end
     end
