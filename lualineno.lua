@@ -25,6 +25,11 @@ local scan_keyword = token.scan_keyword
 local keyval = require('luakeyval')
 local scan_choice = keyval.choices
 local process_keys = keyval.process
+local messages = {
+    error1 = "lualineno: wrong syntax in \\lualineno",
+    value_forbidden = "lualineno: the %s key does not accept a value",
+    value_rquired = "lualineno: the %s key require a value",
+}
 
 local setattribute = tex.setattribute
 local type_attr = luatexbase and luatexbase.new_attribute('lualineno_type') or 0
@@ -101,9 +106,7 @@ the last scanned key was "%s".
 there is a "%s" in the way.
 ]]
 local function set_defaults()
-    local vals = process_keys(defaults_keys,
-      "lualineno: wrong syntax when setting defaults",
-      help_message)
+    local vals = process_keys(defaults_keys,messages)
     for k,v in pairs(vals) do
         defaults[k] = v
     end
@@ -120,9 +123,7 @@ local function define_lineno()
 -- This function is used in the define key.
 -- It is very similar to the set_defaults() function,
 -- but it accepts a `column` and `name` keys as well.
-    local vals = process_keys(define_keys,
-      "lualineno: wrong syntax when defining a lineno",
-      help_message)
+    local vals = process_keys(define_keys,messages)
 -- A newly defined lualineno type must have a name
     local name = vals['name']
     if not name then 
@@ -210,10 +211,10 @@ end
 
 local lualineno_keys = {
     set = {scanner = scan_string},
-    unset = { },
+    unset = { default = true },
     define = {func = define_lineno},
     defaults = {func = set_defaults},
-    anchor = { },
+    anchor = { default = true },
     label = {scanner = scan_toks, args = {false, true}},
     line_attr = {scanner = scan_int},
     col_attr = {scanner = scan_int},
@@ -224,9 +225,7 @@ local find_line
 local function lualineno()
     local saved_endlinechar = tex.endlinechar
     tex.endlinechar = 32
-    local vals = process_keys(lualineno_keys,
-      "lualineno: wrong syntax in \\lualineno",
-      help_message)
+    local vals = process_keys(lualineno_keys,messages)
     tex.endlinechar = saved_endlinechar
     if vals.set then
         local attr = lineno_attr[vals.set]

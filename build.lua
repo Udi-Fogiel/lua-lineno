@@ -20,7 +20,9 @@ packtdszip = true
 
 checkconfigs = {
     "configfiles/config-optex",
+    "configfiles/config-optex2",
     "configfiles/config-latex",
+    "configfiles/config-latex2",
     "configfiles/config-plain",
     "configfiles/config-nil",
 }
