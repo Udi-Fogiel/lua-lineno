@@ -157,15 +157,15 @@ in the first and next to end of lines in the second column.
 
 \expanded{\def\noexpand\startEX#1\csstring\\midEX^^J#2\csstring\\endEX^^J{%
   \medskip
-  \setbox0\vtop attr 4 = 1{\hsize=0.36\hsize
+  \setbox0\vtop attr 4 = 1{\hsize=0.45\hsize
     \unexpanded{{\Blue\LaTeX}
     \begingroup\bracedparam\begtti{}#1}%
     \csstring\\endtt^^J}%
-  \setbox1\vtop attr 4 = 2{\hsize=0.36\hsize
+  \setbox1\vtop attr 4 = 2{\hsize=0.45\hsize
         \unexpanded{{\Green\OpTeX}
         \begingroup\bracedparam\begtti{}#2}%
         \csstring\\endtt^^J}%
-  \noindent\hfil\noexpand\inoval{\vbox{\hsize = 0.8\hsize\vskip10pt
+  \noindent\hfil\noexpand\inoval{\vbox{\vskip10pt
     \line{\box0\hss\vtop to \dimexpr\dp1-\ht1{\Red\leaders\vrule width 1bp\vfil}\hss\box1}}}\medskip\endgroup}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -246,12 +246,11 @@ The module supports:
 \enditems
 
 \insertoutline{Contents}\outlines 0
-\notoc\nonum\sec Table of contents\hfill \typosize[8/]\bf line number
+\notoc\nonum\sec Table of contents\hfill \typosize[8/]\bf line
 \maketoc
 \printdoctail lualineno.opm
 
-\lualineno{unset}
-\everytt{\typoscale[800/800]}
+\everytt{\typoscale[800/800]\lualineno{unset}}
 \sec Implementation
 
 \secc Lua module
