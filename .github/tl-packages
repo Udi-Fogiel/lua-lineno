@@ -5,6 +5,7 @@ latex-bin
 luatex
 optex
 #
+luakeyval
 lipsum
 tools # for multicol
 sttools
