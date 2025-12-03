@@ -387,6 +387,7 @@ find_line = function(parent, list, column, offset)
     set_attribute(parent, type_attr, -2)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
+        if n.id == glyph_id then return end
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
         if n.id == hlist_id and line_type then

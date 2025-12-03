@@ -194,6 +194,12 @@ in the first and next to end of lines in the second column.
                \pdfliteral page{/Span<</ActualText<>>>BDC}%
                \the\lineno\pdfliteral page{EMC}}
       }
+    define =
+      {
+        name = skip
+        toks = {\global\advance\lineno by 1}
+        start = {}
+      }
     set = default
   }
 
@@ -250,7 +256,7 @@ The module supports:
 \maketoc
 \printdoctail lualineno.opm
 
-\everytt{\typoscale[800/800]\lualineno{unset}}
+\everytt{\typoscale[800/800]\lualineno{set=skip}}
 \sec Implementation
 
 \secc Lua module
@@ -262,8 +268,12 @@ The \OpTeX/ package deos not contain much. It is mainly here
 for the documentation, or
 in case someone prefer to type `\load[lualineno]` instead of
 `\directlua{require('lualineno')}`.
-\printdoc lualineno.opm % prints \_doc...\_cod parts + code before \_endcode
 
+\bgroup \lualineno{unset}
+\printdoc lualineno.opm % prints \_doc...\_cod parts + code before \_endcode
+\egroup
+
+\everytt{\typoscale[800/800]\lualineno{set=skip}}
 \secc \LaTeX/ package
 The \LaTeX/ package mostly contains patches to
 other packages. 
