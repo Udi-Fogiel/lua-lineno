@@ -6,21 +6,146 @@
 
 \_endcode
 
-\chap User doc
+\sec User Interface
+The entire user interface consists of a single command: `lualineno`.
+This command accepts a key-value list as an argument, and performs
+various operations depending on the keys provided.
 
-\sec 
+The possible keys are
+\begitems
+* Multiple line numbering schemes with independent configurations
+* Multi-column documents with per-column numbering
+* Selective numbering of boxes, alignments, equations, and text lines
+* Custom positioning and formatting of line numbers
+* Label mechanisms for cross-referencing
+\enditems
 
-The package defines only one macro, `\lualineno`.
-Just loading the package doesn't do much, the user
-needs to define new lineno types in order to get 
-line numbers.
+\sec Examples
 
-The `\lualineno` macro accepts a list of key-val pairs
-separated by spaces. 
+\secc Number Lines Across the Document
+
+Since `pre_sipout_filter` is ran inside the output routine,
+it is runing inside a group, which means you should use global
+counters. \LaTeX/ already does that by default, in \OpTeX/
+we need to use the `\global` prefix.
+
+\everytt{\typoscale[600/600]\hisyntax{tex}}
+\begEX
+\newcounter{lineno}
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\stepcounter{lineno}}
+        start = {\tiny\thelineno
+                 \kern.8em}
+      }
+    set = default
+  }
+\midEX
+\newcount\lineno
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\global\advance\lineno by 1}
+        start = {\thefontsize[5]
+                 \the\lineno\kern.8em}
+      }
+    set = default
+  }
+\endEX
+
+\secc Number Lines Per Page
+Since `pre_sipout_filter` is ran inside the output routine,
+it is runing inside a group, which means you should use local
+counters. \OpTeX/ already does that by default, in \LaTeX/
+we need to reset the counter per page.
+
+\begEX
+\newcounter{lineno}
+\counterwithin{lineno}{page}
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\stepcounter{lineno}}
+        start = {\tiny\thelineno
+                 \kern.8em}
+      }
+    set = default
+  }
+\midEX
+\newcount\lineno
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\advance\lineno by 1}
+        start = {\thefontsize[5]
+                 \the\lineno\kern.8em}
+      }
+    set = default
+  }
+\endEX
+
+\secc Number Two Column Layout
+
+In this example we add the numbers next to the start on lines
+in the first and next to end of lines in the second column. 
+
+\begEX
+\newcounter{lineno}
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\stepcounter{lineno}}
+        start = {\tiny\thelineno
+                 \kern.8em}
+      }
+    define =
+      {
+        name = default
+        column = 2
+        toks = {\stepcounter{lineno}}
+        start = {\kern.8em\tiny
+                 \thelineno}
+      }
+
+    set = default
+  }
+\midEX
+\newcount\lineno
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\global\advance\lineno by 1}
+        start = {\thefontsize[5]
+                 \the\lineno\kern.8em}
+      }
+    define =
+      {
+        name = default
+        column = 2
+        toks = {\global\advance\lineno by 1}
+        end = {\kern.8em\thefontsize[5]
+                 \the\lineno}
+      }
+
+    set = default
+  }
+\endEX
 
 
 \_doc
-%  optex -jobname lualineno-doc '\docgen lualineno'
 
 %%%%%%%%%%%%%%%%%%%%%%%%% example blocks
 
@@ -43,17 +168,9 @@ separated by spaces.
   \noindent\hfil\noexpand\inoval{\vbox{\hsize = 0.8\hsize\vskip10pt
     \line{\box0\hss\vtop to \dimexpr\dp1-\ht1{\Red\leaders\vrule width 1bp\vfil}\hss\box1}}}\medskip\endgroup}}
 
-\everytt{\typoscale[600/600]\hisyntax{tex}}
-\colordef\EXbg{.2\Red}
-\ovalparams={\fcolor=\EXbg
-  \roundness=6pt
-  \shadow=Y
-  \lwidth=1bp
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\load [doc,lualineno]
+\load[lualineno]
 \margins/1 a4 (1,1,1,1)in
 \newcount\lineno
 \lualineno
@@ -61,64 +178,94 @@ separated by spaces.
     define =
       {
         name = default
-        toks = {\advance\lineno by 1}
-        start = {\thefontsize[5]
-                 \wlabel{\the\lineno}\the\lineno\kern.8em}
+        toks = {\global\advance\lineno by 1}
+        start = {\_ewref\Xline{{\_the\lineno}}%
+                 \thefontsize[5]\wlabel{\the\lineno}\_dest[line:\_the\lineno]%
+                 \pdfliteral page{/Span<</ActualText<>>>BDC}%
+                 \the\lineno\pdfliteral page{EMC}\kern.8em}
       }
       define =
       {
         name = default
         column = 2
-        toks = {\advance\lineno by 1}
-        end = {\thefontsize[5]
-                 \kern.8em\wlabel{\the\lineno}\the\lineno}
+        toks = {\global\advance\lineno by 1}
+        end = {\_ewref\Xline{{\_the\lineno}}%
+               \thefontsize[5]\kern.8em\wlabel{\the\lineno}\_dest[line:\_the\lineno]%
+               \pdfliteral page{/Span<</ActualText<>>>BDC}%
+               \the\lineno\pdfliteral page{EMC}}
       }
     set = default
   }
+
+\load[doc]
+\colordef\EXbg{.2\Red}
+\ovalparams={\fcolor=\EXbg
+  \roundness=6pt
+  \shadow=N
+  \lwidth=1bp
+}
+
+\_openref
+\_def\_destheight{20pt}
+\_immediate\_write\_reffile{%
+  \def\noexpand\Xline\string#1{\def\noexpand\currline{{}{\string#1}}}%
+  \_def\noexpand\_XtocA\string#1{\noexpand\_addto\noexpand\_toclist{{\string#1}}\unexpanded{\_ea\_addto\_ea\_toclist\_ea{\currline}}}%
+}
+\_def\_tocline#1#2#3#4#5#6#7{%
+   \_advance\_tocrefnum by1
+   \_bgroup
+      \_leftskip=\_iindent \_rightskip=2\_iindent
+      \_ifischap \_advance\_leftskip by \_iindent \_fi
+      \_def\_pgn##1{\_ilink[line:#7]{\_numprint{##1}}}%
+      \_the\_everytocline
+      \_ifcsname _tocl:#1\_endcsname
+         \_cs{_tocl:#1}{#3}{\_scantextokens{#5}}{#7}\_par
+      \_fi
+   \_egroup
+}
+
 
 
 \insertoutline{Lua-Lineno}
 \tit Numbering lines using the `pre_shipout_filter` callback
 \hfill Version: \_lualineno_version \par
-\centerline{\it Udi Fogiel, 2024}
+\centerline{\it Udi Fogiel, 2025}
 
-The lualineno package eximines the page box before shipout
-using \LuaTeX's capabilities to
-provide line numbering without tampering with the output
-routine.
+The `lualineno` module provides flexible line numbering
+for \LuaTeX-based formats (Lua\LaTeX, \OpTeX, and Plain \LuaTeX).
+Unlike traditional line numbering packages, `lualineno` operates at the Lua level,
+allowing precise control over which content gets numbered and how numbers are positioned.
 
-The main motivation for writing this package was to
-allow to number lines of balanced multi-column text, 
-while allowing to choose the location of the numbers
-according to the column.
-
-The package requires the LuaTeX engine, and works with with
-\OpTeX, \LaTeX/ and Plain.
+The module supports:
+\begitems
+* Multiple line numbering schemes with independent configurations
+* Multi-column documents with per-column numbering
+* Selective numbering of boxes, alignments, equations, and text lines
+* Custom positioning and formatting of line numbers
+* Label mechanisms for cross-referencing
+\enditems
 
 \insertoutline{Contents}\outlines 0
-\notoc\nonum\sec Table of contents
+\notoc\nonum\sec Table of contents\hfill \typosize[8/]\bf line number
 \maketoc
-\printdoctail lualineno.opm % prints the documentation written after \_endcode
+\printdoctail lualineno.opm
 
-\chap Implementation
+\lualineno{unset}
+\everytt{\typoscale[800/800]}
+\sec Implementation
 
-\_def\_printcomments{\_medskip
-     {\_catcodetable0 \_typosize[10/12]\_everypar={}\_scantextokens\_ea{\_vcomments}\par}%
-     \_bigskip
-   }
-
-\sec Lua module
+\secc Lua module
 
 \verbinput \commentchars-- \vitt{lualineno.lua} \hisyntax{lua} (1-) lualineno.lua
 
-\sec \OpTeX/ package
+\secc \OpTeX/ package
 The \OpTeX/ package deos not contain much. It is mainly here
 for the documentation, or
 in case someone prefer to type `\load[lualineno]` instead of
 `\directlua{require('lualineno')}`.
 \printdoc lualineno.opm % prints \_doc...\_cod parts + code before \_endcode
 
-\sec \LaTeX/ package
+\secc \LaTeX/ package
 The \LaTeX/ package mostly contains patches to
 other packages. 
 

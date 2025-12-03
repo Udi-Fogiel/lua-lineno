@@ -44,6 +44,7 @@ local get_props = node.getproperty
 local set_props = node.setproperty
 local get_attribute = node.get_attribute
 local set_attribute = node.set_attribute
+local node_flush = node.flush_node
 local insert_before = node.insert_before
 local insert_after = node.insert_after
 local traverse = node.traverse
@@ -176,8 +177,7 @@ local function mark_last_vlist(n)
 end
 
 local make_label, find_label
-find_label = function(line)
-    local list = line.list
+find_label = function(list)
     for n in traverse(list) do
         if n.id == glyph_id then
             local props = get_props(n)
@@ -284,7 +284,7 @@ end
 -- \secc a^^M
 -- \docfile
 
-local function number_line(n, parent, line_type, offset)
+local function number_line(head, line, parent, line_type, offset)
 -- In case \LaTeX/ is used without the luacolor package,
 -- we add an additional group to make the boxes color safe.
     put_next({rbrace, rbrace})
@@ -294,15 +294,17 @@ local function number_line(n, parent, line_type, offset)
     if start_box.head then
         local start_kern = node.new('kern', 1)
         local shift_kern = node.new('kern', 1)
-        start_kern.kern = -start_box.width - n.shift - offset
-        shift_kern.kern = n.shift + offset
+        start_kern.kern = -start_box.width - line.shift - offset
+        shift_kern.kern = line.shift + offset
         if shift_kern.kern ~= 0 then
-            n.head = insert_before(n.list,n.head,shift_kern)
+            head = insert_before(head,head,shift_kern)
         end
-        n.head = insert_before(n.list,n.head,start_box)
+        head = insert_before(head,head,start_box)
         if start_kern.kern ~= 0 then
-            n.head = insert_before(n.list,n.head,start_kern)
+            head = insert_before(head,head,start_kern)
         end
+    else
+        node_flush(start_box)
     end
     put_next({rbrace, rbrace})
     put_next(line_type['end'])
@@ -310,13 +312,15 @@ local function number_line(n, parent, line_type, offset)
     local end_box = scan_list()
     if end_box.head then
         local end_kern = node.new('kern', 1)
-        end_kern.kern = parent.width - n.shift - n.width + offset
+        end_kern.kern = parent.width - line.shift - line.width + offset
         if end_kern.kern ~= 0 then
-            n.head = insert_after(n.list,tail(n.head),end_kern)
+            head = insert_after(head,tail(head),end_kern)
         end
-        n.head = insert_after(n.list,tail(n.head),end_box)
+        head = insert_after(head,tail(head),end_box)
+    else
+        node_flush(end_box)
     end
-    return n.head
+    return head
 end
 
 local lineno_callbacks
@@ -324,19 +328,25 @@ if luatexbase then
     luatexbase.create_callback('lualineno.pre_numbering', 'list', false)
     luatexbase.create_callback('lualineno.numbering', 'exclusive', number_line)
     luatexbase.create_callback('lualineno.post_numbering', 'reverselist', false)
-    luatexbase.add_to_callback('lualineno.pre_numbering', function(n, parent, line_type, offset)
-        runtoks(function() put_next(line_type['toks']) end) 
+    luatexbase.add_to_callback('lualineno.pre_numbering', function(_, _, _, lt)
+        runtoks(function() put_next(lt['toks']) end) 
     return true end, 'lualineno.runtoks')
     local call_callback = luatexbase.call_callback
-    lineno_callbacks = function(line, parent, line_type, offset)
-        call_callback('lualineno.pre_numbering', line, parent, line_type, offset)
-        call_callback('lualineno.numbering', line, parent, line_type, offset)
-        call_callback('lualineno.post_numbering', line, parent, line_type, offset)
+    lineno_callbacks = function(head, line, parent, line_type, offset)
+        head = call_callback('lualineno.pre_numbering', head, line, parent, line_type, offset)
+        if not head then return end
+        line.head = head
+        head = call_callback('lualineno.numbering', head, line, parent, line_type, offset)
+        if not head then return end
+        line.head = head
+        head = call_callback('lualineno.post_numbering', head, line, parent, line_type, offset)
+        if not head then return end
+        line.head = head
     end
 else
-    lineno_callbacks = function(head, parent, line_type, offset)
+    lineno_callbacks = function(head, line, parent, line_type, offset)
         runtoks(function() put_next(line_type['toks']) end)
-        number_line(head, parent, line_type, offset)
+        line.head = number_line(head, line, parent, line_type, offset)
     end
 end
 
@@ -395,11 +405,11 @@ find_line = function(parent, list, column, offset)
                     end
                 elseif m then
                     local final_offset = line_type['offset'] == 'true' and offset or 0
-                    lineno_callbacks(n, parent, line_type, final_offset)
+                    lineno_callbacks(n.head, n, parent, line_type, final_offset)
                 end
             elseif ltype == 'once' and real_box(n.list) then
                 local final_offset = line_type['offset'] == 'true' and offset or 0
-                lineno_callbacks(n, parent, line_type, final_offset)
+                lineno_callbacks(n.head, n, parent, line_type, final_offset)
             else
                 local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
                 find_line(n, n.list, column, is_offset)
@@ -478,7 +488,7 @@ elseif latex then
          'lualineno.shipout', 'before', 'luacolor.process')
     
     local label_tok = create('label')
-    local node_copy, node_flush = node.copy, node.flush_node
+    local node_copy = node.copy
     make_label = function(label, list, n)
         runtoks(function()
             put_next({rbrace,rbrace})
