@@ -20,7 +20,7 @@
         tex.box[right_box][col_attr] = column + 1}\\mc@align@columns"
       local find = "\\mc@align@columns"
       local patch, success = token.get_macro("page@sofar"):gsub(find, replace)
-      if success then
+      if success > 0 then
           token.set_macro("page@sofar", patch)
       else
           texio.write_nl('log', "lualineno: failed to patch \\page@sofar (multicol)")
@@ -45,7 +45,7 @@
           tex.box[first_col][col_attr] = 1}"
       local find = "\\set@outputbox@with@footnote@and@float \\fi"
       local patch, success = token.get_macro("last@outputdblcol"):gsub(find, replace)
-      if success then
+      if success > 0 then
           token.set_macro("last@outputdblcol", patch)
       else
           texio.write_nl('log', "lualineno: failed to patch \\last@outputdblcol (flushend)")

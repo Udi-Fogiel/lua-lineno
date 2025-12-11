@@ -22,6 +22,7 @@ local scan_keyword = token.scan_keyword
 
 local keyval = require('luakeyval')
 local scan_choice = keyval.choices
+local scan_bool = keyval.bool
 local process_keys = keyval.process
 local messages = {
     error1 = "lualineno: Wrong syntax in \\lualineno",
@@ -112,7 +113,7 @@ local defaults_keys = {
     alignment = {scanner = scan_choice, args = {'true', 'false', 'once'}},
     equation = {scanner = scan_choice, args = {'true', 'false', 'once'}},
     line = {scanner = scan_choice, args = {'true', 'false'}},
-    offset = {scanner = scan_choice, args = {'true', 'false'}}
+    offset = {scanner = scan_bool}
 }
 
 local help_message = [[
@@ -293,11 +294,11 @@ local function number_line(head, line, parent, line_type, offset)
     local start_box = scan_list()
     if start_box.head then
         local start_kern = node.new('kern', 1)
-        local shift_kern = node.new('kern', 1)
-        start_kern.kern = -start_box.width - line.shift - offset
-        shift_kern.kern = line.shift + offset
-        if shift_kern.kern ~= 0 then
-            head = insert_before(head,head,shift_kern)
+        local offset_kern = node.new('kern', 1)
+        start_kern.kern = -start_box.width - offset
+        offset_kern.kern = offset
+        if offset_kern.kern ~= 0 then
+            head = insert_before(head,head,offset_kern)
         end
         head = insert_before(head,head,start_box)
         if start_kern.kern ~= 0 then
@@ -375,8 +376,8 @@ local function real_line(list, parent, offset)
         elseif n.id == vlist_id and n.subtype ~= 11 and real_box(n.list) then
             return n, offset + rangedimensions(parent, list, n)
         elseif n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
-           local new_offset = offset + rangedimensions(parent, list, n)
-           return real_line(n.list, n, new_offset)
+           offset = offset + rangedimensions(parent, list, n)
+           return real_line(n.list, n, offset)
         end
     end
     return false
@@ -387,44 +388,55 @@ find_line = function(parent, list, column, offset)
     set_attribute(parent, type_attr, -2)
     column = get_attribute(parent, col_attr) or column
     for n in traverse(list) do
-        if n.id == glyph_id then return end
-        local line_attr = n.head and get_attribute(tail(n.head), type_attr)
-        local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
-        if n.id == hlist_id and line_type then
-            local ltype = line_type[hlist_subs[n.subtype]]
-            if ltype == 'true' or n.subtype == 0 then
-                local m, new_offset = real_line(n.head, n, offset)
-                if new_offset then
-                    if get_attribute(m, type_attr) == -1 then
-                        new_offset = 0
-                    elseif parent.id == vlist_id then
-                        new_offset = new_offset + n.shift
-                    end
-                    find_line(m, m.head, column, new_offset)
-                    if get_attribute(m, col_attr) then
-                        find_line(n, n.head, column, new_offset)
-                    end
-                elseif m then
-                    local final_offset = line_type['offset'] == 'true' and offset or 0
-                    lineno_callbacks(n.head, n, parent, line_type, final_offset)
+        if n.id == hlist_id then
+            local m, new_offset = real_line(n.head, n, offset)
+            if new_offset then
+                if get_attribute(m, type_attr) == -1 then
+                    new_offset = 0
+                elseif parent.id == vlist_id then
+                    new_offset = new_offset + n.shift
                 end
-            elseif ltype == 'once' and real_box(n.list) then
-                local final_offset = line_type['offset'] == 'true' and offset or 0
-                lineno_callbacks(n.head, n, parent, line_type, final_offset)
-            else
-                local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
-                find_line(n, n.list, column, is_offset)
+                find_line(m, m.head, column, new_offset)
+                if get_attribute(m, col_attr) then
+                    find_line(n, n.head, column, new_offset)
+                end
+            elseif m then
+                local line_attr = n.head and get_attribute(tail(n.head), type_attr)
+                local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
+                if line_type then
+                    local ltype = line_type[hlist_subs[n.subtype]]
+                    if ltype == 'true' or n.subtype == 0 then
+                        local new_offset = offset
+                        if parent.id == vlist_id then
+                            new_offset = offset + n.shift
+                        end
+                        local final_offset = line_type['offset'] and new_offset or 0
+                        lineno_callbacks(n.head, n, parent, line_type, final_offset)
+                    elseif ltype == 'once' then
+                        local new_offset = offset
+                        if parent.id == vlist_id then
+                            new_offset = offset + n.shift
+                        end
+                        local final_offset = line_type['offset'] and offset or 0
+                        lineno_callbacks(n.head, n, parent, line_type, final_offset)
+                    end
+                end
             end
         elseif n.list then
-            local is_offset = get_attribute(n, type_attr) == -1 and 0 or offset
-            find_line(n, n.list, column, is_offset)
+            local new_offset = offset
+            if get_attribute(n, type_attr) == -1 then
+                new_offset = 0
+            elseif parent.id == vlist_id then
+                new_offset = new_offset + n.shift
+            end
+            find_line(n, n.list, column, new_offset)
         end
     end
 end
 
 if not plain then
-    luatexbase.add_to_callback('pre_shipout_filter', function(head)
-        find_line(head, head.list, 1, 0)
+    luatexbase.add_to_callback('pre_shipout_filter', function(box)
+        find_line(box, box.list, 1, 0)
         return true
     end, 'lualineno.shipout')
 end
@@ -451,7 +463,7 @@ if format == 'optex' then
     local find = [[\_vsplit 6 to\_dimen 1 ]]
     local patch, success = token.get_macro("_createcolumns"):gsub(find, replace)
 -- Log the success or failure of the patch
-    if success then
+    if success > 0 then
         token.set_macro("_createcolumns", patch)
     else
         texio.write_nl('log', "lualineno: failed to patch \\_createcolumns")
@@ -487,7 +499,18 @@ elseif latex then
 -- are added to be able to color them.
     luatexbase.declare_callback_rule('pre_shipout_filter', 
          'lualineno.shipout', 'before', 'luacolor.process')
-    
+    local attr_num = luatexbase.attributes['lualineno_type']
+    local replace = string.format([[\moveright \@themargin \vbox attr %d = -1]], attr_num)
+    local find = [[\moveright \@themargin \vbox]]
+    local patch, num_subs = token.get_macro("@outputpage"):gsub(find, replace)
+    find = [[\catcode `\ 10\relax \catcode `\	10\relax]]
+    replace = [[\catcode 32=10\relax \catcode 9=10\relax]]
+    patch, num_subs = patch:gsub(find, replace)
+    if num_subs > 0 then
+        token.set_macro("@outputpage", patch)
+    else
+        texio.write_nl('log', "lualineno: failed to patch \\@outputpage")
+    end
     local label_tok = create('label')
     local node_copy = node.copy
     make_label = function(label, list, n)
