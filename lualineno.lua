@@ -283,7 +283,6 @@ do
 end
 
 -- \secc a^^M
--- \docfile
 
 local function number_line(head, line, parent, line_type, offset)
 -- In case \LaTeX/ is used without the luacolor package,
@@ -402,7 +401,8 @@ find_line = function(parent, list, column, offset)
                 end
             elseif m then
                 local line_attr = n.head and get_attribute(tail(n.head), type_attr)
-                local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
+                local line_type = line_attr and lineno_types[line_attr]
+                  and lineno_types[line_attr][column]
                 if line_type then
                     local ltype = line_type[hlist_subs[n.subtype]]
                     if ltype == 'true' or n.subtype == 0 then

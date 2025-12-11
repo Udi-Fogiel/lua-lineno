@@ -256,12 +256,20 @@ The module supports:
 \maketoc
 \printdoctail lualineno.opm
 
-\everytt{\typoscale[800/800]\lualineno{set=skip}}
 \sec Implementation
 
 \secc Lua module
 
-\verbinput \commentchars-- \vitt{lualineno.lua} \hisyntax{lua} (1-) lualineno.lua
+{\everytt={\typosize[8/10]\lualineno{set=skip}\_let\_printverbline=\_printcodeline \_hfuzz=1em \medskip}
+  \commentchars-- \def\docfile{lualineno.lua} \ttline=-1
+  \_def\_printcomments{\_medskip
+     {\_catcodetable0 \_typosize[10/12]\lualineno{set=default}\_everypar={}\_scantextokens\_ea{\_vcomments}\par}%
+     \_bigskip
+     \_ifx\_normalprintfilename\_undefined\_else \_let\_printfilename=\_normalprintfilename \_fi
+   }
+
+\verbinput \hisyntax{lua} (2-) lualineno.lua
+}
 
 \secc \OpTeX/ package
 The \OpTeX/ package deos not contain much. It is mainly here
@@ -269,7 +277,7 @@ for the documentation, or
 in case someone prefer to type `\load[lualineno]` instead of
 `\directlua{require('lualineno')}`.
 
-\bgroup \lualineno{unset}
+\bgroup \lualineno{set=skip}
 \printdoc lualineno.opm % prints \_doc...\_cod parts + code before \_endcode
 \egroup
 
