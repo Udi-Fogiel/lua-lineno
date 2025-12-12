@@ -29,7 +29,7 @@ it is runing inside a group, which means you should use global
 counters. \LaTeX/ already does that by default, in \OpTeX/
 we need to use the `\global` prefix.
 
-\everytt{\typoscale[600/600]\hisyntax{tex}}
+\everytt{\typoscale[750/750]\hisyntax{tex}}
 \begEX
 \newcounter{lineno}
 \lualineno
@@ -180,7 +180,8 @@ in the first and next to end of lines in the second column.
         name = default
         toks = {\global\advance\lineno by 1}
         start = {\_ewref\Xline{{\_the\lineno}}%
-                 \thefontsize[5]\wlabel{\the\lineno}\_dest[line:\_the\lineno]%
+                 \thefontsize[5]\wlabel{\the\lineno}%
+                 \_def\_destheight{20pt}\_dest[line:\_the\lineno]%
                  \pdfliteral page{/Span<</ActualText<>>>BDC}%
                  \the\lineno\pdfliteral page{EMC}\kern.8em}
       }
@@ -190,7 +191,8 @@ in the first and next to end of lines in the second column.
         column = 2
         toks = {\global\advance\lineno by 1}
         end = {\_ewref\Xline{{\_the\lineno}}%
-               \thefontsize[5]\kern.8em\wlabel{\the\lineno}\_dest[line:\_the\lineno]%
+               \thefontsize[5]\kern.8em\wlabel{\the\lineno}%
+               \_def\_destheight{20pt}\_dest[line:\_the\lineno]%
                \pdfliteral page{/Span<</ActualText<>>>BDC}%
                \the\lineno\pdfliteral page{EMC}}
       }
@@ -212,23 +214,13 @@ in the first and next to end of lines in the second column.
 }
 
 \_openref
-\_def\_destheight{20pt}
 \_immediate\_write\_reffile{%
   \def\noexpand\Xline\string#1{\def\noexpand\currline{{}{\string#1}}}%
-  \_def\noexpand\_XtocA\string#1{\noexpand\_addto\noexpand\_toclist{{\string#1}}\unexpanded{\_ea\_addto\_ea\_toclist\_ea{\currline}}}%
+  \_def\noexpand\_XtocA\string#1{\noexpand\_addto\noexpand\_toclist{{\string#1}}%
+    \unexpanded{\_ea\_addto\_ea\_toclist\_ea{\currline}}}%
 }
-\_def\_tocline#1#2#3#4#5#6#7{%
-   \_advance\_tocrefnum by1
-   \_bgroup
-      \_leftskip=\_iindent \_rightskip=2\_iindent
-      \_ifischap \_advance\_leftskip by \_iindent \_fi
-      \_def\_pgn##1{\_ilink[line:#7]{\_numprint{##1}}}%
-      \_the\_everytocline
-      \_ifcsname _tocl:#1\_endcsname
-         \_cs{_tocl:#1}{#3}{\_scantextokens{#5}}{#7}\_par
-      \_fi
-   \_egroup
-}
+\suppresslongerror=1
+\replmacro \_tocline {} {} {"pg:\#6", "line:\#7"} {}
 
 
 

@@ -386,43 +386,10 @@ find_line = function(parent, list, column, offset)
     if get_attribute(parent, type_attr) == -2 then return end
     set_attribute(parent, type_attr, -2)
     column = get_attribute(parent, col_attr) or column
+    
     for n in traverse(list) do
-        if n.id == hlist_id then
-            local m, new_offset = real_line(n.head, n, offset)
-            if new_offset then
-                if get_attribute(m, type_attr) == -1 then
-                    new_offset = 0
-                elseif parent.id == vlist_id then
-                    new_offset = new_offset + n.shift
-                end
-                find_line(m, m.head, column, new_offset)
-                if get_attribute(m, col_attr) then
-                    find_line(n, n.head, column, new_offset)
-                end
-            elseif m then
-                local line_attr = n.head and get_attribute(tail(n.head), type_attr)
-                local line_type = line_attr and lineno_types[line_attr]
-                  and lineno_types[line_attr][column]
-                if line_type then
-                    local ltype = line_type[hlist_subs[n.subtype]]
-                    if ltype == 'true' or n.subtype == 0 then
-                        local new_offset = offset
-                        if parent.id == vlist_id then
-                            new_offset = offset + n.shift
-                        end
-                        local final_offset = line_type['offset'] and new_offset or 0
-                        lineno_callbacks(n.head, n, parent, line_type, final_offset)
-                    elseif ltype == 'once' then
-                        local new_offset = offset
-                        if parent.id == vlist_id then
-                            new_offset = offset + n.shift
-                        end
-                        local final_offset = line_type['offset'] and offset or 0
-                        lineno_callbacks(n.head, n, parent, line_type, final_offset)
-                    end
-                end
-            end
-        elseif n.list then
+        if n.id ~= hlist_id then
+            if not n.list then goto continue end
             local new_offset = offset
             if get_attribute(n, type_attr) == -1 then
                 new_offset = 0
@@ -430,7 +397,50 @@ find_line = function(parent, list, column, offset)
                 new_offset = new_offset + n.shift
             end
             find_line(n, n.list, column, new_offset)
+            goto continue
         end
+        
+        local m, new_offset = real_line(n.head, n, offset)
+        
+        if new_offset then
+            if get_attribute(m, type_attr) == -1 then
+                new_offset = 0
+            elseif parent.id == vlist_id then
+                new_offset = new_offset + n.shift
+            end
+            find_line(m, m.head, column, new_offset)
+            if get_attribute(m, col_attr) then
+                find_line(n, n.head, column, new_offset)
+            end
+            goto continue
+        end
+        
+        if not m then goto continue end
+        
+        local line_attr = n.head and get_attribute(tail(n.head), type_attr)
+        if not line_attr then goto continue end
+        
+        local line_type = lineno_types[line_attr] and lineno_types[line_attr][column]
+        if not line_type then goto continue end
+        
+        local ltype = line_type[hlist_subs[n.subtype]]
+        if not (ltype == 'true' or ltype == 'once' or n.subtype == 0) then goto continue end
+        
+        local new_offset = offset
+        if parent.id == vlist_id then
+            new_offset = offset + n.shift
+        end
+        
+        local final_offset
+        if ltype == 'once' then
+            final_offset = line_type['offset'] and offset or 0
+        else
+            final_offset = line_type['offset'] and new_offset or 0
+        end
+        
+        lineno_callbacks(n.head, n, parent, line_type, final_offset)
+        
+        ::continue::
     end
 end
 
