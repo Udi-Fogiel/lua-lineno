@@ -400,6 +400,25 @@ find_line = function(parent, list, column, offset)
             goto continue
         end
         
+        -- Get line type info once
+        local line_attr = n.head and get_attribute(tail(n.head), type_attr)
+        local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
+        local ltype = line_type and line_type[hlist_subs[n.subtype]]
+        
+        -- Handle 'once' before any recursion
+        if ltype == 'once' then
+            if real_box(n.list) then
+                local new_offset = offset
+                if parent.id == vlist_id then
+                    new_offset = offset + n.shift
+                end
+                local final_offset = line_type['offset'] and new_offset or 0
+                lineno_callbacks(n.head, n, parent, line_type, final_offset)
+            end
+            goto continue  -- Don't recurse into 'once' boxes
+        end
+        
+        -- Normal analysis for non-'once' boxes
         local m, new_offset = real_line(n.head, n, offset)
         
         if new_offset then
@@ -416,28 +435,16 @@ find_line = function(parent, list, column, offset)
         end
         
         if not m then goto continue end
-        
-        local line_attr = n.head and get_attribute(tail(n.head), type_attr)
-        if not line_attr then goto continue end
-        
-        local line_type = lineno_types[line_attr] and lineno_types[line_attr][column]
         if not line_type then goto continue end
         
-        local ltype = line_type[hlist_subs[n.subtype]]
-        if not (ltype == 'true' or ltype == 'once' or n.subtype == 0) then goto continue end
+        if not (ltype == 'true') then goto continue end
         
         local new_offset = offset
         if parent.id == vlist_id then
             new_offset = offset + n.shift
         end
         
-        local final_offset
-        if ltype == 'once' then
-            final_offset = line_type['offset'] and offset or 0
-        else
-            final_offset = line_type['offset'] and new_offset or 0
-        end
-        
+        local final_offset = line_type['offset'] and new_offset or 0
         lineno_callbacks(n.head, n, parent, line_type, final_offset)
         
         ::continue::
