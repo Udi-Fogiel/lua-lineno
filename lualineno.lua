@@ -387,8 +387,8 @@ find_line = function(parent, list, column, offset)
     set_attribute(parent, type_attr, -2)
     column = get_attribute(parent, col_attr) or column
     
-    for n in traverse(list) do
-        if n.id ~= hlist_id then
+    for n, id, sb in traverse(list) do
+        if id ~= hlist_id then
             if not n.list then goto continue end
             local new_offset = offset
             if get_attribute(n, type_attr) == -1 then
@@ -403,7 +403,7 @@ find_line = function(parent, list, column, offset)
         -- Get line type info once
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
-        local ltype = line_type and line_type[hlist_subs[n.subtype]]
+        local ltype = line_type and line_type[hlist_subs[sb]]
         
         -- Handle 'once' before any recursion
         if ltype == 'once' then
