@@ -356,12 +356,12 @@ end
 -- so we search for a glyph node recursively.
 
 local function real_box(list)
-    for n in traverse(list) do
-        if n.id == glyph_id then
+    for n, id, sb in traverse(list) do
+        if id == glyph_id then
             return true
-        elseif n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
+        elseif id == hlist_id and sb ~= 7 and real_box(n.list) then
             return true
-        elseif n.id == vlist_id and n.subtype ~= 11 and real_box(n.list) then
+        elseif id == vlist_id and sb ~= 11 and real_box(n.list) then
             return true
         end
     end
@@ -369,12 +369,12 @@ local function real_box(list)
 end
 
 local function real_line(list, parent, offset)
-    for n in traverse(list) do
-        if n.id == glyph_id then
+    for n, id, sb in traverse(list) do
+        if id == glyph_id then
             return true
-        elseif n.id == vlist_id and n.subtype ~= 11 and real_box(n.list) then
+        elseif id == vlist_id and sb ~= 11 and real_box(n.list) then
             return n, offset + rangedimensions(parent, list, n)
-        elseif n.id == hlist_id and n.subtype ~= 7 and real_box(n.list) then
+        elseif id == hlist_id and sb ~= 7 and real_box(n.list) then
            offset = offset + rangedimensions(parent, list, n)
            return real_line(n.list, n, offset)
         end
@@ -400,12 +400,10 @@ find_line = function(parent, list, column, offset)
             goto continue
         end
         
-        -- Get line type info once
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
         local ltype = line_type and line_type[hlist_subs[sb]]
         
-        -- Handle 'once' before any recursion
         if ltype == 'once' then
             if real_box(n.list) then
                 local new_offset = offset
@@ -415,10 +413,9 @@ find_line = function(parent, list, column, offset)
                 local final_offset = line_type['offset'] and new_offset or 0
                 lineno_callbacks(n.head, n, parent, line_type, final_offset)
             end
-            goto continue  -- Don't recurse into 'once' boxes
+            goto continue
         end
         
-        -- Normal analysis for non-'once' boxes
         local m, new_offset = real_line(n.head, n, offset)
         
         if new_offset then

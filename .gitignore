@@ -10,3 +10,4 @@ test.tex
 *.lof
 *.dvi
 *.zip
+*.out

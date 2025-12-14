@@ -21,6 +21,7 @@ The possible keys are
 \enditems
 
 \sec Examples
+\everytt{\typoscale[750/750]\hisyntax{tex}}
 
 \secc Number Lines Across the Document
 
@@ -29,7 +30,6 @@ it is runing inside a group, which means you should use global
 counters. \LaTeX/ already does that by default, in \OpTeX/
 we need to use the `\global` prefix.
 
-\everytt{\typoscale[750/750]\hisyntax{tex}}
 \begEX
 \newcounter{lineno}
 \lualineno
@@ -128,7 +128,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\global\advance\lineno by 1}
-        start = {\thefontsize[5]
+        start = {\thefontsize[5]%
                  \the\lineno\kern.8em}
       }
     define =
@@ -136,13 +136,117 @@ in the first and next to end of lines in the second column.
         name = default
         column = 2
         toks = {\global\advance\lineno by 1}
-        end = {\kern.8em\thefontsize[5]
+        end = {\kern.8em\thefontsize[5]%
                  \the\lineno}
       }
 
     set = default
   }
 \endEX
+
+\secc module
+
+\secc Reference a Line
+
+\begEX
+\newcounter{lineno}
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\refstepcounter{lineno}}
+        start = {\tiny
+                  \thelineno
+                  \kern.8em}
+      }
+    set = default
+  }
+\midEX
+\newcount\lineno
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\global\advance\lineno by 1}
+        start = {\thefontsize[5]%
+                 \wlabel{\the\lineno}%
+                 \the\lineno\kern.8em}
+      }
+  }
+\endEX
+
+\secc Link to a Line
+
+\begEX
+\newcounter{lineno}
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\AssignSocketPlug
+                {refstepcounter/target}{noop}%
+                \refstepcounter{lineno}}
+        start = {\MakeLinkTarget{lineno}%
+                 \tiny\thelineno\kern.8em}
+      }
+    set = default
+  }
+\midEX
+\newcount\lineno
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\global\advance\lineno by 1}
+        start = {\thefontsize[5]%
+                 \wlabel{\the\lineno}%
+                 \dest[line:\the\lineno]%
+                 \the\lineno\kern.8em}
+      }
+  }
+\endEX
+
+\secc Ignore Line Numbers When Copying Text
+
+\begEX
+\newcounter{lineno}
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\stepcounter{lineno}}
+        start = {\pdfextension literal page
+                 {/Span<</ActualText<>>>BDC}%
+                 \tiny\thelineno
+                 \pdfextension literal page{EMC}%
+                 \kern.8em}
+      }
+    set = default
+  }
+\midEX
+\newcount\lineno
+\lualineno
+  {
+    define =
+      {
+        name = default
+        toks = {\global\advance\lineno by 1}
+        start = {\thefontsize[5]%
+                 \pdfliteral page
+                   {/Span<</ActualText<>>>BDC}%
+                 \the\lineno
+                 \pdfliteral page{EMC}\kern.8em}
+      }
+    set = default
+  }
+\endEX
+
+\secc Line Numbers in Toc
 
 
 \_doc
