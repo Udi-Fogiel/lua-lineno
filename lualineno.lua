@@ -50,6 +50,7 @@ local insert_before = node.insert_before
 local insert_after = node.insert_after
 local traverse = node.traverse
 local rangedimensions = node.rangedimensions
+local new_node = node.new
 
 local texnest = tex.nest
 
@@ -94,25 +95,32 @@ end
 -- The idea is based on an article by Hans Hagen. 
 local lineno_types = { }
 local lineno_attr = { }
+local LINENO_NUMBER = 0x1
+local LINENO_RECURSE = 0x2
 local defaults = {
     toks = { },
     start = { },
     ['end'] = { },
-    box = 'true',
-    alignment = 'true',
-    equation = 'true',
-    line = 'true',
-    offset = 'true'
+    box = {number = true, recurse = true},
+    alignment = {number = true, recurse = true},
+    equation = {number = true, recurse = true},
+    line = {number = true, recurse = true},
+    offset = {number = true, recurse = true},
+}
+
+local inner_keys = {
+    number = {scanner = scan_bool, default = true},
+    recurse = {scanner = scan_bool, default = true}
 }
 
 local defaults_keys = {
     toks = {scanner = scan_toks},
     start = {scanner = scan_toks},
     ['end'] = {scanner = scan_toks},
-    box = {scanner = scan_choice, args = {'true', 'false'}},
-    alignment = {scanner = scan_choice, args = {'true', 'false', 'once'}},
-    equation = {scanner = scan_choice, args = {'true', 'false', 'once'}},
-    line = {scanner = scan_choice, args = {'true', 'false'}},
+    box = {scanner = process_keys, args = {inner_keys, messages}},
+    alignment = {scanner = process_keys, args = {inner_keys, messages}},
+    equation = {scanner = process_keys, args = {inner_keys, messages}},
+    line = {scanner = process_keys, args = {inner_keys, messages}},
     offset = {scanner = scan_bool}
 }
 
@@ -158,8 +166,16 @@ local function define_lineno()
 -- Populate the column's table.
 -- If a key was not specified we use the defualt value.
     local c = lineno_types[i][col]
-    for k,v in pairs(defaults) do 
-        c[k] = vals[k] or defaults[k]
+    for k,v in pairs(defaults) do
+        if k == 'box' or k == 'alignment' or k == 'equation' or k == 'line' then
+            local setting = vals[k] or v
+            local flags = 0
+            if setting.number then flags = flags | LINENO_NUMBER end
+            if setting.recurse then flags = flags | LINENO_RECURSE end
+            c[k] = flags
+        else    
+            c[k] = vals[k] ~= nil and vals[k] or defaults[k]
+        end
     end
 end
 
@@ -284,7 +300,9 @@ end
 
 -- \secc a^^M
 
-local function number_line(head, line, parent, line_type, offset)
+local function number_line(head, line, line_type, offset, width)
+   local is_offset = line_type['offset']
+   offset = is_offset and offset or 0
 -- In case \LaTeX/ is used without the luacolor package,
 -- we add an additional group to make the boxes color safe.
     put_next({rbrace, rbrace})
@@ -292,15 +310,16 @@ local function number_line(head, line, parent, line_type, offset)
     put_next({hbox, lbrace, lbrace})
     local start_box = scan_list()
     if start_box.head then
-        local start_kern = node.new('kern', 1)
-        local offset_kern = node.new('kern', 1)
-        start_kern.kern = -start_box.width - offset
-        offset_kern.kern = offset
-        if offset_kern.kern ~= 0 then
+        if offset ~= 0 then
+            local offset_kern = new_node('kern', 1)
+            offset_kern.kern = offset
             head = insert_before(head,head,offset_kern)
         end
         head = insert_before(head,head,start_box)
-        if start_kern.kern ~= 0 then
+        local start_kern_width = -start_box.width - offset
+        if start_kern_width ~= 0 then
+            local start_kern = new_node('kern', 1)
+            start_kern.kern = start_kern_width
             head = insert_before(head,head,start_kern)
         end
     else
@@ -311,10 +330,13 @@ local function number_line(head, line, parent, line_type, offset)
     put_next({hbox, lbrace, lbrace})
     local end_box = scan_list()
     if end_box.head then
-        local end_kern = node.new('kern', 1)
-        end_kern.kern = parent.width - line.shift - line.width + offset
-        if end_kern.kern ~= 0 then
-            head = insert_after(head,tail(head),end_kern)
+        if is_offset then
+            local end_kern_width = width - line.width - offset
+            if end_kern_width ~= 0 then
+                local end_kern = new_node('kern', 1)
+                end_kern.kern = end_kern_width
+                head = insert_after(head,tail(head),end_kern)
+            end
         end
         head = insert_after(head,tail(head),end_box)
     else
@@ -328,25 +350,25 @@ if luatexbase then
     luatexbase.create_callback('lualineno.pre_numbering', 'list', false)
     luatexbase.create_callback('lualineno.numbering', 'exclusive', number_line)
     luatexbase.create_callback('lualineno.post_numbering', 'reverselist', false)
-    luatexbase.add_to_callback('lualineno.pre_numbering', function(_, _, _, lt)
+    luatexbase.add_to_callback('lualineno.pre_numbering', function(_, _, lt)
         runtoks(function() put_next(lt['toks']) end) 
     return true end, 'lualineno.runtoks')
     local call_callback = luatexbase.call_callback
-    lineno_callbacks = function(head, line, parent, line_type, offset)
-        head = call_callback('lualineno.pre_numbering', head, line, parent, line_type, offset)
+    lineno_callbacks = function(head, line, line_type, offset, width)
+        head = call_callback('lualineno.pre_numbering', head, line, line_type, offset, width)
         if not head then return end
         line.head = head
-        head = call_callback('lualineno.numbering', head, line, parent, line_type, offset)
+        head = call_callback('lualineno.numbering', head, line, line_type, offset, width)
         if not head then return end
         line.head = head
-        head = call_callback('lualineno.post_numbering', head, line, parent, line_type, offset)
+        head = call_callback('lualineno.post_numbering', head, line, line_type, offset, width)
         if not head then return end
         line.head = head
     end
 else
-    lineno_callbacks = function(head, line, parent, line_type, offset)
+    lineno_callbacks = function(head, line, line_type, offset, width)
         runtoks(function() put_next(line_type['toks']) end)
-        line.head = number_line(head, line, parent, line_type, offset)
+        line.head = number_line(head, line, line_type, offset, width)
     end
 end
 
@@ -359,10 +381,11 @@ local function real_box(list)
     for n, id, sb in traverse(list) do
         if id == glyph_id then
             return true
-        elseif id == hlist_id and sb ~= 7 and real_box(n.list) then
-            return true
-        elseif id == vlist_id and sb ~= 11 and real_box(n.list) then
-            return true
+        elseif (id == hlist_id and sb ~= 7) 
+          or (id == vlist_id and sb ~= 11) then
+            if real_box(n.list) then
+                return true
+            end
         end
     end
     return false
@@ -382,21 +405,22 @@ local function real_line(list, parent, offset)
     return false
 end
 
-find_line = function(parent, list, column, offset)
+find_line = function(parent, list, column, offset, width)
     if get_attribute(parent, type_attr) == -2 then return end
     set_attribute(parent, type_attr, -2)
-    column = get_attribute(parent, col_attr) or column
-    
+    local parent_is_vlist = parent.id == vlist_id
     for n, id, sb in traverse(list) do
         if id ~= hlist_id then
             if not n.list then goto continue end
-            local new_offset = offset
+            local new_offset, new_width = offset, width
             if get_attribute(n, type_attr) == -1 then
-                new_offset = 0
-            elseif parent.id == vlist_id then
+                new_offset, new_width = 0, n.width
+            elseif parent_is_vlist then
                 new_offset = new_offset + n.shift
             end
-            find_line(n, n.list, column, new_offset)
+            local new_col = get_attribute(n, col_attr)
+            new_width = new_col and n.width or new_width
+            find_line(n, n.list, new_col or column, new_offset, new_width)
             goto continue
         end
         
@@ -404,45 +428,42 @@ find_line = function(parent, list, column, offset)
         local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
         local ltype = line_type and line_type[hlist_subs[sb]]
         
-        if ltype == 'once' then
+        if not ltype then goto continue end       
+        local should_number = (ltype & LINENO_NUMBER) ~= 0
+        local should_recurse = (ltype & LINENO_RECURSE) ~= 0       
+        if not (should_number or should_recurse) then
+            goto continue
+        end
+        
+        if should_number and not should_recurse then
             if real_box(n.list) then
-                local new_offset = offset
-                if parent.id == vlist_id then
-                    new_offset = offset + n.shift
-                end
-                local final_offset = line_type['offset'] and new_offset or 0
-                lineno_callbacks(n.head, n, parent, line_type, final_offset)
+                local new_offset = parent_is_vlist and (offset + n.shift) or offset
+                lineno_callbacks(n.head, n, line_type, new_offset, width)
             end
             goto continue
         end
         
         local m, new_offset = real_line(n.head, n, offset)
-        
+        local new_width = width
         if new_offset then
             if get_attribute(m, type_attr) == -1 then
-                new_offset = 0
-            elseif parent.id == vlist_id then
+                new_offset, new_width = 0, m.width
+            elseif parent_is_vlist then
                 new_offset = new_offset + n.shift
             end
-            find_line(m, m.head, column, new_offset)
-            if get_attribute(m, col_attr) then
-                find_line(n, n.head, column, new_offset)
+            local new_col = get_attribute(m, col_attr)
+            new_width = new_col and m.width or new_width
+            find_line(m, m.head, new_col or column, new_offset, new_width)
+            if new_col then
+                find_line(n, n.head, new_col, new_offset, width)
             end
             goto continue
         end
         
-        if not m then goto continue end
-        if not line_type then goto continue end
+        if not (m and should_number) then goto continue end
         
-        if not (ltype == 'true') then goto continue end
-        
-        local new_offset = offset
-        if parent.id == vlist_id then
-            new_offset = offset + n.shift
-        end
-        
-        local final_offset = line_type['offset'] and new_offset or 0
-        lineno_callbacks(n.head, n, parent, line_type, final_offset)
+        local new_offset = parent_is_vlist and (offset + n.shift) or offset        
+        lineno_callbacks(n.head, n, line_type, new_offset, width)
         
         ::continue::
     end
@@ -450,7 +471,7 @@ end
 
 if not plain then
     luatexbase.add_to_callback('pre_shipout_filter', function(box)
-        find_line(box, box.list, 1, 0)
+        find_line(box, box.list, 1, 0, box.width)
         return true
     end, 'lualineno.shipout')
 end

@@ -21,7 +21,7 @@ The possible keys are
 \enditems
 
 \sec Examples
-\everytt{\typoscale[750/750]\hisyntax{tex}}
+\everytt{\typoscale[700/700]\hisyntax{tex}}
 
 \secc Number Lines Across the Document
 
