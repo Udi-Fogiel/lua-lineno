@@ -315,6 +315,7 @@ in the first and next to end of lines in the second column.
   \roundness=6pt
   \shadow=N
   \lwidth=1bp
+  \hhkern=-\roundness
 }
 
 \_openref

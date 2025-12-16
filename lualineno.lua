@@ -33,6 +33,8 @@ local messages = {
 local setattribute = tex.setattribute
 local type_attr = luatexbase and luatexbase.new_attribute('lualineno_type') or 0
 local col_attr = luatexbase and luatexbase.new_attribute('lualineno_col') or 1
+local mark_attr = luatexbase and luatexbase.new_attribute('lualineno_mark') or 2
+
 local unset_attr = -0x7FFFFFFF
 
 local hlist_id = node.id('hlist')
@@ -183,7 +185,7 @@ local function mark_last_vlist(n)
     local current = n
     while current do
         if current.id == vlist_id then
-            set_attribute(current, type_attr, -1)
+            set_attribute(current, mark_attr, -1)
             return true
         elseif current.id == hlist_id then
             if mark_last_vlist(tail(current.list)) then return true end
@@ -249,6 +251,7 @@ local lualineno_keys = {
     label = {scanner = scan_toks, args = {false, true}},
     line_attr = {scanner = scan_int},
     col_attr = {scanner = scan_int},
+    mark_attr = {scanner = scan_int},
     processbox = {scanner = scan_int},
 }
 
@@ -281,9 +284,11 @@ local function lualineno()
     end
     type_attr = vals.line_attr or type_attr
     col_attr = vals.col_attr or col_attr
+    mark_attr = vals.mark_attr or mark_attr
     if vals.processbox then 
         local box = tex.box[vals.processbox]
-        find_line(box, box.head, 1, 0)
+        local col = get_attribute(box, col_attr)
+        find_line(box, box.head, col or 1, 0, box.width)
     end
 end
 
@@ -406,20 +411,23 @@ local function real_line(list, parent, offset)
 end
 
 find_line = function(parent, list, column, offset, width)
-    if get_attribute(parent, type_attr) == -2 then return end
-    set_attribute(parent, type_attr, -2)
+    if get_attribute(parent, mark_attr) == -2 then return end
+    set_attribute(parent, mark_attr, -2)
     local parent_is_vlist = parent.id == vlist_id
     for n, id, sb in traverse(list) do
         if id ~= hlist_id then
             if not n.list then goto continue end
             local new_offset, new_width = offset, width
-            if get_attribute(n, type_attr) == -1 then
+            if get_attribute(n, mark_attr) == -1 then
                 new_offset, new_width = 0, n.width
             elseif parent_is_vlist then
                 new_offset = new_offset + n.shift
             end
             local new_col = get_attribute(n, col_attr)
-            new_width = new_col and n.width or new_width
+            if new_col then
+                new_width = n.width
+                new_offset = 0
+            end
             find_line(n, n.list, new_col or column, new_offset, new_width)
             goto continue
         end
@@ -446,13 +454,16 @@ find_line = function(parent, list, column, offset, width)
         local m, new_offset = real_line(n.head, n, offset)
         local new_width = width
         if new_offset then
-            if get_attribute(m, type_attr) == -1 then
+            if get_attribute(m, mark_attr) == -1 then
                 new_offset, new_width = 0, m.width
             elseif parent_is_vlist then
                 new_offset = new_offset + n.shift
             end
             local new_col = get_attribute(m, col_attr)
-            new_width = new_col and m.width or new_width
+            if new_col then
+                new_width = n.width
+                new_offset = 0
+            end
             find_line(m, m.head, new_col or column, new_offset, new_width)
             if new_col then
                 find_line(n, n.head, new_col, new_offset, width)
@@ -534,7 +545,7 @@ elseif latex then
 -- are added to be able to color them.
     luatexbase.declare_callback_rule('pre_shipout_filter', 
          'lualineno.shipout', 'before', 'luacolor.process')
-    local attr_num = luatexbase.attributes['lualineno_type']
+    local attr_num = luatexbase.attributes['lualineno_mark']
     local replace = string.format([[\moveright \@themargin \vbox attr %d = -1]], attr_num)
     local find = [[\moveright \@themargin \vbox]]
     local patch, num_subs = token.get_macro("@outputpage"):gsub(find, replace)
