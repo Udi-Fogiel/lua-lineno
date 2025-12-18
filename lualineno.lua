@@ -11,7 +11,8 @@ local runtoks = tex.runtoks
 local put_next = token.unchecked_put_next
 local create = token.create
 local new_tok = token.new
-local lbrace, rbrace = new_tok(string.byte('{'), 1), new_tok(string.byte('}'), 2)
+local lbrace = new_tok(string.byte('{'), token.command_id'left_brace')
+local rbrace = new_tok(string.byte('}'), token.command_id'right_brace')
 
 local get_next = token.get_next
 local scan_toks = token.scan_toks
@@ -40,7 +41,6 @@ local unset_attr = -0x7FFFFFFF
 local hlist_id = node.id('hlist')
 local vlist_id = node.id('vlist')
 local glyph_id = node.id('glyph')
-local hlist_subs = node.subtypes("hlist")
 local tail = node.tail
 
 local get_props = node.getproperty
@@ -52,10 +52,29 @@ local insert_before = node.insert_before
 local insert_after = node.insert_after
 local traverse = node.traverse
 local rangedimensions = node.rangedimensions
-local new_node = node.new
-
+local node_copy = node.copy
 local texnest = tex.nest
 
+local LINENO_NUMBER = 0x1
+local LINENO_RECURSE = 0x2
+
+local line_sb, eq_sb, align_sb, bo_sb
+local mathcahr_sb, eqno_sb
+for k,v in pairs(node.subtypes("hlist")) do
+    if v == "line" then line_sb = k end
+    if v == "alignment" then align_sb = k end
+    if v == "box" then box_sb = k end
+    if v == "equation" then eq_sb = k end
+    if v == "equationnumber" then eqno_sb = k end
+    if v == "mathchar" then mathcahr_sb = k end
+end
+local vex_sb, vdel_sb
+for k,v in pairs(node.subtypes("vlist")) do
+    if v == "vextensible" then vex_sb = k end
+    if v == "vdelimiter" then vdel_sb = k end
+end
+
+local base_kern = node.new('kern', 'user')
 
 local optex, latex, plain
 if format:find("optex") then -- OpTeX
@@ -74,8 +93,7 @@ if not (optex or latex or plain) then
 end
 
   -- local hbox = new_tok(141, 21)
-local hbox
-do
+local hbox do
 -- initialization of the new primitives.
   local prefix = '@lua^line&no_' -- unlikely prefix...
   while token.is_defined(prefix .. 'hbox') do
@@ -97,8 +115,6 @@ end
 -- The idea is based on an article by Hans Hagen. 
 local lineno_types = { }
 local lineno_attr = { }
-local LINENO_NUMBER = 0x1
-local LINENO_RECURSE = 0x2
 local defaults = {
     toks = { },
     start = { },
@@ -126,10 +142,6 @@ local defaults_keys = {
     offset = {scanner = scan_bool}
 }
 
-local help_message = [[
-the last scanned key was "%s".
-there is a "%s" in the way.
-]]
 local function set_defaults()
     local vals = process_keys(defaults_keys,messages)
     for k,v in pairs(vals) do
@@ -145,40 +157,40 @@ define_keys.column = {scanner = scan_int}
 define_keys.name = {scanner = scan_string}
 
 local function define_lineno()
--- This function is used in the define key.
--- It is very similar to the set_defaults() function,
--- but it accepts a `column` and `name` keys as well.
-    local vals = process_keys(define_keys,messages)
--- A newly defined lualineno type must have a name
+    local vals = process_keys(define_keys, messages)
     local name = vals['name']
     if not name then 
         texerror("lualineno: Missing name when defining a lineno")
         return
     end
--- If the `column` key is not specified we assume 
--- the definition is for the first (or only) column.
-    local col = vals['column']
-    col = col or 1
--- We keep a map between the lineno type names and attributes.
+    
+    local col = vals['column'] or 1
     lineno_attr[name] = lineno_attr[name] or #lineno_types + 1
     local i = lineno_attr[name]
-    lineno_types[i] = lineno_types[i] or { }
--- Make sure the table for the column of this lineno type exists
-    lineno_types[i][col] = lineno_types[i][col] or { }
--- Populate the column's table.
--- If a key was not specified we use the defualt value.
+    lineno_types[i] = lineno_types[i] or {}
+    lineno_types[i][col] = lineno_types[i][col] or {}
+    
     local c = lineno_types[i][col]
-    for k,v in pairs(defaults) do
-        if k == 'box' or k == 'alignment' or k == 'equation' or k == 'line' then
-            local setting = vals[k] or v
-            local flags = 0
-            if setting.number then flags = flags | LINENO_NUMBER end
-            if setting.recurse then flags = flags | LINENO_RECURSE end
-            c[k] = flags
-        else    
-            c[k] = vals[k] ~= nil and vals[k] or defaults[k]
-        end
+    
+    -- Convert string keys to numeric keys when storing
+    local function store_type(key, subtype_id)
+        local setting = vals[key] or defaults[key]
+        local flags = 0
+        if setting.number then flags = flags | LINENO_NUMBER end
+        if setting.recurse then flags = flags | LINENO_RECURSE end
+        c[subtype_id] = flags
     end
+    
+    store_type('box', box_sb)
+    store_type('alignment', align_sb)
+    store_type('equation', eq_sb)
+    store_type('line', line_sb)
+    
+    -- Other keys remain with string keys
+    c.toks = vals.toks or defaults.toks
+    c.start = vals.start or defaults.start
+    c['end'] = vals['end'] or defaults['end']
+    c.offset = vals.offset ~= nil and vals.offset or defaults.offset
 end
 
 local function mark_last_vlist(n)
@@ -316,14 +328,14 @@ local function number_line(head, line, line_type, offset, width)
     local start_box = scan_list()
     if start_box.head then
         if offset ~= 0 then
-            local offset_kern = new_node('kern', 1)
+            local offset_kern = node_copy(base_kern)
             offset_kern.kern = offset
             head = insert_before(head,head,offset_kern)
         end
         head = insert_before(head,head,start_box)
         local start_kern_width = -start_box.width - offset
         if start_kern_width ~= 0 then
-            local start_kern = new_node('kern', 1)
+            local start_kern = node_copy(base_kern)
             start_kern.kern = start_kern_width
             head = insert_before(head,head,start_kern)
         end
@@ -338,7 +350,7 @@ local function number_line(head, line, line_type, offset, width)
         if is_offset then
             local end_kern_width = width - line.width - offset
             if end_kern_width ~= 0 then
-                local end_kern = new_node('kern', 1)
+                local end_kern = node_copy(base_kern)
                 end_kern.kern = end_kern_width
                 head = insert_after(head,tail(head),end_kern)
             end
@@ -386,8 +398,8 @@ local function real_box(list)
     for n, id, sb in traverse(list) do
         if id == glyph_id then
             return true
-        elseif (id == hlist_id and sb ~= 7) 
-          or (id == vlist_id and sb ~= 11) then
+        elseif (id == hlist_id and sb ~= eqno_sb and sb ~= mathcahr_sb) 
+          or (id == vlist_id and sb ~= vex_sb and sb ~= vdel_sb) then
             if real_box(n.list) then
                 return true
             end
@@ -400,9 +412,9 @@ local function real_line(list, parent, offset)
     for n, id, sb in traverse(list) do
         if id == glyph_id then
             return true
-        elseif id == vlist_id and sb ~= 11 and real_box(n.list) then
+        elseif id == vlist_id and sb ~= vex_sb and sb ~= vdel_sb and real_box(n.list) then
             return n, offset + rangedimensions(parent, list, n)
-        elseif id == hlist_id and sb ~= 7 and real_box(n.list) then
+        elseif id == hlist_id and sb ~= eqno_sb and sb ~= mathcahr_sb and real_box(n.list) then
            offset = offset + rangedimensions(parent, list, n)
            return real_line(n.list, n, offset)
         end
@@ -418,15 +430,11 @@ find_line = function(parent, list, column, offset, width)
         if id ~= hlist_id then
             if not n.list then goto continue end
             local new_offset, new_width = offset, width
-            if get_attribute(n, mark_attr) == -1 then
+            local new_col = get_attribute(n, col_attr)
+            if get_attribute(n, mark_attr) == -1 or new_col then
                 new_offset, new_width = 0, n.width
             elseif parent_is_vlist then
                 new_offset = new_offset + n.shift
-            end
-            local new_col = get_attribute(n, col_attr)
-            if new_col then
-                new_width = n.width
-                new_offset = 0
             end
             find_line(n, n.list, new_col or column, new_offset, new_width)
             goto continue
@@ -434,11 +442,10 @@ find_line = function(parent, list, column, offset, width)
         
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
-        local ltype = line_type and line_type[hlist_subs[sb]]
+        local ltype = line_type and line_type[sb]
         
-        if not ltype then goto continue end       
-        local should_number = (ltype & LINENO_NUMBER) ~= 0
-        local should_recurse = (ltype & LINENO_RECURSE) ~= 0       
+        local should_number = ltype and (ltype & LINENO_NUMBER) ~= 0 or false
+        local should_recurse = ltype and (ltype & LINENO_RECURSE) ~= 0 or true 
         if not (should_number or should_recurse) then
             goto continue
         end
@@ -454,15 +461,11 @@ find_line = function(parent, list, column, offset, width)
         local m, new_offset = real_line(n.head, n, offset)
         local new_width = width
         if new_offset then
-            if get_attribute(m, mark_attr) == -1 then
+            local new_col = get_attribute(m, col_attr)
+            if get_attribute(m, mark_attr) == -1 or new_col then
                 new_offset, new_width = 0, m.width
             elseif parent_is_vlist then
                 new_offset = new_offset + n.shift
-            end
-            local new_col = get_attribute(m, col_attr)
-            if new_col then
-                new_width = n.width
-                new_offset = 0
             end
             find_line(m, m.head, new_col or column, new_offset, new_width)
             if new_col then
@@ -515,7 +518,8 @@ if format == 'optex' then
         texio.write_nl('log', "lualineno: failed to patch \\_createcolumns")
     end
 
-    local lbracket, rbracket = new_tok(string.byte('['), 12), new_tok(string.byte(']'), 12)
+    local lbracket = new_tok(string.byte('['), token.command_id'other_char')
+    local rbracket = new_tok(string.byte(']'), token.command_id'other_char')
     local label_tok = create('_label')
     make_label = function(label)
         runtoks(function()
@@ -558,7 +562,6 @@ elseif latex then
         texio.write_nl('log', "lualineno: failed to patch \\@outputpage")
     end
     local label_tok = create('label')
-    local node_copy = node.copy
     make_label = function(label, list, n)
         runtoks(function()
             put_next({rbrace,rbrace})
