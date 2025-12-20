@@ -117,8 +117,8 @@ local lineno_types = { }
 local lineno_attr = { }
 local defaults = {
     toks = { },
-    start = { },
-    ['end'] = { },
+    left = { },
+    right = { },
     box = {number = true, recurse = true},
     alignment = {number = true, recurse = true},
     equation = {number = true, recurse = true},
@@ -133,8 +133,8 @@ local inner_keys = {
 
 local defaults_keys = {
     toks = {scanner = scan_toks},
-    start = {scanner = scan_toks},
-    ['end'] = {scanner = scan_toks},
+    left = {scanner = scan_toks},
+    right = {scanner = scan_toks},
     box = {scanner = process_keys, args = {inner_keys, messages}},
     alignment = {scanner = process_keys, args = {inner_keys, messages}},
     equation = {scanner = process_keys, args = {inner_keys, messages}},
@@ -188,8 +188,8 @@ local function define_lineno()
     
     -- Other keys remain with string keys
     c.toks = vals.toks or defaults.toks
-    c.start = vals.start or defaults.start
-    c['end'] = vals['end'] or defaults['end']
+    c.left = vals.left or defaults.left
+    c.right = vals.right or defaults.right
     c.offset = vals.offset ~= nil and vals.offset or defaults.offset
 end
 
@@ -323,9 +323,19 @@ local function number_line(head, line, line_type, offset, width)
 -- In case \LaTeX/ is used without the luacolor package,
 -- we add an additional group to make the boxes color safe.
     put_next({rbrace, rbrace})
-    put_next(line_type['start'])
+    put_next(line_type.left)
     put_next({hbox, lbrace, lbrace})
-    local start_box = scan_list()
+    put_next({rbrace, rbrace})
+    put_next(line_type.right)
+    put_next({hbox, lbrace, lbrace})
+    local end_box, start_box
+    if line.dir == "TLT" then
+        end_box = scan_list()
+        start_box = scan_list()
+    else
+        start_box = scan_list()
+        end_box = scan_list()
+    end
     if start_box.head then
         if offset ~= 0 then
             local offset_kern = node_copy(base_kern)
@@ -342,10 +352,6 @@ local function number_line(head, line, line_type, offset, width)
     else
         node_flush(start_box)
     end
-    put_next({rbrace, rbrace})
-    put_next(line_type['end'])
-    put_next({hbox, lbrace, lbrace})
-    local end_box = scan_list()
     if end_box.head then
         if is_offset then
             local end_kern_width = width - line.width - offset

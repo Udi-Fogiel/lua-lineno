@@ -8,7 +8,7 @@
       {
         name = default
         toks = {\refstepcounter{lineno}}
-        start = {\thelineno\kern.8em}
+        left = {\thelineno\kern.8em}
       }
     set = default
   }

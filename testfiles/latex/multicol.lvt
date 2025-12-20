@@ -8,20 +8,20 @@
       {
         name = default
         toks = {\stepcounter{lineno}}
-        start = {\tiny\thelineno\kern.8em}
+        left = {\tiny\thelineno\kern.8em}
       }
     define =
       {
         name = default
         toks = {\stepcounter{lineno}}
-        end = {\tiny\thelineno\kern.8em}
+        right = {\tiny\thelineno\kern.8em}
         column = 2
       }
     define =
       {
         name = default
         toks = {\stepcounter{lineno}}
-        end = {\tiny\thelineno\kern.8em}
+        right = {\tiny\thelineno\kern.8em}
         column = 3
       }
     set = default

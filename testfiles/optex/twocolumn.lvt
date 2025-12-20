@@ -8,13 +8,13 @@
       {
         name = default
         toks = {\advance\lineno1}
-        start = {\setfontsize{mag.6}\the\lineno\kern.8em}
+        left = {\setfontsize{mag.6}\the\lineno\kern.8em}
       }
     define =
       {
         name = default
         toks = {\advance\lineno1}
-        end = {\setfontsize{mag.6}\kern.8em\the\lineno}
+        right = {\setfontsize{mag.6}\kern.8em\the\lineno}
         column = 2
       }
     set = default

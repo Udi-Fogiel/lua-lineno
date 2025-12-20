@@ -7,7 +7,7 @@
       {
         name = default
         toks = {\advance\lineno by 1}
-        start = {\wlabel{\the\lineno}\the\lineno\kern.8em}
+        left = {\wlabel{\the\lineno}\the\lineno\kern.8em}
       }
     set = default
   }
