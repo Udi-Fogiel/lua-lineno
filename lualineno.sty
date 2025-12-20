@@ -72,4 +72,29 @@
  \egroup
 }}
 
+\AddToHook{package/breqn/after}{%
+    \directlua{
+      local replace = "\\directlua {
+        local box = tex.getbox('EQ@numbox')
+        if box then
+          local n = node.copy_list(box)
+          n.subtype = 7
+          node.write(n)
+        end}"
+      local find = "\\copy \\EQ@numbox"
+      local function patch_breqn(macro)
+        local patch, success = token.get_macro(macro):gsub(find, replace)
+        if success > 0 then
+            token.set_macro(macro, patch)
+        else
+            texio.write_nl('log', "lualineno: failed to patch \\" .. macro .. " (breqn)")
+        end
+      end
+      patch_breqn("eq@typeset@RShifted")
+      patch_breqn("eq@typeset@LShifted")
+      patch_breqn("eq@typeset@rightnumber")
+      patch_breqn("eq@typeset@leftnumber")
+      }}
+
+
 \endinput
