@@ -508,7 +508,7 @@ if format == 'optex' then
 -- For each box we assign an attribute with a value 
 -- according to the column number.
     local replace = table.concat({
-      "\\_directlua{ ",
+      "\\_directlua{",
       "local column = tex.splitbox(6, tex.dimen[1], 'exactly') ",
       "local num = tex.count['_tmpnum'] ",
       "local attr = luatexbase.attributes['lualineno_col'] ",

@@ -38,7 +38,7 @@ we need to use the `\global` prefix.
       {
         name = default
         toks = {\stepcounter{lineno}}
-        start = {\tiny\thelineno
+        left = {\tiny\thelineno
                  \kern.8em}
       }
     set = default
@@ -51,7 +51,7 @@ we need to use the `\global` prefix.
       {
         name = default
         toks = {\global\advance\lineno by 1}
-        start = {\thefontsize[5]
+        left = {\thefontsize[5]
                  \the\lineno\kern.8em}
       }
     set = default
@@ -73,7 +73,7 @@ we need to reset the counter per page.
       {
         name = default
         toks = {\stepcounter{lineno}}
-        start = {\tiny\thelineno
+        left = {\tiny\thelineno
                  \kern.8em}
       }
     set = default
@@ -86,7 +86,7 @@ we need to reset the counter per page.
       {
         name = default
         toks = {\advance\lineno by 1}
-        start = {\thefontsize[5]
+        left = {\thefontsize[5]
                  \the\lineno\kern.8em}
       }
     set = default
@@ -106,7 +106,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\stepcounter{lineno}}
-        start = {\tiny\thelineno
+        left = {\tiny\thelineno
                  \kern.8em}
       }
     define =
@@ -114,7 +114,7 @@ in the first and next to end of lines in the second column.
         name = default
         column = 2
         toks = {\stepcounter{lineno}}
-        start = {\kern.8em\tiny
+        right = {\kern.8em\tiny
                  \thelineno}
       }
 
@@ -128,7 +128,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\global\advance\lineno by 1}
-        start = {\thefontsize[5]%
+        left = {\thefontsize[5]%
                  \the\lineno\kern.8em}
       }
     define =
@@ -136,7 +136,7 @@ in the first and next to end of lines in the second column.
         name = default
         column = 2
         toks = {\global\advance\lineno by 1}
-        end = {\kern.8em\thefontsize[5]%
+        right = {\kern.8em\thefontsize[5]%
                  \the\lineno}
       }
 
@@ -156,7 +156,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\refstepcounter{lineno}}
-        start = {\tiny
+        left = {\tiny
                   \thelineno
                   \kern.8em}
       }
@@ -170,7 +170,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\global\advance\lineno by 1}
-        start = {\thefontsize[5]%
+        left = {\thefontsize[5]%
                  \wlabel{\the\lineno}%
                  \the\lineno\kern.8em}
       }
@@ -189,7 +189,7 @@ in the first and next to end of lines in the second column.
         toks = {\AssignSocketPlug
                 {refstepcounter/target}{noop}%
                 \refstepcounter{lineno}}
-        start = {\MakeLinkTarget{lineno}%
+        left = {\MakeLinkTarget{lineno}%
                  \tiny\thelineno\kern.8em}
       }
     set = default
@@ -202,7 +202,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\global\advance\lineno by 1}
-        start = {\thefontsize[5]%
+        left = {\thefontsize[5]%
                  \wlabel{\the\lineno}%
                  \dest[line:\the\lineno]%
                  \the\lineno\kern.8em}
@@ -220,7 +220,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\stepcounter{lineno}}
-        start = {\pdfextension literal page
+        left = {\pdfextension literal page
                  {/Span<</ActualText<>>>BDC}%
                  \tiny\thelineno
                  \pdfextension literal page{EMC}%
@@ -236,7 +236,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\global\advance\lineno by 1}
-        start = {\thefontsize[5]%
+        left = {\thefontsize[5]%
                  \pdfliteral page
                    {/Span<</ActualText<>>>BDC}%
                  \the\lineno
@@ -283,7 +283,7 @@ in the first and next to end of lines in the second column.
       {
         name = default
         toks = {\global\advance\lineno by 1}
-        start = {\_ewref\Xline{{\_the\lineno}}%
+        left = {\_ewref\Xline{{\_the\lineno}}%
                  \thefontsize[5]\wlabel{\the\lineno}%
                  \_def\_destheight{20pt}\_dest[line:\_the\lineno]%
                  \pdfliteral page{/Span<</ActualText<>>>BDC}%
@@ -294,7 +294,7 @@ in the first and next to end of lines in the second column.
         name = default
         column = 2
         toks = {\global\advance\lineno by 1}
-        end = {\_ewref\Xline{{\_the\lineno}}%
+        right = {\_ewref\Xline{{\_the\lineno}}%
                \thefontsize[5]\kern.8em\wlabel{\the\lineno}%
                \_def\_destheight{20pt}\_dest[line:\_the\lineno]%
                \pdfliteral page{/Span<</ActualText<>>>BDC}%
@@ -304,7 +304,7 @@ in the first and next to end of lines in the second column.
       {
         name = skip
         toks = {\global\advance\lineno by 1}
-        start = {}
+        left = {}
       }
     set = default
   }
