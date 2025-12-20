@@ -43,7 +43,7 @@
           local col_attr = luatexbase.attributes['lualineno_col']
           tex.box[sec_col][col_attr] = 2
           tex.box[first_col][col_attr] = 1}"
-      local find = "\\set@outputbox@with@footnote@and@float \\fi"
+      local find = "\\set@outputbox@with@footnote@and@float \\fi "
       local patch, success = token.get_macro("last@outputdblcol"):gsub(find, replace)
       if success > 0 then
           token.set_macro("last@outputdblcol", patch)
@@ -81,7 +81,7 @@
           n.subtype = 7
           node.write(n)
         end}"
-      local find = "\\copy \\EQ@numbox"
+      local find = "\\copy \\EQ@numbox "
       local function patch_breqn(macro)
         local patch, success = token.get_macro(macro):gsub(find, replace)
         if success > 0 then
