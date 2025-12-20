@@ -507,14 +507,15 @@ if format == 'optex' then
 -- This is the patch of `\beginmulti` in order mark the columns boxes.
 -- For each box we assign an attribute with a value 
 -- according to the column number.
-    local replace = [[
-\_directlua{
-    local column = tex.splitbox(6, tex.dimen[1], 'exactly')
-    local num = tex.count['_tmpnum']
-    local attr = luatexbase.attributes['lualineno_col']
-    node.set_attribute(column, attr, num)
-    node.write(column)
-}]]
+    local replace = table.concat({
+      "\\_directlua{ ",
+      "local column = tex.splitbox(6, tex.dimen[1], 'exactly') ",
+      "local num = tex.count['_tmpnum'] ",
+      "local attr = luatexbase.attributes['lualineno_col'] ",
+      "node.set_attribute(column, attr, num) ",
+      "node.write(column) ",
+      "}",
+    })
     local find = [[\_vsplit 6 to\_dimen 1 ]]
     local patch, success = token.get_macro("_createcolumns"):gsub(find, replace)
 -- Log the success or failure of the patch
