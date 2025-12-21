@@ -1,11 +1,8 @@
 -- lualineno version = 0.1, 2025-11-28
 
--- \secc Initialization^^M
+-- \seccc Initialization^^M
 -- Currently the module works only with 
 -- Lua\LaTeX/ and \OpTeX.
-
-local format = tex.formatname
-local texerror = tex.error
 
 local runtoks = tex.runtoks
 local put_next = token.unchecked_put_next
@@ -13,13 +10,81 @@ local create = token.create
 local new_tok = token.new
 local lbrace = new_tok(string.byte('{'), token.command_id'left_brace')
 local rbrace = new_tok(string.byte('}'), token.command_id'right_brace')
-
 local get_next = token.get_next
 local scan_toks = token.scan_toks
 local scan_string = token.scan_string
 local scan_list = token.scan_list
 local scan_int = token.scan_int
-local scan_keyword = token.scan_keyword
+  -- local hbox = new_tok(141, 21)
+local hbox do
+  local prefix = '@lua^line&no_'
+  while token.is_defined(prefix .. 'hbox') do
+    prefix = prefix .. '@lua^line&no_'
+  end
+  tex.enableprimitives(prefix,{'hbox'})
+  local tok = create(prefix .. 'hbox')
+  hbox  = new_tok(tok.mode, tok.command)
+end
+
+local hlist_id = node.id('hlist')
+local vlist_id = node.id('vlist')
+local glyph_id = node.id('glyph')
+local tail = node.tail
+local get_props = node.getproperty
+local set_props = node.setproperty
+local get_attribute = node.get_attribute
+local set_attribute = node.set_attribute
+local node_flush = node.flush_node
+local insert_before = node.insert_before
+local insert_after = node.insert_after
+local traverse = node.traverse
+local rangedimensions = node.rangedimensions
+local node_copy = node.copy
+local base_kern = node.new('kern', 'user')
+local line_sub, eq_sub, align_sub, box_sub
+local ignored_subtypes = {}
+for k,v in pairs(node.subtypes("hlist")) do
+    if v == "line" then line_sub = k end
+    if v == "alignment" then align_sub = k end
+    if v == "box" then box_sub = k end
+    if v == "equation" then eq_sub = k end
+    if v == "equationnumber" then ignored_subtypes[k] = true end
+    if v == "mathchar" then ignored_subtypes[k] = true end
+end
+for k,v in pairs(node.subtypes("vlist")) do
+    if v == "vextensible" then ignored_subtypes[k] = true end
+    if v == "vdelimiter" then ignored_subtypes[k] = true end
+end
+
+local setattribute = tex.setattribute
+local texerror = tex.error
+local texnest = tex.nest
+local format = tex.formatname
+
+local optex, latex, plain
+if format:find("optex") then
+    optex = true
+elseif format:find("latex") then
+    latex = true
+elseif format == "luatex" or
+       format == "luahbtex" or
+       format:find("plain")
+then
+    plain = true
+end
+if not (optex or latex or plain) then
+    error("lualineno: The format " .. format .. " is not supported\n\n" ..
+             "Use OpTeX, LuaLaTeX or Plain.")
+end
+
+local lineno_types = { }
+local lineno_attrs = { }
+local LINENO_NUMBER = 0x1
+local LINENO_RECURSE = 0x2
+local type_attr = luatexbase and luatexbase.new_attribute('lualineno_type') or 0
+local col_attr = luatexbase and luatexbase.new_attribute('lualineno_col') or 1
+local mark_attr = luatexbase and luatexbase.new_attribute('lualineno_mark') or 2
+local unset_attr = -0x7FFFFFFF
 
 local keyval = require('luakeyval')
 local scan_choice = keyval.choices
@@ -31,291 +96,7 @@ local messages = {
     value_required = 'lualineno: The key "%s" requires a value',
 }
 
-local setattribute = tex.setattribute
-local type_attr = luatexbase and luatexbase.new_attribute('lualineno_type') or 0
-local col_attr = luatexbase and luatexbase.new_attribute('lualineno_col') or 1
-local mark_attr = luatexbase and luatexbase.new_attribute('lualineno_mark') or 2
-
-local unset_attr = -0x7FFFFFFF
-
-local hlist_id = node.id('hlist')
-local vlist_id = node.id('vlist')
-local glyph_id = node.id('glyph')
-local tail = node.tail
-
-local get_props = node.getproperty
-local set_props = node.setproperty
-local get_attribute = node.get_attribute
-local set_attribute = node.set_attribute
-local node_flush = node.flush_node
-local insert_before = node.insert_before
-local insert_after = node.insert_after
-local traverse = node.traverse
-local rangedimensions = node.rangedimensions
-local node_copy = node.copy
-local texnest = tex.nest
-
-local LINENO_NUMBER = 0x1
-local LINENO_RECURSE = 0x2
-
-local line_sb, eq_sb, align_sb, bo_sb
-local mathcahr_sb, eqno_sb
-for k,v in pairs(node.subtypes("hlist")) do
-    if v == "line" then line_sb = k end
-    if v == "alignment" then align_sb = k end
-    if v == "box" then box_sb = k end
-    if v == "equation" then eq_sb = k end
-    if v == "equationnumber" then eqno_sb = k end
-    if v == "mathchar" then mathcahr_sb = k end
-end
-local vex_sb, vdel_sb
-for k,v in pairs(node.subtypes("vlist")) do
-    if v == "vextensible" then vex_sb = k end
-    if v == "vdelimiter" then vdel_sb = k end
-end
-
-local base_kern = node.new('kern', 'user')
-
-local optex, latex, plain
-if format:find("optex") then -- OpTeX
-    optex = true
-elseif format:find("latex") then -- lualatex, lualatex-dev, ...
-    latex = true
-elseif format == "luatex" or
-       format == "luahbtex" or
-       format:find("plain")
-then -- Plain
-    plain = true
-end
-if not (optex or latex or plain) then
-    error("lualineno: The format " .. format .. " is not supported\n\n" ..
-             "Use OpTeX, LuaLaTeX or Plain.")
-end
-
-  -- local hbox = new_tok(141, 21)
-local hbox do
--- initialization of the new primitives.
-  local prefix = '@lua^line&no_' -- unlikely prefix...
-  while token.is_defined(prefix .. 'hbox') do
-    prefix = prefix .. '@lua^line&no_'
-  end
-  tex.enableprimitives(prefix,{'hbox'})
--- Now we create new tokens with the meaning of
--- the primitives.
-  local tok = create(prefix .. 'hbox')
-  hbox  = new_tok(tok.mode, tok.command)
-end
-
--- \secc User Interface^^M
--- This section describe the definition of
--- the one macro exposed to the end user.
--- The code is probably longer than it
--- should be, but with this method we can
--- create a format agnostic key-value interface.
--- The idea is based on an article by Hans Hagen. 
-local lineno_types = { }
-local lineno_attr = { }
-local defaults = {
-    toks = { },
-    left = { },
-    right = { },
-    box = {number = true, recurse = true},
-    alignment = {number = true, recurse = true},
-    equation = {number = true, recurse = true},
-    line = {number = true, recurse = true},
-    offset = {number = true, recurse = true},
-}
-
-local inner_keys = {
-    number = {scanner = scan_bool, default = true},
-    recurse = {scanner = scan_bool, default = true}
-}
-
-local defaults_keys = {
-    toks = {scanner = scan_toks},
-    left = {scanner = scan_toks},
-    right = {scanner = scan_toks},
-    box = {scanner = process_keys, args = {inner_keys, messages}},
-    alignment = {scanner = process_keys, args = {inner_keys, messages}},
-    equation = {scanner = process_keys, args = {inner_keys, messages}},
-    line = {scanner = process_keys, args = {inner_keys, messages}},
-    offset = {scanner = scan_bool}
-}
-
-local function set_defaults()
-    local vals = process_keys(defaults_keys,messages)
-    for k,v in pairs(vals) do
-        defaults[k] = v
-    end
-end
-
-local define_keys = { }
-for k,v in pairs(defaults_keys) do
-    define_keys[k] = v
-end
-define_keys.column = {scanner = scan_int}
-define_keys.name = {scanner = scan_string}
-
-local function define_lineno()
-    local vals = process_keys(define_keys, messages)
-    local name = vals['name']
-    if not name then 
-        texerror("lualineno: Missing name when defining a lineno")
-        return
-    end
-    
-    local col = vals['column'] or 1
-    lineno_attr[name] = lineno_attr[name] or #lineno_types + 1
-    local i = lineno_attr[name]
-    lineno_types[i] = lineno_types[i] or {}
-    lineno_types[i][col] = lineno_types[i][col] or {}
-    
-    local c = lineno_types[i][col]
-    
-    -- Convert string keys to numeric keys when storing
-    local function store_type(key, subtype_id)
-        local setting = vals[key] or defaults[key]
-        local flags = 0
-        if setting.number then flags = flags | LINENO_NUMBER end
-        if setting.recurse then flags = flags | LINENO_RECURSE end
-        c[subtype_id] = flags
-    end
-    
-    store_type('box', box_sb)
-    store_type('alignment', align_sb)
-    store_type('equation', eq_sb)
-    store_type('line', line_sb)
-    
-    -- Other keys remain with string keys
-    c.toks = vals.toks or defaults.toks
-    c.left = vals.left or defaults.left
-    c.right = vals.right or defaults.right
-    c.offset = vals.offset ~= nil and vals.offset or defaults.offset
-end
-
-local function mark_last_vlist(n)
-    local current = n
-    while current do
-        if current.id == vlist_id then
-            set_attribute(current, mark_attr, -1)
-            return true
-        elseif current.id == hlist_id then
-            if mark_last_vlist(tail(current.list)) then return true end
-        end
-        current = current.prev
-    end
-    return false
-end
-
-local make_label, find_label
-find_label = function(list)
-    for n in traverse(list) do
-        if n.id == glyph_id then
-            local props = get_props(n)
-            if props then
-                local label = props.lualineno
-                if label then
-                    make_label(label, list, n)
-                end 
-            end
-        elseif n.list then
-            find_label(n.list)
-        end
-    end
-    return true
-end
-
-local function label_last_glyph(m, tokens)
-    if optex then
-        luatexbase.add_to_callback('lualineno.pre_numbering', find_label, 'lualineno.labels')
-    elseif latex then
-        luatexbase.add_to_callback('lualineno.post_numbering', find_label, 'lualineno.labels')
-    end
-    label_last_glyph = function(n, toks)
-        local current = n
-        while current do
-            if current.id == glyph_id then
-                local props = get_props(current)
-                if not props then
-                    props = { }
-                    set_props(current,props)
-                end
-                props.lualineno = toks
-                return true
-            elseif current.list then
-                if label_last_glyph(tail(current.list), toks) then 
-                    return true 
-                end
-            end
-            current = current.prev
-        end
-        return false
-    end
-    return label_last_glyph(m, tokens)
-end
-
-local lualineno_keys = {
-    set = {scanner = scan_string},
-    unset = { default = true },
-    define = {scanner = function() return true end, func = define_lineno},
-    defaults = {scanner = function() return true end, func = set_defaults},
-    anchor = { default = true },
-    label = {scanner = scan_toks, args = {false, true}},
-    line_attr = {scanner = scan_int},
-    col_attr = {scanner = scan_int},
-    mark_attr = {scanner = scan_int},
-    processbox = {scanner = scan_int},
-}
-
-local find_line
-local function lualineno()
-    local saved_endlinechar = tex.endlinechar
-    tex.endlinechar = 32
-    local vals = process_keys(lualineno_keys,messages)
-    tex.endlinechar = saved_endlinechar
-    if vals.set then
-        local attr = lineno_attr[vals.set]
-        if attr then
-          setattribute(type_attr, attr)
-        else
-          texerror("lualineno: type '" .. vals.set .. "' undefined")
-        end
-    end
-    if vals.unset then
-        setattribute(type_attr, unset_attr)
-    end
-    if vals.anchor then
-        for i=texnest.ptr,0,-1 do 
-            if mark_last_vlist(texnest[i].tail) then return end
-        end
-    end
-    if vals.label then
-        for i=texnest.ptr,0,-1 do 
-            if label_last_glyph(texnest[i].tail, vals.label) then return end
-        end
-    end
-    type_attr = vals.line_attr or type_attr
-    col_attr = vals.col_attr or col_attr
-    mark_attr = vals.mark_attr or mark_attr
-    if vals.processbox then 
-        local box = tex.box[vals.processbox]
-        local col = get_attribute(box, col_attr)
-        find_line(box, box.head, col or 1, 0, box.width)
-    end
-end
-
-do
-  if token.is_defined('lualineno') then
-      texio.write_nl('log', "lualineno: redefining \\lualineno")
-  end
-  local function_table = lua.get_functions_table()
-  local luafnalloc = luatexbase and luatexbase.new_luafunction 
-    and luatexbase.new_luafunction('lualineno') or #function_table + 1
-  token.set_lua('lualineno', luafnalloc, 'protected')
-  function_table[luafnalloc] = lualineno
-end
-
--- \secc a^^M
+-- \seccc a^^M
 
 local function number_line(head, line, line_type, offset, width)
    local is_offset = line_type['offset']
@@ -373,8 +154,8 @@ if luatexbase then
     luatexbase.create_callback('lualineno.pre_numbering', 'list', false)
     luatexbase.create_callback('lualineno.numbering', 'exclusive', number_line)
     luatexbase.create_callback('lualineno.post_numbering', 'reverselist', false)
-    luatexbase.add_to_callback('lualineno.pre_numbering', function(_, _, lt)
-        runtoks(function() put_next(lt['toks']) end) 
+    luatexbase.add_to_callback('lualineno.pre_numbering', function(_, _, line_type)
+        runtoks(function() put_next(line_type['toks']) end) 
     return true end, 'lualineno.runtoks')
     local call_callback = luatexbase.call_callback
     lineno_callbacks = function(head, line, line_type, offset, width)
@@ -404,8 +185,7 @@ local function real_box(list)
     for n, id, sb in traverse(list) do
         if id == glyph_id then
             return true
-        elseif (id == hlist_id and sb ~= eqno_sb and sb ~= mathcahr_sb) 
-          or (id == vlist_id and sb ~= vex_sb and sb ~= vdel_sb) then
+        elseif (id == hlist_id or id == vlist_id) and not ignored_subtypes[sb] then
             if real_box(n.list) then
                 return true
             end
@@ -418,9 +198,9 @@ local function real_line(list, parent, offset)
     for n, id, sb in traverse(list) do
         if id == glyph_id then
             return true
-        elseif id == vlist_id and sb ~= vex_sb and sb ~= vdel_sb and real_box(n.list) then
+        elseif id == vlist_id and not ignored_subtypes[sb] and real_box(n.list) then
             return n, offset + rangedimensions(parent, list, n)
-        elseif id == hlist_id and sb ~= eqno_sb and sb ~= mathcahr_sb and real_box(n.list) then
+        elseif id == hlist_id and not ignored_subtypes[sb] and real_box(n.list) then
            offset = offset + rangedimensions(parent, list, n)
            return real_line(n.list, n, offset)
         end
@@ -448,10 +228,10 @@ find_line = function(parent, list, column, offset, width)
         
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
-        local ltype = line_type and line_type[sb]
+        local flag = line_type and line_type[sb]
         
-        local should_number = ltype and (ltype & LINENO_NUMBER) ~= 0 or false
-        local should_recurse = ltype and (ltype & LINENO_RECURSE) ~= 0 or true 
+        local should_number = flag and (flag & LINENO_NUMBER) ~= 0 or false
+        local should_recurse = flag and (flag & LINENO_RECURSE) ~= 0 or true 
         if not (should_number or should_recurse) then
             goto continue
         end
@@ -496,11 +276,216 @@ if not plain then
     end, 'lualineno.shipout')
 end
 
--- \secc Format Specific Code^^M
+-- \seccc the `anchor` key^^M
+
+local function mark_last_vlist(n)
+    local current = n
+    while current do
+        if current.id == vlist_id then
+            set_attribute(current, mark_attr, -1)
+            return true
+        elseif current.id == hlist_id then
+            if mark_last_vlist(tail(current.list)) then return true end
+        end
+        current = current.prev
+    end
+    return false
+end
+
+-- \seccc labels^^M
+
+local make_label
+local function find_label(list)
+    for n in traverse(list) do
+        if n.id == glyph_id then
+            local props = get_props(n)
+            if props then
+                local label = props.lualineno
+                if label then
+                    make_label(label, list, n)
+                end 
+            end
+        elseif n.list then
+            find_label(n.list)
+        end
+    end
+    return true
+end
+
+local function label_last_glyph(m, tokens)
+    if optex then
+        luatexbase.add_to_callback('lualineno.pre_numbering', find_label, 'lualineno.labels')
+    elseif latex then
+        luatexbase.add_to_callback('lualineno.post_numbering', find_label, 'lualineno.labels')
+    end
+    label_last_glyph = function(n, toks)
+        local current = n
+        while current do
+            if current.id == glyph_id then
+                local props = get_props(current)
+                if not props then
+                    props = { }
+                    set_props(current,props)
+                end
+                props.lualineno = toks
+                return true
+            elseif current.list then
+                if label_last_glyph(tail(current.list), toks) then 
+                    return true 
+                end
+            end
+            current = current.prev
+        end
+        return false
+    end
+    return label_last_glyph(m, tokens)
+end
+
+-- \seccc User Interface^^M
+-- This section describe the definition of
+-- the one macro exposed to the end user.
+-- It is based on the luajeyval module.
+local defaults = {
+    toks = { },
+    left = { },
+    right = { },
+    box = {number = true, recurse = true},
+    alignment = {number = true, recurse = true},
+    equation = {number = true, recurse = true},
+    line = {number = true, recurse = true},
+    offset = {number = true, recurse = true},
+}
+
+local inner_keys = {
+    number = {scanner = scan_bool, default = true},
+    recurse = {scanner = scan_bool, default = true}
+}
+
+local defaults_keys = {
+    toks = {scanner = scan_toks},
+    left = {scanner = scan_toks},
+    right = {scanner = scan_toks},
+    box = {scanner = process_keys, args = {inner_keys, messages}},
+    alignment = {scanner = process_keys, args = {inner_keys, messages}},
+    equation = {scanner = process_keys, args = {inner_keys, messages}},
+    line = {scanner = process_keys, args = {inner_keys, messages}},
+    offset = {scanner = scan_bool}
+}
+
+local function set_defaults()
+    local vals = process_keys(defaults_keys,messages)
+    for k,v in pairs(vals) do
+        defaults[k] = v
+    end
+end
+
+local define_keys = { }
+for k,v in pairs(defaults_keys) do
+    define_keys[k] = v
+end
+define_keys.column = {scanner = scan_int}
+define_keys.name = {scanner = scan_string}
+
+local function define_lineno()
+    local vals = process_keys(define_keys, messages)
+    local name = vals['name']
+    if not name then 
+        texerror("lualineno: Missing name when defining a lineno")
+        return
+    end
+    
+    local col = vals['column'] or 1
+    lineno_attrs[name] = lineno_attrs[name] or #lineno_types + 1
+    local i = lineno_attrs[name]
+    lineno_types[i] = lineno_types[i] or {}
+    lineno_types[i][col] = lineno_types[i][col] or {}
+    
+    local c = lineno_types[i][col]
+    
+    local function store_type(key, subtype_id)
+        local setting = vals[key] or defaults[key]
+        local flags = 0
+        if setting.number then flags = flags | LINENO_NUMBER end
+        if setting.recurse then flags = flags | LINENO_RECURSE end
+        c[subtype_id] = flags
+    end
+    
+    store_type('box', box_sub)
+    store_type('alignment', align_sub)
+    store_type('equation', eq_sub)
+    store_type('line', line_sub)
+    
+    c.toks = vals.toks or defaults.toks
+    c.left = vals.left or defaults.left
+    c.right = vals.right or defaults.right
+    c.offset = vals.offset ~= nil and vals.offset or defaults.offset
+end
+
+local lualineno_keys = {
+    set = {scanner = scan_string},
+    unset = { default = true },
+    define = {scanner = function() return true end, func = define_lineno},
+    defaults = {scanner = function() return true end, func = set_defaults},
+    anchor = { default = true },
+    label = {scanner = scan_toks, args = {false, true}},
+    line_attr = {scanner = scan_int},
+    col_attr = {scanner = scan_int},
+    mark_attr = {scanner = scan_int},
+    processbox = {scanner = scan_int},
+}
+
+local function lualineno()
+    local saved_endlinechar = tex.endlinechar
+    tex.endlinechar = 32
+    local vals = process_keys(lualineno_keys,messages)
+    tex.endlinechar = saved_endlinechar
+    if vals.set then
+        local attr = lineno_attrs[vals.set]
+        if attr then
+          setattribute(type_attr, attr)
+        else
+          texerror("lualineno: type '" .. vals.set .. "' undefined")
+        end
+    end
+    if vals.unset then
+        setattribute(type_attr, unset_attr)
+    end
+    if vals.anchor then
+        for i=texnest.ptr,0,-1 do 
+            if mark_last_vlist(texnest[i].tail) then return end
+        end
+    end
+    if vals.label then
+        for i=texnest.ptr,0,-1 do 
+            if label_last_glyph(texnest[i].tail, vals.label) then return end
+        end
+    end
+    type_attr = vals.line_attr or type_attr
+    col_attr = vals.col_attr or col_attr
+    mark_attr = vals.mark_attr or mark_attr
+    if vals.processbox then 
+        local box = tex.box[vals.processbox]
+        local col = get_attribute(box, col_attr)
+        find_line(box, box.head, col or 1, 0, box.width)
+    end
+end
+
+do
+  if token.is_defined('lualineno') then
+      texio.write_nl('log', "lualineno: redefining \\lualineno")
+  end
+  local function_table = lua.get_functions_table()
+  local luafnalloc = luatexbase and luatexbase.new_luafunction 
+    and luatexbase.new_luafunction('lualineno') or #function_table + 1
+  token.set_lua('lualineno', luafnalloc, 'protected')
+  function_table[luafnalloc] = lualineno
+end
+
+-- \seccc Format Specific Code^^M
 
 if format == 'optex' then
 -- To be able to use \OpTeX/'s color mechnism in line numbers the colorizing
--- needs to happen after the line numbers are added, so we remove and insert
+-- needs to happen after line numbers are added, so we remove and insert
 -- back again the colorizing function from the `pre_shipout_filter` callback.
     local colorize = callback.remove_from_callback('pre_shipout_filter', '_colors')
     callback.add_to_callback('pre_shipout_filter', colorize, '_colors')
