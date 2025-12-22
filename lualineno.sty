@@ -7,7 +7,7 @@
 
 \AddToHook{package/multicol/after}{%
   \directlua{
-      local replace = "\\directlua {local right_box = token.create('mult@rightbox').index
+      local replace = "\string\\directlua {local right_box = token.create('mult@rightbox').index
         local col_attr = luatexbase.attributes['lualineno_col']
         local i = right_box
         local last = tex.count['doublecol@number'] - 2
@@ -17,13 +17,13 @@
             column = column + 1
             tex.box[i][col_attr] = column
         end
-        tex.box[right_box][col_attr] = column + 1}\\mc@align@columns"
-      local find = "\\mc@align@columns"
+        tex.box[right_box][col_attr] = column + 1}\string\\mc@align@columns"
+      local find = "\string\\mc@align@columns"
       local patch, success = token.get_macro("page@sofar"):gsub(find, replace)
       if success > 0 then
           token.set_macro("page@sofar", patch)
       else
-          texio.write_nl('log', "lualineno: failed to patch \\page@sofar (multicol)")
+          texio.write_nl('log', "lualineno: failed to patch \string\\page@sofar (multicol)")
       end}}
   
 \AddToHook{package/balance/after}{%
@@ -37,18 +37,18 @@
         
 \AddToHook{package/flushend/after}{%
     \directlua{
-      local replace = "\\set@outputbox@with@footnote@and@float \\fi \\directlua {
+      local replace = "\string\\set@outputbox@with@footnote@and@float \string\\fi \string\\directlua {
           local sec_col = token.create('@outputbox').index
           local first_col = token.create('@leftcolumn').index
           local col_attr = luatexbase.attributes['lualineno_col']
           tex.box[sec_col][col_attr] = 2
           tex.box[first_col][col_attr] = 1}"
-      local find = "\\set@outputbox@with@footnote@and@float \\fi "
+      local find = "\string\\set@outputbox@with@footnote@and@float \string\\fi "
       local patch, success = token.get_macro("last@outputdblcol"):gsub(find, replace)
       if success > 0 then
           token.set_macro("last@outputdblcol", patch)
       else
-          texio.write_nl('log', "lualineno: failed to patch \\last@outputdblcol (flushend)")
+          texio.write_nl('log', "lualineno: failed to patch \string\\last@outputdblcol (flushend)")
       end}}
 
 \AddToHook{package/ltxgrid/after}{%
@@ -74,20 +74,20 @@
 
 \AddToHook{package/breqn/after}{%
     \directlua{
-      local replace = "\\directlua {
+      local replace = "\string\\directlua {
         local box = tex.getbox('EQ@numbox')
         if box then
           local n = node.copy_list(box)
           n.subtype = 7
           node.write(n)
         end}"
-      local find = "\\copy \\EQ@numbox "
+      local find = "\string\\copy \string\\EQ@numbox "
       local function patch_breqn(macro)
         local patch, success = token.get_macro(macro):gsub(find, replace)
         if success > 0 then
             token.set_macro(macro, patch)
         else
-            texio.write_nl('log', "lualineno: failed to patch \\" .. macro .. " (breqn)")
+            texio.write_nl('log', "lualineno: failed to patch \string\\" .. macro .. " (breqn)")
         end
       end
       patch_breqn("eq@typeset@RShifted")
