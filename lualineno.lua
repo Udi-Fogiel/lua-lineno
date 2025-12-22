@@ -1,8 +1,8 @@
 -- lualineno version = 0.1, 2025-11-28
 
 -- \seccc Initialization^^M
--- Currently the module works only with 
--- Lua\LaTeX/ and \OpTeX.
+-- Some decleratinos of local functions/constants of global ones
+-- to avoid table lookups.
 
 local runtoks = tex.runtoks
 local put_next = token.unchecked_put_next
@@ -15,7 +15,17 @@ local scan_toks = token.scan_toks
 local scan_string = token.scan_string
 local scan_list = token.scan_list
 local scan_int = token.scan_int
-  -- local hbox = new_tok(141, 21)
+
+-- sadly there isn't a nice way in \LuaTeX/ to get 
+-- a primitive token without using a csname.
+-- To be sure `\hbox` has the correct meaning
+-- we can use `tex.enableprimitives` to create
+-- a new csname with the meaning of the primitive,
+-- then create a token with the same `.mode` and `.command`
+-- fields so we won't need the csname anymore.
+-- All of this is to avoid to use some implementation details
+-- (`local hbox = new_tok(141, 21)`)
+
 local hbox do
   local prefix = '@lua^line&no_'
   while token.is_defined(prefix .. 'hbox') do
@@ -61,6 +71,9 @@ local texerror = tex.error
 local texnest = tex.nest
 local format = tex.formatname
 
+-- The module currently works with
+-- \OpTeX, \LaTeX/ or Plain.
+
 local optex, latex, plain
 if format:find("optex") then
     optex = true
@@ -86,6 +99,8 @@ local col_attr = luatexbase and luatexbase.new_attribute('lualineno_col') or 1
 local mark_attr = luatexbase and luatexbase.new_attribute('lualineno_mark') or 2
 local unset_attr = -0x7FFFFFFF
 
+-- We use the `luakeyval` module for the user interface
+
 local keyval = require('luakeyval')
 local scan_choice = keyval.choices
 local scan_bool = keyval.bool
@@ -96,20 +111,38 @@ local messages = {
     value_required = 'lualineno: The key "%s" requires a value',
 }
 
--- \seccc a^^M
+-- \seccc Numbering Lines^^M
+-- In here we define the main functions of the module,
+-- the functinos that find and number the lines in a page.
+--
+-- The following function is used to number a line that is considered
+-- \"real" (i.e. has some glyphs in it that are not equation number or 
+-- a big math delimiter). This function is used in the `lualineno.numbering`
+-- callback, so it can be replaces if desired.
+--
+-- `line` is the hlist node representing the line, `line_type` is a lua table
+-- with the parameters defined in the define key according to the attribute
+-- and the column, `offset` is the total shift calculated from the start of
+-- the line and `width` is the width of the column containing the lines.
 
 local function number_line(head, line, line_type, offset, width)
+
    local is_offset = line_type['offset']
    offset = is_offset and offset or 0
+   
 -- In case \LaTeX/ is used without the luacolor package,
 -- we add an additional group to make the boxes color safe.
+
     put_next({rbrace, rbrace})
     put_next(line_type.left)
     put_next({hbox, lbrace, lbrace})
     put_next({rbrace, rbrace})
     put_next(line_type.right)
     put_next({hbox, lbrace, lbrace})
-    local end_box, start_box
+    
+-- to make sure \"right" always means right, we check the line direction.
+
+    local end_box, start_box  
     if line.dir == "TLT" then
         end_box = scan_list()
         start_box = scan_list()
@@ -179,7 +212,10 @@ end
 -- Not every object that would be considered a line from \LuaTeX's point of view
 -- would be considered a line from a human perspective. For example, a line
 -- containing only an indent box, or an alignment containing only rules,
--- so we search for a glyph node recursively.
+-- so we use the following two functions to search for a glyph node recursively,
+-- while ignoring boxes
+-- for equation number, for big delimiters (i.e. in `cases` environment)
+-- or dummy boxes for null delimiters. 
 
 local function real_box(list)
     for n, id, sb in traverse(list) do
@@ -193,6 +229,11 @@ local function real_box(list)
     end
     return false
 end
+
+-- If the first thing (that we care about) in a line is a glyph
+-- we simplu number it, if it is an hlist we keep looking inside
+-- for glyphs and if it is a vlist we add the shift to the offset
+-- and go back to finding lines in that vlist.
 
 local function real_line(list, parent, offset)
     for n, id, sb in traverse(list) do
@@ -208,11 +249,30 @@ local function real_line(list, parent, offset)
     return false
 end
 
+-- This function finds the lines that needs to be numbered in a page.
+-- It should be used right before shipout, but can be used on individual
+-- boxes using the `peocessbox` key if needed (maybe special numbering oreder
+-- is desired). 
+-- When a line found, `lineno_callbacks` is called to number it.
+
 find_line = function(parent, list, column, offset, width)
+
+-- The -2 value of the `mark_attr` marks already processed boxes.
+
     if get_attribute(parent, mark_attr) == -2 then return end
     set_attribute(parent, mark_attr, -2)
+    
+-- We need to keep track of the parent id to know if the `.shift`
+-- filed represent horizontal or verticla displacement.
+
     local parent_is_vlist = parent.id == vlist_id
     for n, id, sb in traverse(list) do
+    
+-- lines are `hlist`s, so if a node is not one we dig deeper,
+-- while calculating the offset and the width.
+-- If a column is found, or a box marked with the `anchor` key
+-- then the offset is reset and the width is updated.
+ 
         if id ~= hlist_id then
             if not n.list then goto continue end
             local new_offset, new_width = offset, width
@@ -226,16 +286,26 @@ find_line = function(parent, list, column, offset, width)
             goto continue
         end
         
+-- A line type is determined by the attribbute of its last node so that line types can be switched
+-- from within the line (but maybe this should be configurable).
+-- The flag is a bitset the determines wheather to number or recurse further.
+
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
         local flag = line_type and line_type[sb]
-        
+
+-- If a line does not have any attribute we don't number it, be we do recurse further.
+
         local should_number = flag and (flag & LINENO_NUMBER) ~= 0 or false
         local should_recurse = flag and (flag & LINENO_RECURSE) ~= 0 or true 
         if not (should_number or should_recurse) then
             goto continue
         end
         
+-- This is the case where a line should be numbered only once.
+-- Maybe someone would like to number alignment once, regardless
+-- of the fact the first column contains cells with paragrpahs.        
+
         if should_number and not should_recurse then
             if real_box(n.list) then
                 local new_offset = parent_is_vlist and (offset + n.shift) or offset
@@ -243,6 +313,11 @@ find_line = function(parent, list, column, offset, width)
             end
             goto continue
         end
+        
+-- If `real_line` returned a `new_offset`, fhte first thing encountered in the line is a `vlist`,
+-- so we need to find lines inside of that `vlist` as well. As before offset and width maybe needs
+-- to be updated. If we encounter a column, maybe this line contains more columns, so we number the
+-- first one and keep looking for more.
         
         local m, new_offset = real_line(n.head, n, offset)
         local new_width = width
@@ -262,6 +337,8 @@ find_line = function(parent, list, column, offset, width)
         
         if not (m and should_number) then goto continue end
         
+-- A line is found! update the offset and number it.
+        
         local new_offset = parent_is_vlist and (offset + n.shift) or offset        
         lineno_callbacks(n.head, n, line_type, new_offset, width)
         
@@ -276,7 +353,8 @@ if not plain then
     end, 'lualineno.shipout')
 end
 
--- \seccc the `anchor` key^^M
+-- \seccc Anchoring numbers to a box^^M
+-- The anchor key 
 
 local function mark_last_vlist(n)
     local current = n
@@ -345,6 +423,7 @@ end
 -- This section describe the definition of
 -- the one macro exposed to the end user.
 -- It is based on the luajeyval module.
+
 local defaults = {
     toks = { },
     left = { },
@@ -484,14 +563,18 @@ end
 -- \seccc Format Specific Code^^M
 
 if format == 'optex' then
+
 -- To be able to use \OpTeX/'s color mechnism in line numbers the colorizing
 -- needs to happen after line numbers are added, so we remove and insert
 -- back again the colorizing function from the `pre_shipout_filter` callback.
+
     local colorize = callback.remove_from_callback('pre_shipout_filter', '_colors')
     callback.add_to_callback('pre_shipout_filter', colorize, '_colors')
--- This is the patch of `\beginmulti` in order mark the columns boxes.
--- For each box we assign an attribute with a value 
+
+-- This is the patch for `\beginmulti` in order mark the columns boxes.
+-- For each box we assign an attribute with a value
 -- according to the column number.
+
     local replace = table.concat({
       "\\_directlua{",
       "local column = tex.splitbox(6, tex.dimen[1], 'exactly') ",
@@ -503,12 +586,16 @@ if format == 'optex' then
     })
     local find = [[\_vsplit 6 to\_dimen 1 ]]
     local patch, success = token.get_macro("_createcolumns"):gsub(find, replace)
+    
 -- Log the success or failure of the patch
+
     if success > 0 then
         token.set_macro("_createcolumns", patch)
     else
         texio.write_nl('log', "lualineno: failed to patch \\_createcolumns")
     end
+
+-- \OpTeX/ only needs to run `\label[toks]` before a destination to label it.
 
     local lbracket = new_tok(string.byte('['), token.command_id'other_char')
     local rbracket = new_tok(string.byte(']'), token.command_id'other_char')
@@ -520,8 +607,11 @@ if format == 'optex' then
             put_next({label_tok,lbracket})
         end)
     end
+    
 elseif latex then
+
 -- Here we mark the columns accroding to `\if@firstcolumn`
+
     local true_tok = create('iftrue')
     luatexbase.add_to_callback('pre_output_filter', function()
         if create('if@firstcolumn').mode == true_tok.mode then
@@ -536,23 +626,41 @@ elseif latex then
             setattribute(col_attr, unset_attr)
         end 
     end, 'lualineno.mark_columns')
+    
 -- If the luacolor package is loaded,
 -- colorizing must happen after line numbers
 -- are added to be able to color them.
+
     luatexbase.declare_callback_rule('pre_shipout_filter', 
          'lualineno.shipout', 'before', 'luacolor.process')
+
+-- Since \LaTeX/ isn't really shiping out the page box, but a box
+-- containing the `\topmaring` and the page box which is shifted with
+-- `\moveright`, so it adds an undesired offset in `find_line`, so
+-- we mark the page box as `anchor`.
+
     local attr_num = luatexbase.attributes['lualineno_mark']
     local replace = string.format([[\moveright \@themargin \vbox attr %d = -1]], attr_num)
     local find = [[\moveright \@themargin \vbox]]
     local patch, num_subs = token.get_macro("@outputpage"):gsub(find, replace)
+
+-- space controls are changed as well to aviod a bug in `token.set_macro`
+
     find = [[\catcode `\ 10\relax \catcode `\	10\relax]]
     replace = [[\catcode 32=10\relax \catcode 9=10\relax]]
     patch, num_subs = patch:gsub(find, replace)
+
+-- Log the success or failure of the patch
+
     if num_subs > 0 then
         token.set_macro("@outputpage", patch)
     else
         texio.write_nl('log', "lualineno: failed to patch \\@outputpage")
     end
+
+-- \LaTeX/'s `\label`'s creates a whtsit node (`\write`), so we temporarily box the label
+-- to fetch this node, and add it to the list.
+
     local label_tok = create('label')
     make_label = function(label, list, n)
         runtoks(function()
@@ -564,4 +672,5 @@ elseif latex then
             node_flush(label_node)
         end)
     end
+    
 end
