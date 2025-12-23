@@ -432,7 +432,7 @@ local defaults = {
     alignment = {number = true, recurse = true},
     equation = {number = true, recurse = true},
     line = {number = true, recurse = true},
-    offset = {number = true, recurse = true},
+    offset = true,
 }
 
 local inner_keys = {
@@ -497,7 +497,11 @@ local function define_lineno()
     c.toks = vals.toks or defaults.toks
     c.left = vals.left or defaults.left
     c.right = vals.right or defaults.right
-    c.offset = vals.offset ~= nil and vals.offset or defaults.offset
+    if vals.offset ~= nil then
+        c.offset = vals.offset
+    else
+        c.offset = defaults.offset
+    end
 end
 
 local lualineno_keys = {
