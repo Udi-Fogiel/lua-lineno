@@ -61,6 +61,7 @@ for k,v in pairs(node.subtypes("hlist")) do
     if v == "equationnumber" then ignored_subtypes[k] = true end
     if v == "mathchar" then ignored_subtypes[k] = true end
 end
+local displayalign_sb = #node.subtypes("hlist") + 1
 for k,v in pairs(node.subtypes("vlist")) do
     if v == "vextensible" then ignored_subtypes[k] = true end
     if v == "vdelimiter" then ignored_subtypes[k] = true end
@@ -98,6 +99,7 @@ local type_attr = luatexbase and luatexbase.new_attribute('lualineno_type') or 0
 local col_attr = luatexbase and luatexbase.new_attribute('lualineno_col') or 1
 local mark_attr = luatexbase and luatexbase.new_attribute('lualineno_mark') or 2
 local unset_attr = -0x7FFFFFFF
+local in_display = false
 
 -- We use the `luakeyval` module for the user interface
 
@@ -288,11 +290,16 @@ find_line = function(parent, list, column, offset, width)
         
 -- A line type is determined by the attribbute of its last node so that line types can be switched
 -- from within the line (but maybe this should be configurable).
--- The flag is a bitset the determines wheather to number or recurse further.
+-- The flag is a bitset that determines wheather to number or recurse further.
 
         local line_attr = n.head and get_attribute(tail(n.head), type_attr)
         local line_type = line_attr and lineno_types[line_attr] and lineno_types[line_attr][column]
-        local flag = line_type and line_type[sb]
+        local flag
+        if sb == align_sb and in_display then
+            flag = line_type and line_type[displayalign_sb]
+        else
+            flag = line_type and line_type[sb]
+        end
 
 -- If a line does not have any attribute we don't number it, be we do recurse further.
 
@@ -314,7 +321,7 @@ find_line = function(parent, list, column, offset, width)
             goto continue
         end
         
--- If `real_line` returned a `new_offset`, fhte first thing encountered in the line is a `vlist`,
+-- If `real_line` returned a `new_offset`, the first thing encountered in the line is a `vlist`,
 -- so we need to find lines inside of that `vlist` as well. As before offset and width maybe needs
 -- to be updated. If we encounter a column, maybe this line contains more columns, so we number the
 -- first one and keep looking for more.
@@ -352,6 +359,16 @@ if not plain then
         return true
     end, 'lualineno.shipout')
 end
+
+-- Check if inside display for display alignment
+
+luatexbase.add_to_callback("buildpage_filter", function(info)
+    if info == "before_display" then 
+        in_display = true
+    elseif info == "after_display" then
+        in_display = false
+    end
+end, "lualineno.indisplay")
 
 -- \seccc Anchoring numbers to a box^^M
 -- The anchor key 
@@ -430,6 +447,7 @@ local defaults = {
     right = { },
     box = {number = true, recurse = true},
     alignment = {number = true, recurse = true},
+    displayalignment = {number = true, recurse = true},
     equation = {number = true, recurse = true},
     line = {number = true, recurse = true},
     offset = true,
@@ -446,6 +464,7 @@ local defaults_keys = {
     right = {scanner = scan_toks},
     box = {scanner = process_keys, args = {inner_keys, messages}},
     alignment = {scanner = process_keys, args = {inner_keys, messages}},
+    displayalignment = {scanner = process_keys, args = {inner_keys, messages}},
     equation = {scanner = process_keys, args = {inner_keys, messages}},
     line = {scanner = process_keys, args = {inner_keys, messages}},
     offset = {scanner = scan_bool}
@@ -493,6 +512,7 @@ local function define_lineno()
     store_type('alignment', align_sub)
     store_type('equation', eq_sub)
     store_type('line', line_sub)
+    store_type('displayalignment', displayalign_sb)
     
     c.toks = vals.toks or defaults.toks
     c.left = vals.left or defaults.left
@@ -615,10 +635,20 @@ if format == 'optex' then
 elseif latex then
 
 -- Here we mark the columns accroding to `\if@firstcolumn`
+    
+    local true_mode do
+      local prefix = '@lua^line&no_'
+      while token.is_defined(prefix .. 'iftrue') do
+        prefix = prefix .. '@lua^line&no_'
+      end
+      tex.enableprimitives(prefix,{'iftrue'})
+      local tok = create(prefix .. 'iftrue')
+      true_mode  = tok.mode
+    end
 
-    local true_tok = create('iftrue')
+
     luatexbase.add_to_callback('pre_output_filter', function()
-        if create('if@firstcolumn').mode == true_tok.mode then
+        if create('if@firstcolumn').mode == true_mode then
            setattribute(col_attr, 1)
         else
            setattribute(col_attr, 2)
