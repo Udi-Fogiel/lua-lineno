@@ -362,13 +362,15 @@ end
 
 -- Check if inside display for display alignment
 
-luatexbase.add_to_callback("buildpage_filter", function(info)
-    if info == "before_display" then 
-        in_display = true
-    elseif info == "after_display" then
-        in_display = false
-    end
-end, "lualineno.indisplay")
+if luatexbase then 
+    luatexbase.add_to_callback("buildpage_filter", function(info)
+        if info == "before_display" then 
+            in_display = true
+        elseif info == "after_display" then
+            in_display = false
+        end
+    end, "lualineno.indisplay")
+end
 
 -- \seccc Anchoring numbers to a box^^M
 -- The anchor key 
